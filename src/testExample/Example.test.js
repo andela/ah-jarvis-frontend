@@ -1,5 +1,5 @@
 import React from "react";
-import Hello from "../exampleComponent";
+import Hello from "./exampleComponent";
 import { shallow } from "enzyme";
 
 it("renders the name given", () => {
