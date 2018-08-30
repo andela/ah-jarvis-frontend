@@ -3,6 +3,7 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/no-unescaped-entities': 0,
+    quotes: [2, 'backtick', 'double'],
   },
   globals: {
     document: false,
