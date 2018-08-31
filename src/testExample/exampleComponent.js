@@ -1,7 +1,13 @@
-import React, { Component } from "react";
+import React from 'react';
 
-const Hello = ({ name = "Unknown" }) => {
-  return <p>Hello, {name}!</p>;
-};
+const Hello = (
+  { name = 'Unknown' }, // eslint-disable-line
+) => (
+  <p>
+    Hello,
+    {name}
+!
+  </p>
+);
 
 export default Hello;
