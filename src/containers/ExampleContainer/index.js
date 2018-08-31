@@ -4,13 +4,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { sayHi } from './actions';
+import sayHi from './actions';
 
 class ExampleContainer extends Component {
-  static defaultProps = {
-    message: 'Hello',
-  };
-
   componentDidMount() {
     this.props.sayHi();
   }
@@ -24,6 +20,10 @@ class ExampleContainer extends Component {
 ExampleContainer.propTypes = {
   message: PropTypes.string,
   sayHi: PropTypes.func.isRequired,
+};
+
+ExampleContainer.defaultProps = {
+  message: 'Hello',
 };
 
 const mapStateToProps = state => ({
