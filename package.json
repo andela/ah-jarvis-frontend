@@ -17,8 +17,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "dev": "concurrently \"yarn start\" \"yarn sass:watch\"",
-    "sass:watch": "node-sass-chokidar ./src/sass/ -o ./src/ --watch",
-    "sass:build": "node-sass-chokidar ./src/sass/ -o ./src/",
+    "sass:watch": "node-sass-chokidar ./src/styles/scss -o ./src/styles/css --watch",
+    "sass:build": "node-sass-chokidar ./src/styles/scss -o ./src/styles/css",
     "lint": "./node_modules/.bin/eslint src/"
   },
   "devDependencies": {
