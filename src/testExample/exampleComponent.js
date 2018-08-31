@@ -4,7 +4,7 @@ const Hello = (
   { name = 'Unknown' }, // eslint-disable-line
 ) => (
   <p>
-    Hello,
+    {'Hello, '}
     {name}
 !
   </p>
