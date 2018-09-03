@@ -1,1 +1,0 @@
-// Constants -> to avoid typos
