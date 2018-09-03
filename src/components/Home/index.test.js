@@ -1,9 +1,10 @@
+import { shallow } from 'enzyme';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from '.';
+import Home from '.';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('<Home />', () => {
+  it('renders three <Home /> components', () => {
+    const wrapper = shallow(<Home />);
+    expect(wrapper.contains(<h1>Home Page</h1>));
+  });
 });
