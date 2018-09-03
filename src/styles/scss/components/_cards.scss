@@ -1,0 +1,12 @@
+.card-stacked {
+  .card-image {
+    min-height: 100% !important;
+  }
+  .card-content {
+    line-height: 30px;
+
+    .card--title {
+      font-size: 54px !important;
+    }
+  }
+}

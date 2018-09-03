@@ -1,0 +1,72 @@
+body {
+  background-color: $secondary-color;
+}
+
+.text-primary {
+  color: $primary-color;
+}
+
+.fb-blue {
+  background-color: #3d5a96 !important;
+}
+
+.brand {
+  font-size: 30px !important;
+}
+
+form {
+  & .row {
+    margin-bottom: 0;
+  }
+}
+
+.link--icon {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    margin-right: 10px;
+  }
+}
+
+.container--fluid {
+  margin: 30px;
+}
+
+.card--article {
+  padding: 20px 20px;
+
+  &__title {
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+
+.tabs .tab a:hover,
+.tabs .tab a.active {
+  color: $primary-color;
+}
+
+.tabs .indicator {
+  background-color: $primary-color;
+}
+.error {
+  border-bottom: solid 1px red !important;
+}
+
+.divider {
+  background-color: #ccc;
+}
+
+[contenteditable="true"]:focus,
+[contenteditable="true"]:active {
+  border: none;
+  outline: none;
+}
+
+.container--medium {
+  width: 53% !important;
+}
+textarea.materialize-textarea {
+  height: 7rem;
+}

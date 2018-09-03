@@ -1,0 +1,17 @@
+.icon {
+  height: 17.5px;
+  width: 17.5px;
+
+  &--google {
+    fill: red;
+  }
+  &--default {
+    fill: $primary-color;
+  }
+  &--fb {
+    fill: #3d5a96;
+  }
+  &--twitter {
+    fill: #2aa3ef;
+  }
+}
