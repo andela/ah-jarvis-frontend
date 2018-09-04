@@ -1,0 +1,17 @@
+.badge {
+  border-radius: 50%;
+  position: absolute;
+  background-color: $primary-color;
+  color: white;
+  height: 25px;
+  width: 25px;
+  top: -87%;
+  left: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & p {
+    font-size: 12px;
+  }
+}
