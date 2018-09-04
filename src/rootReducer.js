@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import message from './containers/ExampleContainer/reducer';
+const message = () => ({ message: 'This is a reducer' });
 
 const rootReducer = combineReducers({ message });
 

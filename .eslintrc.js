@@ -13,6 +13,7 @@ module.exports = {
     it: false,
     window: false,
     expect: false,
+    describe: false,
     navigator: false,
     fetch: false,
   },
