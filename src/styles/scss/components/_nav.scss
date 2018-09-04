@@ -1,0 +1,20 @@
+.nav-icons {
+  display: flex !important;
+  align-items: center;
+
+  .dropdown-trigger {
+    display: flex;
+    align-items: center;
+    &:focus,
+    &:active {
+      outline: none;
+    }
+
+    & .icon {
+      margin-left: 10px;
+    }
+  }
+}
+.relative {
+  position: relative;
+}
