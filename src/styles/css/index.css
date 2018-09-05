@@ -153,6 +153,9 @@ nav .back {
     height: 460px;
     top: -38px; }
 
+.public-DraftEditorPlaceholder-inner {
+  background-color: whitesmoke; }
+
 .collection-item {
   display: flex;
   justify-content: space-between;
@@ -227,6 +230,13 @@ form .row {
 
 textarea.materialize-textarea {
   height: 7rem; }
+
+.avatar--medium {
+  height: 90px !important;
+  width: 90px !important; }
+
+.text--small {
+  font-size: 12px !important; }
 
 .avatar {
   border-radius: 50%; }
