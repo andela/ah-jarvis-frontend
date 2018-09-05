@@ -16,5 +16,9 @@ module.exports = {
     describe: false,
     navigator: false,
     fetch: false,
+    localStorage:false,
+    beforeEach:false,
+    afterEach:false,
+    jest:false
   },
 };
