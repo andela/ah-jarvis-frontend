@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const InputField = ({
-  type, name, label, value, onChange, errors, validation, failure,
+  type, name, label, value, onChange, errors, failure,
 }) => (
   <div className="row">
     <div className="input-field col s12">
@@ -13,7 +13,7 @@ const InputField = ({
         value={value}
         onChange={onChange}
       />
-      <label htmlFor={name} >{label}</label>
+      <label htmlFor={name}>{label}</label>
       {failure && <span className="red-text">{errors.errors[name]}</span>}
     </div>
   </div>
@@ -29,6 +29,7 @@ InputField.propTypes = {
   onChange: PropTypes.func.isRequired,
   errors: PropTypes.shape({
     email: PropTypes.string,
+    username: PropTypes.string,
     password: PropTypes.string,
   }),
   failure: PropTypes.bool,
