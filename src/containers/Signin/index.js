@@ -10,6 +10,10 @@ import Errors from '../../components/Errors';
 import signinAction from './actions';
 
 export class Signin extends Component {
+  static defaultProps = {
+    signin: {},
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -28,9 +32,7 @@ export class Signin extends Component {
   };
 
   render() {
-    const {
-      errors, failure, isFetching,
-    } = this.props.signin;
+    const { errors, failure, isFetching } = this.props.signin;
     console.log();
     return (
       <div className="row">
@@ -93,8 +95,15 @@ export class Signin extends Component {
 }
 
 Signin.propTypes = {
-  message: PropTypes.string,
   signinUser: PropTypes.func.isRequired,
+  signin: PropTypes.shape({
+    errors: PropTypes.isRequired,
+    failure: PropTypes.isRequired,
+    isFetching: PropTypes.isRequired,
+  }),
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = state => ({
