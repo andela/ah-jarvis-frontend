@@ -1,12 +1,12 @@
 // This is a smart component which is aware of redux
 import { bindActionCreators } from 'redux';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import InputField from '../../components/InputField';
 import Errors from '../../components/Errors';
+import Buttons from '../../components/SigninButtons';
 import signinAction from './actions';
 
 class Signin extends Component {
@@ -25,8 +25,21 @@ class Signin extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.signinUser({ user: this.state }, this.props.history);
+    const { signinUser, history } = this.props;
+    signinUser({ user: this.state }, history);
   };
+
+  renderInput = (name, failure, errors, value) => (
+    <InputField
+      name={`${name}`}
+      label={`Enter your ${name}`}
+      type={`${name}`}
+      value={value}
+      onChange={this.handleChange}
+      failure={failure}
+      errors={errors}
+    />
+  )
 
   render() {
     const { errors, failure, isFetching } = this.props.signin;
@@ -42,54 +55,13 @@ class Signin extends Component {
                 failure={failure}
               />
               <form id="loginForm" onSubmit={this.handleSubmit}>
-                <InputField
-                  name="email"
-                  label="Enter Email"
-                  type="email"
-                  value={this.state.email}
-                  onChange={this.handleChange}
-                  failure={failure}
-                  errors={errors}
+                {this.renderInput('email', failure, errors, this.state.email)}
+                {this.renderInput('password', failure, errors, this.state.password)}
+                <Buttons
+                  isFetching={isFetching}
+                  onClick={this.handleSubmit}
                 />
-                <InputField
-                  name="password"
-                  label="Enter Password"
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.handleChange}
-                  failure={failure}
-                  errors={errors}
-                />
-                <div className="row">
-                  <div className="input-field col s12">
-                    <button
-                      className="btn waves-effect waves-light btn--block"
-                      type="submit"
-                      name="action"
-                      onClick={this.handleClick}
-                      disabled={isFetching}
-                    >
-                      {isFetching ? 'Signing in...' : 'Sign in'}
-                    </button>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="input-field col s12">
-                    Already have an account?
-                    <Link className="p-l--10" to="/signup">
-                      Sign up
-                    </Link>
-                  </div>
-                </div>
 
-                <div className="row">
-                  <Link className="input-field col s12 m6 link--icon" to="/reset/password">
-                    <svg className="icon icon--default">
-                      <use xlinkHref="/ui/static/assets/icons/sprite.svg#icon-arrow-left" />
-                    </svg>
-                      Forgot password?
-                  </Link>
-                </div>
               </form>
             </div>
           </div>
