@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import PropTypes from 'prop-types';
-import updateUser from './actions';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import PropTypes from "prop-types";
+import updateUser from "./actions";
 
 class Update extends Component {
   state = {
-    username: '',
-    bio: '',
+    username: "",
+    bio: "",
     image:
-      'https://t3.ftcdn.net/jpg/01/83/55/76/500_F_183557656_DRcvOesmfDl5BIyhPKrcWANFKy2964i9.jpg',
+      "https://t3.ftcdn.net/jpg/01/83/55/76/500_F_183557656_DRcvOesmfDl5BIyhPKrcWANFKy2964i9.jpg"
   };
 
   componentDidMount() {
@@ -25,14 +25,15 @@ class Update extends Component {
     this.setState({
       username: data.username,
       bio: data.bio,
+      image: data.image
     });
   }
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     const { updateProfile, history } = this.props;
     updateProfile({ user: this.state }, history);
@@ -94,22 +95,23 @@ class Update extends Component {
 Update.propTypes = {
   updateProfile: PropTypes.func.isRequired,
   history: PropTypes.func.isRequired,
-  profile: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
   profile: state.getProfile.payload,
-  edit: state.editProfile,
+  edit: state.editProfile
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    updateProfile: updateUser,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      updateProfile: updateUser
+    },
+    dispatch
+  );
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(Update);
