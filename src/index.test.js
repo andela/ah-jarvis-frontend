@@ -1,8 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import Routes from './routes';
-// import rootReducer from './rootReducer';
-import configStore from './store';
 
 describe('<Routes />', () => {
   it('renders three <Routes /> components', () => {

@@ -1,38 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <header>
     <nav className="white">
       <div className="nav-wrapper p-l--30 p-r--30">
-        <a href="#" className="flow-text black-text">
+        <Link to="/" className="flow-text black-text">
           Authors' Haven
-        </a>
-        <a href="#" data-target="mobile-demo" className="sidenav-trigger">
-          <i className="material-icons black-text">menu</i>
-        </a>
+        </Link>
 
         <ul id="nav-mobile" className="right nav-icons hide-on-med-and-down">
           <li className="black-text hide search-input">
             <input type="text" placeholder="Search..." className="search" />
           </li>
           <li>
-            <a href="#" className="black-text" id="search">
-              <div>
-                {/* <svg className="icon">
-                                <use xlink:href="../../static/assets/icons/sprite.svg#icon-search"></use>
-                            </svg> */}
-              </div>
+            <a href="!#" className="black-text" id="search">
+              search
             </a>
           </li>
           <li>
-            <a href="#" className="black-text">
-              {/* <svg className="icon">
-                            <use xlink:href="../../static/assets/icons/sprite.svg#icon-bell"></use>
-                        </svg> */}
+            <a href="!#" className="black-text">
+              notification
             </a>
           </li>
           <li>
-            <a className="dropdown-trigger black-text" href="#" data-target="profile">
+            <a className="dropdown-trigger black-text" href="!#" data-target="profile">
               <img
                 src="https://randomuser.me/api/portraits/med/men/83.jpg"
                 alt=""
@@ -41,11 +33,11 @@ const Header = () => (
             </a>
             <ul id="profile" className="dropdown-content">
               <li>
-                <a href="#!">Profile</a>
+                <Link to="/profile">Profile</Link>
               </li>
               <li className="divider" tabIndex="-1" />
               <li>
-                <a href="/ui/public/articles/create/">New Article</a>
+                <Link to="/article/new">New Article</Link>
               </li>
               <li className="divider" tabIndex="-1" />
               <li>

@@ -13,7 +13,7 @@ class Create extends Component {
     saving: false,
   };
 
-  handleSave = state => {
+  handleSave = (state) => {
     this.setState({ saving: true });
     const editorState = state.editorState();
     const title = editorState.getCurrentContent().getFirstBlock().text;
@@ -43,6 +43,7 @@ class Create extends Component {
   handleFailure = () => {
     console.log('Failed');
   };
+
   render() {
     const { publishing } = this.props.article;
     console.log(this.state);
@@ -59,7 +60,7 @@ class Create extends Component {
             <div className="col s12">
               <Dante
                 content={editorstate}
-                spellcheck={true}
+                spellcheck
                 data_storage={{
                   url: 'http://localhost:9000/api/articles/',
                   method: 'POST',

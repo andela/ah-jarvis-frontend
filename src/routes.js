@@ -16,7 +16,7 @@ export default () => (
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/articles/new" component={Create} />
+        <Route exact path="/article/new" component={Create} />
         <Route path="/article/:id" component={Read} />
         <Route exact path="/login" component={SocialAuth} />
 
