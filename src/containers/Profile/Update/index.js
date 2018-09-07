@@ -24,8 +24,7 @@ class Update extends Component {
 
     this.setState({
       username: data.username,
-      bio: data.bio,
-      image: data.image
+      bio: data.bio
     });
   }
 

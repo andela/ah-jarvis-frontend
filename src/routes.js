@@ -9,7 +9,6 @@ import Read from "./containers/Profile/Read";
 import Update from "./containers/Profile/Update";
 import NotFound from "./components/NotFound";
 import SocialAuth from "./containers/Login";
-
 const store = configStore();
 
 export default () => (
@@ -21,7 +20,6 @@ export default () => (
         <Route exact path="/profile/:username" component={Read} />
         <Route exact path="/edit/profile/:username" component={Update} />
         <Route exact path="/login" component={SocialAuth} />
-
         <Route component={NotFound} />
       </Switch>
     </Router>

@@ -8,6 +8,13 @@ module.exports = {
     jest: true,
   },
   rules: {
+    "jsx-a11y/label-has-for": [ 2, {
+        "components": [ "Label" ],
+        "required": {
+            "some": [ "nesting", "id" ]
+        },
+        "allowChildren": false
+    }],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/destructuring-assignment': 0,
     'react/no-unescaped-entities': 0,

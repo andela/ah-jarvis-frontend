@@ -68,7 +68,8 @@ export class Read extends Component {
               <div className="col s12 m3">
                 {data && (
                   <img
-                    src={data.image}
+                    src="https://t3.ftcdn.net/jpg/01/83/55/76/500_F_183557656_DRcvOesmfDl5BIyhPKrcWANFKy2964i9.jpg"
+                    // {data.image}
                     alt={data.username}
                     className="responsive-img circle avatar--large"
                   />
