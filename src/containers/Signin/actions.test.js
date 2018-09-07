@@ -1,5 +1,3 @@
-import { shallow, mount, render } from 'enzyme';
-import React from 'react';
 import { SIGNIN_SUCCESS, SIGNIN_FAILURE, SIGNIN_REQUEST } from './constants';
 import { signinFailure, signingIn, signinSuccess } from './actions';
 

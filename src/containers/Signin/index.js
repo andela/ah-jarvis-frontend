@@ -2,7 +2,7 @@
 import { bindActionCreators } from 'redux';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { connect, Provider } from 'react-redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import InputField from '../../components/InputField';
@@ -29,7 +29,7 @@ export class Signin extends Component {
 
   render() {
     const {
-      errors, payload, success, failure, isFetching,
+      errors, failure, isFetching,
     } = this.props.signin;
     console.log();
     return (
@@ -94,6 +94,7 @@ export class Signin extends Component {
 
 Signin.propTypes = {
   message: PropTypes.string,
+  signinUser: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

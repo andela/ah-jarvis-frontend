@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import configureStore from 'redux-mock-store';
-import ConnectedSignin, { Signin } from './index';
+import ConnectedSignin from './index';
 
 describe('<Signin />', () => {
   const initialState = {
@@ -24,5 +24,4 @@ describe('<Signin />', () => {
   it('should render SMART login component', () => {
     expect(wrapper.length).toEqual(1);
   });
-
 });
