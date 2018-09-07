@@ -33,7 +33,6 @@ class Signin extends Component {
 
   render() {
     const { errors, failure, isFetching } = this.props.signin;
-    console.log();
     return (
       <div className="row">
         <div className="col m4 s12 offset-m4 auth">
