@@ -9,7 +9,7 @@ import InputField from '../../components/InputField';
 import Errors from '../../components/Errors';
 import signinAction from './actions';
 
-export class Signin extends Component {
+class Signin extends Component {
   static defaultProps = {
     signin: {},
   }

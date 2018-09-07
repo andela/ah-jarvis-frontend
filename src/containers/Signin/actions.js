@@ -25,7 +25,6 @@ const signinAction = (creds, history) => (dispatch) => {
       history.push('/');
     })
     .catch((err) => {
-      console.log(err)
       dispatch(signinFailure(err));
     });
 };
