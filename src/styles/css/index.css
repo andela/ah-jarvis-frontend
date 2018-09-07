@@ -238,6 +238,10 @@ textarea.materialize-textarea {
 .text--small {
   font-size: 12px !important; }
 
+.flex-center {
+  display: flex;
+  justify-content: center; }
+
 .avatar {
   border-radius: 50%; }
   .avatar--large {

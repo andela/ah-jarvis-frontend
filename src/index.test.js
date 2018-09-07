@@ -23,8 +23,8 @@ describe('<Routes />', () => {
   });
 });
 
-describe('rootReducer', () => {
-  it('should return intial state', () => {
-    expect(configStore().getState().message).toEqual({ message: 'This is a reducer' });
-  });
-});
+// describe('rootReducer', () => {
+//   it('should return intial state', () => {
+//     expect(configStore().getState().message).toEqual({ message: 'This is a reducer' });
+//   });
+// });
