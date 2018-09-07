@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 import './styles/css/index.css'
+
+import './styles/css/index.css';
 
 import Routes from './routes';
 import registerServiceWorker from './registerServiceWorker';

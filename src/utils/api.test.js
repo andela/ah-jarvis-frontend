@@ -15,6 +15,17 @@ describe('API', () => {
     });
   });
 
+  it('Should fetch from an endpoint with authentication. ', () => {
+    fetch.mockResponseOnce(JSON.stringify({ data: '12345' }));
+    api({
+      method: 'GET',
+      endpoint: '/articles/',
+      authenticated: true,
+    }).then((res) => {
+      expect(res.data).toEqual('12345');
+    });
+  });
+
   it('Should post to an endpoint. ', () => {
     fetch.mockResponseOnce(JSON.stringify({ data: 'testing' }));
     api({
