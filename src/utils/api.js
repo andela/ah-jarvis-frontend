@@ -21,7 +21,6 @@ export function authHeader() {
   return {};
 }
 
-
 const api = ({ endpoint, method, data }) => fetch(`${config.BASE_URL}${endpoint}`, {
   method,
   headers: {
@@ -30,6 +29,5 @@ const api = ({ endpoint, method, data }) => fetch(`${config.BASE_URL}${endpoint}
   },
   body: JSON.stringify(data),
 }).then(handleResponse);
-
 
 export default api;

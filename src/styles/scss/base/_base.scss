@@ -70,3 +70,21 @@ form {
 textarea.materialize-textarea {
   height: 7rem;
 }
+
+.input-edit {
+  border: none !important;
+
+  &--large {
+    font-size: 37px !important;
+  }
+  &--medium {
+    font-size: 24px !important;
+  }
+  &--small {
+    font-size: 14px !important;
+  }
+
+  &:focus {
+    border: none !important;
+  }
+}

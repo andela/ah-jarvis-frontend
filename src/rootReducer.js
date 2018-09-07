@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 
-const message = () => ({ message: 'This is a reducer' });
+import getProfile from './containers/Profile/Read/reducer';
+import editProfile from './containers/Profile/Update/reducer';
 
-const rootReducer = combineReducers({ message });
+const rootReducer = combineReducers({ getProfile, editProfile });
 
 export default rootReducer;

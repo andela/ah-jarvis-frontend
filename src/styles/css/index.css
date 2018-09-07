@@ -228,6 +228,17 @@ form .row {
 textarea.materialize-textarea {
   height: 7rem; }
 
+.input-edit {
+  border: none !important; }
+  .input-edit--large {
+    font-size: 37px !important; }
+  .input-edit--medium {
+    font-size: 24px !important; }
+  .input-edit--small {
+    font-size: 14px !important; }
+  .input-edit:focus {
+    border: none !important; }
+
 .avatar {
   border-radius: 50%; }
   .avatar--large {

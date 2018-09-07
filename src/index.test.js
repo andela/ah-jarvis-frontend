@@ -1,8 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import Routes from './routes';
-// import rootReducer from './rootReducer';
-import configStore from './store';
 
 describe('<Routes />', () => {
   it('renders three <Routes /> components', () => {
@@ -20,11 +18,5 @@ describe('<Routes />', () => {
   </Provider>
     `),
     );
-  });
-});
-
-describe('rootReducer', () => {
-  it('should return intial state', () => {
-    expect(configStore().getState().message).toEqual({ message: 'This is a reducer' });
   });
 });
