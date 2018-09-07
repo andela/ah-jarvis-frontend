@@ -1,8 +1,15 @@
 module.exports = {
   extends: 'airbnb',
+  plugins: ['react', 'import'],
+  parser: 'babel-eslint',
+  env: {
+    browser: true,
+    node: true,
+    jest: true
+  },
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
-    'react/destructuring-assignment': ['never', { ignoreClassFields: true }],
+    'react/destructuring-assignment': 0,
     'react/no-unescaped-entities': 0,
     'no-console': 0,
     'no-param-reassign': 0,
@@ -16,9 +23,9 @@ module.exports = {
     describe: false,
     navigator: false,
     fetch: false,
-    localStorage:false,
-    beforeEach:false,
-    afterEach:false,
-    jest:false
+    localStorage: false,
+    beforeEach: false,
+    afterEach: false,
+    jest: false
   },
 };
