@@ -15,14 +15,17 @@ const articleFailure = errors => ({
   errors,
 });
 
-const createArticle = data => (dispatch) => {
+const createArticle = (data, history) => (dispatch) => {
   dispatch(articleFetch());
   return api({
     method: 'POST',
     endpoint: '/articles/',
     data,
   })
-    .then(res => dispatch(articleSuccess(res)))
+    .then((res) => {
+      dispatch(articleSuccess(res));
+      history.push(`/article/${res.article.slug}`);
+    })
     .catch(err => dispatch(articleFailure(err)));
 };
 

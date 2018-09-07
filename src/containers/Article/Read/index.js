@@ -2,13 +2,9 @@ import Dante from 'Dante2';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
-import { stateFromHTML } from 'draft-js-import-html';
-import { convertFromRaw, convertToRaw } from 'draft-js';
 
-import { convertFromHTML } from 'draft-convert';
 import Header from '../../../components/Header';
 import fetchArticle from './actions';
-import UserInfo from '../../../components/UserInfo';
 import ArticleLoader from '../../../components/ArticleLoader';
 
 class Read extends Component {
