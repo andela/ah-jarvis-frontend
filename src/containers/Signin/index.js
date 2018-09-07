@@ -14,13 +14,10 @@ class Signin extends Component {
     signin: {},
   }
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: '',
-    };
-  }
+  state = {
+    email: '',
+    password: '',
+  };
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
