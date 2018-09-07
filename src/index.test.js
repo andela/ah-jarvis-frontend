@@ -10,21 +10,18 @@ describe('<Routes />', () => {
     expect(
       wrapper.contains(`
       <Provider store={store}>
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/signin" component={Signin} />
-        <Route component={NotFound} />
-      </Switch>
-    </Router>
-  </Provider>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/articles/new" component={Create} />
+            <Route path="/article/:id" component={Read} />
+            <Route exact path="/login" component={SocialAuth} />
+
+            <Route component={NotFound} />
+          </Switch>
+        </Router>
+      </Provider>
     `),
     );
   });
 });
-
-// describe('rootReducer', () => {
-//   it('should return intial state', () => {
-//     expect(configStore().getState().message).toEqual({ message: 'This is a reducer' });
-//   });
-// });
