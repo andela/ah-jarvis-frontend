@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-import getUser from './actions';
+import getUser from "./actions";
 
 export class Read extends Component {
   // change to component will mount
@@ -14,13 +14,13 @@ export class Read extends Component {
     const urlUsername = match.params.username;
     const users = {
       user: {
-        email: 'ianduncan08@gmail.com',
+        email: "ianduncan08@gmail.com",
         username: urlUsername,
         token:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjAsImV4cCI6MTUzNjM0MjMxN30.kdMybS2US9UXn_hw8XHlpjftZxokGR16FoYhkQejXlY',
-      },
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjAsImV4cCI6MTUzNjM1MjYwMX0.lGPIGe9X2s0sPaK6wuKx9pRFcC2ETgWogHf_sMttcqk"
+      }
     };
-    localStorage.setItem('user', JSON.stringify(users));
+    localStorage.setItem("user", JSON.stringify(users));
     retrieveProfile(urlUsername);
     console.log(this.props);
   }
@@ -87,21 +87,22 @@ export class Read extends Component {
 Read.propTypes = {
   retrieveProfile: PropTypes.func.isRequired,
   match: PropTypes.func,
-  profile: PropTypes.object,
+  profile: PropTypes.object
 };
 
 const mapStateToProps = state => ({
-  profile: state.getProfile,
+  profile: state.getProfile
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    retrieveProfile: getUser,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      retrieveProfile: getUser
+    },
+    dispatch
+  );
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(Read);

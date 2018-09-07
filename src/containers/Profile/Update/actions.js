@@ -1,28 +1,29 @@
-import { EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE } from './constants';
-import api from '../../../utils/api';
+import { EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE } from "./constants";
+import api from "../../../utils/api";
 
 const editProfileFetch = () => ({
-  type: EDIT_REQUEST,
+  type: EDIT_REQUEST
 });
 
 const editProfileSuccess = payload => ({
   type: EDIT_SUCCESS,
-  payload,
+  payload
 });
 
 const editProfileFailure = errors => ({
   type: EDIT_FAILURE,
-  errors,
+  errors
 });
 
-const updateUser = (data, history) => (dispatch) => {
+const updateUser = (data, history) => dispatch => {
   dispatch(editProfileFetch());
   return api({
-    method: 'PUT',
-    endpoint: '/user/',
+    method: "PUT",
+    endpoint: "/user/",
     data,
+    authenticated: true
   })
-    .then((res) => {
+    .then(res => {
       dispatch(editProfileSuccess(res));
       history.push(`/profile/${res.user.username}`);
     })
