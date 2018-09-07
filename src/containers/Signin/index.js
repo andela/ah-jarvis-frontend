@@ -23,7 +23,7 @@ class Signin extends Component {
   }
 
   handleChange = (e) => {
-    this.setState({ [e.target.id]: e.target.value });
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   handleSubmit = (e) => {
@@ -84,6 +84,15 @@ class Signin extends Component {
                       Sign up
                     </Link>
                   </div>
+                </div>
+
+                <div className="row">
+                  <Link className="input-field col s12 m6 link--icon" to="/reset/password">
+                    <svg className="icon icon--default">
+                      <use xlinkHref="/ui/static/assets/icons/sprite.svg#icon-arrow-left" />
+                    </svg>
+                      Forgot password?
+                  </Link>
                 </div>
               </form>
             </div>

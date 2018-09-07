@@ -8,7 +8,7 @@ const InputField = ({
     <div className="input-field col s12">
       <input
         type={type}
-        id={name}
+        name={name}
         className={`validate ${failure ? 'invalid' : ''}`}
         value={value}
         onChange={onChange}
