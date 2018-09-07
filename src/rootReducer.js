@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
+import forgotPasswordAction from './containers/ForgotPassword/reducer';
+import resetPasswordAction from './containers/ResetPassword/reducer';
 
-const message = () => ({ message: 'This is a reducer' });
-
-const rootReducer = combineReducers({ message });
+const rootReducer = combineReducers({ forgotPasswordAction, resetPasswordAction });
 
 export default rootReducer;
