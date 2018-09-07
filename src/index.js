@@ -1,9 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'materialize-css/dist/css/materialize.min.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import "materialize-css/dist/css/materialize.min.css";
+import "materialize-css";
 
-import Routes from './routes';
-import registerServiceWorker from './registerServiceWorker';
+import "./styles/css/index.css";
 
-ReactDOM.render(<Routes />, document.getElementById('root'));
+import Routes from "./routes";
+import registerServiceWorker from "./registerServiceWorker";
+
+ReactDOM.render(<Routes />, document.getElementById("root"));
 registerServiceWorker();
