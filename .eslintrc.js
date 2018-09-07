@@ -14,18 +14,5 @@ module.exports = {
     'no-console': 0,
     'no-param-reassign': 0,
     quotes: ['error', 'single'],
-  },
-  globals: {
-    document: false,
-    it: false,
-    window: false,
-    expect: false,
-    describe: false,
-    navigator: false,
-    fetch: false,
-    localStorage:false,
-    beforeEach:false,
-    afterEach:false,
-    jest:false
-  },
+  }
 };

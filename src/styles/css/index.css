@@ -228,6 +228,11 @@ form .row {
 textarea.materialize-textarea {
   height: 7rem; }
 
+.danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb; }
+
 .avatar {
   border-radius: 50%; }
   .avatar--large {
