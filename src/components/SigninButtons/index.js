@@ -29,10 +29,13 @@ const Buttons = ({
     </div>
 
     <div className="row">
-      <Link className="input-field col s12 m6 link--icon" to="/reset/password">
+      <Link className="input-field col s12 m6 link--icon" to="/login">
         <svg className="icon icon--default">
           <use xlinkHref="/ui/static/assets/icons/sprite.svg#icon-arrow-left" />
         </svg>
+             Back
+      </Link>
+      <Link className="input-field col s12 m6 link--icon" to="/reset/password">
             Forgot password?
       </Link>
     </div>
