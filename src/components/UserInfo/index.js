@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UserInfo = ({ onPublish, publishing, save }) => (
+const UserInfo = ({
+  onPublish, publishing, save, user,
+}) => (
   <div className="row p-t--20 p-b--20">
     <div className="col s6 m1">
       <img
@@ -12,7 +14,7 @@ const UserInfo = ({ onPublish, publishing, save }) => (
     </div>
     <div className="col s12 m9">
       <div className="m-b--15">
-        <p>Dennis Wanjiru</p>
+        <p>{user.user.username}</p>
       </div>
 
       <div className="m-b--15 p-r--100">
@@ -43,4 +45,9 @@ UserInfo.propTypes = {
   publishing: PropTypes.bool.isRequired,
   onPublish: PropTypes.func.isRequired,
   save: PropTypes.bool.isRequired,
+  user: PropTypes.shape({
+    user: PropTypes.shape({
+      username: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
 };

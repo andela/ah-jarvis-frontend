@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 
 import ArticleLoader from '../../../components/ArticleLoader';
 import Header from '../../../components/Header';
-import fetchArticle from './actions';
+import { fetchArticle } from './actions';
 
 class Read extends Component {
   componentDidMount() {
@@ -15,7 +15,7 @@ class Read extends Component {
   }
 
   render() {
-    const { isFetching, success, payload } = this.props.article;
+    const { success, payload, isFetching } = this.props.article;
     let data;
     if (payload.article) {
       data = JSON.parse(payload.article.body);

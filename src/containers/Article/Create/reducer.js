@@ -1,7 +1,7 @@
 import { ARTICLE_REQUEST, ARTICLE_SUCCESS, ARTICLE_FAILURE } from './constants';
 
 const initialState = {
-  payload: '',
+  payload: {},
   publishing: false,
   success: false,
   failure: false,

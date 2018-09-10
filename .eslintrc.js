@@ -22,4 +22,4 @@ module.exports = {
     'no-param-reassign': 0,
     quotes: ['error', 'single'],
   }
-};
+}

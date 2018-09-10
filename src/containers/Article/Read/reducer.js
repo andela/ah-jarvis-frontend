@@ -2,7 +2,7 @@ import { ARTICLE_FETCH_SUCCESS, ARTICLE_FETCH_FAILURE, ARTICLE_FETCH_REQUEST } f
 
 const initialState = {
   payload: {},
-  isFatching: false,
+  isFetching: false,
   success: false,
   failure: false,
   errors: null,
@@ -12,7 +12,7 @@ export default function (state = initialState, action) {
   const { type, payload, errors } = action;
   switch (type) {
     case ARTICLE_FETCH_REQUEST:
-      return { ...state, isFatching: true };
+      return { ...state, isFetching: true };
     case ARTICLE_FETCH_SUCCESS:
       return {
         ...state,
@@ -20,7 +20,7 @@ export default function (state = initialState, action) {
         errors: null,
         success: true,
         failure: false,
-        isFatching: false,
+        isFetching: false,
       };
     case ARTICLE_FETCH_FAILURE:
       return {
@@ -29,7 +29,7 @@ export default function (state = initialState, action) {
         payload: '',
         failure: true,
         success: false,
-        isFatching: false,
+        isFetching: false,
       };
     default:
       return state;

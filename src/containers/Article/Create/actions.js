@@ -1,16 +1,16 @@
 import { ARTICLE_REQUEST, ARTICLE_SUCCESS, ARTICLE_FAILURE } from './constants';
 import api from '../../../utils/api';
 
-const articleFetch = () => ({
+export const articleFetch = () => ({
   type: ARTICLE_REQUEST,
 });
 
-const articleSuccess = payload => ({
+export const articleSuccess = payload => ({
   type: ARTICLE_SUCCESS,
   payload,
 });
 
-const articleFailure = errors => ({
+export const articleFailure = errors => ({
   type: ARTICLE_FAILURE,
   errors,
 });
@@ -21,6 +21,7 @@ const createArticleAction = (data, history) => (dispatch) => {
     method: 'POST',
     endpoint: '/articles/',
     data,
+    authenticated: true,
   })
     .then((res) => {
       dispatch(articleSuccess(res));
