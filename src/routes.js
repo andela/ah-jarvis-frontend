@@ -20,6 +20,7 @@ export default () => (
         <Route path="/article/:id" component={Read} />
         <Route exact path="/login" component={SocialAuth} />
 
+
         <Route component={NotFound} />
       </Switch>
     </Router>

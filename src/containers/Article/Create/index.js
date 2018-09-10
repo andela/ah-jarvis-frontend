@@ -3,10 +3,18 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 
+import { ImageBlockConfig } from 'Dante2/package/es/components/blocks/image';
+import { VideoBlockConfig } from 'Dante2/package/es/components/blocks/video';
+import { PlaceholderBlockConfig } from 'Dante2/package/es/components/blocks/placeholder';
+import { EmbedBlockConfig } from 'Dante2/package/es/components/blocks/embed';
+
 import Header from '../../../components/Header';
 import createArticle from './actions';
 import UserInfo from '../../../components/UserInfo';
 import editorstate from './editorstate';
+import { getCurrentUser } from '../../../utils/auth';
+import { DividerBlockConfig } from './divider';
+
 
 class Create extends Component {
   state = {
@@ -17,6 +25,7 @@ class Create extends Component {
     this.setState({ saving: true });
     const editorState = state.editorState();
     const title = editorState.getCurrentContent().getFirstBlock().text;
+    console.log(title);
     const data = {
       article: {
         body: JSON.stringify(state.editorContent),
@@ -44,9 +53,33 @@ class Create extends Component {
     console.log('Failed');
   };
 
+
+  handleUpload =(img, state) => {
+    console.log(`Uploading ${img} ${state}`);
+    console.log(state);
+
+    const xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+      const response = JSON.parse(this.responseText);
+      state.uploadCompleted(response.secure_url);
+    };
+    xhr.onerror = function () {
+      const response = JSON.parse(this.responseText);
+      console.log('ajaxError', response);
+    };
+    xhr.open('post', 'https://api.cloudinary.com/v1_1/dhgp3cxes/image/upload');
+    xhr.upload.addEventListener('progress', (e) => {
+      state.updateProgressBar(e);
+    });
+    const fd = new FormData();
+    fd.append('upload_preset', 'jaaktgvk');
+    fd.append('file', img);
+    xhr.send(fd);
+  };
+
   render() {
     const { publishing } = this.props.article;
-    console.log(this.state);
+
     return (
       <React.Fragment>
         <Header />
@@ -55,12 +88,22 @@ class Create extends Component {
             onPublish={this.handlePublish}
             publishing={publishing}
             save={this.state.saving}
+            user={getCurrentUser()}
           />
           <div className="row">
             <div className="col s12">
               <Dante
                 content={editorstate}
                 spellcheck
+                widgets={[ImageBlockConfig({
+                  upload_handler: this.handleUpload,
+                  options: {
+                    upload_url: null,
+                    upload_handler: this.handleUpload,
+                    upload_callback: this.handleUpload,
+                    upload_error_callback: this.handleFailure,
+                  },
+                }), VideoBlockConfig(), EmbedBlockConfig(), DividerBlockConfig(), PlaceholderBlockConfig()]}
                 data_storage={{
                   url: 'http://localhost:9000/api/articles/',
                   method: 'POST',

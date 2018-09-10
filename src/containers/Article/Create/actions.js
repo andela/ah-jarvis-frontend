@@ -21,6 +21,7 @@ const createArticle = (data, history) => (dispatch) => {
     method: 'POST',
     endpoint: '/articles/',
     data,
+    authenticated: true,
   })
     .then((res) => {
       dispatch(articleSuccess(res));
