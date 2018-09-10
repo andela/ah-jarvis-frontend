@@ -1,27 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const InputField = props => (
+const InputField = ({
+  type, name, label, value, onChange, errors, failure,
+}) => (
   <div className="row">
     <div className="input-field col s12">
       <input
-        type={props.type}
-        id={props.id}
-        className="validate"
-        value={props.value}
-        onChange={props.onChange}
+        type={type}
+        name={name}
+        className={`validate ${failure ? 'invalid' : ''}`}
+        value={value}
+        onChange={onChange}
       />
-      <label htmlFor={props.id}>{props.label}</label>
+      <label htmlFor={name}>{label}</label>
+      {failure && <span className="red-text">{errors.errors[name]}</span>}
     </div>
   </div>
 );
 
+export default InputField;
+
 InputField.propTypes = {
   type: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
+  errors: PropTypes.shape({
+    email: PropTypes.string,
+    username: PropTypes.string,
+    password: PropTypes.string,
+  }),
+  failure: PropTypes.bool,
 };
 
-export default InputField;
+InputField.defaultProps = {
+  errors: null,
+  failure: false,
+};

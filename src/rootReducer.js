@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import registerUser from './containers/SignUp/reducer';
+import signup from './containers/SignUp/reducer';
+import signin from './containers/Signin/reducer';
 
 const message = () => ({ message: 'This is a reducer' });
 
-const rootReducer = combineReducers({ message, registerUser });
+const rootReducer = combineReducers({ message, signin, signup });
 
 export default rootReducer;
