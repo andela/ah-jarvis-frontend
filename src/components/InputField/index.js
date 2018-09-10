@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const InputField = ({
-  type, name, value, onChange, errors, failure, label,
+  type, name, label, value, onChange, errors, failure,
 }) => (
   <div className="row">
     <div className="input-field col s12">
       <input
         type={type}
         name={name}
-        className={`validate ${failure ? 'text-red' : ''}`}
+        className={`validate ${failure ? 'invalid' : ''}`}
         value={value}
         onChange={onChange}
       />
@@ -24,11 +24,12 @@ export default InputField;
 InputField.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   errors: PropTypes.shape({
     email: PropTypes.string,
+    username: PropTypes.string,
     password: PropTypes.string,
   }),
   failure: PropTypes.bool,

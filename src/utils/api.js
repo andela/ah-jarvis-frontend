@@ -8,8 +8,11 @@ const handleResponse = response => response.text().then((text) => {
   return data;
 });
 
-export function authHeader() {
+export function authHeader(authenticated) {
   // return authorization header with jwt token
+  if (!authenticated) {
+    return {};
+  }
   const data = localStorage.getItem('user');
   if (!data) {
     return {};
@@ -22,11 +25,13 @@ export function authHeader() {
 }
 
 
-const api = ({ endpoint, method, data }) => fetch(`${config.BASE_URL}${endpoint}`, {
+const api = ({
+  endpoint, method, data, authenticated,
+}) => fetch(`${config.BASE_URL}${endpoint}`, {
   method,
   headers: {
     'content-type': 'application/json',
-    ...authHeader(),
+    ...authHeader(authenticated),
   },
   body: JSON.stringify(data),
 }).then(handleResponse);
