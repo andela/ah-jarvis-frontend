@@ -15,7 +15,7 @@ const articleFailure = errors => ({
   errors,
 });
 
-const createArticle = (data, history) => (dispatch) => {
+const createArticleAction = (data, history) => (dispatch) => {
   dispatch(articleFetch());
   return api({
     method: 'POST',
@@ -29,4 +29,4 @@ const createArticle = (data, history) => (dispatch) => {
     .catch(err => dispatch(articleFailure(err)));
 };
 
-export default createArticle;
+export default createArticleAction;

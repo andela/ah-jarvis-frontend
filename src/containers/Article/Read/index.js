@@ -1,11 +1,12 @@
 import Dante from 'Dante2';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 
+import ArticleLoader from '../../../components/ArticleLoader';
 import Header from '../../../components/Header';
 import fetchArticle from './actions';
-import ArticleLoader from '../../../components/ArticleLoader';
 
 class Read extends Component {
   componentDidMount() {
@@ -18,7 +19,6 @@ class Read extends Component {
     let data;
     if (payload.article) {
       data = JSON.parse(payload.article.body);
-      console.log(data);
     }
     return (
       <React.Fragment>
@@ -35,6 +35,18 @@ class Read extends Component {
     );
   }
 }
+
+Read.propTypes = {
+  article: PropTypes.shape({
+    isFetching: PropTypes.bool.isRequired,
+    success: PropTypes.bool.isRequired,
+    payload: PropTypes.object.isRequired,
+  }).isRequired,
+  getArticle: PropTypes.func.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.object.isRequired,
+  }).isRequired,
+};
 
 const mapDispatchToProps = dispatch => bindActionCreators({ getArticle: fetchArticle }, dispatch);
 const mapStateToProps = state => ({

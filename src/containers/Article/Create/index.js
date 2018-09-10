@@ -1,12 +1,13 @@
 import Dante from 'Dante2';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 
-import Header from '../../../components/Header';
-import createArticle from './actions';
 import UserInfo from '../../../components/UserInfo';
+import Header from '../../../components/Header';
 import editorstate from './editorstate';
+import createArticleAction from './actions';
 
 class Create extends Component {
   state = {
@@ -31,12 +32,9 @@ class Create extends Component {
     }, 1500);
   };
 
-  handleSuccess = () => {
-    console.log('Saved');
-  };
-
   handlePublish = () => {
-    this.props.postArticle(JSON.parse(localStorage.getItem('article')), this.props.history);
+    const { postArticle, history } = this.props;
+    postArticle(JSON.parse(localStorage.getItem('article')), history);
     localStorage.removeItem('article');
   };
 
@@ -78,7 +76,22 @@ class Create extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({ postArticle: createArticle }, dispatch);
+Create.propTypes = {
+  article: PropTypes.shape({
+    publishing: PropTypes.bool.isRequired,
+  }).isRequired,
+  postArticle: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    postArticle: createArticleAction,
+  },
+  dispatch,
+);
 
 const mapStateToProps = ({ createArticle }) => ({
   article: createArticle,

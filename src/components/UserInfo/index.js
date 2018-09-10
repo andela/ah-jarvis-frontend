@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const UserInfo = ({ onPublish, publishing, save }) => (
   <div className="row p-t--20 p-b--20">
@@ -37,3 +38,9 @@ const UserInfo = ({ onPublish, publishing, save }) => (
 );
 
 export default UserInfo;
+
+UserInfo.propTypes = {
+  publishing: PropTypes.bool.isRequired,
+  onPublish: PropTypes.func.isRequired,
+  save: PropTypes.bool.isRequired,
+};
