@@ -1,20 +1,28 @@
 const initialState = {
   failure: false,
-  errors: null
+  errors: null,
+  isFetching: false,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case "SIGNUP_SUCCESSFUL":
+    case 'SIGNING_UP':
       return {
         ...state,
-        success: action.payload
+        isFetching: true,
       };
-    case "SIGNUP_FAILURE":
+    case 'SIGNUP_SUCCESSFUL':
+      return {
+        ...state,
+        success: action.payload,
+        isFetching: false,
+      };
+    case 'SIGNUP_FAILURE':
       return {
         ...state,
         failure: true,
-        errors: action.payload
+        errors: action.payload,
+        isFetching: false,
       };
     default:
       return state;

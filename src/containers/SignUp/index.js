@@ -1,23 +1,24 @@
-import React from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 
-import { SignUpForm } from "../../components/SignUpForm";
-import { registerUser } from "./actions";
+import Form from './Form';
+import { registerUser } from './actions';
+import InlineLoader from '../../components/InlineLoader';
 
 class SignUp extends React.Component {
   render() {
-    console.log(this.props.register);
     return (
       <div className="row">
         <div className="col m4 s12 offset-m4 auth">
           <div className="card card--auth">
+            {this.props.register.isFetching ? <InlineLoader /> : ''}
+
             <div className="card-content">
-              <span className="card-title center-align text-primary brand">
-                Authors' Haven
-              </span>
-              <SignUpForm
-                onClick={user => {
+              <span className="card-title center-align text-primary brand">Authors' Haven</span>
+              <Form
+                onClick={(user) => {
                   this.props.actions(user, this.props.history);
                 }}
                 register={this.props.register}
@@ -30,15 +31,20 @@ class SignUp extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { register: state.registerUser };
-};
+const mapStateToProps = state => ({ register: state.registerUser });
 
-const mapDispatchToProps = dispatch => {
-  return { actions: bindActionCreators(registerUser, dispatch) };
+const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(registerUser, dispatch) });
+
+SignUp.propTypes = {
+  actions: PropTypes.func.isRequired,
+  register: PropTypes.shape({
+    errors: { errors: {} },
+    failure: PropTypes.bool,
+  }).isRequired,
+  history: PropTypes.shape({}).isRequired,
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(SignUp);
