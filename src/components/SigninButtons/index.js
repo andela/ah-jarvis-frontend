@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import ROUTES from '../../utils/routes';
 
 const Buttons = ({
   onClick, isFetching,
@@ -29,10 +30,13 @@ const Buttons = ({
     </div>
 
     <div className="row">
-      <Link className="input-field col s12 m6 link--icon" to="/reset/password">
+      <Link className="input-field col s12 m6 link--icon" to={ROUTES.login}>
         <svg className="icon icon--default">
           <use xlinkHref="/ui/static/assets/icons/sprite.svg#icon-arrow-left" />
         </svg>
+             Back
+      </Link>
+      <Link className="input-field col s12 m6 link--icon" to={ROUTES.resetPassword}>
             Forgot password?
       </Link>
     </div>
