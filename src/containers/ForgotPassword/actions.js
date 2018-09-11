@@ -2,29 +2,29 @@
 import { LINK_SUCCESS, LINK_FAILURE, LINK_REQUEST } from './constants';
 import api from '../../utils/api';
 
-const linkSuccess = payload => ({
+export const linkSuccess = payload => ({
   type: LINK_SUCCESS,
   payload,
 });
 
-const linkFailure = errors => ({
+export const linkFailure = errors => ({
   type: LINK_FAILURE,
   errors,
 });
 
-const forgotPassword = () => ({
+export const forgotPassword = () => ({
   type: LINK_REQUEST,
 });
 
-const forgotPasswordAction = mail => (dispatch) => {
+export const forgotPasswordAction = data => (dispatch) => {
   dispatch(forgotPassword());
   api({
     method: 'POST',
-    data: mail.email,
+    data,
     endpoint: '/users/forgot_password/',
   })
     .then(res => dispatch(linkSuccess(res.message)))
-    .catch(error => dispatch(linkFailure(error)));
+    .catch(err => dispatch(linkFailure(err)));
 };
 
 export default forgotPasswordAction;

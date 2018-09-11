@@ -2,29 +2,53 @@
 import { bindActionCreators } from 'redux';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import InputField from '../../components/InputField';
-import forgotPasswordAction from './actions';
+import Errors from '../../components/Errors';
+import validateInput from '../../utils/validateInput';
+import { forgotPasswordAction } from './actions';
 
 
 class ForgotPassword extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { email: '' };
+  static defaultProps = {
+    forgotPass: {},
   }
 
+  state = {
+    email: '',
+    validation: {},
+  };
+
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({
+      [e.target.name]: e.target.value,
+      validation: { [e.target.name]: validateInput(e.target.name, e.target.value) },
+    });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.sendLink({ email: this.state });
+    const { sendLink } = this.props;
+    sendLink({ email: this.state.email });
   };
+
+  renderInput = (name, failure, errors, value) => (
+    <InputField
+      name={`${name}`}
+      label={`Enter your ${name}`}
+      type={`${name}`}
+      value={value}
+      onChange={this.handleChange}
+      failure={failure}
+      errors={errors}
+    />
+  )
 
   render() {
     const {
-      errors, success, failure, isFetching } = this.props.ForgotPasswordAction;
+      errors, failure, isFetching, success,
+    } = this.props.forgotPass;
     let output;
 
     if (success) {
@@ -60,21 +84,14 @@ class ForgotPassword extends Component {
                 <span className="card-title center-align text-primary brand">Authors' Haven</span>
                 <br />
                 <h6 className="center">Reset password</h6>
-                <br />
-                <div className="row">
-                  <div className="col s12">
-                    {failure && <span className="red-text">{errors.errors.error}</span>}
-                  </div>
-                </div>
                 <form onSubmit={this.handleSubmit}>
-                  <InputField
-                    name="email"
-                    type="email"
-                    label="Enter your email"
-                    value={this.state.email}
-                    onChange={this.handleChange}
+                  {this.renderInput('email', failure, errors, this.state.email)}
+                  {<span className="red-text helper-text">{this.state.validation.email}</span>}
+                  <Errors
+                    name="error"
+                    errors={errors}
+                    failure={failure}
                   />
-                  {failure && <span className="red-text">{errors.errors.email}</span>}
                   <div className="row">
                     <div className="input-field col s12">
                       <button
@@ -104,8 +121,18 @@ class ForgotPassword extends Component {
   }
 }
 
+ForgotPassword.propTypes = {
+  sendLink: PropTypes.func.isRequired,
+  forgotPass: PropTypes.shape({
+    success: PropTypes.isRequired,
+    errors: PropTypes.isRequired,
+    failure: PropTypes.isRequired,
+    isFetching: PropTypes.isRequired,
+  }),
+};
+
 const mapStateToProps = state => ({
-  ForgotPasswordAction: state.forgotPasswordAction,
+  forgotPass: state.forgotPass,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(
