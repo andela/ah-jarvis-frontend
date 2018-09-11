@@ -20,4 +20,5 @@ export default (inputType, value) => {
     }
     return '';
   }
+  return '';
 };
