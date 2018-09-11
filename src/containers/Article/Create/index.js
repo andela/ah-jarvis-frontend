@@ -13,7 +13,6 @@ import createArticleAction from './actions';
 import UserInfo from '../../../components/UserInfo';
 import Header from '../../../components/Header';
 import editorstate from './editorstate';
-import getCurrentUser from '../../../utils/auth';
 import DividerBlockConfig from './divider';
 import config from '../../../config';
 
@@ -81,7 +80,7 @@ class Create extends Component {
             onPublish={this.handlePublish}
             publishing={publishing}
             save={this.state.saving}
-            user={getCurrentUser()}
+            user={this.props.user}
           />
           <div className="row">
             <div className="col s12">
@@ -104,7 +103,7 @@ class Create extends Component {
                   PlaceholderBlockConfig(),
                 ]}
                 data_storage={{
-                  url: null,
+                  url: config.BASE_URL,
                   method: 'POST',
                   save_handler: this.handleSave,
                   success_handler: this.handleSuccess,
@@ -127,6 +126,9 @@ Create.propTypes = {
   postArticle: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
+  }).isRequired,
+  user: PropTypes.shape({
+    username: PropTypes.string,
   }).isRequired,
 };
 

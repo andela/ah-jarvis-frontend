@@ -1,0 +1,337 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArticleDetailsLoader /> renders  <ArticleDetailsLoader /> components 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ArticleDetailsLoader />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <circle
+          cx="18.956999999999997"
+          cy="18.956999999999997"
+          r="18.956999999999997"
+/>,
+        <rect
+          height="5.53"
+          rx="4"
+          ry="4"
+          width="87"
+          x="48"
+          y="8.05"
+/>,
+        <rect
+          height="3.43"
+          rx="4"
+          ry="4"
+          width="50"
+          x="49"
+          y="21.05"
+/>,
+        <rect
+          height="400"
+          rx="5"
+          ry="5"
+          width="400"
+          x="2"
+          y="65"
+/>,
+        <rect
+          height="5.7"
+          rx="0"
+          ry="0"
+          width="146.3"
+          x="3"
+          y="52.05"
+/>,
+        <circle
+          cx="204"
+          cy="45.05"
+          r="1"
+/>,
+      ],
+      "height": 475,
+      "primaryColor": "#dfdfdf",
+      "secondaryColor": "#ffffff",
+      "speed": 1.5,
+      "width": 400,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "cx": "18.956999999999997",
+          "cy": "18.956999999999997",
+          "r": "18.956999999999997",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "circle",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "height": "5.53",
+          "rx": "4",
+          "ry": "4",
+          "width": "87",
+          "x": "48",
+          "y": "8.05",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "rect",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "height": "3.43",
+          "rx": "4",
+          "ry": "4",
+          "width": "50",
+          "x": "49",
+          "y": "21.05",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "rect",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "height": "400",
+          "rx": "5",
+          "ry": "5",
+          "width": "400",
+          "x": "2",
+          "y": "65",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "rect",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "height": "5.7",
+          "rx": "0",
+          "ry": "0",
+          "width": "146.3",
+          "x": "3",
+          "y": "52.05",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "rect",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "cx": "204",
+          "cy": "45.05",
+          "r": "1",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "circle",
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <circle
+            cx="18.956999999999997"
+            cy="18.956999999999997"
+            r="18.956999999999997"
+/>,
+          <rect
+            height="5.53"
+            rx="4"
+            ry="4"
+            width="87"
+            x="48"
+            y="8.05"
+/>,
+          <rect
+            height="3.43"
+            rx="4"
+            ry="4"
+            width="50"
+            x="49"
+            y="21.05"
+/>,
+          <rect
+            height="400"
+            rx="5"
+            ry="5"
+            width="400"
+            x="2"
+            y="65"
+/>,
+          <rect
+            height="5.7"
+            rx="0"
+            ry="0"
+            width="146.3"
+            x="3"
+            y="52.05"
+/>,
+          <circle
+            cx="204"
+            cy="45.05"
+            r="1"
+/>,
+        ],
+        "height": 475,
+        "primaryColor": "#dfdfdf",
+        "secondaryColor": "#ffffff",
+        "speed": 1.5,
+        "width": 400,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "cx": "18.956999999999997",
+            "cy": "18.956999999999997",
+            "r": "18.956999999999997",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "circle",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "5.53",
+            "rx": "4",
+            "ry": "4",
+            "width": "87",
+            "x": "48",
+            "y": "8.05",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "3.43",
+            "rx": "4",
+            "ry": "4",
+            "width": "50",
+            "x": "49",
+            "y": "21.05",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "400",
+            "rx": "5",
+            "ry": "5",
+            "width": "400",
+            "x": "2",
+            "y": "65",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "5.7",
+            "rx": "0",
+            "ry": "0",
+            "width": "146.3",
+            "x": "3",
+            "y": "52.05",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "cx": "204",
+            "cy": "45.05",
+            "r": "1",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "circle",
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;

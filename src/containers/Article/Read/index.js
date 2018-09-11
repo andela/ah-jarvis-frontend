@@ -4,9 +4,11 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 
-import ArticleLoader from '../../../components/ArticleLoader';
-import Header from '../../../components/Header';
 import { fetchArticle } from './actions';
+import Header from '../../../components/Header';
+import NotFound from '../../../components/NotFound';
+import AuthorDetails from '../../../components/AuthorDetails';
+import ArticleDetailsLoader from '../../../components/Placehoders/ArticleDetailsLoader ';
 
 class Read extends Component {
   componentDidMount() {
@@ -15,10 +17,20 @@ class Read extends Component {
   }
 
   render() {
-    const { success, payload, isFetching } = this.props.article;
+    const {
+      isFetching, success, payload, errors,
+    } = this.props.article;
     let data;
     if (payload.article) {
-      data = JSON.parse(payload.article.body);
+      try {
+        data = JSON.parse(payload.article.body);
+      } catch (e) {
+        return <NotFound />;
+      }
+    }
+
+    if (errors) {
+      return <NotFound />;
     }
     return (
       <React.Fragment>
@@ -27,7 +39,17 @@ class Read extends Component {
         <div className="container m-t--30">
           <div className="row">
             <div className="col s12">
-              {isFetching || !success ? <ArticleLoader /> : <Dante read_only content={data} />}
+              {isFetching || !success ? (
+                <ArticleDetailsLoader />
+              ) : (
+                <React.Fragment>
+                  <AuthorDetails
+                    user={{ ...payload.article.author }}
+                    date={payload.article.created_at}
+                  />
+                  <Dante read_only content={data} />
+                </React.Fragment>
+              )}
             </div>
           </div>
         </div>
@@ -41,6 +63,7 @@ Read.propTypes = {
     isFetching: PropTypes.bool.isRequired,
     success: PropTypes.bool.isRequired,
     payload: PropTypes.object.isRequired,
+    errors: PropTypes.object,
   }).isRequired,
   getArticle: PropTypes.func.isRequired,
   match: PropTypes.shape({

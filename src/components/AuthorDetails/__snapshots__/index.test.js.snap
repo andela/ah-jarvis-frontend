@@ -1,0 +1,726 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AuthorDetails /> renders  <AuthorDetails /> components 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AuthorDetails
+    date=""
+    user={
+        Object {
+            "username": "test user",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="author col m9"
+>
+          <div
+                    className="author__avatar"
+          >
+                    <img
+                              alt=""
+                              className="responsive-img circle avatar--medium"
+                              src={undefined}
+                    />
+          </div>
+          <div
+                    className="author_details"
+          >
+                    <div
+                              className="author__info"
+                    >
+                              <div
+                                        className="author-name"
+                              >
+                                        <p>
+                                                  Test User
+                                        </p>
+                              </div>
+                              <button
+                                        className="btn-flat btn-flat--primary"
+                                        type="button"
+                              >
+                                        Follow
+                              </button>
+                    </div>
+                    <div
+                              className="article__highlights"
+                    >
+                              Invalid Date
+                              <span
+                                        className="p-r--10 p-l--10"
+                              >
+                                        .
+                              </span>
+                    </div>
+          </div>
+</div>,
+        <div
+          className="col m3"
+>
+          <div
+                    className="m-t--15"
+          >
+                    <button
+                              className="btn-flat btn-flat--primary"
+                              type="button"
+                    >
+                              Edit Article
+                    </button>
+          </div>
+</div>,
+      ],
+      "className": "row",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="author__avatar"
+>
+              <img
+                            alt=""
+                            className="responsive-img circle avatar--medium"
+                            src={undefined}
+              />
+</div>,
+            <div
+              className="author_details"
+>
+              <div
+                            className="author__info"
+              >
+                            <div
+                                          className="author-name"
+                            >
+                                          <p>
+                                                        Test User
+                                          </p>
+                            </div>
+                            <button
+                                          className="btn-flat btn-flat--primary"
+                                          type="button"
+                            >
+                                          Follow
+                            </button>
+              </div>
+              <div
+                            className="article__highlights"
+              >
+                            Invalid Date
+                            <span
+                                          className="p-r--10 p-l--10"
+                            >
+                                          .
+                            </span>
+              </div>
+</div>,
+          ],
+          "className": "author col m9",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <img
+                alt=""
+                className="responsive-img circle avatar--medium"
+                src={undefined}
+/>,
+              "className": "author__avatar",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "",
+                "className": "responsive-img circle avatar--medium",
+                "src": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="author__info"
+>
+                  <div
+                                    className="author-name"
+                  >
+                                    <p>
+                                                      Test User
+                                    </p>
+                  </div>
+                  <button
+                                    className="btn-flat btn-flat--primary"
+                                    type="button"
+                  >
+                                    Follow
+                  </button>
+</div>,
+                <div
+                  className="article__highlights"
+>
+                  Invalid Date
+                  <span
+                                    className="p-r--10 p-l--10"
+                  >
+                                    .
+                  </span>
+</div>,
+              ],
+              "className": "author_details",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="author-name"
+>
+                      <p>
+                                            Test User
+                      </p>
+</div>,
+                    <button
+                      className="btn-flat btn-flat--primary"
+                      type="button"
+>
+                      Follow
+</button>,
+                  ],
+                  "className": "author__info",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <p>
+                        Test User
+</p>,
+                      "className": "author-name",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Test User",
+                      },
+                      "ref": null,
+                      "rendered": "Test User",
+                      "type": "p",
+                    },
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Follow",
+                      "className": "btn-flat btn-flat--primary",
+                      "type": "button",
+                    },
+                    "ref": null,
+                    "rendered": "Follow",
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Invalid Date",
+                    <span
+                      className="p-r--10 p-l--10"
+>
+                      .
+</span>,
+                  ],
+                  "className": "article__highlights",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Invalid Date",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": ".",
+                      "className": "p-r--10 p-l--10",
+                    },
+                    "ref": null,
+                    "rendered": ".",
+                    "type": "span",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="m-t--15"
+>
+            <button
+                        className="btn-flat btn-flat--primary"
+                        type="button"
+            >
+                        Edit Article
+            </button>
+</div>,
+          "className": "col m3",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <button
+              className="btn-flat btn-flat--primary"
+              type="button"
+>
+              Edit Article
+</button>,
+            "className": "m-t--15",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Edit Article",
+              "className": "btn-flat btn-flat--primary",
+              "type": "button",
+            },
+            "ref": null,
+            "rendered": "Edit Article",
+            "type": "button",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="author col m9"
+>
+            <div
+                        className="author__avatar"
+            >
+                        <img
+                                    alt=""
+                                    className="responsive-img circle avatar--medium"
+                                    src={undefined}
+                        />
+            </div>
+            <div
+                        className="author_details"
+            >
+                        <div
+                                    className="author__info"
+                        >
+                                    <div
+                                                className="author-name"
+                                    >
+                                                <p>
+                                                            Test User
+                                                </p>
+                                    </div>
+                                    <button
+                                                className="btn-flat btn-flat--primary"
+                                                type="button"
+                                    >
+                                                Follow
+                                    </button>
+                        </div>
+                        <div
+                                    className="article__highlights"
+                        >
+                                    Invalid Date
+                                    <span
+                                                className="p-r--10 p-l--10"
+                                    >
+                                                .
+                                    </span>
+                        </div>
+            </div>
+</div>,
+          <div
+            className="col m3"
+>
+            <div
+                        className="m-t--15"
+            >
+                        <button
+                                    className="btn-flat btn-flat--primary"
+                                    type="button"
+                        >
+                                    Edit Article
+                        </button>
+            </div>
+</div>,
+        ],
+        "className": "row",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="author__avatar"
+>
+                <img
+                                alt=""
+                                className="responsive-img circle avatar--medium"
+                                src={undefined}
+                />
+</div>,
+              <div
+                className="author_details"
+>
+                <div
+                                className="author__info"
+                >
+                                <div
+                                                className="author-name"
+                                >
+                                                <p>
+                                                                Test User
+                                                </p>
+                                </div>
+                                <button
+                                                className="btn-flat btn-flat--primary"
+                                                type="button"
+                                >
+                                                Follow
+                                </button>
+                </div>
+                <div
+                                className="article__highlights"
+                >
+                                Invalid Date
+                                <span
+                                                className="p-r--10 p-l--10"
+                                >
+                                                .
+                                </span>
+                </div>
+</div>,
+            ],
+            "className": "author col m9",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <img
+                  alt=""
+                  className="responsive-img circle avatar--medium"
+                  src={undefined}
+/>,
+                "className": "author__avatar",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "",
+                  "className": "responsive-img circle avatar--medium",
+                  "src": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="author__info"
+>
+                    <div
+                                        className="author-name"
+                    >
+                                        <p>
+                                                            Test User
+                                        </p>
+                    </div>
+                    <button
+                                        className="btn-flat btn-flat--primary"
+                                        type="button"
+                    >
+                                        Follow
+                    </button>
+</div>,
+                  <div
+                    className="article__highlights"
+>
+                    Invalid Date
+                    <span
+                                        className="p-r--10 p-l--10"
+                    >
+                                        .
+                    </span>
+</div>,
+                ],
+                "className": "author_details",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="author-name"
+>
+                        <p>
+                                                Test User
+                        </p>
+</div>,
+                      <button
+                        className="btn-flat btn-flat--primary"
+                        type="button"
+>
+                        Follow
+</button>,
+                    ],
+                    "className": "author__info",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <p>
+                          Test User
+</p>,
+                        "className": "author-name",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Test User",
+                        },
+                        "ref": null,
+                        "rendered": "Test User",
+                        "type": "p",
+                      },
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Follow",
+                        "className": "btn-flat btn-flat--primary",
+                        "type": "button",
+                      },
+                      "ref": null,
+                      "rendered": "Follow",
+                      "type": "button",
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Invalid Date",
+                      <span
+                        className="p-r--10 p-l--10"
+>
+                        .
+</span>,
+                    ],
+                    "className": "article__highlights",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Invalid Date",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": ".",
+                        "className": "p-r--10 p-l--10",
+                      },
+                      "ref": null,
+                      "rendered": ".",
+                      "type": "span",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="m-t--15"
+>
+              <button
+                            className="btn-flat btn-flat--primary"
+                            type="button"
+              >
+                            Edit Article
+              </button>
+</div>,
+            "className": "col m3",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <button
+                className="btn-flat btn-flat--primary"
+                type="button"
+>
+                Edit Article
+</button>,
+              "className": "m-t--15",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Edit Article",
+                "className": "btn-flat btn-flat--primary",
+                "type": "button",
+              },
+              "ref": null,
+              "rendered": "Edit Article",
+              "type": "button",
+            },
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
