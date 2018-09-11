@@ -11,61 +11,51 @@ class Form extends React.Component {
       password: '',
     },
     validation: {},
+    isDisabled: false,
   };
 
   handleChange = (event) => {
-    this.setState({
-      user: { ...this.state.user, [event.target.id]: event.target.value },
-      validation: {
-        [event.target.name]: validateInput(event.target.name, event.target.value),
-      },
-    });
-  };
+    const t = Object.values(this.state.validation).every(e => e === null)
+      && Object.keys(this.state.validation).length === 3;
 
-  renderInput = (name, failure, errors, value) => (
-    <InputField
-      name={`${name}`}
-      label={`Enter your ${name}`}
-      type={`${name}`}
-      value={value}
-      onChange={this.handleChange}
-      failure={failure}
-      errors={errors}
-    />
-  );
+    const { user, validation } = this.state;
+    user[event.target.name] = event.target.value;
+    validation[event.target.name] = validateInput(event.target.name, event.target.value);
+
+    this.setState(prevState => ({
+      ...prevState,
+      user,
+      validation,
+      isDisabled: !t,
+    }));
+  };
 
   handleClick = (event) => {
     event.preventDefault();
     this.props.onClick({ user: this.state.user });
   };
 
+  renderInput = (name, failure, errors, value, validation, type) => (
+    <InputField
+      name={`${name}`}
+      label={`Enter your ${name}`}
+      type={`${type}`}
+      value={value}
+      onChange={this.handleChange}
+      failure={failure}
+      errors={errors}
+      validation={validation}
+    />
+  );
+
   render() {
     const { errors, failure } = this.props.register;
+    const { username, email, password } = this.state.validation;
     return (
       <form>
-        {this.renderInput('username', failure, errors, this.state.username)}
-        {this.renderInput('email', failure, errors, this.state.email)}
-        {this.renderInput('password', failure, errors, this.state.password)}
-
-        <InputField
-          id="email"
-          label="Enter Email"
-          type="email"
-          value={this.state.email}
-          onChange={this.handleChange}
-        />
-        <p className="p-b--5 red-text helper-text">{failure ? errors.errors.email : ''}</p>
-        <span className="green-text helper-text">{this.state.validation.email}</span>
-
-        <InputField
-          id="password"
-          label="Enter Password"
-          type="password"
-          value={this.state.password}
-          onChange={this.handleChange}
-        />
-        <p className="p-b--5 red-text helper-text">{failure ? errors.errors.password : ''}</p>
-        <span className="green-text helper-texts">{this.state.validation.password}</span>
+        {this.renderInput('username', failure, errors, this.state.username, username, 'text')}
+        {this.renderInput('email', failure, errors, this.state.email, email, 'email')}
+        {this.renderInput('password', failure, errors, this.state.password, password, 'password')}
 
         <div className="row">
           <div className="input-field col s12">
@@ -75,6 +65,7 @@ class Form extends React.Component {
               type="submit"
               name="action"
               onClick={this.handleClick}
+              disabled={this.state.isDisabled}
             >
               Sign up
             </button>

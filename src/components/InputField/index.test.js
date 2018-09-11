@@ -6,7 +6,6 @@ import InputField from './index';
 describe('InputField --- Shallow Render InputField COMPONENT', () => {
   let wrapper;
   const errors = null;
-  const email = '';
   const failure = false;
   const onChange = () => {};
   beforeEach(() => {
@@ -15,10 +14,11 @@ describe('InputField --- Shallow Render InputField COMPONENT', () => {
         name="email"
         label="Enter Email"
         type="email"
-        value={email}
+        value=""
         onChange={onChange}
         failure={failure}
         errors={errors}
+        validation=""
       />,
     );
   });

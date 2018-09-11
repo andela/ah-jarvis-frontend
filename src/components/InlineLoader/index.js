@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default props => (
+export default () => (
   <div className="progress">
     <div className="indeterminate" />
   </div>

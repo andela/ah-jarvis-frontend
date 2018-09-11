@@ -10,7 +10,7 @@ export const signUpFailure = payload => ({
   payload,
 });
 
-const signingUp = () => ({ type: 'SIGNING_UP' });
+export const signingUp = () => ({ type: 'SIGNING_UP' });
 
 export const registerUser = (user, history) => (dispatch) => {
   dispatch(signingUp());

@@ -8,20 +8,22 @@ import { registerUser } from './actions';
 import InlineLoader from '../../components/InlineLoader';
 
 class SignUp extends React.Component {
+  state = {};
+
   render() {
+    const { register, history, actions } = this.props;
     return (
       <div className="row">
         <div className="col m4 s12 offset-m4 auth">
           <div className="card card--auth">
-            {this.props.register.isFetching ? <InlineLoader /> : ''}
-
+            {register.isFetching ? <InlineLoader /> : ''}
             <div className="card-content">
               <span className="card-title center-align text-primary brand">Authors' Haven</span>
               <Form
                 onClick={(user) => {
-                  this.props.actions(user, this.props.history);
+                  actions(user, history);
                 }}
-                register={this.props.register}
+                register={register}
               />
             </div>
           </div>
@@ -31,7 +33,7 @@ class SignUp extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({ register: state.registerUser });
+const mapStateToProps = state => ({ register: state.signup });
 
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(registerUser, dispatch) });
 
