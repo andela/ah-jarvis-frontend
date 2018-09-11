@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 import InputField from '../../../components/InputField';
 import SignUpButton from '../../../components/SignUpButton';
 import validateInput from '../../../utils/validateInput';
@@ -66,7 +68,7 @@ class Form extends React.Component {
         <div className="row">
           <div className="input-field col s12">
             Already have an account?
-            <a href="https://reactjs.org/docs/thinking-in-react.html"> Sign in</a>
+            <Link to="/signin"> Sign in</Link>
           </div>
         </div>
       </form>

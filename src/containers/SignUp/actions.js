@@ -18,6 +18,10 @@ export const registerUser = (user, history) => (dispatch) => {
     .then((data) => {
       localStorage.setItem('user', JSON.stringify(data));
       dispatch(signUpSuccess(data));
+      localStorage.setItem(
+        'success',
+        'Sign Up is Successful! An activation link has been sent to your email',
+      );
       history.push('/');
     })
     .catch((error) => {
