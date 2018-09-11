@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import InputField from '../../../components/InputField';
+import SignUpButton from '../../../components/SignUpButton';
 import validateInput from '../../../utils/validateInput';
 
 class Form extends React.Component {
@@ -59,16 +60,7 @@ class Form extends React.Component {
 
         <div className="row">
           <div className="input-field col s12">
-            <button
-              className="btn waves-effect waves-light btn--block"
-              id="signup_button"
-              type="submit"
-              name="action"
-              onClick={this.handleClick}
-              disabled={this.state.isDisabled}
-            >
-              Sign up
-            </button>
+            <SignUpButton onClick={this.handleClick} disabled={this.state.isDisabled} />
           </div>
         </div>
         <div className="row">
