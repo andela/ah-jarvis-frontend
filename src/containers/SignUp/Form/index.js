@@ -52,8 +52,6 @@ class Form extends React.Component {
   );
 
   render() {
-    console.log(this.state.validation);
-    console.log(this.state.isDisabled);
     const { errors, failure } = this.props.register;
     const { username, email, password } = this.state.validation;
     return (
@@ -88,9 +86,13 @@ class Form extends React.Component {
 Form.propTypes = {
   onClick: PropTypes.func.isRequired,
   register: PropTypes.shape({
+<<<<<<< HEAD
     errors: PropTypes.shape({
       errors: PropTypes.shape({}),
     }),
+=======
+    errors: { errors: {} },
+>>>>>>> e5d0cfab1247cc3a29d00100a2f8b915eea34ea9
     failure: PropTypes.bool,
   }).isRequired,
 };

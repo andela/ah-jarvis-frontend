@@ -41,7 +41,7 @@ SignUp.propTypes = {
   actions: PropTypes.func.isRequired,
   register: PropTypes.shape({
     errors: PropTypes.shape({
-      errors: {},
+      errors: PropTypes.shape({}),
     }),
     failure: PropTypes.bool,
   }).isRequired,
