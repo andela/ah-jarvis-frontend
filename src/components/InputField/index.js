@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const InputField = ({
-  type, name, label, value, onChange, errors, failure,
+  type, name, label, value, onChange, errors, failure, validation,
 }) => (
   <div className="row">
     <div className="input-field col s12">
@@ -15,6 +15,7 @@ const InputField = ({
       />
       <label htmlFor={name}>{label}</label>
       {failure && <span className="red-text helper-text">{errors.errors[name]}</span>}
+      <span className="green-text helper-text">{validation}</span>
     </div>
   </div>
 );
@@ -33,6 +34,7 @@ InputField.propTypes = {
     password: PropTypes.string,
   }),
   failure: PropTypes.bool,
+  validation: PropTypes.string.isRequired,
 };
 
 InputField.defaultProps = {

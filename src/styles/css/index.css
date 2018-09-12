@@ -238,6 +238,11 @@ helper-text {
   background-color: #f8d7da;
   border-color: #f5c6cb; }
 
+.success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb; }
+
 .avatar {
   border-radius: 50%; }
   .avatar--large {
@@ -365,6 +370,9 @@ helper-text {
   margin: auto;
   width: 100%;
   padding: 10px 40px; }
+
+.helper-text {
+  font-size: 12px; }
 
 .articles {
   display: flex;

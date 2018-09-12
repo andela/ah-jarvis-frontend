@@ -24,7 +24,6 @@ export function authHeader(authenticated) {
   return {};
 }
 
-
 const api = ({
   endpoint, method, data, authenticated,
 }) => fetch(`${config.BASE_URL}${endpoint}`, {
@@ -35,6 +34,5 @@ const api = ({
   },
   body: JSON.stringify(data),
 }).then(handleResponse);
-
 
 export default api;

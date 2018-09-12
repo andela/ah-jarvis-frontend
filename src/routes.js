@@ -9,6 +9,7 @@ import NotFound from './components/NotFound';
 import SocialAuth from './containers/Login';
 import Home from './components/Home';
 import Signin from './containers/Signin';
+import SignUp from './containers/SignUp';
 
 const store = configStore();
 
@@ -18,6 +19,7 @@ export default () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/signin" component={Signin} />
+        <Route path="/signup" component={SignUp} />
         <Route exact path="/login" component={SocialAuth} />
         <Route exact path="/reset/password" component={ForgotPasssword} />
         <Route exact path="/verify/:token" component={ResetPasssword} />
