@@ -18,7 +18,7 @@ class Form extends React.Component {
   };
 
   handleChange = (event) => {
-    const t = Object.values(this.state.validation).every(e => e === '')
+    const checkValidation = Object.values(this.state.validation).every(e => e === '')
       && Object.keys(this.state.validation).length === 3;
 
     const { user, validation } = this.state;
@@ -29,7 +29,7 @@ class Form extends React.Component {
       ...prevState,
       user,
       validation,
-      isDisabled: !t,
+      isDisabled: !checkValidation,
     }));
   };
 

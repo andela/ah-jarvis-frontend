@@ -13,7 +13,7 @@ export default (inputType, value) => {
     }
   }
   if (inputType === 'password') {
-    re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(\W|_)).{8,}$/;
+    re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(\W|_)).{7,}$/;
     if (!re.test(value)) {
       return 'Password should contain capital letters, numbers and special characters e.g. @,#,!';
     }
