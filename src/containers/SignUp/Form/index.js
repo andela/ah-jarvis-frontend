@@ -9,9 +9,9 @@ import validateInput from '../../../utils/validateInput';
 class Form extends React.Component {
   state = {
     user: {
-      username: '',
-      email: '',
-      password: '',
+      userName: '',
+      userEmail: '',
+      userPassword: '',
     },
     validation: {},
     isDisabled: false,
@@ -54,18 +54,12 @@ class Form extends React.Component {
   render() {
     const { errors, failure } = this.props.register;
     const { username, email, password } = this.state.validation;
+    const { userName, userEmail, userPassword } = this.state.user;
     return (
       <form>
-        {this.renderInput('username', failure, errors, this.state.user.username, username, 'text')}
-        {this.renderInput('email', failure, errors, this.state.user.email, email, 'email')}
-        {this.renderInput(
-          'password',
-          failure,
-          errors,
-          this.state.user.password,
-          password,
-          'password',
-        )}
+        {this.renderInput('username', failure, errors, userName, username, 'text')}
+        {this.renderInput('email', failure, errors, userEmail, email, 'email')}
+        {this.renderInput('password', failure, errors, userPassword, password, 'password')}
 
         <div className="row">
           <div className="input-field col s12">
@@ -86,7 +80,7 @@ class Form extends React.Component {
 Form.propTypes = {
   onClick: PropTypes.func.isRequired,
   register: PropTypes.shape({
-    errors: PropTypes.shape({
+    error: PropTypes.shape({
       errors: PropTypes.shape({}),
     }),
     failure: PropTypes.bool,

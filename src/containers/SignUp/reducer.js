@@ -1,6 +1,6 @@
 const initialState = {
   failure: false,
-  errors: null,
+  error: null,
   isFetching: false,
 };
 
@@ -21,7 +21,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         failure: true,
-        errors: action.payload,
+        error: action.payload,
         isFetching: false,
       };
     default:

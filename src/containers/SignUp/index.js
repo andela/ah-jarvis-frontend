@@ -11,6 +11,7 @@ class SignUp extends React.Component {
   state = {};
 
   render() {
+    console.log(this.props);
     const { register, history, actions } = this.props;
     return (
       <div className="row">
@@ -40,7 +41,7 @@ const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(registerUs
 SignUp.propTypes = {
   actions: PropTypes.func.isRequired,
   register: PropTypes.shape({
-    errors: PropTypes.shape({
+    error: PropTypes.shape({
       errors: PropTypes.shape({}),
     }),
     failure: PropTypes.bool,
