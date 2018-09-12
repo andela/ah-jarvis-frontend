@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import M from 'materialize-css';
 
 import InputField from '../../components/InputField';
 import Errors from '../../components/Errors';
@@ -20,6 +21,7 @@ class Signin extends Component {
   };
 
   handleChange = (e) => {
+    localStorage.removeItem('flash');
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -28,6 +30,10 @@ class Signin extends Component {
     const { signinUser, history } = this.props;
     signinUser({ user: this.state }, history);
   };
+
+  toaster = () => {
+    M.toast({ html: localStorage.getItem('flash'), className: 'success' });
+  }
 
   renderInput = (name, failure, errors, value) => (
     <InputField
@@ -45,6 +51,7 @@ class Signin extends Component {
     const { errors, failure, isFetching } = this.props.signin;
     return (
       <div className="row">
+        {localStorage.getItem('flash') ? this.toaster() : '' }
         <div className="col m4 s12 offset-m4 auth">
           <div className="card card--auth">
             <div className="card-content">

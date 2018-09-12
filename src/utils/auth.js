@@ -1,1 +1,1 @@
-export const getCurrentUser = () => JSON.parse(localStorage.getItem("user"));
+export const getCurrentUser = () => JSON.parse(localStorage.getItem('user'));

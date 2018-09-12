@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import updateUser from './actions';
-import validateInput from '../../../utils/validateInputs';
+import validateInput from '../../../utils/validateInput';
 import uploader from '../../../utils/uploader';
 
 class Update extends Component {
@@ -27,7 +27,6 @@ class Update extends Component {
     }
     this.setState({
       profile: {
-        ...this.state.profile,
         username: data.username,
         bio: data.bio,
         image: data.image,
@@ -59,7 +58,8 @@ class Update extends Component {
     });
   };
 
-  handleUpload = (e) => {
+  handleUpload = (event) => {
+    event.preventDefault();
     const reader = new FileReader();
 
     reader.onload = (e) => {
@@ -167,7 +167,9 @@ class Update extends Component {
 
 Update.propTypes = {
   updateProfile: PropTypes.func.isRequired,
-  history: PropTypes.func.isRequired,
+  history: PropTypes.object,
+  edit: PropTypes.object,
+  profile: PropTypes.object,
 };
 
 const mapStateToProps = state => ({

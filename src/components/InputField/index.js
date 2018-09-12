@@ -2,19 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const InputField = ({
-  type, name, label, value, onChange, errors, failure,
+  type, name, label, value, onChange, errors, failure, validation,
 }) => (
   <div className="row">
     <div className="input-field col s12">
       <input
         type={type}
         name={name}
-        className={`validate ${failure ? 'invalid' : ''}`}
+        className={`validate ${failure && 'text-red'}`}
         value={value}
         onChange={onChange}
       />
       <label htmlFor={name}>{label}</label>
-      {failure && <span className="red-text">{errors.errors[name]}</span>}
+      {failure && <span className="red-text helper-text">{errors.errors[name]}</span>}
+      <span className="green-text helper-text">{validation}</span>
     </div>
   </div>
 );
@@ -33,9 +34,11 @@ InputField.propTypes = {
     password: PropTypes.string,
   }),
   failure: PropTypes.bool,
+  validation: PropTypes.string,
 };
 
 InputField.defaultProps = {
   errors: null,
   failure: false,
+  validation: '',
 };

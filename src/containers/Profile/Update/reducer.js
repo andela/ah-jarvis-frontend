@@ -1,14 +1,14 @@
-import { EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE } from "./constants";
+import { EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE } from './constants';
 
 const InitialState = {
-  payload: "",
+  payload: '',
   success: false,
   failure: false,
   errors: null,
-  isFetching: false
+  isFetching: false,
 };
 
-export default function(state = InitialState, action) {
+export default function (state = InitialState, action) {
   const { type, payload, errors } = action;
 
   switch (type) {
@@ -21,16 +21,16 @@ export default function(state = InitialState, action) {
         errors: null,
         success: true,
         failure: false,
-        isFetching: false
+        isFetching: false,
       };
     case EDIT_FAILURE:
       return {
         ...state,
         errors,
-        payload: "",
+        payload: '',
         failure: true,
         success: false,
-        isFetching: false
+        isFetching: false,
       };
 
     default:

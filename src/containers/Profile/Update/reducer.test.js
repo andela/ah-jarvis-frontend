@@ -1,14 +1,14 @@
-import * as actions from "./actions";
-import updateProfileReducer from "./reducer";
+import * as actions from './actions';
+import updateProfileReducer from './reducer';
 
-describe("update profile reducers", () => {
-  it("should set isFetching True when EDIT_REQUEST", () => {
+describe('update profile reducers', () => {
+  it('should set isFetching True when EDIT_REQUEST', () => {
     const initialState = {
-      payload: "",
+      payload: '',
       success: false,
       failure: false,
       errors: null,
-      isFetching: false
+      isFetching: false,
     };
     const action = actions.editProfileFetch();
 
@@ -18,18 +18,18 @@ describe("update profile reducers", () => {
     expect(newState.isFetching).toBe(true);
   });
 
-  it("should set failure True when EDIT_FAILURE", () => {
+  it('should set failure True when EDIT_FAILURE', () => {
     const initialState = {
       payload: {},
       errors: null,
       success: false,
       failure: false,
-      isFetching: false
+      isFetching: false,
     };
     const errors = {
       errors: {
-        error: ["Incorrect credentials"]
-      }
+        error: ['Incorrect credentials'],
+      },
     };
     const action = actions.editProfileFailure(errors);
 
@@ -39,21 +39,21 @@ describe("update profile reducers", () => {
     expect(newState.failure).toBe(true);
   });
 
-  it("should set success True when EDIT_SUCCESS", () => {
+  it('should set success True when EDIT_SUCCESS', () => {
     const initialState = {
       payload: {},
       errors: null,
       success: false,
       failure: false,
-      isFetching: false
+      isFetching: false,
     };
     const payload = {
       user: {
-        username: "testuser2",
-        bio: "This is a bio",
+        username: 'testuser2',
+        bio: 'This is a bio',
         image:
-          "https://t3.ftcdn.net/jpg/01/83/55/76/500_F_183557656_DRcvOesmfDl5BIyhPKrcWANFKy2964i9.jpg"
-      }
+          'https://t3.ftcdn.net/jpg/01/83/55/76/500_F_183557656_DRcvOesmfDl5BIyhPKrcWANFKy2964i9.jpg',
+      },
     };
     const action = actions.editProfileSuccess(payload);
 

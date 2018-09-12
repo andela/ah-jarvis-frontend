@@ -6,19 +6,21 @@ import InputField from './index';
 describe('InputField --- Shallow Render InputField COMPONENT', () => {
   let wrapper;
   const errors = null;
-  const email = '';
   const failure = false;
   const onChange = () => {};
   beforeEach(() => {
-    wrapper = shallow(<InputField
-      name="email"
-      label="Enter Email"
-      type="email"
-      value={email}
-      onChange={onChange}
-      failure={failure}
-      errors={errors}
-    />);
+    wrapper = shallow(
+      <InputField
+        name="email"
+        label="Enter Email"
+        type="email"
+        value=""
+        onChange={onChange}
+        failure={failure}
+        errors={errors}
+        validation=""
+      />,
+    );
   });
 
   it('+++ render the DUMB component', () => {

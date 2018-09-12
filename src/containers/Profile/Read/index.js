@@ -46,20 +46,26 @@ export class Read extends Component {
                   <p>{success ? data.bio : error}</p>
                 </div>
 
-                <div className="m-b--15">
-                  {getCurrentUser === 'ian' || data ? (
-                    <Link
-                      to={`/edit/profile/${data.username}`}
-                      className="waves-effect waves-light btn btn--rounded"
-                    >
-                      Edit
-                    </Link>
-                  ) : (
-                    <Link to="#nn" className="waves-effect waves-light btn btn--rounded">
-                      Follow
-                    </Link>
-                  )}
-                </div>
+                {data && (
+                  <div className="m-b--15">
+                    {getCurrentUser().user.username === data.username ? (
+                      <Link
+                        to={`/edit/profile/${data.username}`}
+                        className="waves-effect waves-light btn btn--rounded"
+                      >
+                        Edit
+                      </Link>
+                    ) : (
+                      <div>
+                        {success && (
+                          <Link to="#nn" className="waves-effect waves-light btn btn--rounded">
+                            Follow
+                          </Link>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
               <div className="col s12 m3">
                 {data && (
@@ -81,7 +87,7 @@ export class Read extends Component {
 
 Read.propTypes = {
   retrieveProfile: PropTypes.func.isRequired,
-  match: PropTypes.func,
+  match: PropTypes.object,
   profile: PropTypes.object,
 };
 
