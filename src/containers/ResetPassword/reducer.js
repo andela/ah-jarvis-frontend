@@ -7,6 +7,7 @@ const initialState = {
   success: false,
   failure: false,
   isFetching: false,
+  flash: '',
 };
 
 export default (state = initialState, action) => {

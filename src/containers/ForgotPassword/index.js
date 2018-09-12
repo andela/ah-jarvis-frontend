@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import InputField from '../../components/InputField';
 import Errors from '../../components/Errors';
 import validateInput from '../../utils/validateInput';
+import { ResendEmail } from '../../components/ResendEmail';
 import { forgotPasswordAction } from './actions';
 
 
@@ -45,6 +46,20 @@ class ForgotPassword extends Component {
     />
   )
 
+  renderResetButton = isFetching => (
+    <div className="row">
+      <div className="input-field col s12">
+        <button
+          className="btn waves-effect waves-light btn--block"
+          type="submit"
+          name="action"
+        >
+          {isFetching ? 'Sending...' : 'Reset Password'}
+        </button>
+      </div>
+    </div>
+  )
+
   render() {
     const {
       errors, failure, isFetching, success,
@@ -53,27 +68,10 @@ class ForgotPassword extends Component {
 
     if (success) {
       output = (
-        <div className="row">
-          <div className="col m4 s12 offset-m4 auth">
-            <div className="card card--auth p-b--40">
-              <div className="card-content">
-                <span className="card-title center-align text-primary brand m-b--30 m-t--15">Authors' Haven</span>
-                <div className="center">
-                  <p className="centre-align">A password reset email has been sent to you.</p>
-                  <p className="m-t--15">If you have not received an email click resend</p>
-                </div>
-              </div>
-              <button
-                onClick={this.handleSubmit}
-                className="btn waves-effect waves-light btn--block"
-                type="submit"
-                name="action"
-              >
-                {isFetching ? 'Sending...' : 'Resend Link'}
-              </button>
-            </div>
-          </div>
-        </div>
+        <ResendEmail
+          isFetching={isFetching}
+          onClick={this.handleSubmit}
+        />
       );
     } else {
       output = (
@@ -82,7 +80,6 @@ class ForgotPassword extends Component {
             <div className="card card--auth p-b--40">
               <div className="card-content">
                 <span className="card-title center-align text-primary brand">Authors' Haven</span>
-                <br />
                 <h6 className="center">Reset password</h6>
                 <form onSubmit={this.handleSubmit}>
                   {this.renderInput('email', failure, errors, this.state.email)}
@@ -92,17 +89,7 @@ class ForgotPassword extends Component {
                     errors={errors}
                     failure={failure}
                   />
-                  <div className="row">
-                    <div className="input-field col s12">
-                      <button
-                        className="btn waves-effect waves-light btn--block"
-                        type="submit"
-                        name="action"
-                      >
-                        {isFetching ? 'Sending...' : 'Reset Password'}
-                      </button>
-                    </div>
-                  </div>
+                  {this.renderResetButton(isFetching)}
                 </form>
                 <div className="row">
                   <a href="./">

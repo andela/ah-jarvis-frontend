@@ -228,26 +228,15 @@ form .row {
 textarea.materialize-textarea {
   height: 7rem; }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fec6b12fbd72c7ea7df9921d253f9f43080f66ac
 helper-text {
   margin-top: 0 !important;
   padding: 0;
   font-size: 12px; }
-<<<<<<< HEAD
-=======
-=======
->>>>>>> fec6b12fbd72c7ea7df9921d253f9f43080f66ac
+
 .danger {
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb; }
-<<<<<<< HEAD
->>>>>>> 76e951c... [ft #59961953] Add Social login with facebook and google. (#13)
-=======
->>>>>>> fec6b12fbd72c7ea7df9921d253f9f43080f66ac
 
 .avatar {
   border-radius: 50%; }

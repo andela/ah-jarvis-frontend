@@ -25,9 +25,12 @@ const resetPasswordAction = (data, history) => (dispatch) => {
   })
     .then((res) => {
       dispatch(resetSuccess(res));
+      localStorage.setItem('flash', res);
       history.push('/signin');
     })
-    .catch(errors => dispatch(resetFailure(errors)));
+    .catch((errors) => {
+      dispatch(resetFailure(errors));
+    });
 };
 
 export default resetPasswordAction;

@@ -24,10 +24,10 @@ describe('forgot actions', () => {
       expect(linkFailure(errors)).toEqual(expectedAction);
     });
   });
-  describe('signin success action creator', () => {
+  describe('forgot success action creator', () => {
     it('should create an action to dispatch success response.', () => {
       const payload = {
-        email: 'tito@tito.com',
+        email: 'titohb@gmail.com',
       };
       const expectedAction = {
         type: LINK_SUCCESS,

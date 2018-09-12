@@ -26,7 +26,7 @@ class ResetPassword extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const {
-      resetPass, location, match,
+      resetPass, location, match, history,
     } = this.props;
 
     resetPass(
@@ -37,6 +37,7 @@ class ResetPassword extends Component {
           email: new URLSearchParams(location.search).get('email'),
         },
       },
+      history,
     );
   }
 
@@ -54,6 +55,16 @@ class ResetPassword extends Component {
       && this.state.new_password === this.state.confirm_password
     );
   }
+
+  renderButton = isFetching => (
+    <div className="row">
+      <div className="input-field col s12">
+        <button className="btn waves-effect waves-light btn--block m-t--50" type="submit" name="action" disabled={!this.validateForm()}>
+          {isFetching ? 'Changing...' : 'Change Password'}
+        </button>
+      </div>
+    </div>
+  )
 
   renderInput = (name, failure, errors, value, label, type) => (
     <InputField
@@ -86,18 +97,7 @@ class ResetPassword extends Component {
                   errors={errors}
                   failure={failure}
                 />
-                <div className="row">
-                  <div className="input-field col s12">
-                    <button
-                      className="btn waves-effect waves-light btn--block m-t--50"
-                      type="submit"
-                      name="action"
-                      disabled={!this.validateForm()}
-                    >
-                      {isFetching ? 'Changing...' : 'Change Password'}
-                    </button>
-                  </div>
-                </div>
+                {this.renderButton(isFetching) }
               </form>
             </div>
           </div>
@@ -121,6 +121,9 @@ ResetPassword.propTypes = {
     failure: PropTypes.isRequired,
     isFetching: PropTypes.isRequired,
   }),
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = state => ({

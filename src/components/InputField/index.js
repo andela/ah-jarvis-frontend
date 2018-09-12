@@ -9,7 +9,7 @@ const InputField = ({
       <input
         type={type}
         name={name}
-        className={`validate ${failure ? 'text-red' : ''}`}
+        className={`validate ${failure && 'text-red'}`}
         value={value}
         onChange={onChange}
       />
