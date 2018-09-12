@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import Dante from 'Dante2';
+import M from 'materialize-css';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { ImageBlockConfig } from 'Dante2/package/es/components/blocks/image';
 import { VideoBlockConfig } from 'Dante2/package/es/components/blocks/video';
-import { PlaceholderBlockConfig } from 'Dante2/package/es/components/blocks/placeholder';
 import { EmbedBlockConfig } from 'Dante2/package/es/components/blocks/embed';
+import { PlaceholderBlockConfig } from 'Dante2/package/es/components/blocks/placeholder';
 
 import createArticleAction from './actions';
 import UserInfo from '../../../components/UserInfo';
 import Header from '../../../components/Header';
 import editorstate from './editorstate';
 import config from '../../../config';
+import uploader from '../../../utils/uploader';
 
 class Create extends Component {
   state = {
@@ -44,28 +46,19 @@ class Create extends Component {
     localStorage.removeItem('article');
   };
 
-  handleFailure = () => {
-    console.log('Failed');
+  handleFailure = (e) => {
+    M.toast({ html: e, classes: 'danger' });
   };
 
   handleUpload = (img, state) => {
-    const xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-      const response = JSON.parse(this.responseText);
-      state.uploadCompleted(response.secure_url);
-    };
-    xhr.onerror = function () {
-      const response = JSON.parse(this.responseText);
-      console.log('ajaxError', response);
-    };
-    xhr.open('post', config.UPLOAD_URL);
-    xhr.upload.addEventListener('progress', (e) => {
-      state.updateProgressBar(e);
+    uploader({
+      body: img,
+      progress: (e) => {
+        state.updateProgressBar(e);
+      },
+    }).then((data) => {
+      state.uploadCompleted(data.secure_url);
     });
-    const fd = new FormData();
-    fd.append('upload_preset', 'jaaktgvk');
-    fd.append('file', img);
-    xhr.send(fd);
   };
 
   render() {

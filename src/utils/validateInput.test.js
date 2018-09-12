@@ -3,17 +3,17 @@ import validate from './validateInput';
 describe('Validate Input', () => {
   it('should return null if username is valid', () => {
     const value = 'user';
-    expect(validate('username', value)).toEqual(null);
+    expect(validate('username', value)).toEqual('');
   });
 
   it('should return null if email is valid', () => {
     const value = 'user@mail.com';
-    expect(validate('email', value)).toEqual(null);
+    expect(validate('email', value)).toEqual('');
   });
 
   it('should return null if password is valid', () => {
     const value = 'User123!';
-    expect(validate('password', value)).toEqual(null);
+    expect(validate('password', value)).toEqual('');
   });
 
   it('should return message if username is invalid', () => {
@@ -31,6 +31,6 @@ describe('Validate Input', () => {
   });
 
   it('should return null by default', () => {
-    expect(validate('', '')).toEqual(null);
+    expect(validate('', '')).toEqual('');
   });
 });

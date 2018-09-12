@@ -17,7 +17,7 @@ describe('SignUp reducer', () => {
   it('should store user for case SIGNUP_FAILURE', () => {
     const action = actions.signUpFailure(errors);
     const newState = register({}, action);
-    expect(newState.errors.errors).toEqual('This is an error message');
+    expect(newState.error.errors).toEqual('This is an error message');
   });
 
   it('should set isFetching to true for case SIGNING_UP', () => {
