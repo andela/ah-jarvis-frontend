@@ -1,26 +1,26 @@
-import { GET_REQUEST, GET_SUCCESS, GET_FAILURE } from "./constants";
-import api from "../../../utils/api";
+import { GET_REQUEST, GET_SUCCESS, GET_FAILURE } from './constants';
+import api from '../../../utils/api';
 
-const fetchProfile = () => ({
-  type: GET_REQUEST
+export const fetchProfile = () => ({
+  type: GET_REQUEST,
 });
 
-const fetchProfileSuccess = payload => ({
+export const fetchProfileSuccess = payload => ({
   type: GET_SUCCESS,
-  payload
+  payload,
 });
 
-const fetchProfileFailure = errors => ({
+export const fetchProfileFailure = errors => ({
   type: GET_FAILURE,
-  errors
+  errors,
 });
 
-const getUser = username => dispatch => {
+const getUser = username => (dispatch) => {
   dispatch(fetchProfile());
   return api({
-    method: "GET",
+    method: 'GET',
     endpoint: `/profiles/${username}/`,
-    authenticated: true
+    authenticated: true,
   })
     .then(res => dispatch(fetchProfileSuccess(res)))
     .catch(err => dispatch(fetchProfileFailure(err)));

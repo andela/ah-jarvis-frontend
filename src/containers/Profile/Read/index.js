@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import getUser from "./actions";
+import { getCurrentUser } from '../../../utils/auth';
+import getUser from './actions';
 
 export class Read extends Component {
   // change to component will mount
@@ -12,17 +13,7 @@ export class Read extends Component {
   componentDidMount() {
     const { retrieveProfile, match } = this.props;
     const urlUsername = match.params.username;
-    const users = {
-      user: {
-        email: "ianduncan08@gmail.com",
-        username: urlUsername,
-        token:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjAsImV4cCI6MTUzNjM1MjYwMX0.lGPIGe9X2s0sPaK6wuKx9pRFcC2ETgWogHf_sMttcqk"
-      }
-    };
-    localStorage.setItem("user", JSON.stringify(users));
     retrieveProfile(urlUsername);
-    console.log(this.props);
   }
 
   render() {
@@ -38,6 +29,7 @@ export class Read extends Component {
       data = JSON.parse(JSON.stringify(errors));
       error = data.profile.detail;
     }
+
     return (
       <div>
         {/* Main */}
@@ -55,12 +47,16 @@ export class Read extends Component {
                 </div>
 
                 <div className="m-b--15">
-                  {data && (
+                  {getCurrentUser === 'ian' || data ? (
                     <Link
                       to={`/edit/profile/${data.username}`}
                       className="waves-effect waves-light btn btn--rounded"
                     >
                       Edit
+                    </Link>
+                  ) : (
+                    <Link to="#nn" className="waves-effect waves-light btn btn--rounded">
+                      Follow
                     </Link>
                   )}
                 </div>
@@ -68,8 +64,7 @@ export class Read extends Component {
               <div className="col s12 m3">
                 {data && (
                   <img
-                    src="https://t3.ftcdn.net/jpg/01/83/55/76/500_F_183557656_DRcvOesmfDl5BIyhPKrcWANFKy2964i9.jpg"
-                    // {data.image}
+                    src={data.image}
                     alt={data.username}
                     className="responsive-img circle avatar--large"
                   />
@@ -87,22 +82,21 @@ export class Read extends Component {
 Read.propTypes = {
   retrieveProfile: PropTypes.func.isRequired,
   match: PropTypes.func,
-  profile: PropTypes.object
+  profile: PropTypes.object,
 };
 
 const mapStateToProps = state => ({
-  profile: state.getProfile
+  profile: state.getProfile,
 });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      retrieveProfile: getUser
-    },
-    dispatch
-  );
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    retrieveProfile: getUser,
+  },
+  dispatch,
+);
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Read);

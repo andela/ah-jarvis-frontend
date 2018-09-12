@@ -1,16 +1,16 @@
 import { EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE } from "./constants";
 import api from "../../../utils/api";
 
-const editProfileFetch = () => ({
+export const editProfileFetch = () => ({
   type: EDIT_REQUEST
 });
 
-const editProfileSuccess = payload => ({
+export const editProfileSuccess = payload => ({
   type: EDIT_SUCCESS,
   payload
 });
 
-const editProfileFailure = errors => ({
+export const editProfileFailure = errors => ({
   type: EDIT_FAILURE,
   errors
 });
