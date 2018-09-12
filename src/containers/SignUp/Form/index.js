@@ -52,14 +52,14 @@ class Form extends React.Component {
   );
 
   render() {
-    const { errors, failure } = this.props.register;
+    const { error, failure } = this.props.register;
     const { username, email, password } = this.state.validation;
     const { userName, userEmail, userPassword } = this.state.user;
     return (
       <form>
-        {this.renderInput('username', failure, errors, userName, username, 'text')}
-        {this.renderInput('email', failure, errors, userEmail, email, 'email')}
-        {this.renderInput('password', failure, errors, userPassword, password, 'password')}
+        {this.renderInput('username', failure, error, userName, username, 'text')}
+        {this.renderInput('email', failure, error, userEmail, email, 'email')}
+        {this.renderInput('password', failure, error, userPassword, password, 'password')}
 
         <div className="row">
           <div className="input-field col s12">

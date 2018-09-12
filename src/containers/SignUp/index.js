@@ -41,9 +41,7 @@ const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(registerUs
 SignUp.propTypes = {
   actions: PropTypes.func.isRequired,
   register: PropTypes.shape({
-    error: PropTypes.shape({
-      errors: PropTypes.shape({}),
-    }),
+    error: PropTypes.object,
     failure: PropTypes.bool,
   }).isRequired,
   history: PropTypes.shape({}).isRequired,
