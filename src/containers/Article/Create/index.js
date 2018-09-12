@@ -13,7 +13,6 @@ import createArticleAction from './actions';
 import UserInfo from '../../../components/UserInfo';
 import Header from '../../../components/Header';
 import editorstate from './editorstate';
-import DividerBlockConfig from './divider';
 import config from '../../../config';
 
 class Create extends Component {
@@ -99,7 +98,6 @@ class Create extends Component {
                   }),
                   VideoBlockConfig(),
                   EmbedBlockConfig(),
-                  DividerBlockConfig(),
                   PlaceholderBlockConfig(),
                 ]}
                 data_storage={{

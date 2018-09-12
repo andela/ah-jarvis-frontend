@@ -22,4 +22,5 @@ yarn-error.log*
 /.vscode
 .env
 /src/styles/css/
+**css.map
 

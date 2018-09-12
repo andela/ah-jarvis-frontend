@@ -7,11 +7,13 @@ import {
 import Create from './containers/Article/Create';
 import NotFound from './components/NotFound';
 import Read from './containers/Article/Read';
-import SocialAuth from './containers/Login';
+import SocialAuth from './containers/SocialAuth';
 import Signin from './containers/Signin';
 import Home from './components/Home';
 import configStore from './store';
 import getCurrentUser from './utils/auth';
+import SignUp from './containers/SignUp';
+import ROUTES from './utils/routes';
 
 const store = configStore();
 const user = getCurrentUser();
@@ -32,12 +34,12 @@ export default () => (
   <Provider store={store}>
     <Router>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/article/:id" component={Read} />
-        <PrivateRoute exact path="/articles/new" component={Create} />
-        <Route exact path="/login" component={SocialAuth} />
-        <Route exact path="/signin" component={Signin} />
-
+        <Route exact path={ROUTES.home} component={Home} />
+        <Route path={ROUTES.getArticleUrl} component={Read} />
+        <PrivateRoute exact path={ROUTES.createArticleUrl} component={Create} />
+        <Route exact path={ROUTES.signinWithEmail} component={Signin} />
+        <Route exact path={ROUTES.signup} component={SignUp} />
+        <Route exact path={ROUTES.signin} component={SocialAuth} />
         <Route component={NotFound} />
       </Switch>
     </Router>
