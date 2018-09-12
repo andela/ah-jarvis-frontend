@@ -18,7 +18,7 @@ class Form extends React.Component {
   };
 
   handleChange = (event) => {
-    const t = Object.values(this.state.validation).every(e => e === null)
+    const t = Object.values(this.state.validation).every(e => e === '')
       && Object.keys(this.state.validation).length === 3;
 
     const { user, validation } = this.state;
@@ -52,13 +52,22 @@ class Form extends React.Component {
   );
 
   render() {
+    console.log(this.state.validation);
+    console.log(this.state.isDisabled);
     const { errors, failure } = this.props.register;
     const { username, email, password } = this.state.validation;
     return (
       <form>
-        {this.renderInput('username', failure, errors, this.state.username, username, 'text')}
-        {this.renderInput('email', failure, errors, this.state.email, email, 'email')}
-        {this.renderInput('password', failure, errors, this.state.password, password, 'password')}
+        {this.renderInput('username', failure, errors, this.state.user.username, username, 'text')}
+        {this.renderInput('email', failure, errors, this.state.user.email, email, 'email')}
+        {this.renderInput(
+          'password',
+          failure,
+          errors,
+          this.state.user.password,
+          password,
+          'password',
+        )}
 
         <div className="row">
           <div className="input-field col s12">
@@ -79,7 +88,9 @@ class Form extends React.Component {
 Form.propTypes = {
   onClick: PropTypes.func.isRequired,
   register: PropTypes.shape({
-    errors: { errors: {} },
+    errors: PropTypes.shape({
+      errors: PropTypes.shape({}),
+    }),
     failure: PropTypes.bool,
   }).isRequired,
 };

@@ -18,5 +18,5 @@ export default (inputType, value) => {
       return 'Password should contain capital letters, numbers and special characters e.g. @,#,!';
     }
   }
-  return null;
+  return '';
 };
