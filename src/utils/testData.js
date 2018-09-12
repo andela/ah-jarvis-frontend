@@ -25,4 +25,12 @@ export default {
     },
   },
   errors: { errors: 'This is an error message' },
+  email: { email: 'user@email.com' },
+  reset_data: {
+    reset_data: {
+      token: 'token_sent_to_email',
+      email: 'validemail@example.com',
+      new_password: 'new_password',
+    },
+  },
 };

@@ -6,6 +6,7 @@ const ROUTES = {
   createArticleUrl: '/articles/new',
   signinWithEmail: '/signin/email',
   resetPassword: '/reset/password',
+  verify: '/verify/:token',
 };
 
 export default ROUTES;
