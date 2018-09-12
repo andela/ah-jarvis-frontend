@@ -10,6 +10,7 @@ import SocialAuth from './containers/Login';
 import Home from './components/Home';
 import Signin from './containers/Signin';
 import SignUp from './containers/SignUp';
+import ROUTES from './utils/routes';
 
 const store = configStore();
 
@@ -21,8 +22,8 @@ export default () => (
         <Route exact path="/signin" component={Signin} />
         <Route path="/signup" component={SignUp} />
         <Route exact path="/login" component={SocialAuth} />
-        <Route exact path="/reset/password" component={ForgotPasssword} />
-        <Route exact path="/verify/:token" component={ResetPasssword} />
+        <Route exact path={ROUTES.resetPassword} component={ForgotPasssword} />
+        <Route exact path={ROUTES.verify} component={ResetPasssword} />
         <Route component={NotFound} />
       </Switch>
     </Router>
