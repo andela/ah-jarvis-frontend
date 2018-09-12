@@ -2,17 +2,17 @@
 import { RESET_SUCCESS, RESET_FAILURE, RESET_REQUEST } from './constants';
 import api from '../../utils/api';
 
-const resetSuccess = payload => ({
+export const resetSuccess = payload => ({
   type: RESET_SUCCESS,
   payload,
 });
 
-const resetFailure = errors => ({
+export const resetFailure = errors => ({
   type: RESET_FAILURE,
   errors,
 });
 
-const resetPassword = () => ({
+export const resetPassword = () => ({
   type: RESET_REQUEST,
 });
 
