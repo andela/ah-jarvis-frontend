@@ -81,7 +81,7 @@ Form.propTypes = {
   onClick: PropTypes.func.isRequired,
   register: PropTypes.shape({
     error: PropTypes.shape({
-      errors: PropTypes.shape({}),
+      errors: PropTypes.object,
     }),
     failure: PropTypes.bool,
   }).isRequired,
