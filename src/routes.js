@@ -18,10 +18,10 @@ export default () => (
   <Provider store={store}>
     <Router>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/signin" component={Signin} />
-        <Route path="/signup" component={SignUp} />
-        <Route exact path="/login" component={SocialAuth} />
+        <Route exact path={ROUTES.home} component={Home} />
+        <Route exact path={ROUTES.signin} component={Signin} />
+        <Route path={ROUTES.signup} component={SignUp} />
+        <Route exact path={ROUTES.login} component={SocialAuth} />
         <Route exact path={ROUTES.resetPassword} component={ForgotPasssword} />
         <Route exact path={ROUTES.verify} component={ResetPasssword} />
         <Route component={NotFound} />

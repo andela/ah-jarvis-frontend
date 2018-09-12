@@ -9,16 +9,16 @@ import validateInput from '../../../utils/validateInput';
 class Form extends React.Component {
   state = {
     user: {
-      username: '',
-      email: '',
-      password: '',
+      userName: '',
+      userEmail: '',
+      userPassword: '',
     },
     validation: {},
     isDisabled: false,
   };
 
   handleChange = (event) => {
-    const t = Object.values(this.state.validation).every(e => e === null)
+    const checkValidation = Object.values(this.state.validation).every(e => e === '')
       && Object.keys(this.state.validation).length === 3;
 
     const { user, validation } = this.state;
@@ -29,7 +29,7 @@ class Form extends React.Component {
       ...prevState,
       user,
       validation,
-      isDisabled: !t,
+      isDisabled: !checkValidation,
     }));
   };
 
@@ -52,13 +52,14 @@ class Form extends React.Component {
   );
 
   render() {
-    const { errors, failure } = this.props.register;
+    const { error, failure } = this.props.register;
     const { username, email, password } = this.state.validation;
+    const { userName, userEmail, userPassword } = this.state.user;
     return (
       <form>
-        {this.renderInput('username', failure, errors, this.state.username, username, 'text')}
-        {this.renderInput('email', failure, errors, this.state.email, email, 'email')}
-        {this.renderInput('password', failure, errors, this.state.password, password, 'password')}
+        {this.renderInput('username', failure, error, userName, username, 'text')}
+        {this.renderInput('email', failure, error, userEmail, email, 'email')}
+        {this.renderInput('password', failure, error, userPassword, password, 'password')}
 
         <div className="row">
           <div className="input-field col s12">
@@ -79,7 +80,9 @@ class Form extends React.Component {
 Form.propTypes = {
   onClick: PropTypes.func.isRequired,
   register: PropTypes.shape({
-    errors: { errors: {} },
+    error: PropTypes.shape({
+      errors: PropTypes.object,
+    }),
     failure: PropTypes.bool,
   }).isRequired,
 };

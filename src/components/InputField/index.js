@@ -34,10 +34,11 @@ InputField.propTypes = {
     password: PropTypes.string,
   }),
   failure: PropTypes.bool,
-  validation: PropTypes.string.isRequired,
+  validation: PropTypes.string,
 };
 
 InputField.defaultProps = {
   errors: null,
   failure: false,
+  validation: '',
 };
