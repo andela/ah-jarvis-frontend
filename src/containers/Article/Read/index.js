@@ -90,7 +90,9 @@ class Read extends Component {
                   <AuthorDetails
                     user={{ ...payload.article.author }}
                     date={payload.article.created_at}
-                    averageRate={payload.article.average_rating ? payload.article.average_rating : this.state.rating}
+                    averageRate={
+                      payload.article.average_rating ? payload.article.average_rating
+                        : this.state.rating}
                     onStarClick={this.onStarClick}
                   />
                   <Dante read_only content={data} />
@@ -119,7 +121,11 @@ Read.propTypes = {
   }).isRequired,
 };
 
-const mapDispatchToProps = dispatch => bindActionCreators({ getArticle: fetchArticle, getRating: rateSuccess }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({
+  getArticle: fetchArticle,
+  getRating: rateSuccess,
+}, dispatch);
+
 const mapStateToProps = state => ({
   article: state.fetchArticle,
 });

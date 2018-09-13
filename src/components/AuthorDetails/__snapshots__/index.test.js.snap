@@ -80,8 +80,10 @@ ShallowWrapper {
                                         />
                               </span>
                               <span
-                                        className="helper-text"
-                              />
+                                        className="p-r--10 p-l--5"
+                              >
+                                        <p />
+                              </span>
                     </div>
           </div>
 </div>,
@@ -162,8 +164,10 @@ ShallowWrapper {
                                           />
                             </span>
                             <span
-                                          className="helper-text"
-                            />
+                                          className="p-r--10 p-l--5"
+                            >
+                                          <p />
+                            </span>
               </div>
 </div>,
           ],
@@ -245,8 +249,10 @@ ShallowWrapper {
                                     />
                   </span>
                   <span
-                                    className="helper-text"
-                  />
+                                    className="p-r--10 p-l--5"
+                  >
+                                    <p />
+                  </span>
 </div>,
               ],
               "className": "author_details",
@@ -343,8 +349,10 @@ ShallowWrapper {
                       />
 </span>,
                     <span
-                      className="helper-text"
-/>,
+                      className="p-r--10 p-l--5"
+>
+                      <p />
+</span>,
                   ],
                   "className": "article__highlights",
                 },
@@ -404,11 +412,21 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": undefined,
-                      "className": "helper-text",
+                      "children": <p />,
+                      "className": "p-r--10 p-l--5",
                     },
                     "ref": null,
-                    "rendered": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": undefined,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "p",
+                    },
                     "type": "span",
                   },
                 ],
@@ -534,8 +552,10 @@ ShallowWrapper {
                                                 />
                                     </span>
                                     <span
-                                                className="helper-text"
-                                    />
+                                                className="p-r--10 p-l--5"
+                                    >
+                                                <p />
+                                    </span>
                         </div>
             </div>
 </div>,
@@ -616,8 +636,10 @@ ShallowWrapper {
                                                 />
                                 </span>
                                 <span
-                                                className="helper-text"
-                                />
+                                                className="p-r--10 p-l--5"
+                                >
+                                                <p />
+                                </span>
                 </div>
 </div>,
             ],
@@ -699,8 +721,10 @@ ShallowWrapper {
                                         />
                     </span>
                     <span
-                                        className="helper-text"
-                    />
+                                        className="p-r--10 p-l--5"
+                    >
+                                        <p />
+                    </span>
 </div>,
                 ],
                 "className": "author_details",
@@ -797,8 +821,10 @@ ShallowWrapper {
                         />
 </span>,
                       <span
-                        className="helper-text"
-/>,
+                        className="p-r--10 p-l--5"
+>
+                        <p />
+</span>,
                     ],
                     "className": "article__highlights",
                   },
@@ -858,11 +884,21 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": undefined,
-                        "className": "helper-text",
+                        "children": <p />,
+                        "className": "p-r--10 p-l--5",
                       },
                       "ref": null,
-                      "rendered": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": undefined,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "p",
+                      },
                       "type": "span",
                     },
                   ],
