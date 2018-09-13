@@ -29,7 +29,7 @@ describe('Article Reducers', () => {
 
     const newState = fetchArticleReducer(initialState, action);
 
-    expect(Object.keys(newState).length).toEqual(5);
+    expect(Object.keys(newState).length).toEqual(6);
     expect(newState.failure).toBe(true);
   });
 
