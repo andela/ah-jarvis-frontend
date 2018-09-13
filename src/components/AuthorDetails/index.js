@@ -33,10 +33,12 @@ const AuthorDetails = ({
               name="rate1"
               starCount={5}
               value={averageRate}
+              starColor="#03a87c"
+              emptyStarColor="#ccc"
               onStarClick={onStarClick}
             />
           </span>
-          <span className="p-r--10 p-l--5"><p>{ averageRate }</p></span>
+          <p>{ averageRate }</p>
         </div>
       </div>
     </div>
