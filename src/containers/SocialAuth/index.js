@@ -7,12 +7,11 @@ import facebook from '../../assets/icons/facebook.svg';
 import google from '../../assets/icons/google.svg';
 import mail from '../../assets/icons/mail.svg';
 
-
 import SocialButton from '../../components/SocialButton';
 import api from '../../utils/api';
 import config from '../../config';
 import InlineLoader from '../../components/InlineLoader';
-
+import ROUTES from '../../utils/routes';
 
 class SocialAuth extends React.Component {
   state = {
@@ -32,19 +31,21 @@ class SocialAuth extends React.Component {
         access_token: user._token.accessToken,
       },
       method: 'POST',
-    }).then((data) => {
-      localStorage.setItem('user', JSON.stringify(data));
-      this.props.history.push('/');
-    }).catch(({ error }) => {
-      this.setState({ error, isLoading: false });
-    });
-  }
+    })
+      .then((data) => {
+        localStorage.setItem('user', JSON.stringify(data));
+        this.props.history.push('/');
+      })
+      .catch(({ error }) => {
+        this.setState({ error, isLoading: false });
+      });
+  };
 
   handleSocialLoginFailure = () => {
     this.setState({
       error: 'Something went wrong',
     });
-  }
+  };
 
   renderLoginButton = (provider, appId, content) => (
     <SocialButton
@@ -54,14 +55,18 @@ class SocialAuth extends React.Component {
       onLoginSuccess={this.handleSocialLogin}
       onLoginFailure={this.handleSocialLoginFailure}
     >
-      <img src={provider === 'facebook' ? facebook : google} alt={`Sign up with  ${provider} `} className="icon" />
+      <img
+        src={provider === 'facebook' ? facebook : google}
+        alt={`Sign up with  ${provider} `}
+        className="icon"
+      />
       {content}
     </SocialButton>
-  )
+  );
 
   toaster = () => {
     M.toast({ html: this.state.error, classes: 'danger' });
-  }
+  };
 
   renderCard = () => {
     const { error, isLoading } = this.state;
@@ -70,30 +75,33 @@ class SocialAuth extends React.Component {
         {isLoading && <InlineLoader />}
         {error && this.toaster()}
         <div className="card-content">
-          <span className="card-title center-align text-primary brand m-b--30 m-t--15">Authors' Haven</span>
-          <Link to="/signin" className="waves-effect waves-light btn-flat btn--default m-b--15  btn--block">
+          <span className="card-title center-align text-primary brand m-b--30 m-t--15">
+            Authors' Haven
+          </span>
+          <Link
+            to={ROUTES.signinWithEmail}
+            className="waves-effect waves-light btn-flat btn--default m-b--15  btn--block"
+          >
             <img src={mail} alt="Sign up with email" className="icon" />
-                Sign in with email
+            Sign in with email
           </Link>
-          { this.renderLoginButton('facebook', config.FACEBOOK_APP_ID, ' Sign in with facebook') }
-          { this.renderLoginButton('google', config.GOOGLE_APP_ID, ' Sign in with Google') }
+          {this.renderLoginButton('facebook', config.FACEBOOK_APP_ID, ' Sign in with facebook')}
+          {this.renderLoginButton('google', config.GOOGLE_APP_ID, ' Sign in with Google')}
           <div className="m-t--20">
             <span>
-                  Want to go classical?
+              Want to go classical?
               <Link to="/signup"> Sign up here</Link>
             </span>
           </div>
         </div>
       </div>
     );
-  }
+  };
 
   render() {
     return (
       <div className="row">
-        <div className="col m4 s12 offset-m4 auth">
-          {this.renderCard()}
-        </div>
+        <div className="col m4 s12 offset-m4 auth">{this.renderCard()}</div>
       </div>
     );
   }

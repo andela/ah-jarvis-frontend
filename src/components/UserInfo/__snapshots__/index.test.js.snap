@@ -1,0 +1,440 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserInfo /> renders  <UserInfo /> components 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <UserInfo
+    onPublish={[Function]}
+    publishing={true}
+    save={true}
+    user={
+        Object {
+            "user": Object {
+              "username": "test user",
+            },
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="col s6 m1"
+>
+          <img
+                    alt="nn"
+                    className="responsive-img circle"
+                    src={undefined}
+          />
+</div>,
+        <div
+          className="col s12 m9"
+>
+          <p
+                    className="m-t--15"
+          />
+</div>,
+        <div
+          className="col m1 s6"
+>
+          <p
+                    className="grey-text p-t--10"
+          >
+                    Saving...
+          </p>
+</div>,
+        <div
+          className="col s6 m1"
+>
+          <div
+                    className="m-b--15"
+          >
+                    <button
+                              className="waves-effect waves-light btn btn--rounded"
+                              disabled={true}
+                              onClick={[Function]}
+                              type="submit"
+                    >
+                              Publishing...
+                    </button>
+          </div>
+</div>,
+      ],
+      "className": "row p-t--20 p-b--20",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <img
+            alt="nn"
+            className="responsive-img circle"
+            src={undefined}
+/>,
+          "className": "col s6 m1",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "nn",
+            "className": "responsive-img circle",
+            "src": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p
+              className="m-t--15"
+/>,
+            undefined,
+          ],
+          "className": "col s12 m9",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "className": "m-t--15",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "p",
+          },
+          undefined,
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <p
+            className="grey-text p-t--10"
+>
+            Saving...
+</p>,
+          "className": "col m1 s6",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Saving...",
+            "className": "grey-text p-t--10",
+          },
+          "ref": null,
+          "rendered": "Saving...",
+          "type": "p",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="m-b--15"
+>
+            <button
+                        className="waves-effect waves-light btn btn--rounded"
+                        disabled={true}
+                        onClick={[Function]}
+                        type="submit"
+            >
+                        Publishing...
+            </button>
+</div>,
+          "className": "col s6 m1",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <button
+              className="waves-effect waves-light btn btn--rounded"
+              disabled={true}
+              onClick={[Function]}
+              type="submit"
+>
+              Publishing...
+</button>,
+            "className": "m-b--15",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Publishing...",
+              "className": "waves-effect waves-light btn btn--rounded",
+              "disabled": true,
+              "onClick": [Function],
+              "type": "submit",
+            },
+            "ref": null,
+            "rendered": "Publishing...",
+            "type": "button",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="col s6 m1"
+>
+            <img
+                        alt="nn"
+                        className="responsive-img circle"
+                        src={undefined}
+            />
+</div>,
+          <div
+            className="col s12 m9"
+>
+            <p
+                        className="m-t--15"
+            />
+</div>,
+          <div
+            className="col m1 s6"
+>
+            <p
+                        className="grey-text p-t--10"
+            >
+                        Saving...
+            </p>
+</div>,
+          <div
+            className="col s6 m1"
+>
+            <div
+                        className="m-b--15"
+            >
+                        <button
+                                    className="waves-effect waves-light btn btn--rounded"
+                                    disabled={true}
+                                    onClick={[Function]}
+                                    type="submit"
+                        >
+                                    Publishing...
+                        </button>
+            </div>
+</div>,
+        ],
+        "className": "row p-t--20 p-b--20",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <img
+              alt="nn"
+              className="responsive-img circle"
+              src={undefined}
+/>,
+            "className": "col s6 m1",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "nn",
+              "className": "responsive-img circle",
+              "src": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p
+                className="m-t--15"
+/>,
+              undefined,
+            ],
+            "className": "col s12 m9",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "m-t--15",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "p",
+            },
+            undefined,
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <p
+              className="grey-text p-t--10"
+>
+              Saving...
+</p>,
+            "className": "col m1 s6",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Saving...",
+              "className": "grey-text p-t--10",
+            },
+            "ref": null,
+            "rendered": "Saving...",
+            "type": "p",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="m-b--15"
+>
+              <button
+                            className="waves-effect waves-light btn btn--rounded"
+                            disabled={true}
+                            onClick={[Function]}
+                            type="submit"
+              >
+                            Publishing...
+              </button>
+</div>,
+            "className": "col s6 m1",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <button
+                className="waves-effect waves-light btn btn--rounded"
+                disabled={true}
+                onClick={[Function]}
+                type="submit"
+>
+                Publishing...
+</button>,
+              "className": "m-b--15",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Publishing...",
+                "className": "waves-effect waves-light btn btn--rounded",
+                "disabled": true,
+                "onClick": [Function],
+                "type": "submit",
+              },
+              "ref": null,
+              "rendered": "Publishing...",
+              "type": "button",
+            },
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
