@@ -4,10 +4,10 @@ import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { getCurrentUser } from '../../../utils/auth';
+import getCurrentUser from '../../../utils/auth';
 import getUser from './actions';
 
-export class Read extends Component {
+export class ReadProfile extends Component {
   // change to component will mount
 
   componentDidMount() {
@@ -48,7 +48,7 @@ export class Read extends Component {
 
                 {data && (
                   <div className="m-b--15">
-                    {getCurrentUser().user.username === data.username ? (
+                    {getCurrentUser().username === data.username ? (
                       <Link
                         to={`/edit/profile/${data.username}`}
                         className="waves-effect waves-light btn btn--rounded"
@@ -85,7 +85,7 @@ export class Read extends Component {
   }
 }
 
-Read.propTypes = {
+ReadProfile.propTypes = {
   retrieveProfile: PropTypes.func.isRequired,
   match: PropTypes.object,
   profile: PropTypes.object,
@@ -105,4 +105,4 @@ const mapDispatchToProps = dispatch => bindActionCreators(
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Read);
+)(ReadProfile);

@@ -1,9 +1,8 @@
+import config from '../config';
+
 const uploader = obj => new Promise((resolve, reject) => {
   const xhr = new XMLHttpRequest();
-  xhr.open(
-    obj.method || 'POST',
-    obj.url || 'https://api.cloudinary.com/v1_1/dhgp3cxes/image/upload',
-  );
+  xhr.open(obj.method || 'POST', obj.url || config.UPLOAD_URL);
   if (obj.headers) {
     Object.keys(obj.headers).forEach((key) => {
       xhr.setRequestHeader(key, obj.headers[key]);

@@ -18,10 +18,10 @@ describe('<Signin />', () => {
   beforeEach(() => {
     // creates the store with any initial state or middleware needed
     store = mockStore(initialState);
-    wrapper = shallow(<ConnectedSignin store={store} />);
+    wrapper = shallow(<ConnectedSignin store={store} history={{ push: () => '' }} />);
   });
 
-  it('should render SMART login component', () => {
+  it('should render <Signin /> component successfully', () => {
     expect(wrapper.length).toEqual(1);
   });
 });

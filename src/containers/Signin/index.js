@@ -13,7 +13,7 @@ import signinAction from './actions';
 class Signin extends Component {
   static defaultProps = {
     signin: {},
-  }
+  };
 
   state = {
     email: '',
@@ -45,7 +45,7 @@ class Signin extends Component {
       failure={failure}
       errors={errors}
     />
-  )
+  );
 
   render() {
     const { errors, failure, isFetching } = this.props.signin;
@@ -56,19 +56,11 @@ class Signin extends Component {
           <div className="card card--auth">
             <div className="card-content">
               <span className="card-title center-align text-primary brand">Authors' Haven</span>
-              <Errors
-                name="error"
-                errors={errors}
-                failure={failure}
-              />
+              <Errors name="error" errors={errors} failure={failure} />
               <form id="loginForm" onSubmit={this.handleSubmit}>
                 {this.renderInput('email', failure, errors, this.state.email)}
                 {this.renderInput('password', failure, errors, this.state.password)}
-                <Buttons
-                  isFetching={isFetching}
-                  onClick={this.handleSubmit}
-                />
-
+                <Buttons isFetching={isFetching} onClick={this.handleSubmit} />
               </form>
             </div>
           </div>

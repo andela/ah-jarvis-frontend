@@ -1,22 +1,8 @@
-import { shallow } from 'enzyme';
-import React from 'react';
-import Routes from './routes';
+import configStore from './store';
 
-describe('<Routes />', () => {
-  it('renders three <Routes /> components', () => {
-    const wrapper = shallow(<Routes />);
-    expect(
-      wrapper.contains(`
-      <Provider store={store}>
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/signin" component={Signin} />
-        <Route component={NotFound} />
-      </Switch>
-    </Router>
-  </Provider>
-    `),
-    );
+describe('Store', () => {
+  it('should return initalState', () => {
+    const state = configStore().getState();
+    expect(state.createArticle.errors).toBe(null);
   });
 });

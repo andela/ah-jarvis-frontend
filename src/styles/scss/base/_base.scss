@@ -94,6 +94,34 @@ helper-text {
     outline: none;
   }
 }
+
+.avatar--medium {
+  height: 90px !important;
+  width: 90px !important;
+}
+
+.text--small {
+  font-size: 12px !important;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar--medium {
+  height: 90px !important;
+  width: 90px !important;
+}
+
+.text--small {
+  font-size: 12px !important;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
 .danger {
   color: #721c24;
   background-color: #f8d7da;
@@ -144,7 +172,6 @@ helper-text {
 }
 .edit-hover {
   position: relative;
-  // width: 60%;
 
   &:hover {
     .image {
@@ -156,6 +183,44 @@ helper-text {
     }
   }
 }
+.profile-pic {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  vertical-align: middle;
+  text-align: center;
+  color: transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.profile-pic:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  color: #fff;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.profile-pic span {
+  display: inline-block;
+  padding-top: 4.5em;
+  padding-bottom: 4.5em;
+}
+
+.separator {
+  display: flex;
+  justify-content: center;
+  font-size: 64px;
+  color: #aaa;
+  letter-spacing: 30px;
+  line-height: 0;
+  padding-bottom: 40px;
+}
+
 .success {
   color: #155724;
   background-color: #d4edda;

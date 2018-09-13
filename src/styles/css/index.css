@@ -153,6 +153,9 @@ nav .back {
     height: 460px;
     top: -38px; }
 
+.public-DraftEditorPlaceholder-inner {
+  background-color: whitesmoke; }
+
 .collection-item {
   display: flex;
   justify-content: space-between;
@@ -234,7 +237,8 @@ helper-text {
   font-size: 12px; }
 
 .input-edit {
-  border: none !important; }
+  border: none !important;
+  outline: none; }
   .input-edit--large {
     font-size: 37px !important; }
   .input-edit--medium {
@@ -242,7 +246,29 @@ helper-text {
   .input-edit--small {
     font-size: 14px !important; }
   .input-edit:focus {
-    border: none !important; }
+    outline: none; }
+
+.avatar--medium {
+  height: 90px !important;
+  width: 90px !important; }
+
+.text--small {
+  font-size: 12px !important; }
+
+.flex-center {
+  display: flex;
+  justify-content: center; }
+
+.avatar--medium {
+  height: 90px !important;
+  width: 90px !important; }
+
+.text--small {
+  font-size: 12px !important; }
+
+.flex-center {
+  display: flex;
+  justify-content: center; }
 
 .danger {
   color: #721c24;
@@ -290,6 +316,40 @@ helper-text {
     opacity: 0.3; }
   .edit-hover:hover .toggle {
     opacity: 1; }
+
+.profile-pic {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  vertical-align: middle;
+  text-align: center;
+  color: transparent;
+  transition: all 0.3s ease;
+  text-decoration: none; }
+
+.profile-pic:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  color: #fff;
+  transition: all 0.3s ease;
+  text-decoration: none; }
+
+.profile-pic span {
+  display: inline-block;
+  padding-top: 4.5em;
+  padding-bottom: 4.5em; }
+
+.separator {
+  display: flex;
+  justify-content: center;
+  font-size: 64px;
+  color: #aaa;
+  letter-spacing: 30px;
+  line-height: 0;
+  padding-bottom: 40px; }
 
 .success {
   color: #155724;

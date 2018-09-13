@@ -6,7 +6,7 @@ import updateUser from './actions';
 import validateInput from '../../../utils/validateInput';
 import uploader from '../../../utils/uploader';
 
-class Update extends Component {
+class UpdateProfile extends Component {
   state = {
     profile: {
       username: '',
@@ -165,7 +165,7 @@ class Update extends Component {
   }
 }
 
-Update.propTypes = {
+UpdateProfile.propTypes = {
   updateProfile: PropTypes.func.isRequired,
   history: PropTypes.object,
   edit: PropTypes.object,
@@ -187,4 +187,4 @@ const mapDispatchToProps = dispatch => bindActionCreators(
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Update);
+)(UpdateProfile);
