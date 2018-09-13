@@ -231,6 +231,11 @@ form .row {
 textarea.materialize-textarea {
   height: 7rem; }
 
+helper-text {
+  margin-top: 0 !important;
+  padding: 0;
+  font-size: 12px; }
+
 .avatar--medium {
   height: 90px !important;
   width: 90px !important; }
@@ -297,6 +302,15 @@ textarea.materialize-textarea {
   background-color: #d4edda;
   border-color: #c3e6cb; }
 
+.block {
+  width: 100% !important; }
+
+.primary-color {
+  color: #03a87c; }
+
+hr {
+  border-top: 1px solid #ccc; }
+
 .avatar {
   border-radius: 50%; }
   .avatar--large {
@@ -305,6 +319,9 @@ textarea.materialize-textarea {
   .avatar--medium {
     height: 60px;
     width: 60px; }
+  .avatar--small {
+    height: 40px;
+    width: 40px; }
 
 .badge {
   border-radius: 50%;
@@ -457,8 +474,12 @@ textarea.materialize-textarea {
   display: flex;
   padding: 10px 20px; }
   .trending__article--img {
-    padding-right: 20px; }
+    padding-right: 20px;
+    max-width: 140px !important;
+    min-width: 140px !important;
+    max-height: 140px !important; }
   .trending__article--body {
+    width: 60%;
     line-height: 20px;
     padding-top: 10px; }
     .trending__article--body .article__title {
@@ -485,6 +506,28 @@ textarea.materialize-textarea {
   color: #888; }
   .article__highlights > span {
     font-size: 30px; }
+
+.article__image {
+  display: flex; }
+
+.article__hypes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0; }
+  .article__hypes div {
+    display: flex;
+    align-items: center; }
+    .article__hypes div img {
+      padding-right: 10px; }
+
+.article__preview {
+  height: 200px !important;
+  width: auto; }
+  .article__preview--title {
+    font-size: 25px;
+    margin-bottom: 5px; }
+  .article__preview--body {
+    line-height: 30px; }
 
 .article__header {
   display: flex;
@@ -532,7 +575,7 @@ textarea.materialize-textarea {
   display: flex;
   align-items: center; }
   .author__avatar {
-    margin-right: 30px; }
+    margin-right: 15px; }
   .author__details {
     display: flex;
     flex-direction: column; }
@@ -541,6 +584,8 @@ textarea.materialize-textarea {
     align-items: center; }
   .author-name {
     margin-right: 10px; }
+  .author--small {
+    line-height: 13px; }
 
 .card--reactions {
   display: flex;
@@ -554,6 +599,10 @@ textarea.materialize-textarea {
     align-self: flex-end; }
   .card--reactions .stats {
     display: flex; }
+
+.preview {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 40px; }
 
 /*
 This .scss loop will create "margin helpers" and "padding helpers" for use in your web projects.

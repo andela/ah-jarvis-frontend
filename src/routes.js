@@ -12,10 +12,11 @@ import getCurrentUser from './utils/auth';
 import configStore from './store';
 import ForgotPasssword from './containers/ForgotPassword';
 import ResetPasssword from './containers/ResetPassword';
-import Home from './components/Home';
 import Signin from './containers/Signin';
 import SignUp from './containers/SignUp';
 import ROUTES from './utils/routes';
+import Home from './containers/Home';
+import Articles from './containers/Articles';
 
 const store = configStore();
 const user = getCurrentUser();
@@ -39,6 +40,7 @@ export default () => (
         <Route exact path={ROUTES.home} component={Home} />
         <Route path={ROUTES.getArticleUrl} component={Read} />
         <PrivateRoute exact path={ROUTES.createArticleUrl} component={Create} />
+        <Route exact path={ROUTES.articles} component={Articles} />
         <Route exact path={ROUTES.signup} component={SignUp} />
         <Route exact path={ROUTES.signin} component={SocialAuth} />
         <Route exact path={ROUTES.signinWithEmail} component={Signin} />

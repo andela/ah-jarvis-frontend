@@ -1,0 +1,571 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Trending /> renders  <Trending /> components 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    articles={
+        Array [
+            Object {
+              "image": "",
+              "preview": "Article",
+              "title": "title",
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="trending__article"
+>
+          <div
+                    className="title--md"
+          >
+                    Trending articles
+          </div>
+</div>,
+        Array [
+          <div
+            className="trending__article"
+>
+            <div
+                        className="trending__article--img"
+            >
+                        <img
+                                    alt=""
+                                    className="responsive-img"
+                                    src=""
+                        />
+            </div>
+            <div
+                        className="trending__article--body"
+            >
+                        <Link
+                                    className="black-text"
+                                    replace={false}
+                                    to="/article/undefined"
+                        >
+                                    <p
+                                                className="article__title truncate"
+                                    >
+                                                title
+                                    </p>
+                        </Link>
+                        <Link
+                                    className="black-text"
+                                    replace={false}
+                                    to="/article/undefined"
+                        >
+                                    <p
+                                                className="article__info"
+                                    >
+                                                rticle...
+                                    </p>
+                        </Link>
+            </div>
+</div>,
+        ],
+      ],
+      "className": "trending p-b--10",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="title--md"
+>
+            Trending articles
+</div>,
+          "className": "trending__article",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Trending articles",
+            "className": "title--md",
+          },
+          "ref": null,
+          "rendered": "Trending articles",
+          "type": "div",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="trending__article--img"
+>
+              <img
+                            alt=""
+                            className="responsive-img"
+                            src=""
+              />
+</div>,
+            <div
+              className="trending__article--body"
+>
+              <Link
+                            className="black-text"
+                            replace={false}
+                            to="/article/undefined"
+              >
+                            <p
+                                          className="article__title truncate"
+                            >
+                                          title
+                            </p>
+              </Link>
+              <Link
+                            className="black-text"
+                            replace={false}
+                            to="/article/undefined"
+              >
+                            <p
+                                          className="article__info"
+                            >
+                                          rticle...
+                            </p>
+              </Link>
+</div>,
+          ],
+          "className": "trending__article",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <img
+                alt=""
+                className="responsive-img"
+                src=""
+/>,
+              "className": "trending__article--img",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "",
+                "className": "responsive-img",
+                "src": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Link
+                  className="black-text"
+                  replace={false}
+                  to="/article/undefined"
+>
+                  <p
+                                    className="article__title truncate"
+                  >
+                                    title
+                  </p>
+</Link>,
+                <Link
+                  className="black-text"
+                  replace={false}
+                  to="/article/undefined"
+>
+                  <p
+                                    className="article__info"
+                  >
+                                    rticle...
+                  </p>
+</Link>,
+              ],
+              "className": "trending__article--body",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <p
+                    className="article__title truncate"
+>
+                    title
+</p>,
+                  "className": "black-text",
+                  "replace": false,
+                  "to": "/article/undefined",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "title",
+                    "className": "article__title truncate",
+                  },
+                  "ref": null,
+                  "rendered": "title",
+                  "type": "p",
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <p
+                    className="article__info"
+>
+                    rticle...
+</p>,
+                  "className": "black-text",
+                  "replace": false,
+                  "to": "/article/undefined",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "rticle...",
+                    "className": "article__info",
+                  },
+                  "ref": null,
+                  "rendered": "rticle...",
+                  "type": "p",
+                },
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="trending__article"
+>
+            <div
+                        className="title--md"
+            >
+                        Trending articles
+            </div>
+</div>,
+          Array [
+            <div
+              className="trending__article"
+>
+              <div
+                            className="trending__article--img"
+              >
+                            <img
+                                          alt=""
+                                          className="responsive-img"
+                                          src=""
+                            />
+              </div>
+              <div
+                            className="trending__article--body"
+              >
+                            <Link
+                                          className="black-text"
+                                          replace={false}
+                                          to="/article/undefined"
+                            >
+                                          <p
+                                                        className="article__title truncate"
+                                          >
+                                                        title
+                                          </p>
+                            </Link>
+                            <Link
+                                          className="black-text"
+                                          replace={false}
+                                          to="/article/undefined"
+                            >
+                                          <p
+                                                        className="article__info"
+                                          >
+                                                        rticle...
+                                          </p>
+                            </Link>
+              </div>
+</div>,
+          ],
+        ],
+        "className": "trending p-b--10",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="title--md"
+>
+              Trending articles
+</div>,
+            "className": "trending__article",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Trending articles",
+              "className": "title--md",
+            },
+            "ref": null,
+            "rendered": "Trending articles",
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="trending__article--img"
+>
+                <img
+                                alt=""
+                                className="responsive-img"
+                                src=""
+                />
+</div>,
+              <div
+                className="trending__article--body"
+>
+                <Link
+                                className="black-text"
+                                replace={false}
+                                to="/article/undefined"
+                >
+                                <p
+                                                className="article__title truncate"
+                                >
+                                                title
+                                </p>
+                </Link>
+                <Link
+                                className="black-text"
+                                replace={false}
+                                to="/article/undefined"
+                >
+                                <p
+                                                className="article__info"
+                                >
+                                                rticle...
+                                </p>
+                </Link>
+</div>,
+            ],
+            "className": "trending__article",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <img
+                  alt=""
+                  className="responsive-img"
+                  src=""
+/>,
+                "className": "trending__article--img",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "",
+                  "className": "responsive-img",
+                  "src": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Link
+                    className="black-text"
+                    replace={false}
+                    to="/article/undefined"
+>
+                    <p
+                                        className="article__title truncate"
+                    >
+                                        title
+                    </p>
+</Link>,
+                  <Link
+                    className="black-text"
+                    replace={false}
+                    to="/article/undefined"
+>
+                    <p
+                                        className="article__info"
+                    >
+                                        rticle...
+                    </p>
+</Link>,
+                ],
+                "className": "trending__article--body",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <p
+                      className="article__title truncate"
+>
+                      title
+</p>,
+                    "className": "black-text",
+                    "replace": false,
+                    "to": "/article/undefined",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "title",
+                      "className": "article__title truncate",
+                    },
+                    "ref": null,
+                    "rendered": "title",
+                    "type": "p",
+                  },
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <p
+                      className="article__info"
+>
+                      rticle...
+</p>,
+                    "className": "black-text",
+                    "replace": false,
+                    "to": "/article/undefined",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "rticle...",
+                      "className": "article__info",
+                    },
+                    "ref": null,
+                    "rendered": "rticle...",
+                    "type": "p",
+                  },
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;

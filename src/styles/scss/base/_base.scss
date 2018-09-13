@@ -152,3 +152,15 @@ helper-text {
   background-color: #d4edda;
   border-color: #c3e6cb;
 }
+
+.block {
+  width: 100%!important;
+}
+
+.primary-color {
+  color: $primary-color;
+}
+
+hr {
+  border-top: 1px solid #ccc;
+}
