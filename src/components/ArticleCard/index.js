@@ -11,7 +11,9 @@ const Articles = ({ article, index }) => {
   } = article;
   const imageComponent = (
     <div className="card-image">
-      <img alt="" src={image} className="responsive-img article-img" />
+      <Link to={`/article/${slug}`}>
+        <img alt="" src={image} className="responsive-img article-img" />
+      </Link>
     </div>
   );
 
@@ -20,9 +22,13 @@ const Articles = ({ article, index }) => {
       {index % 2 === 0 && imageComponent }
       <div className="card-stacked">
         <div className="card-content">
-          <h5 className="truncate">{title}</h5>
+          <Link to={`/article/${slug}`} className="black-text">
+            <h5 className="truncate">{title}</h5>
+          </Link>
           <p>
-            {`${preview} ... `}
+            <Link to={`/article/${slug}`} className="black-text">
+              {`${preview} ... `}
+            </Link>
             <Link to={`/article/${slug}`}>
               <u>Read article</u>
             </Link>

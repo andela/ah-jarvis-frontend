@@ -364,6 +364,7 @@ helper-text {
 
 hr {
   border-top: 1px solid #ccc; }
+
 .line-space {
   line-height: 25px; }
 
@@ -378,9 +379,9 @@ hr {
   .avatar--small {
     height: 40px;
     width: 40px; }
-  .avatar--profile {
-    height: 80px;
-    width: 80px; }
+    .avatar--small--profile {
+      height: 80px;
+      width: 80px; }
 
 .badge {
   border-radius: 50%;

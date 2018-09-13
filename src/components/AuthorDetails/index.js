@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import capitalize from '../../utils/capitalize';
 import getCurrentUser from '../../utils/auth';
+import ROUTES from '../../utils/routes';
 
 const AuthorDetails = ({
   user, date, small, averageRate, onStarClick,
@@ -19,7 +20,7 @@ const AuthorDetails = ({
       <div className={`author_details ${small && 'author--small'}`}>
         <div className="author__info">
           <div className="author-name">
-            <Link className="text--small" to="/">{capitalize(user.username)}</Link>
+            <Link className="text--small" to={`${ROUTES.profile}/${user.username}`}>{capitalize(user.username)}</Link>
           </div>
           {!small && <a className="btn-flat btn-flat--primary" href="#!">Follow</a>}
         </div>

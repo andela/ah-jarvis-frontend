@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import getCurrentUser from '../../../utils/auth';
 import getUser from './actions';
 import capitalize from '../../../utils/capitalize';
+import Header from '../../../components/Header';
 
 export class ReadProfile extends Component {
   componentDidMount() {
@@ -30,7 +31,8 @@ export class ReadProfile extends Component {
     }
 
     return (
-      <div>
+      <React.Fragment>
+        <Header />
         {/* Main */}
         <div className="container container--medium">
           <div className="row m-t--20">
@@ -47,9 +49,9 @@ export class ReadProfile extends Component {
 
                 {data && (
                   <div className="m-b--15">
-                    {getCurrentUser().email === data.email ? (
+                    {getCurrentUser() && getCurrentUser().email === data.email ? (
                       <Link
-                        to={`/edit/profile/${data.username}`}
+                        to={`/profile/${data.username}/edit`}
                         className="waves-effect waves-light btn btn--rounded"
                       >
                         Edit
@@ -57,7 +59,7 @@ export class ReadProfile extends Component {
                     ) : (
                       <div>
                         {success && (
-                          <Link to="#nn" className="waves-effect waves-light btn btn--rounded">
+                          <Link to="#!" className="waves-effect waves-light btn btn--rounded">
                             Follow
                           </Link>
                         )}
@@ -79,7 +81,7 @@ export class ReadProfile extends Component {
             {/* End of User profile */}
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

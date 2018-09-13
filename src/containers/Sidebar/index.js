@@ -2,18 +2,17 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
-import InlineLoader from '../../components/InlineLoader';
 import Trending from '../../components/Trending';
 import fetchTrendingArticleAction from './actions';
 import featured from '../../utils/featured';
+import TrendingPlaceHolder from '../../components/Placehoders/TrendingPlaceHolder';
 
 
 const Network = () => (
   <React.Fragment>
     <img src="https://randomuser.me/api/portraits/med/women/2.jpg" alt="" className="small--avatar responsive-img" />
     <img src="https://randomuser.me/api/portraits/med/men/1.jpg" alt="" className="small--avatar responsive-img" />
-    <img src="https://randomuser.me/api/portraits/med/men/5.jpg" alt="" className="small--avatar responsive-img" />
+    <img src="https://randomuser.me/api/portraits/med/women/5.jpg" alt="" className="small--avatar responsive-img" />
 
     <p className="m-t--15 m-b--20">
             Build your network in seconds
@@ -30,6 +29,8 @@ const Tags = () => (
       <div className="chip">Quantum computing</div>
       <div className="chip">Alien technology</div>
       <div className="chip">Technology</div>
+      <div className="chip">Music</div>
+
     </div>
   </React.Fragment>
 );
@@ -40,13 +41,9 @@ class SideBar extends Component {
     this.props.fetchArticle(30);
   }
 
-  renderPlaceholder = () => (
-    <InlineLoader />
-  );
-
   renderArticles = () => {
     const { results } = this.props.articles.payload;
-    const featuredArticles = featured(results).filter(a => a !== false).slice(0, 4);
+    const featuredArticles = featured(results).filter(a => a !== false).slice(0, 3);
     return (
       <React.Fragment>
         <Trending articles={featuredArticles} />
@@ -54,6 +51,14 @@ class SideBar extends Component {
     );
   }
 
+  renderTrendingPlaceholder = () => {
+    const loaders = [];
+    for (let index = 0; index < 3; index += 1) {
+      loaders.push(<TrendingPlaceHolder />);
+    }
+
+    return loaders;
+  }
 
   render() {
     const { isFetching, success } = this.props.articles;
@@ -64,7 +69,7 @@ class SideBar extends Component {
         </div>
 
         <div className="divider" />
-        {isFetching || !success ? this.renderPlaceholder() : this.renderArticles() }
+        {isFetching || !success ? this.renderTrendingPlaceholder() : this.renderArticles() }
         <div className="divider" />
 
         <div className="trending p-b--10">

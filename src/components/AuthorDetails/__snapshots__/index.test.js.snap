@@ -54,7 +54,7 @@ ShallowWrapper {
                                         <Link
                                                   className="text--small"
                                                   replace={false}
-                                                  to="/"
+                                                  to="/profile/test user"
                                         >
                                                   Test User
                                         </Link>
@@ -146,7 +146,7 @@ ShallowWrapper {
                                           <Link
                                                         className="text--small"
                                                         replace={false}
-                                                        to="/"
+                                                        to="/profile/test user"
                                           >
                                                         Test User
                                           </Link>
@@ -261,7 +261,7 @@ ShallowWrapper {
                                     <Link
                                                       className="text--small"
                                                       replace={false}
-                                                      to="/"
+                                                      to="/profile/test user"
                                     >
                                                       Test User
                                     </Link>
@@ -324,7 +324,7 @@ ShallowWrapper {
                       <Link
                                             className="text--small"
                                             replace={false}
-                                            to="/"
+                                            to="/profile/test user"
                       >
                                             Test User
                       </Link>
@@ -348,7 +348,7 @@ ShallowWrapper {
                       "children": <Link
                         className="text--small"
                         replace={false}
-                        to="/"
+                        to="/profile/test user"
 >
                         Test User
 </Link>,
@@ -363,7 +363,7 @@ ShallowWrapper {
                         "children": "Test User",
                         "className": "text--small",
                         "replace": false,
-                        "to": "/",
+                        "to": "/profile/test user",
                       },
                       "ref": null,
                       "rendered": "Test User",
@@ -620,7 +620,7 @@ ShallowWrapper {
                                                 <Link
                                                             className="text--small"
                                                             replace={false}
-                                                            to="/"
+                                                            to="/profile/test user"
                                                 >
                                                             Test User
                                                 </Link>
@@ -712,7 +712,7 @@ ShallowWrapper {
                                                 <Link
                                                                 className="text--small"
                                                                 replace={false}
-                                                                to="/"
+                                                                to="/profile/test user"
                                                 >
                                                                 Test User
                                                 </Link>
@@ -827,7 +827,7 @@ ShallowWrapper {
                                         <Link
                                                             className="text--small"
                                                             replace={false}
-                                                            to="/"
+                                                            to="/profile/test user"
                                         >
                                                             Test User
                                         </Link>
@@ -890,7 +890,7 @@ ShallowWrapper {
                         <Link
                                                 className="text--small"
                                                 replace={false}
-                                                to="/"
+                                                to="/profile/test user"
                         >
                                                 Test User
                         </Link>
@@ -914,7 +914,7 @@ ShallowWrapper {
                         "children": <Link
                           className="text--small"
                           replace={false}
-                          to="/"
+                          to="/profile/test user"
 >
                           Test User
 </Link>,
@@ -929,7 +929,7 @@ ShallowWrapper {
                           "children": "Test User",
                           "className": "text--small",
                           "replace": false,
-                          "to": "/",
+                          "to": "/profile/test user",
                         },
                         "ref": null,
                         "rendered": "Test User",
@@ -1228,7 +1228,7 @@ ShallowWrapper {
                                         <Link
                                                   className="text--small"
                                                   replace={false}
-                                                  to="/"
+                                                  to="/profile/test user"
                                         >
                                                   Test User
                                         </Link>
@@ -1298,7 +1298,7 @@ ShallowWrapper {
                                           <Link
                                                         className="text--small"
                                                         replace={false}
-                                                        to="/"
+                                                        to="/profile/test user"
                                           >
                                                         Test User
                                           </Link>
@@ -1391,7 +1391,7 @@ ShallowWrapper {
                                     <Link
                                                       className="text--small"
                                                       replace={false}
-                                                      to="/"
+                                                      to="/profile/test user"
                                     >
                                                       Test User
                                     </Link>
@@ -1432,7 +1432,7 @@ ShallowWrapper {
                       <Link
                                             className="text--small"
                                             replace={false}
-                                            to="/"
+                                            to="/profile/test user"
                       >
                                             Test User
                       </Link>
@@ -1451,7 +1451,7 @@ ShallowWrapper {
                       "children": <Link
                         className="text--small"
                         replace={false}
-                        to="/"
+                        to="/profile/test user"
 >
                         Test User
 </Link>,
@@ -1466,7 +1466,7 @@ ShallowWrapper {
                         "children": "Test User",
                         "className": "text--small",
                         "replace": false,
-                        "to": "/",
+                        "to": "/profile/test user",
                       },
                       "ref": null,
                       "rendered": "Test User",
@@ -1623,7 +1623,7 @@ ShallowWrapper {
                                                 <Link
                                                             className="text--small"
                                                             replace={false}
-                                                            to="/"
+                                                            to="/profile/test user"
                                                 >
                                                             Test User
                                                 </Link>
@@ -1693,7 +1693,7 @@ ShallowWrapper {
                                                 <Link
                                                                 className="text--small"
                                                                 replace={false}
-                                                                to="/"
+                                                                to="/profile/test user"
                                                 >
                                                                 Test User
                                                 </Link>
@@ -1786,7 +1786,7 @@ ShallowWrapper {
                                         <Link
                                                             className="text--small"
                                                             replace={false}
-                                                            to="/"
+                                                            to="/profile/test user"
                                         >
                                                             Test User
                                         </Link>
@@ -1827,7 +1827,7 @@ ShallowWrapper {
                         <Link
                                                 className="text--small"
                                                 replace={false}
-                                                to="/"
+                                                to="/profile/test user"
                         >
                                                 Test User
                         </Link>
@@ -1846,7 +1846,7 @@ ShallowWrapper {
                         "children": <Link
                           className="text--small"
                           replace={false}
-                          to="/"
+                          to="/profile/test user"
 >
                           Test User
 </Link>,
@@ -1861,7 +1861,7 @@ ShallowWrapper {
                           "children": "Test User",
                           "className": "text--small",
                           "replace": false,
-                          "to": "/",
+                          "to": "/profile/test user",
                         },
                         "ref": null,
                         "rendered": "Test User",
