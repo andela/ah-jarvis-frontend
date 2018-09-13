@@ -7,6 +7,8 @@ const ROUTES = {
   signinWithEmail: '/signin/email',
   resetPassword: '/reset/password',
   verify: '/verify/:token',
+  getProfile: '/profile/:username',
+  updateProfile: '/edit/profile/:username',
 };
 
 export default ROUTES;

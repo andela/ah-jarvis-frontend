@@ -15,6 +15,8 @@ import ResetPasssword from './containers/ResetPassword';
 import Home from './components/Home';
 import Signin from './containers/Signin';
 import SignUp from './containers/SignUp';
+import ReadProfile from './containers/Profile/Read';
+import UpdateProfile from './containers/Profile/Update';
 import ROUTES from './utils/routes';
 
 const store = configStore();
@@ -36,6 +38,7 @@ export default () => (
   <Provider store={store}>
     <Router>
       <Switch>
+        <Route exact path="/login" component={SocialAuth} />
         <Route exact path={ROUTES.home} component={Home} />
         <Route path={ROUTES.getArticleUrl} component={Read} />
         <PrivateRoute exact path={ROUTES.createArticleUrl} component={Create} />
@@ -44,6 +47,8 @@ export default () => (
         <Route exact path={ROUTES.signinWithEmail} component={Signin} />
         <Route exact path={ROUTES.resetPassword} component={ForgotPasssword} />
         <Route exact path={ROUTES.verify} component={ResetPasssword} />
+        <Route exact path={ROUTES.getProfile} component={ReadProfile} />
+        <Route exact path={ROUTES.updateProfile} component={UpdateProfile} />
         <Route component={NotFound} />
       </Switch>
     </Router>
