@@ -1,22 +1,20 @@
-import {
-  ARTICLE_FETCH_SUCCESS, ARTICLE_FETCH_FAILURE, ARTICLE_FETCH_REQUEST, RATE_ARTICLE_REQUEST,
-} from './constants';
+import { EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE } from './constants';
 
-const initialState = {
-  payload: {},
-  isFetching: false,
-  isRating: false,
+const InitialState = {
+  payload: '',
   success: false,
   failure: false,
   errors: null,
+  isFetching: false,
 };
 
-export default function (state = initialState, action) {
+export default function (state = InitialState, action) {
   const { type, payload, errors } = action;
+
   switch (type) {
-    case ARTICLE_FETCH_REQUEST:
+    case EDIT_REQUEST:
       return { ...state, isFetching: true };
-    case ARTICLE_FETCH_SUCCESS:
+    case EDIT_SUCCESS:
       return {
         ...state,
         payload,
@@ -25,7 +23,7 @@ export default function (state = initialState, action) {
         failure: false,
         isFetching: false,
       };
-    case ARTICLE_FETCH_FAILURE:
+    case EDIT_FAILURE:
       return {
         ...state,
         errors,
@@ -33,10 +31,8 @@ export default function (state = initialState, action) {
         failure: true,
         success: false,
         isFetching: false,
-        isRating: false,
       };
-    case RATE_ARTICLE_REQUEST:
-      return { ...state, isRating: true };
+
     default:
       return state;
   }

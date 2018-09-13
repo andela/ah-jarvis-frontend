@@ -76,6 +76,25 @@ helper-text {
   font-size: 12px;
 }
 
+.input-edit {
+  border: none !important;
+  outline: none;
+
+  &--large {
+    font-size: 37px !important;
+  }
+  &--medium {
+    font-size: 24px !important;
+  }
+  &--small {
+    font-size: 14px !important;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
 .avatar--medium {
   height: 90px !important;
   width: 90px !important;
@@ -109,6 +128,61 @@ helper-text {
   border-color: #f5c6cb;
 }
 
+.change-image {
+  display: none;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.toggle {
+  transition: 0.5s ease;
+  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0;
+  margin: 0;
+
+  &-loading {
+    padding: 20px 30px;
+    font-weight: 700;
+    color: #444;
+  }
+
+  &-text {
+    background: url("http://www.stickpng.com/assets/images/584abf102912007028bd9332.png");
+    background-position: center;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    padding: 20px 30px;
+  }
+}
+
+.image-loading {
+  opacity: 0.3;
+}
+.edit-hover {
+  position: relative;
+
+  &:hover {
+    .image {
+      opacity: 0.3;
+    }
+
+    .toggle {
+      opacity: 1;
+    }
+  }
+}
 .profile-pic {
   border-radius: 50%;
   height: 150px;
@@ -163,4 +237,7 @@ helper-text {
 
 hr {
   border-top: 1px solid #ccc;
+}
+.line-space {
+  line-height: 25px;
 }

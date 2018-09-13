@@ -25,7 +25,7 @@ const Trending = ({ articles }) => {
 };
 
 Trending.propTypes = {
-  articles: PropTypes.shape().isRequired,
+  articles: PropTypes.array.isRequired,
 };
 
 export default Trending;

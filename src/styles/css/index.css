@@ -236,6 +236,18 @@ helper-text {
   padding: 0;
   font-size: 12px; }
 
+.input-edit {
+  border: none !important;
+  outline: none; }
+  .input-edit--large {
+    font-size: 37px !important; }
+  .input-edit--medium {
+    font-size: 24px !important; }
+  .input-edit--small {
+    font-size: 14px !important; }
+  .input-edit:focus {
+    outline: none; }
+
 .avatar--medium {
   height: 90px !important;
   width: 90px !important; }
@@ -262,6 +274,48 @@ helper-text {
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb; }
+
+.change-image {
+  display: none; }
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  transition: 0.5s ease;
+  backface-visibility: hidden; }
+
+.toggle {
+  transition: 0.5s ease;
+  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0;
+  margin: 0; }
+  .toggle-loading {
+    padding: 20px 30px;
+    font-weight: 700;
+    color: #444; }
+  .toggle-text {
+    background: url("http://www.stickpng.com/assets/images/584abf102912007028bd9332.png");
+    background-position: center;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    padding: 20px 30px; }
+
+.image-loading {
+  opacity: 0.3; }
+
+.edit-hover {
+  position: relative; }
+  .edit-hover:hover .image {
+    opacity: 0.3; }
+  .edit-hover:hover .toggle {
+    opacity: 1; }
 
 .profile-pic {
   border-radius: 50%;
@@ -310,6 +364,8 @@ helper-text {
 
 hr {
   border-top: 1px solid #ccc; }
+.line-space {
+  line-height: 25px; }
 
 .avatar {
   border-radius: 50%; }
@@ -322,6 +378,9 @@ hr {
   .avatar--small {
     height: 40px;
     width: 40px; }
+  .avatar--profile {
+    height: 80px;
+    width: 80px; }
 
 .badge {
   border-radius: 50%;

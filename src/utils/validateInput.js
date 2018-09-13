@@ -18,5 +18,15 @@ export default (inputType, value) => {
       return 'Password should contain capital letters, numbers and special characters e.g. @,#,!';
     }
   }
+
+  if (inputType === 'bio') {
+    re = value.split(' ').length;
+    if (re < 6) {
+      return 'Bio should be at least 6 words';
+    }
+    if (re > 150) {
+      return 'Bio should not exceed 150 words';
+    }
+  }
   return '';
 };

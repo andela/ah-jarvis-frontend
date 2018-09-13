@@ -1,4 +1,4 @@
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import React from 'react';
 import ArticleDetailsLoader from './ArticleDetailsLoader ';
 import ArticleCard from './ArticleCard';
@@ -11,25 +11,24 @@ describe('<ArticleDetailsLoader />', () => {
     const snap = shallow(<ArticleDetailsLoader />);
     expect(snap).toMatchSnapshot();
   });
-});
 
+  it('renders  <ArticleCard /> components', () => {
+    const snap = shallow(<ArticleCard />);
+    expect(snap).toMatchSnapshot();
+  });
 
-test('renders  <ArticleCard /> components', () => {
-  const snap = mount(<ArticleCard />);
-  expect(snap).toMatchSnapshot();
-});
+  it('renders  <ArticleCardReverse /> components', () => {
+    const snap = shallow(<ArticleCardReverse />);
+    expect(snap).toMatchSnapshot();
+  });
 
-test('renders  <ArticleCardReverse /> components', () => {
-  const snap = mount(<ArticleCardReverse />);
-  expect(snap).toMatchSnapshot();
-});
+  it('renders  <ArticleDetails /> components', () => {
+    const snap = shallow(<ArticleDetails />);
+    expect(snap).toMatchSnapshot();
+  });
 
-test('renders  <ArticleDetails /> components', () => {
-  const snap = mount(<ArticleDetails />);
-  expect(snap).toMatchSnapshot();
-});
-
-test('renders  <ArticleLoader /> components', () => {
-  const snap = mount(<ArticleLoader />);
-  expect(snap).toMatchSnapshot();
+  it('renders  <ArticleLoader /> components', () => {
+    const snap = shallow(<ArticleLoader />);
+    expect(snap).toMatchSnapshot();
+  });
 });

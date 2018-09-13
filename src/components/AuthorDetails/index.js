@@ -1,3 +1,4 @@
+import StarRatingComponent from 'react-star-rating-component';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -5,7 +6,9 @@ import { Link } from 'react-router-dom';
 import capitalize from '../../utils/capitalize';
 import getCurrentUser from '../../utils/auth';
 
-const AuthorDetails = ({ user, date, small }) => (
+const AuthorDetails = ({
+  user, date, small, averageRate, onStarClick,
+}) => (
   <div className="row">
     <div className={`author ${!small && 'col m9'}`}>
       <Link to="/">
@@ -37,6 +40,24 @@ const AuthorDetails = ({ user, date, small }) => (
               13 min read
             </React.Fragment>
           ) }
+          <span className="p-r--10 p-l--10">.</span>
+
+          {!small && (
+          <React.Fragment>
+            <span className="p-r--10 p-l--10">
+              <StarRatingComponent
+                name="rate1"
+                starCount={5}
+                value={averageRate}
+                starColor="#03a87c"
+                emptyStarColor="#ccc"
+                onStarClick={onStarClick}
+              />
+            </span>
+            <p>{ averageRate }</p>
+          </React.Fragment>
+          )}
+
         </div>
       </div>
     </div>
@@ -61,6 +82,8 @@ AuthorDetails.propTypes = {
   user: PropTypes.shape({
     username: PropTypes.string.isRequired,
   }).isRequired,
-  small: PropTypes.bool.isRequired,
+  small: PropTypes.bool,
   date: PropTypes.string.isRequired,
+  onStarClick: PropTypes.func,
+  averageRate: PropTypes.number,
 };

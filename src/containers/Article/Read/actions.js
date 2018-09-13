@@ -1,5 +1,7 @@
 import api from '../../../utils/api';
-import { ARTICLE_FETCH_REQUEST, ARTICLE_FETCH_SUCCESS, ARTICLE_FETCH_FAILURE } from './constants';
+import {
+  ARTICLE_FETCH_REQUEST, ARTICLE_FETCH_SUCCESS, ARTICLE_FETCH_FAILURE, RATE_ARTICLE_REQUEST,
+} from './constants';
 
 export const articleFetch = () => ({
   type: ARTICLE_FETCH_REQUEST,
@@ -13,6 +15,10 @@ export const articleSuccess = payload => ({
 export const articleFailure = errors => ({
   type: ARTICLE_FETCH_FAILURE,
   errors,
+});
+
+export const rateSuccess = () => ({
+  type: RATE_ARTICLE_REQUEST,
 });
 
 export const fetchArticle = id => (dispatch) => {
