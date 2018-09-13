@@ -66,6 +66,20 @@ ShallowWrapper {
                               >
                                         .
                               </span>
+                              <span
+                                        className="p-r--10 p-l--10"
+                              >
+                                        <StarRatingComponent
+                                                  editing={true}
+                                                  emptyStarColor="#ccc"
+                                                  name="rate1"
+                                                  onStarClick={undefined}
+                                                  starColor="#03a87c"
+                                                  starCount={5}
+                                                  value={undefined}
+                                        />
+                              </span>
+                              <p />
                     </div>
           </div>
 </div>,
@@ -132,6 +146,20 @@ ShallowWrapper {
                             >
                                           .
                             </span>
+                            <span
+                                          className="p-r--10 p-l--10"
+                            >
+                                          <StarRatingComponent
+                                                        editing={true}
+                                                        emptyStarColor="#ccc"
+                                                        name="rate1"
+                                                        onStarClick={undefined}
+                                                        starColor="#03a87c"
+                                                        starCount={5}
+                                                        value={undefined}
+                                          />
+                            </span>
+                            <p />
               </div>
 </div>,
           ],
@@ -199,6 +227,20 @@ ShallowWrapper {
                   >
                                     .
                   </span>
+                  <span
+                                    className="p-r--10 p-l--10"
+                  >
+                                    <StarRatingComponent
+                                                      editing={true}
+                                                      emptyStarColor="#ccc"
+                                                      name="rate1"
+                                                      onStarClick={undefined}
+                                                      starColor="#03a87c"
+                                                      starCount={5}
+                                                      value={undefined}
+                                    />
+                  </span>
+                  <p />
 </div>,
               ],
               "className": "author_details",
@@ -281,6 +323,20 @@ ShallowWrapper {
 >
                       .
 </span>,
+                    <span
+                      className="p-r--10 p-l--10"
+>
+                      <StarRatingComponent
+                                            editing={true}
+                                            emptyStarColor="#ccc"
+                                            name="rate1"
+                                            onStarClick={undefined}
+                                            starColor="#03a87c"
+                                            starCount={5}
+                                            value={undefined}
+                      />
+</span>,
+                    <p />,
                   ],
                   "className": "article__highlights",
                 },
@@ -298,6 +354,53 @@ ShallowWrapper {
                     "ref": null,
                     "rendered": ".",
                     "type": "span",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <StarRatingComponent
+                        editing={true}
+                        emptyStarColor="#ccc"
+                        name="rate1"
+                        onStarClick={undefined}
+                        starColor="#03a87c"
+                        starCount={5}
+                        value={undefined}
+/>,
+                      "className": "p-r--10 p-l--10",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "editing": true,
+                        "emptyStarColor": "#ccc",
+                        "name": "rate1",
+                        "onStarClick": undefined,
+                        "starColor": "#03a87c",
+                        "starCount": 5,
+                        "value": undefined,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": "span",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": undefined,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "p",
                   },
                 ],
                 "type": "div",
@@ -408,6 +511,20 @@ ShallowWrapper {
                                     >
                                                 .
                                     </span>
+                                    <span
+                                                className="p-r--10 p-l--10"
+                                    >
+                                                <StarRatingComponent
+                                                            editing={true}
+                                                            emptyStarColor="#ccc"
+                                                            name="rate1"
+                                                            onStarClick={undefined}
+                                                            starColor="#03a87c"
+                                                            starCount={5}
+                                                            value={undefined}
+                                                />
+                                    </span>
+                                    <p />
                         </div>
             </div>
 </div>,
@@ -474,6 +591,20 @@ ShallowWrapper {
                                 >
                                                 .
                                 </span>
+                                <span
+                                                className="p-r--10 p-l--10"
+                                >
+                                                <StarRatingComponent
+                                                                editing={true}
+                                                                emptyStarColor="#ccc"
+                                                                name="rate1"
+                                                                onStarClick={undefined}
+                                                                starColor="#03a87c"
+                                                                starCount={5}
+                                                                value={undefined}
+                                                />
+                                </span>
+                                <p />
                 </div>
 </div>,
             ],
@@ -541,6 +672,20 @@ ShallowWrapper {
                     >
                                         .
                     </span>
+                    <span
+                                        className="p-r--10 p-l--10"
+                    >
+                                        <StarRatingComponent
+                                                            editing={true}
+                                                            emptyStarColor="#ccc"
+                                                            name="rate1"
+                                                            onStarClick={undefined}
+                                                            starColor="#03a87c"
+                                                            starCount={5}
+                                                            value={undefined}
+                                        />
+                    </span>
+                    <p />
 </div>,
                 ],
                 "className": "author_details",
@@ -623,6 +768,20 @@ ShallowWrapper {
 >
                         .
 </span>,
+                      <span
+                        className="p-r--10 p-l--10"
+>
+                        <StarRatingComponent
+                                                editing={true}
+                                                emptyStarColor="#ccc"
+                                                name="rate1"
+                                                onStarClick={undefined}
+                                                starColor="#03a87c"
+                                                starCount={5}
+                                                value={undefined}
+                        />
+</span>,
+                      <p />,
                     ],
                     "className": "article__highlights",
                   },
@@ -640,6 +799,53 @@ ShallowWrapper {
                       "ref": null,
                       "rendered": ".",
                       "type": "span",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <StarRatingComponent
+                          editing={true}
+                          emptyStarColor="#ccc"
+                          name="rate1"
+                          onStarClick={undefined}
+                          starColor="#03a87c"
+                          starCount={5}
+                          value={undefined}
+/>,
+                        "className": "p-r--10 p-l--10",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "editing": true,
+                          "emptyStarColor": "#ccc",
+                          "name": "rate1",
+                          "onStarClick": undefined,
+                          "starColor": "#03a87c",
+                          "starCount": 5,
+                          "value": undefined,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      "type": "span",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": undefined,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "p",
                     },
                   ],
                   "type": "div",

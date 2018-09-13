@@ -2,9 +2,11 @@ import configureMockStore from 'redux-mock-store';
 import fetchMock from 'fetch-mock';
 import thunk from 'redux-thunk';
 
-import { ARTICLE_FETCH_SUCCESS, ARTICLE_FETCH_FAILURE, ARTICLE_FETCH_REQUEST } from './constants';
 import {
-  articleFailure, articleFetch, articleSuccess, fetchArticle,
+  ARTICLE_FETCH_SUCCESS, ARTICLE_FETCH_FAILURE, ARTICLE_FETCH_REQUEST, RATE_ARTICLE_REQUEST,
+} from './constants';
+import {
+  articleFailure, articleFetch, articleSuccess, fetchArticle, rateSuccess,
 } from './actions';
 import getAction from '../../../utils/getActions';
 import testData from '../../../utils/testData';
@@ -41,6 +43,13 @@ describe('article actions', () => {
       payload,
     };
     expect(articleSuccess(payload)).toEqual(expectedAction);
+  });
+
+  it('should create an action to rate article', () => {
+    const expectedAction = {
+      type: RATE_ARTICLE_REQUEST,
+    };
+    expect(rateSuccess()).toEqual(expectedAction);
   });
 
   it('should mock thunk action', async () => {

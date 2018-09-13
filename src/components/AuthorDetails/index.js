@@ -1,9 +1,12 @@
+import StarRatingComponent from 'react-star-rating-component';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import capitalize from '../../utils/capitalize';
 
-const AuthorDetails = ({ user, date }) => (
+const AuthorDetails = ({
+  user, date, averageRate, onStarClick,
+}) => (
   <div className="row">
     <div className="author col m9">
       <div className="author__avatar">
@@ -25,6 +28,17 @@ const AuthorDetails = ({ user, date }) => (
             year: 'numeric',
           })}
           <span className="p-r--10 p-l--10">.</span>
+          <span className="p-r--10 p-l--10">
+            <StarRatingComponent
+              name="rate1"
+              starCount={5}
+              value={averageRate}
+              starColor="#03a87c"
+              emptyStarColor="#ccc"
+              onStarClick={onStarClick}
+            />
+          </span>
+          <p>{ averageRate }</p>
         </div>
       </div>
     </div>
@@ -46,4 +60,6 @@ AuthorDetails.propTypes = {
     username: PropTypes.string.isRequired,
   }).isRequired,
   date: PropTypes.string.isRequired,
+  onStarClick: PropTypes.func.isRequired,
+  averageRate: PropTypes.number.isRequired,
 };
