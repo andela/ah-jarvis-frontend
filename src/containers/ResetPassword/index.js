@@ -3,25 +3,25 @@ import { bindActionCreators } from 'redux';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import InputField from '../../components/InputField';
 import validateInput from '../../utils/validateInput';
 import Errors from '../../components/Errors';
 import resetPasswordAction from './actions';
 
-
 class ResetPassword extends Component {
   static defaultProps = {
     reset: {},
     location: {},
     match: {},
-  }
+  };
 
   state = {
     new_password: '',
     confirm_password: '',
     validation: {},
-  }
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -39,14 +39,14 @@ class ResetPassword extends Component {
       },
       history,
     );
-  }
+  };
 
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
       validation: { [e.target.name]: validateInput('password', e.target.value) },
     });
-  }
+  };
 
   validateForm() {
     return (
@@ -59,12 +59,17 @@ class ResetPassword extends Component {
   renderButton = isFetching => (
     <div className="row">
       <div className="input-field col s12">
-        <button className="btn waves-effect waves-light btn--block m-t--50" type="submit" name="action" disabled={!this.validateForm()}>
+        <button
+          className="btn waves-effect waves-light btn--block m-t--50"
+          type="submit"
+          name="action"
+          disabled={!this.validateForm()}
+        >
           {isFetching ? 'Changing...' : 'Change Password'}
         </button>
       </div>
     </div>
-  )
+  );
 
   renderInput = (name, failure, errors, value, label, type) => (
     <InputField
@@ -76,7 +81,7 @@ class ResetPassword extends Component {
       failure={failure}
       errors={errors}
     />
-  )
+  );
 
   render() {
     const { errors, failure, isFetching } = this.props.reset;
@@ -85,19 +90,29 @@ class ResetPassword extends Component {
         <div className="col m4 s12 offset-m4 auth">
           <div className="card card--auth p-b--40">
             <div className="card-content">
-              <span className="card-title center-align text-primary  brand m-b--30 m-t--15">
+              <Link to="/" className="card-title center-align text-primary  brand m-b--30 m-t--15">
                 Authors' Haven
-              </span>
+              </Link>
               <form onSubmit={this.handleSubmit}>
-                {this.renderInput('new_password', failure, errors, this.state.new_password, 'New Password', 'password')}
+                {this.renderInput(
+                  'new_password',
+                  failure,
+                  errors,
+                  this.state.new_password,
+                  'New Password',
+                  'password',
+                )}
                 {<span className="red-text helper-text">{this.state.validation.new_password}</span>}
-                {this.renderInput('confirm_password', failure, errors, this.state.confirm_password, 'Confirm new password', 'password')}
-                <Errors
-                  name="error"
-                  errors={errors}
-                  failure={failure}
-                />
-                {this.renderButton(isFetching) }
+                {this.renderInput(
+                  'confirm_password',
+                  failure,
+                  errors,
+                  this.state.confirm_password,
+                  'Confirm new password',
+                  'password',
+                )}
+                <Errors name="error" errors={errors} failure={failure} />
+                {this.renderButton(isFetching)}
               </form>
             </div>
           </div>
@@ -131,7 +146,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(
-  { resetPass: resetPasswordAction },
+  {
+    resetPass: resetPasswordAction,
+  },
   dispatch,
 );
 
