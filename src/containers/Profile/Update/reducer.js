@@ -1,4 +1,6 @@
-import { EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE } from './constants';
+import {
+  EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE, CLEAR_STORE,
+} from './constants';
 
 const InitialState = {
   payload: '',
@@ -12,6 +14,16 @@ export default function (state = InitialState, action) {
   const { type, payload, errors } = action;
 
   switch (type) {
+    case CLEAR_STORE:
+      return {
+        ...state,
+        payload: '',
+        success: false,
+        failure: false,
+        errors: null,
+        isFetching: false,
+      };
+
     case EDIT_REQUEST:
       return { ...state, isFetching: true };
     case EDIT_SUCCESS:
