@@ -1,0 +1,841 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Article /> renders  <Article /> components 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Article
+    author={
+        Object {
+            "username": "test user",
+          }
+    }
+    date=""
+    image=""
+    preview="data"
+    slug="data"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="row author"
+>
+          <AuthorDetails
+                    date=""
+                    small={true}
+                    user={
+                              Object {
+                                        "username": "test user",
+                                      }
+                    }
+          />
+</div>,
+        "",
+        <div
+          className="row article__details"
+>
+          <Link
+                    className="black-text"
+                    replace={false}
+                    to="article/data"
+          >
+                    <h2
+                              className="article__preview--title truncate"
+                    />
+          </Link>
+          <div
+                    className="article__preview--body truncate"
+          >
+                    <Link
+                              className="black-text"
+                              replace={false}
+                              to="article/data"
+                    >
+                              <p>
+                                        data
+                              </p>
+                    </Link>
+                    <Link
+                              replace={false}
+                              to="article/data"
+                    >
+                              Read more...
+                    </Link>
+          </div>
+</div>,
+        <div
+          className="row"
+>
+          <div
+                    className="article__hypes"
+          >
+                    <div
+                              className="icon---default"
+                    >
+                              <img
+                                        alt="thumbs-up"
+                                        src="thumbs-up.svg"
+                              />
+                              <div
+                                        className="text--small"
+                              >
+                                        77k
+                              </div>
+                    </div>
+                    <div>
+                              <img
+                                        alt="thumbs-up"
+                                        src="heart.svg"
+                              />
+                    </div>
+          </div>
+</div>,
+      ],
+      "className": "col m11 s12 preview",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <AuthorDetails
+            date=""
+            small={true}
+            user={
+                        Object {
+                                    "username": "test user",
+                                  }
+            }
+/>,
+          "className": "row author",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "date": "",
+            "small": true,
+            "user": Object {
+              "username": "test user",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      "",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Link
+              className="black-text"
+              replace={false}
+              to="article/data"
+>
+              <h2
+                            className="article__preview--title truncate"
+              />
+</Link>,
+            <div
+              className="article__preview--body truncate"
+>
+              <Link
+                            className="black-text"
+                            replace={false}
+                            to="article/data"
+              >
+                            <p>
+                                          data
+                            </p>
+              </Link>
+              <Link
+                            replace={false}
+                            to="article/data"
+              >
+                            Read more...
+              </Link>
+</div>,
+          ],
+          "className": "row article__details",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <h2
+                className="article__preview--title truncate"
+/>,
+              "className": "black-text",
+              "replace": false,
+              "to": "article/data",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "article__preview--title truncate",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "h2",
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Link
+                  className="black-text"
+                  replace={false}
+                  to="article/data"
+>
+                  <p>
+                                    data
+                  </p>
+</Link>,
+                <Link
+                  replace={false}
+                  to="article/data"
+>
+                  Read more...
+</Link>,
+              ],
+              "className": "article__preview--body truncate",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <p>
+                    data
+</p>,
+                  "className": "black-text",
+                  "replace": false,
+                  "to": "article/data",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "data",
+                  },
+                  "ref": null,
+                  "rendered": "data",
+                  "type": "p",
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Read more...",
+                  "replace": false,
+                  "to": "article/data",
+                },
+                "ref": null,
+                "rendered": "Read more...",
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="article__hypes"
+>
+            <div
+                        className="icon---default"
+            >
+                        <img
+                                    alt="thumbs-up"
+                                    src="thumbs-up.svg"
+                        />
+                        <div
+                                    className="text--small"
+                        >
+                                    77k
+                        </div>
+            </div>
+            <div>
+                        <img
+                                    alt="thumbs-up"
+                                    src="heart.svg"
+                        />
+            </div>
+</div>,
+          "className": "row",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="icon---default"
+>
+                <img
+                                alt="thumbs-up"
+                                src="thumbs-up.svg"
+                />
+                <div
+                                className="text--small"
+                >
+                                77k
+                </div>
+</div>,
+              <div>
+                <img
+                                alt="thumbs-up"
+                                src="heart.svg"
+                />
+</div>,
+            ],
+            "className": "article__hypes",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <img
+                    alt="thumbs-up"
+                    src="thumbs-up.svg"
+/>,
+                  <div
+                    className="text--small"
+>
+                    77k
+</div>,
+                ],
+                "className": "icon---default",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "thumbs-up",
+                    "src": "thumbs-up.svg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "77k",
+                    "className": "text--small",
+                  },
+                  "ref": null,
+                  "rendered": "77k",
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <img
+                  alt="thumbs-up"
+                  src="heart.svg"
+/>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "thumbs-up",
+                  "src": "heart.svg",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="row author"
+>
+            <AuthorDetails
+                        date=""
+                        small={true}
+                        user={
+                                    Object {
+                                                "username": "test user",
+                                              }
+                        }
+            />
+</div>,
+          "",
+          <div
+            className="row article__details"
+>
+            <Link
+                        className="black-text"
+                        replace={false}
+                        to="article/data"
+            >
+                        <h2
+                                    className="article__preview--title truncate"
+                        />
+            </Link>
+            <div
+                        className="article__preview--body truncate"
+            >
+                        <Link
+                                    className="black-text"
+                                    replace={false}
+                                    to="article/data"
+                        >
+                                    <p>
+                                                data
+                                    </p>
+                        </Link>
+                        <Link
+                                    replace={false}
+                                    to="article/data"
+                        >
+                                    Read more...
+                        </Link>
+            </div>
+</div>,
+          <div
+            className="row"
+>
+            <div
+                        className="article__hypes"
+            >
+                        <div
+                                    className="icon---default"
+                        >
+                                    <img
+                                                alt="thumbs-up"
+                                                src="thumbs-up.svg"
+                                    />
+                                    <div
+                                                className="text--small"
+                                    >
+                                                77k
+                                    </div>
+                        </div>
+                        <div>
+                                    <img
+                                                alt="thumbs-up"
+                                                src="heart.svg"
+                                    />
+                        </div>
+            </div>
+</div>,
+        ],
+        "className": "col m11 s12 preview",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <AuthorDetails
+              date=""
+              small={true}
+              user={
+                            Object {
+                                          "username": "test user",
+                                        }
+              }
+/>,
+            "className": "row author",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "date": "",
+              "small": true,
+              "user": Object {
+                "username": "test user",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        "",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Link
+                className="black-text"
+                replace={false}
+                to="article/data"
+>
+                <h2
+                                className="article__preview--title truncate"
+                />
+</Link>,
+              <div
+                className="article__preview--body truncate"
+>
+                <Link
+                                className="black-text"
+                                replace={false}
+                                to="article/data"
+                >
+                                <p>
+                                                data
+                                </p>
+                </Link>
+                <Link
+                                replace={false}
+                                to="article/data"
+                >
+                                Read more...
+                </Link>
+</div>,
+            ],
+            "className": "row article__details",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <h2
+                  className="article__preview--title truncate"
+/>,
+                "className": "black-text",
+                "replace": false,
+                "to": "article/data",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                  "className": "article__preview--title truncate",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "h2",
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Link
+                    className="black-text"
+                    replace={false}
+                    to="article/data"
+>
+                    <p>
+                                        data
+                    </p>
+</Link>,
+                  <Link
+                    replace={false}
+                    to="article/data"
+>
+                    Read more...
+</Link>,
+                ],
+                "className": "article__preview--body truncate",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <p>
+                      data
+</p>,
+                    "className": "black-text",
+                    "replace": false,
+                    "to": "article/data",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "data",
+                    },
+                    "ref": null,
+                    "rendered": "data",
+                    "type": "p",
+                  },
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Read more...",
+                    "replace": false,
+                    "to": "article/data",
+                  },
+                  "ref": null,
+                  "rendered": "Read more...",
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="article__hypes"
+>
+              <div
+                            className="icon---default"
+              >
+                            <img
+                                          alt="thumbs-up"
+                                          src="thumbs-up.svg"
+                            />
+                            <div
+                                          className="text--small"
+                            >
+                                          77k
+                            </div>
+              </div>
+              <div>
+                            <img
+                                          alt="thumbs-up"
+                                          src="heart.svg"
+                            />
+              </div>
+</div>,
+            "className": "row",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="icon---default"
+>
+                  <img
+                                    alt="thumbs-up"
+                                    src="thumbs-up.svg"
+                  />
+                  <div
+                                    className="text--small"
+                  >
+                                    77k
+                  </div>
+</div>,
+                <div>
+                  <img
+                                    alt="thumbs-up"
+                                    src="heart.svg"
+                  />
+</div>,
+              ],
+              "className": "article__hypes",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <img
+                      alt="thumbs-up"
+                      src="thumbs-up.svg"
+/>,
+                    <div
+                      className="text--small"
+>
+                      77k
+</div>,
+                  ],
+                  "className": "icon---default",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "alt": "thumbs-up",
+                      "src": "thumbs-up.svg",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "77k",
+                      "className": "text--small",
+                    },
+                    "ref": null,
+                    "rendered": "77k",
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <img
+                    alt="thumbs-up"
+                    src="heart.svg"
+/>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "thumbs-up",
+                    "src": "heart.svg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
