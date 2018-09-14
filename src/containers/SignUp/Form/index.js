@@ -52,7 +52,6 @@ class Form extends React.Component {
   );
 
   render() {
-    console.log(this.state);
     const { error, failure } = this.props.register;
     const { username, email, password } = this.state.validation;
     const { user } = this.state;
