@@ -8,7 +8,7 @@ import getCurrentUser from '../../utils/auth';
 import ROUTES from '../../utils/routes';
 
 const AuthorDetails = ({
-  user, date, small, averageRate, onStarClick,
+  user, date, small, averageRate, onStarClick, readtime,
 }) => (
   <div className="row">
     <div className={`author ${!small && 'col m9'}`}>
@@ -33,12 +33,12 @@ const AuthorDetails = ({
           {small ? (
             <React.Fragment>
               <span className="p-r--5 p-l--5">.</span>
-              13 min read
+              {`${readtime} min read`}
             </React.Fragment>
           ) : (
             <React.Fragment>
               <span className="p-r--5 p-l--5">.</span>
-              13 min read
+              {`${readtime} min read`}
             </React.Fragment>
           ) }
           <span className="p-r--10 p-l--10">.</span>
@@ -87,4 +87,5 @@ AuthorDetails.propTypes = {
   date: PropTypes.string.isRequired,
   onStarClick: PropTypes.func,
   averageRate: PropTypes.number,
+  readtime: PropTypes.number,
 };

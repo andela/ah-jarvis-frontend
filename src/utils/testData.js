@@ -17,6 +17,14 @@ export default {
     isFetching: false,
   },
 
+  testBlock: {
+    body: {
+      blocks: [{
+        key: '4kjs4', text: 'The data', type: 'unstyled', depth: 0, inlineStyleRanges: [], entityRanges: [], data: {},
+      }],
+      entityMap: {},
+    },
+  },
   user: {
     user: {
       email: 'user@mail.com',
