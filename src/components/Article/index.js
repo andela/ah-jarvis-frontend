@@ -6,7 +6,7 @@ import thumbsUp from '../../assets/icons/thumbs-up.svg';
 import heart from '../../assets/icons/heart.svg';
 
 const Article = ({
-  title, author, image, preview, date, slug, likes_count,
+  title, author, image, preview, date, slug, likesCount,
 }) => (
   <div className="col m11 s12 preview">
     <div className="row author">
@@ -34,7 +34,7 @@ const Article = ({
       <div className="article__hypes">
         <div className="icon---default">
           <img src={thumbsUp} alt="thumbs-up" />
-          <div className="text--small">{likes_count}</div>
+          <div className="text--small">{likesCount}</div>
         </div>
         <div>
           <img src={heart} alt="thumbs-up" />
@@ -53,7 +53,7 @@ Article.propTypes = {
   author: PropTypes.shape({
     username: PropTypes.string.isRequired,
   }).isRequired,
-  likes_count: PropTypes.string.isRequired,
+  likesCount: PropTypes.string.isRequired,
 };
 
 export default Article;

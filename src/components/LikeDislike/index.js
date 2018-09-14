@@ -18,4 +18,5 @@ Reaction.propTypes = {
   id: PropTypes.func.isRequired,
   src: PropTypes.bool.isRequired,
   count: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };

@@ -76,13 +76,13 @@ class Read extends Component {
 
   handleReaction = (e) => {
     e.preventDefault();
-    const { likeArticle, dislikeArticle, match } = this.props;
+    const { like, dislike, match } = this.props;
     if (user) {
       this.setState({ alert: false });
       if (e.target.id === 'like') {
-        likeArticle(match.params.id);
+        like(match.params.id);
       } else if (e.target.id === 'dislike') {
-        dislikeArticle(match.params.id);
+        dislike(match.params.id);
       }
     } else {
       this.setState({
@@ -165,16 +165,16 @@ Read.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.object.isRequired,
   }).isRequired,
-  likeArticle: PropTypes.func.isRequired,
-  dislikeArticle: PropTypes.func.isRequired
+  like: PropTypes.func.isRequired,
+  dislike: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators(
   {
     getArticle: fetchArticle,
     getRating: rateSuccess,
-    likeArticle,
-    dislikeArticle,
+    like: likeArticle,
+    dislike: dislikeArticle,
   },
   dispatch,
 );
