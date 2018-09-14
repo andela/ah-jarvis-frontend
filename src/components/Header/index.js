@@ -15,6 +15,10 @@ class Header extends React.Component {
     M.Dropdown.init(el);
   }
 
+  logout = () => {
+    localStorage.removeItem('user');
+  }
+
   renderDropDown = user => (
     <li>
       { user && (
@@ -41,6 +45,10 @@ class Header extends React.Component {
             <li className="divider" tabIndex="-1" />
             <li>
               <a href="#!">Favorites</a>
+            </li>
+            <li className="divider" tabIndex="-1" />
+            <li>
+              <a href="#!" onClick={this.logout}>Logout</a>
             </li>
           </ul>
         </React.Fragment>)
