@@ -98,6 +98,7 @@ class Read extends Component {
   );
 
   render() {
+    console.log(thumbsUp)
     const {
       isFetching, success, payload, errors, isRating,
     } = this.props.article;
