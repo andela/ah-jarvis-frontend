@@ -37,9 +37,7 @@ class Articles extends Component {
         return false;
       }
       const { blocks } = b;
-      if (!blocks) {
-        return false;
-      }
+      if (!blocks) return false;
       const image = extractImage(blocks);
       const p = extractDescription(blocks);
       const preview = p ? p.text : '';
