@@ -91,9 +91,7 @@ ShallowWrapper {
                               />
                               <div
                                         className="text--small"
-                              >
-                                        77k
-                              </div>
+                              />
                     </div>
                     <div>
                               <img
@@ -299,9 +297,7 @@ ShallowWrapper {
                         />
                         <div
                                     className="text--small"
-                        >
-                                    77k
-                        </div>
+                        />
             </div>
             <div>
                         <img
@@ -328,9 +324,7 @@ ShallowWrapper {
                 />
                 <div
                                 className="text--small"
-                >
-                                77k
-                </div>
+                />
 </div>,
               <div>
                 <img
@@ -355,9 +349,7 @@ ShallowWrapper {
 />,
                   <div
                     className="text--small"
->
-                    77k
-</div>,
+/>,
                 ],
                 "className": "icon---default",
               },
@@ -380,11 +372,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "77k",
+                    "children": undefined,
                     "className": "text--small",
                   },
                   "ref": null,
-                  "rendered": "77k",
+                  "rendered": null,
                   "type": "div",
                 },
               ],
@@ -492,9 +484,7 @@ ShallowWrapper {
                                     />
                                     <div
                                                 className="text--small"
-                                    >
-                                                77k
-                                    </div>
+                                    />
                         </div>
                         <div>
                                     <img
@@ -700,9 +690,7 @@ ShallowWrapper {
                             />
                             <div
                                           className="text--small"
-                            >
-                                          77k
-                            </div>
+                            />
               </div>
               <div>
                             <img
@@ -729,9 +717,7 @@ ShallowWrapper {
                   />
                   <div
                                     className="text--small"
-                  >
-                                    77k
-                  </div>
+                  />
 </div>,
                 <div>
                   <img
@@ -756,9 +742,7 @@ ShallowWrapper {
 />,
                     <div
                       className="text--small"
->
-                      77k
-</div>,
+/>,
                   ],
                   "className": "icon---default",
                 },
@@ -781,11 +765,11 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "77k",
+                      "children": undefined,
                       "className": "text--small",
                     },
                     "ref": null,
-                    "rendered": "77k",
+                    "rendered": null,
                     "type": "div",
                   },
                 ],

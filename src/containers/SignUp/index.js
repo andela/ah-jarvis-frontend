@@ -2,10 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import Form from './Form';
 import { registerUser } from './actions';
 import InlineLoader from '../../components/InlineLoader';
+import ROUTES from '../../utils/routes';
 
 class SignUp extends React.Component {
   state = {};
@@ -19,7 +21,9 @@ class SignUp extends React.Component {
           <div className="card card--auth">
             {register.isFetching ? <InlineLoader /> : ''}
             <div className="card-content">
-              <span className="card-title center-align text-primary brand">Authors' Haven</span>
+              <Link to={`${ROUTES.home}`} className="card-title center-align text-primary brand">
+                Authors' Haven
+              </Link>
               <Form
                 onClick={(user) => {
                   actions(user, history);

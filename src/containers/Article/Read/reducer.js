@@ -1,11 +1,18 @@
 import {
-  ARTICLE_FETCH_SUCCESS, ARTICLE_FETCH_FAILURE, ARTICLE_FETCH_REQUEST, RATE_ARTICLE_REQUEST,
+  ARTICLE_FETCH_SUCCESS,
+  ARTICLE_FETCH_FAILURE,
+  ARTICLE_FETCH_REQUEST,
+  RATE_ARTICLE_REQUEST,
+  LIKE_ARTICLE_SUCCESS,
+  DISLIKE_ARTICLE_SUCCESS,
 } from './constants';
 
 const initialState = {
   payload: {},
   isFetching: false,
   isRating: false,
+  isLiking: false,
+  isDisliking: false,
   success: false,
   failure: false,
   errors: null,
@@ -37,6 +44,10 @@ export default function (state = initialState, action) {
       };
     case RATE_ARTICLE_REQUEST:
       return { ...state, isRating: true };
+    case LIKE_ARTICLE_SUCCESS:
+      return { ...state, isLiking: true };
+    case DISLIKE_ARTICLE_SUCCESS:
+      return { ...state, isDisliking: true };
     default:
       return state;
   }

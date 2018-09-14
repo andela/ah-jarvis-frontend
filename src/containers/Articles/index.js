@@ -16,7 +16,7 @@ import readTime from '../../utils/readtime';
 class Articles extends Component {
   state = {
     activePage: 1,
-  }
+  };
 
   componentDidMount() {
     const { location } = this.props;
@@ -53,11 +53,12 @@ class Articles extends Component {
           author={data.author}
           key={data.slug}
           readtime={readTime(b)}
+          likesCount={data.likes_count}
         />
       );
     });
     return articles;
-  }
+  };
 
   renderLoader = () => {
     const loaders = [];
@@ -66,7 +67,7 @@ class Articles extends Component {
       loaders.push(loader);
     }
     return loaders;
-  }
+  };
 
   handlePageChange = (page) => {
     const activePage = page;
@@ -75,7 +76,7 @@ class Articles extends Component {
     });
     this.props.fetchArticle(config.ARTICLES_PER_PAGE, page);
     window.scrollTo(0, 0);
-  }
+  };
 
   renderStories = () => {
     const { isFetching, success } = this.props.articles;
@@ -83,12 +84,12 @@ class Articles extends Component {
       <div className="row articles">
         <div className="col m8 articles__main">
           <p className="flow-text m-b--30">Stories</p>
-          {isFetching || !success ? this.renderLoader() : this.renderArticles() }
+          {isFetching || !success ? this.renderLoader() : this.renderArticles()}
         </div>
         <Sidebar />
       </div>
     );
-  }
+  };
 
   render() {
     const { payload } = this.props.articles;
@@ -98,22 +99,19 @@ class Articles extends Component {
           <Header />
           <div className="container-fluid">
             {this.renderStories()}
-            {payload
-            && (
-            <Paginator
-              activePage={this.state.activePage}
-              total={payload.count}
-              onClick={this.handlePageChange}
-            />
-            )
-          }
+            {payload && (
+              <Paginator
+                activePage={this.state.activePage}
+                total={payload.count}
+                onClick={this.handlePageChange}
+              />
+            )}
           </div>
         </React.Fragment>
       </div>
     );
   }
 }
-
 
 Articles.propTypes = {
   articles: PropTypes.shape({
@@ -139,4 +137,7 @@ const mapDispatchToProps = dispatch => bindActionCreators(
   dispatch,
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Articles);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Articles);
