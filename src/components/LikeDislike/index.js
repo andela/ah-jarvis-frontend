@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Reaction = ({ id, src, count }) => (
+const Reaction = ({
+  id, src, count, onClick,
+}) => (
   <div className="reactions__icon">
     <span>{count}</span>
-    <img id={id} src={src} alt="Reaction" className="icon" />
+    <a href="#!" onClick={onClick}>
+      <img id={id} src={src} alt="Reaction" className="icon" />
+    </a>
   </div>
 );
 

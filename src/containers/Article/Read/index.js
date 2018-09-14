@@ -74,13 +74,28 @@ class Read extends Component {
     }
   };
 
-  handleLike = () => {
-    this.props.likeArticle(this.props.match.params.id);
+  handleReaction = (e) => {
+    e.preventDefault();
+    const { likeArticle, dislikeArticle, match } = this.props;
+    if (user) {
+      this.setState({ alert: false });
+      if (e.target.id === 'like') {
+        likeArticle(match.params.id);
+      } else if (e.target.id === 'dislike') {
+        dislikeArticle(match.params.id);
+      }
+    } else {
+      this.setState({
+        alert: true,
+        alertMessage: 'Please Login to like or dislike this article',
+        alertClass: 'danger',
+      });
+    }
   };
 
-  handleDislike = () => {
-    this.props.dislikeArticle(this.props.match.params.id);
-  };
+  renderReaction = ( id, src, count ) => (
+    <Reaction id={id} src={src} count={count} onClick={this.handleReaction} />
+  );
 
   render() {
     const {
@@ -104,12 +119,12 @@ class Read extends Component {
 
         <div className="container m-t--30">
           <div className="row">
-            <div className="col s11">
-              {this.state.alert ? this.toaster() : ''}
-              {(isFetching || !success) && !isRating ? (
-                <ArticleDetailsLoader />
-              ) : (
-                <React.Fragment>
+            {this.state.alert ? this.toaster() : ''}
+            {(isFetching || !success) && !isRating ? (
+              <ArticleDetailsLoader />
+            ) : (
+              <React.Fragment>
+                <div className="col s11">
                   <AuthorDetails
                     user={{ ...payload.article.author }}
                     date={payload.article.created_at}
@@ -121,15 +136,15 @@ class Read extends Component {
                     onStarClick={this.onStarClick}
                   />
                   <Dante read_only content={data} />
-                </React.Fragment>
-              )}
-            </div>
-            <div className="col s1">
-              <div className="reactions">
-                <Reaction id="like" src={thumbsUp} onClick={this.handleLike} />
-                <Reaction id="dislike" src={thumbsDown} onClick={this.handleDislike} />
-              </div>
-            </div>
+                </div>
+                <div className="col s1">
+                  <div className="reactions">
+                    {this.renderReaction('like', thumbsUp, payload.article.likes_count)}
+                    {this.renderReaction('dislike', thumbsDown, payload.article.dislikes_count)}
+                  </div>
+                </div>
+              </React.Fragment>
+            )}
           </div>
         </div>
       </React.Fragment>

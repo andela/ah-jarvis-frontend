@@ -35,13 +35,11 @@ export const likeArticle = slug => (dispatch) => {
     method: 'PUT',
     authenticated: true,
   })
-    .then((data) => {
+    .then((res) => {
       dispatch(likeArticleSuccess());
-      console.log(data);
+      dispatch(articleSuccess(res));
     })
-    .catch((e) => {
-      console.log(e);
-    });
+    .catch(err => dispatch(articleFailure(err)));
 };
 
 export const dislikeArticle = slug => (dispatch) => {
@@ -50,13 +48,11 @@ export const dislikeArticle = slug => (dispatch) => {
     method: 'PUT',
     authenticated: true,
   })
-    .then((data) => {
+    .then((res) => {
       dispatch(dislikeArticleSuccess());
-      console.log(data);
+      dispatch(articleSuccess(res));
     })
-    .catch((e) => {
-      console.log(e);
-    });
+    .catch(err => dispatch(articleFailure(err)));
 };
 
 export const fetchArticle = id => (dispatch) => {
