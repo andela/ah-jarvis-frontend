@@ -18,6 +18,7 @@ class Header extends React.Component {
 
   logout = () => {
     localStorage.removeItem('user');
+    return window.location.replace(ROUTES.home);
   }
 
   renderDropDown = user => (
