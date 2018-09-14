@@ -99,7 +99,6 @@ class Read extends Component {
   );
 
   render() {
-    console.log(thumbsUp);
     const {
       isFetching, success, payload, errors, isRating,
     } = this.props.article;
@@ -113,7 +112,6 @@ class Read extends Component {
         return <NotFound />;
       }
     }
-
     if (errors) {
       return <NotFound />;
     }
@@ -135,7 +133,7 @@ class Read extends Component {
                     readtime={readtime}
                     averageRate={
                       payload.article.average_rating
-                        ? payload.article.average_rating
+                        ? parseFloat(payload.article.average_rating)
                         : this.state.rating
                     }
                     onStarClick={this.onStarClick}
@@ -163,7 +161,7 @@ Read.propTypes = {
     isRating: PropTypes.bool.isRequired,
     success: PropTypes.bool.isRequired,
     payload: PropTypes.object.isRequired,
-    errors: PropTypes.object.isRequired,
+    errors: PropTypes.object,
   }).isRequired,
   getArticle: PropTypes.func.isRequired,
   getRating: PropTypes.func.isRequired,
