@@ -3,18 +3,19 @@ import { bindActionCreators } from 'redux';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import InputField from '../../components/InputField';
 import Errors from '../../components/Errors';
 import validateInput from '../../utils/validateInput';
 import { ResendEmail } from '../../components/ResendEmail';
 import { forgotPasswordAction } from './actions';
-
+import ROUTES from '../../utils/routes';
 
 class ForgotPassword extends Component {
   static defaultProps = {
     forgotPass: {},
-  }
+  };
 
   state = {
     email: '',
@@ -44,21 +45,17 @@ class ForgotPassword extends Component {
       failure={failure}
       errors={errors}
     />
-  )
+  );
 
   renderResetButton = isFetching => (
     <div className="row">
       <div className="input-field col s12">
-        <button
-          className="btn waves-effect waves-light btn--block"
-          type="submit"
-          name="action"
-        >
+        <button className="btn waves-effect waves-light btn--block" type="submit" name="action">
           {isFetching ? 'Sending...' : 'Reset Password'}
         </button>
       </div>
     </div>
-  )
+  );
 
   render() {
     const {
@@ -67,35 +64,26 @@ class ForgotPassword extends Component {
     let output;
 
     if (success) {
-      output = (
-        <ResendEmail
-          isFetching={isFetching}
-          onClick={this.handleSubmit}
-        />
-      );
+      output = <ResendEmail isFetching={isFetching} onClick={this.handleSubmit} />;
     } else {
       output = (
         <div className="row">
           <div className="col m4 s12 offset-m4 auth">
             <div className="card card--auth p-b--40">
               <div className="card-content">
-                <span className="card-title center-align text-primary brand">Authors' Haven</span>
+                <Link to={`${ROUTES.home}`} className="card-title center-align text-primary brand">
+                  Authors' Haven
+                </Link>
                 <h6 className="center">Reset password</h6>
                 <form onSubmit={this.handleSubmit}>
                   {this.renderInput('email', failure, errors, this.state.email)}
                   {<span className="red-text helper-text">{this.state.validation.email}</span>}
-                  <Errors
-                    name="error"
-                    errors={errors}
-                    failure={failure}
-                  />
+                  <Errors name="error" errors={errors} failure={failure} />
                   {this.renderResetButton(isFetching)}
                 </form>
                 <div className="row">
                   <a href="./">
-                    <div className="input-field col s12 m6">
-                      Back to Sign in
-                    </div>
+                    <div className="input-field col s12 m6">Back to Sign in</div>
                   </a>
                 </div>
               </div>
@@ -104,7 +92,7 @@ class ForgotPassword extends Component {
         </div>
       );
     }
-    return (output);
+    return output;
   }
 }
 
@@ -123,7 +111,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(
-  { sendLink: forgotPasswordAction },
+  {
+    sendLink: forgotPasswordAction,
+  },
   dispatch,
 );
 
