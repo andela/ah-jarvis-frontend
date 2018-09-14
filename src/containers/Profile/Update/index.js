@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import M from 'materialize-css';
 import updateUser from './actions';
 import validateInput from '../../../utils/validateInput';
 import uploader from '../../../utils/uploader';
@@ -87,8 +88,12 @@ class UpdateProfile extends Component {
       .catch(err => console.log(err));
   };
 
+  toaster = () => {
+    M.toast({ html: 'Your profile has been successfully updated', classes: 'success' });
+  };
+
   render() {
-    const { isFetching } = this.props.edit;
+    const { success, isFetching } = this.props.edit;
     if (this.state.uploaded === 100) {
       this.setState({
         uploaded: null,
@@ -99,6 +104,7 @@ class UpdateProfile extends Component {
       <div>
         <Header />
         <div className="container container--medium">
+          {success && this.toaster()}
           {/* Main */}
           <div className="row m-t--20">
             {/* User Profile */}
