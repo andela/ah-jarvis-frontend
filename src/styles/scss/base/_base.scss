@@ -102,6 +102,7 @@ helper-text {
 
 .text--small {
   font-size: 12px !important;
+  color: $primary-color;
 }
 
 .flex-center {
@@ -112,10 +113,6 @@ helper-text {
 .avatar--medium {
   height: 90px !important;
   width: 90px !important;
-}
-
-.text--small {
-  font-size: 12px !important;
 }
 
 .flex-center {
@@ -228,7 +225,7 @@ helper-text {
 }
 
 .block {
-  width: 100%!important;
+  width: 100% !important;
 }
 
 .primary-color {
