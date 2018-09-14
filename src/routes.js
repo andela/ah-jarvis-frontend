@@ -47,8 +47,8 @@ export default () => (
         <Route exact path={ROUTES.signinWithEmail} component={Signin} />
         <Route exact path={ROUTES.resetPassword} component={ForgotPasssword} />
         <Route exact path={ROUTES.verify} component={ResetPasssword} />
-        <Route exact path={ROUTES.getProfile} component={ReadProfile} />
-        <Route exact path={ROUTES.updateProfile} component={UpdateProfile} />
+        <PrivateRoute exact path={ROUTES.getProfile} component={ReadProfile} />
+        <PrivateRoute exact path={ROUTES.updateProfile} component={UpdateProfile} />
         <Route component={NotFound} />
       </Switch>
     </Router>

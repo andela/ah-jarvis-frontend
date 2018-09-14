@@ -4,9 +4,9 @@ import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import getCurrentUser from '../../../utils/auth';
 import getUser from './actions';
 import capitalize from '../../../utils/capitalize';
+import Header from '../../../components/Header';
 
 export class ReadProfile extends Component {
   componentDidMount() {
@@ -32,6 +32,7 @@ export class ReadProfile extends Component {
     return (
       <div>
         {/* Main */}
+        <Header />
         <div className="container container--medium">
           <div className="row m-t--20">
             {/* User Profile */}
@@ -47,9 +48,9 @@ export class ReadProfile extends Component {
 
                 {data && (
                   <div className="m-b--15">
-                    {getCurrentUser().email === data.email ? (
+                    {this.props.user.email === data.email ? (
                       <Link
-                        to={`/edit/profile/${data.username}`}
+                        to={`/profile/${data.username}/edit`}
                         className="waves-effect waves-light btn btn--rounded"
                       >
                         Edit
@@ -88,6 +89,7 @@ ReadProfile.propTypes = {
   retrieveProfile: PropTypes.func.isRequired,
   match: PropTypes.object,
   profile: PropTypes.object,
+  user: PropTypes.object,
 };
 
 const mapStateToProps = state => ({

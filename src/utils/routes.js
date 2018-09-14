@@ -8,7 +8,7 @@ const ROUTES = {
   resetPassword: '/reset/password',
   verify: '/verify/:token',
   getProfile: '/profile/:username',
-  updateProfile: '/edit/profile/:username',
+  updateProfile: '/profile/:username/edit',
 };
 
 export default ROUTES;
