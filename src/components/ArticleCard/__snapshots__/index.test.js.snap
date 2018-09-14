@@ -71,15 +71,18 @@ ShallowWrapper {
                     <div
                               className="stats"
                     >
-                              <span
-                                        className="icon-stats"
+                              <div
+                                        className="icon---default"
                               >
                                         <img
-                                                  alt="likes"
+                                                  alt="thumbs-up"
+                                                  className="p-r--5"
                                                   src="thumbs-up.svg"
                                         />
-                                        
-                              </span>
+                                        <span
+                                                  className="text--small"
+                                        />
+                              </div>
                               <span
                                         className="icon-stats"
                               />
@@ -137,15 +140,18 @@ ShallowWrapper {
               <div
                             className="stats"
               >
-                            <span
-                                          className="icon-stats"
+                            <div
+                                          className="icon---default"
                             >
                                           <img
-                                                        alt="likes"
+                                                        alt="thumbs-up"
+                                                        className="p-r--5"
                                                         src="thumbs-up.svg"
                                           />
-                                          
-                            </span>
+                                          <span
+                                                        className="text--small"
+                                          />
+                            </div>
                             <span
                                           className="icon-stats"
                             />
@@ -302,15 +308,18 @@ ShallowWrapper {
               "children": <div
                 className="stats"
 >
-                <span
-                                className="icon-stats"
+                <div
+                                className="icon---default"
                 >
                                 <img
-                                                alt="likes"
+                                                alt="thumbs-up"
+                                                className="p-r--5"
                                                 src="thumbs-up.svg"
                                 />
-                                
-                </span>
+                                <span
+                                                className="text--small"
+                                />
+                </div>
                 <span
                                 className="icon-stats"
                 />
@@ -324,15 +333,18 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <span
-                    className="icon-stats"
+                  <div
+                    className="icon---default"
 >
                     <img
-                                        alt="likes"
+                                        alt="thumbs-up"
+                                        className="p-r--5"
                                         src="thumbs-up.svg"
                     />
-                    
-</span>,
+                    <span
+                                        className="text--small"
+                    />
+</div>,
                   <span
                     className="icon-stats"
 />,
@@ -348,12 +360,15 @@ ShallowWrapper {
                   "props": Object {
                     "children": Array [
                       <img
-                        alt="likes"
+                        alt="thumbs-up"
+                        className="p-r--5"
                         src="thumbs-up.svg"
 />,
-                      "",
+                      <span
+                        className="text--small"
+/>,
                     ],
-                    "className": "icon-stats",
+                    "className": "icon---default",
                   },
                   "ref": null,
                   "rendered": Array [
@@ -362,16 +377,28 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "alt": "likes",
+                        "alt": "thumbs-up",
+                        "className": "p-r--5",
                         "src": "thumbs-up.svg",
                       },
                       "ref": null,
                       "rendered": null,
                       "type": "img",
                     },
-                    "",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "",
+                        "className": "text--small",
+                      },
+                      "ref": null,
+                      "rendered": "",
+                      "type": "span",
+                    },
                   ],
-                  "type": "span",
+                  "type": "div",
                 },
                 Object {
                   "instance": null,
@@ -446,15 +473,18 @@ ShallowWrapper {
                         <div
                                     className="stats"
                         >
-                                    <span
-                                                className="icon-stats"
+                                    <div
+                                                className="icon---default"
                                     >
                                                 <img
-                                                            alt="likes"
+                                                            alt="thumbs-up"
+                                                            className="p-r--5"
                                                             src="thumbs-up.svg"
                                                 />
-                                                
-                                    </span>
+                                                <span
+                                                            className="text--small"
+                                                />
+                                    </div>
                                     <span
                                                 className="icon-stats"
                                     />
@@ -512,15 +542,18 @@ ShallowWrapper {
                 <div
                                 className="stats"
                 >
-                                <span
-                                                className="icon-stats"
+                                <div
+                                                className="icon---default"
                                 >
                                                 <img
-                                                                alt="likes"
+                                                                alt="thumbs-up"
+                                                                className="p-r--5"
                                                                 src="thumbs-up.svg"
                                                 />
-                                                
-                                </span>
+                                                <span
+                                                                className="text--small"
+                                                />
+                                </div>
                                 <span
                                                 className="icon-stats"
                                 />
@@ -677,15 +710,18 @@ ShallowWrapper {
                 "children": <div
                   className="stats"
 >
-                  <span
-                                    className="icon-stats"
+                  <div
+                                    className="icon---default"
                   >
                                     <img
-                                                      alt="likes"
+                                                      alt="thumbs-up"
+                                                      className="p-r--5"
                                                       src="thumbs-up.svg"
                                     />
-                                    
-                  </span>
+                                    <span
+                                                      className="text--small"
+                                    />
+                  </div>
                   <span
                                     className="icon-stats"
                   />
@@ -699,15 +735,18 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    <span
-                      className="icon-stats"
+                    <div
+                      className="icon---default"
 >
                       <img
-                                            alt="likes"
+                                            alt="thumbs-up"
+                                            className="p-r--5"
                                             src="thumbs-up.svg"
                       />
-                      
-</span>,
+                      <span
+                                            className="text--small"
+                      />
+</div>,
                     <span
                       className="icon-stats"
 />,
@@ -723,12 +762,15 @@ ShallowWrapper {
                     "props": Object {
                       "children": Array [
                         <img
-                          alt="likes"
+                          alt="thumbs-up"
+                          className="p-r--5"
                           src="thumbs-up.svg"
 />,
-                        "",
+                        <span
+                          className="text--small"
+/>,
                       ],
-                      "className": "icon-stats",
+                      "className": "icon---default",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -737,16 +779,28 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "host",
                         "props": Object {
-                          "alt": "likes",
+                          "alt": "thumbs-up",
+                          "className": "p-r--5",
                           "src": "thumbs-up.svg",
                         },
                         "ref": null,
                         "rendered": null,
                         "type": "img",
                       },
-                      "",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "",
+                          "className": "text--small",
+                        },
+                        "ref": null,
+                        "rendered": "",
+                        "type": "span",
+                      },
                     ],
-                    "type": "span",
+                    "type": "div",
                   },
                   Object {
                     "instance": null,
