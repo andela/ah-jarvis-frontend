@@ -7,6 +7,13 @@ import capitalize from '../../utils/capitalize';
 import getCurrentUser from '../../utils/auth';
 import ROUTES from '../../utils/routes';
 
+const renderTime = readtime => (
+  <React.Fragment>
+    <span className="p-r--5 p-l--5">.</span>
+    {`${readtime} min read`}
+  </React.Fragment>
+);
+
 const AuthorDetails = ({
   user, date, small, averageRate, onStarClick, readtime,
 }) => (
@@ -31,15 +38,9 @@ const AuthorDetails = ({
             year: 'numeric',
           })}
           {small ? (
-            <React.Fragment>
-              <span className="p-r--5 p-l--5">.</span>
-              {`${readtime} min read`}
-            </React.Fragment>
+            renderTime(readtime)
           ) : (
-            <React.Fragment>
-              <span className="p-r--5 p-l--5">.</span>
-              {`${readtime} min read`}
-            </React.Fragment>
+            renderTime(readtime)
           ) }
           <span className="p-r--10 p-l--10">.</span>
 
