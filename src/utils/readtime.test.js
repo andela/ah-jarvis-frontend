@@ -1,9 +1,9 @@
 import readTime from './readtime';
-import testData from './testData';
+import editorstate from './editorstate';
 
 describe('ReadTime ', () => {
   it('Should return a value. ', () => {
-    const value = readTime(testData.testBlock.body);
-    expect(value).toBe(1);
+    const value = readTime(editorstate);
+    expect(value).toBe(0);
   });
 });
