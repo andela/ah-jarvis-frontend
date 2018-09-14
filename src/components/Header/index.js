@@ -7,6 +7,7 @@ import ROUTES from '../../utils/routes';
 
 import notification from '../../assets/icons/bell.svg';
 import search from '../../assets/icons/search.svg';
+import config from '../../config';
 
 
 class Header extends React.Component {
@@ -25,7 +26,7 @@ class Header extends React.Component {
         <React.Fragment>
           <a className="dropdown-trigger black-text" href="!#" data-target="profile">
             <img
-              src={user.image}
+              src={user.image ? user.image : config.DEFAULT_USER_AVATAR}
               alt=""
               className="responsive-img small--avatar circle-img"
             />
