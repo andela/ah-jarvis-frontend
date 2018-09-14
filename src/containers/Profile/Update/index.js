@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import M from 'materialize-css';
 import updateUser from './actions';
 import validateInput from '../../../utils/validateInput';
 import uploader from '../../../utils/uploader';
+import ProfileInput from '../../../components/ProfileInput';
+import Header from '../../../components/Header';
 
 class UpdateProfile extends Component {
   state = {
@@ -85,8 +88,12 @@ class UpdateProfile extends Component {
       .catch(err => console.log(err));
   };
 
+  toaster = () => {
+    M.toast({ html: 'Your profile has been successfully updated', classes: 'success' });
+  };
+
   render() {
-    const { isFetching } = this.props.edit;
+    const { success, isFetching } = this.props.edit;
     if (this.state.uploaded === 100) {
       this.setState({
         uploaded: null,
@@ -94,68 +101,74 @@ class UpdateProfile extends Component {
     }
 
     return (
-      <div className="container container--medium">
-        {/* Main */}
-        <div className="row m-t--20">
-          {/* User Profile */}
-          <div className="row p-t--20 p-b--20">
-            <div className="col s12 m9">
-              <div className="m-b--15">
-                <input
-                  className="input-edit input-edit--large"
-                  value={this.state.profile.username}
-                  name="username"
-                  onChange={this.handleChange}
-                  placeholder="Edit your username"
-                />
-                <span className="green-text small">{this.state.validation.username}</span>
-              </div>
-
-              <div className="m-b--15 p-r--100">
-                <input
-                  className="input-edit input-edit--small"
-                  value={this.state.profile.bio}
-                  name="bio"
-                  onChange={this.handleChange}
-                  placeholder="Edit your bio"
-                />
-                <span className="green-text small">{this.state.validation.bio}</span>
-              </div>
-
-              <div className="m-b--15">
-                <button
-                  type="submit"
-                  className="waves-effect waves-light btn btn--rounded"
-                  onClick={this.handleSubmit}
-                  disabled={isFetching}
-                >
-                  {isFetching ? 'Saving...' : 'Save'}
-                </button>
-              </div>
-            </div>
-            <div className="col s12 m3">
-              <div className="edit-hover">
-                <label htmlFor="image">
-                  <img
-                    className={`circle avatar--profile image ${
-                      this.state.uploaded ? 'image-loading' : ''
-                    }`}
-                    src={this.state.profile.image}
-                    alt={this.state.profile.username}
+      <div>
+        <Header />
+        <div className="container container--medium">
+          {success && this.toaster()}
+          {/* Main */}
+          <div className="row m-t--20">
+            {/* User Profile */}
+            <div className="row p-t--20 p-b--20">
+              <div className="col s12 m9">
+                <div className="m-b--15">
+                  <ProfileInput
+                    type="text"
+                    classValue="input-edit input-edit--large"
+                    value={this.state.profile.username}
+                    name="username"
+                    onChange={this.handleChange}
+                    holder="Edit your username"
+                    validation={this.state.validation.username}
                   />
-                  <div className="toggle">
-                    <div className={this.state.uploaded ? 'toggle-loading' : 'toggle-text'}>
-                      {this.state.uploaded && `${this.state.uploaded}%`}
+                </div>
+
+                <div className="m-b--15 p-r--100">
+                  <ProfileInput
+                    type="text"
+                    classValue="input-edit input-edit--small"
+                    value={this.state.profile.bio}
+                    name="bio"
+                    onChange={this.handleChange}
+                    holder="Edit your bio"
+                    validation={this.state.validation.bio}
+                  />
+                </div>
+
+                <div className="m-b--15">
+                  <button
+                    type="submit"
+                    className="waves-effect waves-light btn btn--rounded"
+                    onClick={this.handleSubmit}
+                    disabled={isFetching}
+                  >
+                    {isFetching ? 'Saving...' : 'Save'}
+                  </button>
+                </div>
+              </div>
+              <div className="col s12 m3">
+                <div className="edit-hover">
+                  <label htmlFor="image">
+                    <img
+                      className={`circle avatar--profile image ${
+                        this.state.uploaded ? 'image-loading' : ''
+                      }`}
+                      src={this.state.profile.image}
+                      alt={this.state.profile.username}
+                    />
+                    <div className="toggle">
+                      <div className={this.state.uploaded ? 'toggle-loading' : 'toggle-text'}>
+                        {this.state.uploaded && `${this.state.uploaded}%`}
+                      </div>
                     </div>
-                  </div>
-                </label>
-                <input
-                  id="image"
-                  className="change-image"
-                  type="file"
-                  onChange={this.handleUpload}
-                  ref={this.state.fileInput}
-                />
+                  </label>
+                  <input
+                    id="image"
+                    className="change-image"
+                    type="file"
+                    onChange={this.handleUpload}
+                    ref={this.state.fileInput}
+                  />
+                </div>
               </div>
             </div>
           </div>
