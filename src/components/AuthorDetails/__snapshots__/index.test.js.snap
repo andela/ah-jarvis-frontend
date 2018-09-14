@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<AuthorDetails /> renders  <AuthorDetails /> components 1`] = `
+exports[`<AuthorDetails /> renders  <AuthorDetails /> components  without small 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <AuthorDetails
@@ -28,17 +28,22 @@ ShallowWrapper {
         <div
           className="author col m9"
 >
-          <div
-                    className="author__avatar"
+          <Link
+                    replace={false}
+                    to="/"
           >
-                    <img
-                              alt=""
-                              className="responsive-img circle avatar--medium"
-                              src={undefined}
-                    />
-          </div>
+                    <div
+                              className="author__avatar"
+                    >
+                              <img
+                                        alt=""
+                                        className="responsive-img circle avatar--small"
+                                        src={undefined}
+                              />
+                    </div>
+          </Link>
           <div
-                    className="author_details"
+                    className="author_details undefined"
           >
                     <div
                               className="author__info"
@@ -46,40 +51,54 @@ ShallowWrapper {
                               <div
                                         className="author-name"
                               >
-                                        <p>
+                                        <Link
+                                                  className="text--small"
+                                                  replace={false}
+                                                  to="/profile/test user"
+                                        >
                                                   Test User
-                                        </p>
+                                        </Link>
                               </div>
-                              <button
+                              <a
                                         className="btn-flat btn-flat--primary"
-                                        type="button"
+                                        href="#!"
                               >
                                         Follow
-                              </button>
+                              </a>
                     </div>
                     <div
                               className="article__highlights"
                     >
                               Invalid Date
+                              <Unknown>
+                                        <span
+                                                  className="p-r--5 p-l--5"
+                                        >
+                                                  .
+                                        </span>
+                                        13 min read
+                              </Unknown>
                               <span
                                         className="p-r--10 p-l--10"
                               >
                                         .
                               </span>
-                              <span
-                                        className="p-r--10 p-l--10"
-                              >
-                                        <StarRatingComponent
-                                                  editing={true}
-                                                  emptyStarColor="#ccc"
-                                                  name="rate1"
-                                                  onStarClick={undefined}
-                                                  starColor="#03a87c"
-                                                  starCount={5}
-                                                  value={undefined}
-                                        />
-                              </span>
-                              <p />
+                              <Unknown>
+                                        <span
+                                                  className="p-r--10 p-l--10"
+                                        >
+                                                  <StarRatingComponent
+                                                            editing={true}
+                                                            emptyStarColor="#ccc"
+                                                            name="rate1"
+                                                            onStarClick={undefined}
+                                                            starColor="#03a87c"
+                                                            starCount={5}
+                                                            value={undefined}
+                                                  />
+                                        </span>
+                                        <p />
+                              </Unknown>
                     </div>
           </div>
 </div>,
@@ -88,14 +107,7 @@ ShallowWrapper {
 >
           <div
                     className="m-t--15"
-          >
-                    <button
-                              className="btn-flat btn-flat--primary"
-                              type="button"
-                    >
-                              Edit Article
-                    </button>
-          </div>
+          />
 </div>,
       ],
       "className": "row",
@@ -108,17 +120,22 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <div
-              className="author__avatar"
+            <Link
+              replace={false}
+              to="/"
 >
-              <img
-                            alt=""
-                            className="responsive-img circle avatar--medium"
-                            src={undefined}
-              />
-</div>,
+              <div
+                            className="author__avatar"
+              >
+                            <img
+                                          alt=""
+                                          className="responsive-img circle avatar--small"
+                                          src={undefined}
+                            />
+              </div>
+</Link>,
             <div
-              className="author_details"
+              className="author_details undefined"
 >
               <div
                             className="author__info"
@@ -126,40 +143,54 @@ ShallowWrapper {
                             <div
                                           className="author-name"
                             >
-                                          <p>
+                                          <Link
+                                                        className="text--small"
+                                                        replace={false}
+                                                        to="/profile/test user"
+                                          >
                                                         Test User
-                                          </p>
+                                          </Link>
                             </div>
-                            <button
+                            <a
                                           className="btn-flat btn-flat--primary"
-                                          type="button"
+                                          href="#!"
                             >
                                           Follow
-                            </button>
+                            </a>
               </div>
               <div
                             className="article__highlights"
               >
                             Invalid Date
+                            <Unknown>
+                                          <span
+                                                        className="p-r--5 p-l--5"
+                                          >
+                                                        .
+                                          </span>
+                                          13 min read
+                            </Unknown>
                             <span
                                           className="p-r--10 p-l--10"
                             >
                                           .
                             </span>
-                            <span
-                                          className="p-r--10 p-l--10"
-                            >
-                                          <StarRatingComponent
-                                                        editing={true}
-                                                        emptyStarColor="#ccc"
-                                                        name="rate1"
-                                                        onStarClick={undefined}
-                                                        starColor="#03a87c"
-                                                        starCount={5}
-                                                        value={undefined}
-                                          />
-                            </span>
-                            <p />
+                            <Unknown>
+                                          <span
+                                                        className="p-r--10 p-l--10"
+                                          >
+                                                        <StarRatingComponent
+                                                                      editing={true}
+                                                                      emptyStarColor="#ccc"
+                                                                      name="rate1"
+                                                                      onStarClick={undefined}
+                                                                      starColor="#03a87c"
+                                                                      starCount={5}
+                                                                      value={undefined}
+                                                        />
+                                          </span>
+                                          <p />
+                            </Unknown>
               </div>
 </div>,
           ],
@@ -170,14 +201,19 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "class",
             "props": Object {
-              "children": <img
-                alt=""
-                className="responsive-img circle avatar--medium"
-                src={undefined}
-/>,
-              "className": "author__avatar",
+              "children": <div
+                className="author__avatar"
+>
+                <img
+                                alt=""
+                                className="responsive-img circle avatar--small"
+                                src={undefined}
+                />
+</div>,
+              "replace": false,
+              "to": "/",
             },
             "ref": null,
             "rendered": Object {
@@ -185,15 +221,30 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "alt": "",
-                "className": "responsive-img circle avatar--medium",
-                "src": undefined,
+                "children": <img
+                  alt=""
+                  className="responsive-img circle avatar--small"
+                  src={undefined}
+/>,
+                "className": "author__avatar",
               },
               "ref": null,
-              "rendered": null,
-              "type": "img",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "",
+                  "className": "responsive-img circle avatar--small",
+                  "src": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": "div",
             },
-            "type": "div",
+            "type": [Function],
           },
           Object {
             "instance": null,
@@ -207,43 +258,57 @@ ShallowWrapper {
                   <div
                                     className="author-name"
                   >
-                                    <p>
+                                    <Link
+                                                      className="text--small"
+                                                      replace={false}
+                                                      to="/profile/test user"
+                                    >
                                                       Test User
-                                    </p>
+                                    </Link>
                   </div>
-                  <button
+                  <a
                                     className="btn-flat btn-flat--primary"
-                                    type="button"
+                                    href="#!"
                   >
                                     Follow
-                  </button>
+                  </a>
 </div>,
                 <div
                   className="article__highlights"
 >
                   Invalid Date
+                  <Unknown>
+                                    <span
+                                                      className="p-r--5 p-l--5"
+                                    >
+                                                      .
+                                    </span>
+                                    13 min read
+                  </Unknown>
                   <span
                                     className="p-r--10 p-l--10"
                   >
                                     .
                   </span>
-                  <span
-                                    className="p-r--10 p-l--10"
-                  >
-                                    <StarRatingComponent
-                                                      editing={true}
-                                                      emptyStarColor="#ccc"
-                                                      name="rate1"
-                                                      onStarClick={undefined}
-                                                      starColor="#03a87c"
-                                                      starCount={5}
-                                                      value={undefined}
-                                    />
-                  </span>
-                  <p />
+                  <Unknown>
+                                    <span
+                                                      className="p-r--10 p-l--10"
+                                    >
+                                                      <StarRatingComponent
+                                                                        editing={true}
+                                                                        emptyStarColor="#ccc"
+                                                                        name="rate1"
+                                                                        onStarClick={undefined}
+                                                                        starColor="#03a87c"
+                                                                        starCount={5}
+                                                                        value={undefined}
+                                                      />
+                                    </span>
+                                    <p />
+                  </Unknown>
 </div>,
               ],
-              "className": "author_details",
+              "className": "author_details undefined",
             },
             "ref": null,
             "rendered": Array [
@@ -256,16 +321,20 @@ ShallowWrapper {
                     <div
                       className="author-name"
 >
-                      <p>
+                      <Link
+                                            className="text--small"
+                                            replace={false}
+                                            to="/profile/test user"
+                      >
                                             Test User
-                      </p>
+                      </Link>
 </div>,
-                    <button
+                    <a
                       className="btn-flat btn-flat--primary"
-                      type="button"
+                      href="#!"
 >
                       Follow
-</button>,
+</a>,
                   ],
                   "className": "author__info",
                 },
@@ -276,22 +345,29 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": <p>
+                      "children": <Link
+                        className="text--small"
+                        replace={false}
+                        to="/profile/test user"
+>
                         Test User
-</p>,
+</Link>,
                       "className": "author-name",
                     },
                     "ref": null,
                     "rendered": Object {
                       "instance": null,
                       "key": undefined,
-                      "nodeType": "host",
+                      "nodeType": "class",
                       "props": Object {
                         "children": "Test User",
+                        "className": "text--small",
+                        "replace": false,
+                        "to": "/profile/test user",
                       },
                       "ref": null,
                       "rendered": "Test User",
-                      "type": "p",
+                      "type": [Function],
                     },
                     "type": "div",
                   },
@@ -302,11 +378,11 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Follow",
                       "className": "btn-flat btn-flat--primary",
-                      "type": "button",
+                      "href": "#!",
                     },
                     "ref": null,
                     "rendered": "Follow",
-                    "type": "button",
+                    "type": "a",
                   },
                 ],
                 "type": "div",
@@ -318,31 +394,73 @@ ShallowWrapper {
                 "props": Object {
                   "children": Array [
                     "Invalid Date",
+                    <Unknown>
+                      <span
+                                            className="p-r--5 p-l--5"
+                      >
+                                            .
+                      </span>
+                      13 min read
+</Unknown>,
                     <span
                       className="p-r--10 p-l--10"
 >
                       .
 </span>,
-                    <span
-                      className="p-r--10 p-l--10"
->
-                      <StarRatingComponent
-                                            editing={true}
-                                            emptyStarColor="#ccc"
-                                            name="rate1"
-                                            onStarClick={undefined}
-                                            starColor="#03a87c"
-                                            starCount={5}
-                                            value={undefined}
-                      />
-</span>,
-                    <p />,
+                    <Unknown>
+                      <span
+                                            className="p-r--10 p-l--10"
+                      >
+                                            <StarRatingComponent
+                                                                  editing={true}
+                                                                  emptyStarColor="#ccc"
+                                                                  name="rate1"
+                                                                  onStarClick={undefined}
+                                                                  starColor="#03a87c"
+                                                                  starCount={5}
+                                                                  value={undefined}
+                                            />
+                      </span>
+                      <p />
+</Unknown>,
                   ],
                   "className": "article__highlights",
                 },
                 "ref": null,
                 "rendered": Array [
                   "Invalid Date",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": Array [
+                        <span
+                          className="p-r--5 p-l--5"
+>
+                          .
+</span>,
+                        "13 min read",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": ".",
+                          "className": "p-r--5 p-l--5",
+                        },
+                        "ref": null,
+                        "rendered": ".",
+                        "type": "span",
+                      },
+                      "13 min read",
+                    ],
+                    "type": Symbol(react.fragment),
+                  },
                   Object {
                     "instance": null,
                     "key": undefined,
@@ -358,49 +476,76 @@ ShallowWrapper {
                   Object {
                     "instance": null,
                     "key": undefined,
-                    "nodeType": "host",
+                    "nodeType": "function",
                     "props": Object {
-                      "children": <StarRatingComponent
-                        editing={true}
-                        emptyStarColor="#ccc"
-                        name="rate1"
-                        onStarClick={undefined}
-                        starColor="#03a87c"
-                        starCount={5}
-                        value={undefined}
+                      "children": Array [
+                        <span
+                          className="p-r--10 p-l--10"
+>
+                          <StarRatingComponent
+                                                    editing={true}
+                                                    emptyStarColor="#ccc"
+                                                    name="rate1"
+                                                    onStarClick={undefined}
+                                                    starColor="#03a87c"
+                                                    starCount={5}
+                                                    value={undefined}
+                          />
+</span>,
+                        <p />,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": <StarRatingComponent
+                            editing={true}
+                            emptyStarColor="#ccc"
+                            name="rate1"
+                            onStarClick={undefined}
+                            starColor="#03a87c"
+                            starCount={5}
+                            value={undefined}
 />,
-                      "className": "p-r--10 p-l--10",
-                    },
-                    "ref": null,
-                    "rendered": Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "class",
-                      "props": Object {
-                        "editing": true,
-                        "emptyStarColor": "#ccc",
-                        "name": "rate1",
-                        "onStarClick": undefined,
-                        "starColor": "#03a87c",
-                        "starCount": 5,
-                        "value": undefined,
+                          "className": "p-r--10 p-l--10",
+                        },
+                        "ref": null,
+                        "rendered": Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "editing": true,
+                            "emptyStarColor": "#ccc",
+                            "name": "rate1",
+                            "onStarClick": undefined,
+                            "starColor": "#03a87c",
+                            "starCount": 5,
+                            "value": undefined,
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                        "type": "span",
                       },
-                      "ref": null,
-                      "rendered": null,
-                      "type": [Function],
-                    },
-                    "type": "span",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": undefined,
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": "p",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": undefined,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "p",
+                      },
+                    ],
+                    "type": Symbol(react.fragment),
                   },
                 ],
                 "type": "div",
@@ -418,14 +563,7 @@ ShallowWrapper {
         "props": Object {
           "children": <div
             className="m-t--15"
->
-            <button
-                        className="btn-flat btn-flat--primary"
-                        type="button"
-            >
-                        Edit Article
-            </button>
-</div>,
+/>,
           "className": "col m3",
         },
         "ref": null,
@@ -434,28 +572,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <button
-              className="btn-flat btn-flat--primary"
-              type="button"
->
-              Edit Article
-</button>,
+            "children": null,
             "className": "m-t--15",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Edit Article",
-              "className": "btn-flat btn-flat--primary",
-              "type": "button",
-            },
-            "ref": null,
-            "rendered": "Edit Article",
-            "type": "button",
-          },
+          "rendered": null,
           "type": "div",
         },
         "type": "div",
@@ -473,17 +594,22 @@ ShallowWrapper {
           <div
             className="author col m9"
 >
-            <div
-                        className="author__avatar"
+            <Link
+                        replace={false}
+                        to="/"
             >
-                        <img
-                                    alt=""
-                                    className="responsive-img circle avatar--medium"
-                                    src={undefined}
-                        />
-            </div>
+                        <div
+                                    className="author__avatar"
+                        >
+                                    <img
+                                                alt=""
+                                                className="responsive-img circle avatar--small"
+                                                src={undefined}
+                                    />
+                        </div>
+            </Link>
             <div
-                        className="author_details"
+                        className="author_details undefined"
             >
                         <div
                                     className="author__info"
@@ -491,40 +617,54 @@ ShallowWrapper {
                                     <div
                                                 className="author-name"
                                     >
-                                                <p>
+                                                <Link
+                                                            className="text--small"
+                                                            replace={false}
+                                                            to="/profile/test user"
+                                                >
                                                             Test User
-                                                </p>
+                                                </Link>
                                     </div>
-                                    <button
+                                    <a
                                                 className="btn-flat btn-flat--primary"
-                                                type="button"
+                                                href="#!"
                                     >
                                                 Follow
-                                    </button>
+                                    </a>
                         </div>
                         <div
                                     className="article__highlights"
                         >
                                     Invalid Date
+                                    <Unknown>
+                                                <span
+                                                            className="p-r--5 p-l--5"
+                                                >
+                                                            .
+                                                </span>
+                                                13 min read
+                                    </Unknown>
                                     <span
                                                 className="p-r--10 p-l--10"
                                     >
                                                 .
                                     </span>
-                                    <span
-                                                className="p-r--10 p-l--10"
-                                    >
-                                                <StarRatingComponent
-                                                            editing={true}
-                                                            emptyStarColor="#ccc"
-                                                            name="rate1"
-                                                            onStarClick={undefined}
-                                                            starColor="#03a87c"
-                                                            starCount={5}
-                                                            value={undefined}
-                                                />
-                                    </span>
-                                    <p />
+                                    <Unknown>
+                                                <span
+                                                            className="p-r--10 p-l--10"
+                                                >
+                                                            <StarRatingComponent
+                                                                        editing={true}
+                                                                        emptyStarColor="#ccc"
+                                                                        name="rate1"
+                                                                        onStarClick={undefined}
+                                                                        starColor="#03a87c"
+                                                                        starCount={5}
+                                                                        value={undefined}
+                                                            />
+                                                </span>
+                                                <p />
+                                    </Unknown>
                         </div>
             </div>
 </div>,
@@ -533,14 +673,7 @@ ShallowWrapper {
 >
             <div
                         className="m-t--15"
-            >
-                        <button
-                                    className="btn-flat btn-flat--primary"
-                                    type="button"
-                        >
-                                    Edit Article
-                        </button>
-            </div>
+            />
 </div>,
         ],
         "className": "row",
@@ -553,17 +686,22 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <div
-                className="author__avatar"
+              <Link
+                replace={false}
+                to="/"
 >
-                <img
-                                alt=""
-                                className="responsive-img circle avatar--medium"
-                                src={undefined}
-                />
-</div>,
+                <div
+                                className="author__avatar"
+                >
+                                <img
+                                                alt=""
+                                                className="responsive-img circle avatar--small"
+                                                src={undefined}
+                                />
+                </div>
+</Link>,
               <div
-                className="author_details"
+                className="author_details undefined"
 >
                 <div
                                 className="author__info"
@@ -571,40 +709,54 @@ ShallowWrapper {
                                 <div
                                                 className="author-name"
                                 >
-                                                <p>
+                                                <Link
+                                                                className="text--small"
+                                                                replace={false}
+                                                                to="/profile/test user"
+                                                >
                                                                 Test User
-                                                </p>
+                                                </Link>
                                 </div>
-                                <button
+                                <a
                                                 className="btn-flat btn-flat--primary"
-                                                type="button"
+                                                href="#!"
                                 >
                                                 Follow
-                                </button>
+                                </a>
                 </div>
                 <div
                                 className="article__highlights"
                 >
                                 Invalid Date
+                                <Unknown>
+                                                <span
+                                                                className="p-r--5 p-l--5"
+                                                >
+                                                                .
+                                                </span>
+                                                13 min read
+                                </Unknown>
                                 <span
                                                 className="p-r--10 p-l--10"
                                 >
                                                 .
                                 </span>
-                                <span
-                                                className="p-r--10 p-l--10"
-                                >
-                                                <StarRatingComponent
-                                                                editing={true}
-                                                                emptyStarColor="#ccc"
-                                                                name="rate1"
-                                                                onStarClick={undefined}
-                                                                starColor="#03a87c"
-                                                                starCount={5}
-                                                                value={undefined}
-                                                />
-                                </span>
-                                <p />
+                                <Unknown>
+                                                <span
+                                                                className="p-r--10 p-l--10"
+                                                >
+                                                                <StarRatingComponent
+                                                                                editing={true}
+                                                                                emptyStarColor="#ccc"
+                                                                                name="rate1"
+                                                                                onStarClick={undefined}
+                                                                                starColor="#03a87c"
+                                                                                starCount={5}
+                                                                                value={undefined}
+                                                                />
+                                                </span>
+                                                <p />
+                                </Unknown>
                 </div>
 </div>,
             ],
@@ -615,14 +767,19 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "class",
               "props": Object {
-                "children": <img
-                  alt=""
-                  className="responsive-img circle avatar--medium"
-                  src={undefined}
-/>,
-                "className": "author__avatar",
+                "children": <div
+                  className="author__avatar"
+>
+                  <img
+                                    alt=""
+                                    className="responsive-img circle avatar--small"
+                                    src={undefined}
+                  />
+</div>,
+                "replace": false,
+                "to": "/",
               },
               "ref": null,
               "rendered": Object {
@@ -630,15 +787,30 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "alt": "",
-                  "className": "responsive-img circle avatar--medium",
-                  "src": undefined,
+                  "children": <img
+                    alt=""
+                    className="responsive-img circle avatar--small"
+                    src={undefined}
+/>,
+                  "className": "author__avatar",
                 },
                 "ref": null,
-                "rendered": null,
-                "type": "img",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "",
+                    "className": "responsive-img circle avatar--small",
+                    "src": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "type": "div",
               },
-              "type": "div",
+              "type": [Function],
             },
             Object {
               "instance": null,
@@ -652,43 +824,57 @@ ShallowWrapper {
                     <div
                                         className="author-name"
                     >
-                                        <p>
+                                        <Link
+                                                            className="text--small"
+                                                            replace={false}
+                                                            to="/profile/test user"
+                                        >
                                                             Test User
-                                        </p>
+                                        </Link>
                     </div>
-                    <button
+                    <a
                                         className="btn-flat btn-flat--primary"
-                                        type="button"
+                                        href="#!"
                     >
                                         Follow
-                    </button>
+                    </a>
 </div>,
                   <div
                     className="article__highlights"
 >
                     Invalid Date
+                    <Unknown>
+                                        <span
+                                                            className="p-r--5 p-l--5"
+                                        >
+                                                            .
+                                        </span>
+                                        13 min read
+                    </Unknown>
                     <span
                                         className="p-r--10 p-l--10"
                     >
                                         .
                     </span>
-                    <span
-                                        className="p-r--10 p-l--10"
-                    >
-                                        <StarRatingComponent
-                                                            editing={true}
-                                                            emptyStarColor="#ccc"
-                                                            name="rate1"
-                                                            onStarClick={undefined}
-                                                            starColor="#03a87c"
-                                                            starCount={5}
-                                                            value={undefined}
-                                        />
-                    </span>
-                    <p />
+                    <Unknown>
+                                        <span
+                                                            className="p-r--10 p-l--10"
+                                        >
+                                                            <StarRatingComponent
+                                                                                editing={true}
+                                                                                emptyStarColor="#ccc"
+                                                                                name="rate1"
+                                                                                onStarClick={undefined}
+                                                                                starColor="#03a87c"
+                                                                                starCount={5}
+                                                                                value={undefined}
+                                                            />
+                                        </span>
+                                        <p />
+                    </Unknown>
 </div>,
                 ],
-                "className": "author_details",
+                "className": "author_details undefined",
               },
               "ref": null,
               "rendered": Array [
@@ -701,16 +887,20 @@ ShallowWrapper {
                       <div
                         className="author-name"
 >
-                        <p>
+                        <Link
+                                                className="text--small"
+                                                replace={false}
+                                                to="/profile/test user"
+                        >
                                                 Test User
-                        </p>
+                        </Link>
 </div>,
-                      <button
+                      <a
                         className="btn-flat btn-flat--primary"
-                        type="button"
+                        href="#!"
 >
                         Follow
-</button>,
+</a>,
                     ],
                     "className": "author__info",
                   },
@@ -721,22 +911,29 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": <p>
+                        "children": <Link
+                          className="text--small"
+                          replace={false}
+                          to="/profile/test user"
+>
                           Test User
-</p>,
+</Link>,
                         "className": "author-name",
                       },
                       "ref": null,
                       "rendered": Object {
                         "instance": null,
                         "key": undefined,
-                        "nodeType": "host",
+                        "nodeType": "class",
                         "props": Object {
                           "children": "Test User",
+                          "className": "text--small",
+                          "replace": false,
+                          "to": "/profile/test user",
                         },
                         "ref": null,
                         "rendered": "Test User",
-                        "type": "p",
+                        "type": [Function],
                       },
                       "type": "div",
                     },
@@ -747,11 +944,11 @@ ShallowWrapper {
                       "props": Object {
                         "children": "Follow",
                         "className": "btn-flat btn-flat--primary",
-                        "type": "button",
+                        "href": "#!",
                       },
                       "ref": null,
                       "rendered": "Follow",
-                      "type": "button",
+                      "type": "a",
                     },
                   ],
                   "type": "div",
@@ -763,31 +960,73 @@ ShallowWrapper {
                   "props": Object {
                     "children": Array [
                       "Invalid Date",
+                      <Unknown>
+                        <span
+                                                className="p-r--5 p-l--5"
+                        >
+                                                .
+                        </span>
+                        13 min read
+</Unknown>,
                       <span
                         className="p-r--10 p-l--10"
 >
                         .
 </span>,
-                      <span
-                        className="p-r--10 p-l--10"
->
-                        <StarRatingComponent
-                                                editing={true}
-                                                emptyStarColor="#ccc"
-                                                name="rate1"
-                                                onStarClick={undefined}
-                                                starColor="#03a87c"
-                                                starCount={5}
-                                                value={undefined}
-                        />
-</span>,
-                      <p />,
+                      <Unknown>
+                        <span
+                                                className="p-r--10 p-l--10"
+                        >
+                                                <StarRatingComponent
+                                                                        editing={true}
+                                                                        emptyStarColor="#ccc"
+                                                                        name="rate1"
+                                                                        onStarClick={undefined}
+                                                                        starColor="#03a87c"
+                                                                        starCount={5}
+                                                                        value={undefined}
+                                                />
+                        </span>
+                        <p />
+</Unknown>,
                     ],
                     "className": "article__highlights",
                   },
                   "ref": null,
                   "rendered": Array [
                     "Invalid Date",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="p-r--5 p-l--5"
+>
+                            .
+</span>,
+                          "13 min read",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": ".",
+                            "className": "p-r--5 p-l--5",
+                          },
+                          "ref": null,
+                          "rendered": ".",
+                          "type": "span",
+                        },
+                        "13 min read",
+                      ],
+                      "type": Symbol(react.fragment),
+                    },
                     Object {
                       "instance": null,
                       "key": undefined,
@@ -803,49 +1042,76 @@ ShallowWrapper {
                     Object {
                       "instance": null,
                       "key": undefined,
-                      "nodeType": "host",
+                      "nodeType": "function",
                       "props": Object {
-                        "children": <StarRatingComponent
-                          editing={true}
-                          emptyStarColor="#ccc"
-                          name="rate1"
-                          onStarClick={undefined}
-                          starColor="#03a87c"
-                          starCount={5}
-                          value={undefined}
+                        "children": Array [
+                          <span
+                            className="p-r--10 p-l--10"
+>
+                            <StarRatingComponent
+                                                        editing={true}
+                                                        emptyStarColor="#ccc"
+                                                        name="rate1"
+                                                        onStarClick={undefined}
+                                                        starColor="#03a87c"
+                                                        starCount={5}
+                                                        value={undefined}
+                            />
+</span>,
+                          <p />,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": <StarRatingComponent
+                              editing={true}
+                              emptyStarColor="#ccc"
+                              name="rate1"
+                              onStarClick={undefined}
+                              starColor="#03a87c"
+                              starCount={5}
+                              value={undefined}
 />,
-                        "className": "p-r--10 p-l--10",
-                      },
-                      "ref": null,
-                      "rendered": Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "class",
-                        "props": Object {
-                          "editing": true,
-                          "emptyStarColor": "#ccc",
-                          "name": "rate1",
-                          "onStarClick": undefined,
-                          "starColor": "#03a87c",
-                          "starCount": 5,
-                          "value": undefined,
+                            "className": "p-r--10 p-l--10",
+                          },
+                          "ref": null,
+                          "rendered": Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "class",
+                            "props": Object {
+                              "editing": true,
+                              "emptyStarColor": "#ccc",
+                              "name": "rate1",
+                              "onStarClick": undefined,
+                              "starColor": "#03a87c",
+                              "starCount": 5,
+                              "value": undefined,
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": [Function],
+                          },
+                          "type": "span",
                         },
-                        "ref": null,
-                        "rendered": null,
-                        "type": [Function],
-                      },
-                      "type": "span",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": undefined,
-                      },
-                      "ref": null,
-                      "rendered": null,
-                      "type": "p",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": undefined,
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "p",
+                        },
+                      ],
+                      "type": Symbol(react.fragment),
                     },
                   ],
                   "type": "div",
@@ -863,14 +1129,7 @@ ShallowWrapper {
           "props": Object {
             "children": <div
               className="m-t--15"
->
-              <button
-                            className="btn-flat btn-flat--primary"
-                            type="button"
-              >
-                            Edit Article
-              </button>
-</div>,
+/>,
             "className": "col m3",
           },
           "ref": null,
@@ -879,13 +1138,212 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <button
-                className="btn-flat btn-flat--primary"
-                type="button"
->
-                Edit Article
-</button>,
+              "children": null,
               "className": "m-t--15",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
+exports[`<AuthorDetails /> renders  <AuthorDetails /> components 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AuthorDetails
+    date=""
+    small={true}
+    user={
+        Object {
+            "username": "test user",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="author false"
+>
+          <Link
+                    replace={false}
+                    to="/"
+          >
+                    <div
+                              className="author__avatar"
+                    >
+                              <img
+                                        alt=""
+                                        className="responsive-img circle avatar--small"
+                                        src={undefined}
+                              />
+                    </div>
+          </Link>
+          <div
+                    className="author_details author--small"
+          >
+                    <div
+                              className="author__info"
+                    >
+                              <div
+                                        className="author-name"
+                              >
+                                        <Link
+                                                  className="text--small"
+                                                  replace={false}
+                                                  to="/profile/test user"
+                                        >
+                                                  Test User
+                                        </Link>
+                              </div>
+                    </div>
+                    <div
+                              className="article__highlights"
+                    >
+                              Invalid Date
+                              <Unknown>
+                                        <span
+                                                  className="p-r--5 p-l--5"
+                                        >
+                                                  .
+                                        </span>
+                                        13 min read
+                              </Unknown>
+                              <span
+                                        className="p-r--10 p-l--10"
+                              >
+                                        .
+                              </span>
+                    </div>
+          </div>
+</div>,
+        <div
+          className="col m3"
+>
+          <div
+                    className="m-t--15"
+          />
+</div>,
+      ],
+      "className": "row",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Link
+              replace={false}
+              to="/"
+>
+              <div
+                            className="author__avatar"
+              >
+                            <img
+                                          alt=""
+                                          className="responsive-img circle avatar--small"
+                                          src={undefined}
+                            />
+              </div>
+</Link>,
+            <div
+              className="author_details author--small"
+>
+              <div
+                            className="author__info"
+              >
+                            <div
+                                          className="author-name"
+                            >
+                                          <Link
+                                                        className="text--small"
+                                                        replace={false}
+                                                        to="/profile/test user"
+                                          >
+                                                        Test User
+                                          </Link>
+                            </div>
+              </div>
+              <div
+                            className="article__highlights"
+              >
+                            Invalid Date
+                            <Unknown>
+                                          <span
+                                                        className="p-r--5 p-l--5"
+                                          >
+                                                        .
+                                          </span>
+                                          13 min read
+                            </Unknown>
+                            <span
+                                          className="p-r--10 p-l--10"
+                            >
+                                          .
+                            </span>
+              </div>
+</div>,
+          ],
+          "className": "author false",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <div
+                className="author__avatar"
+>
+                <img
+                                alt=""
+                                className="responsive-img circle avatar--small"
+                                src={undefined}
+                />
+</div>,
+              "replace": false,
+              "to": "/",
             },
             "ref": null,
             "rendered": Object {
@@ -893,14 +1351,630 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Edit Article",
-                "className": "btn-flat btn-flat--primary",
-                "type": "button",
+                "children": <img
+                  alt=""
+                  className="responsive-img circle avatar--small"
+                  src={undefined}
+/>,
+                "className": "author__avatar",
               },
               "ref": null,
-              "rendered": "Edit Article",
-              "type": "button",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "",
+                  "className": "responsive-img circle avatar--small",
+                  "src": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": "div",
             },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="author__info"
+>
+                  <div
+                                    className="author-name"
+                  >
+                                    <Link
+                                                      className="text--small"
+                                                      replace={false}
+                                                      to="/profile/test user"
+                                    >
+                                                      Test User
+                                    </Link>
+                  </div>
+</div>,
+                <div
+                  className="article__highlights"
+>
+                  Invalid Date
+                  <Unknown>
+                                    <span
+                                                      className="p-r--5 p-l--5"
+                                    >
+                                                      .
+                                    </span>
+                                    13 min read
+                  </Unknown>
+                  <span
+                                    className="p-r--10 p-l--10"
+                  >
+                                    .
+                  </span>
+</div>,
+              ],
+              "className": "author_details author--small",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="author-name"
+>
+                      <Link
+                                            className="text--small"
+                                            replace={false}
+                                            to="/profile/test user"
+                      >
+                                            Test User
+                      </Link>
+</div>,
+                    false,
+                  ],
+                  "className": "author__info",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <Link
+                        className="text--small"
+                        replace={false}
+                        to="/profile/test user"
+>
+                        Test User
+</Link>,
+                      "className": "author-name",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Test User",
+                        "className": "text--small",
+                        "replace": false,
+                        "to": "/profile/test user",
+                      },
+                      "ref": null,
+                      "rendered": "Test User",
+                      "type": [Function],
+                    },
+                    "type": "div",
+                  },
+                  false,
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Invalid Date",
+                    <Unknown>
+                      <span
+                                            className="p-r--5 p-l--5"
+                      >
+                                            .
+                      </span>
+                      13 min read
+</Unknown>,
+                    <span
+                      className="p-r--10 p-l--10"
+>
+                      .
+</span>,
+                    false,
+                  ],
+                  "className": "article__highlights",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Invalid Date",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": Array [
+                        <span
+                          className="p-r--5 p-l--5"
+>
+                          .
+</span>,
+                        "13 min read",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": ".",
+                          "className": "p-r--5 p-l--5",
+                        },
+                        "ref": null,
+                        "rendered": ".",
+                        "type": "span",
+                      },
+                      "13 min read",
+                    ],
+                    "type": Symbol(react.fragment),
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": ".",
+                      "className": "p-r--10 p-l--10",
+                    },
+                    "ref": null,
+                    "rendered": ".",
+                    "type": "span",
+                  },
+                  false,
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="m-t--15"
+/>,
+          "className": "col m3",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": false,
+            "className": "m-t--15",
+          },
+          "ref": null,
+          "rendered": false,
+          "type": "div",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="author false"
+>
+            <Link
+                        replace={false}
+                        to="/"
+            >
+                        <div
+                                    className="author__avatar"
+                        >
+                                    <img
+                                                alt=""
+                                                className="responsive-img circle avatar--small"
+                                                src={undefined}
+                                    />
+                        </div>
+            </Link>
+            <div
+                        className="author_details author--small"
+            >
+                        <div
+                                    className="author__info"
+                        >
+                                    <div
+                                                className="author-name"
+                                    >
+                                                <Link
+                                                            className="text--small"
+                                                            replace={false}
+                                                            to="/profile/test user"
+                                                >
+                                                            Test User
+                                                </Link>
+                                    </div>
+                        </div>
+                        <div
+                                    className="article__highlights"
+                        >
+                                    Invalid Date
+                                    <Unknown>
+                                                <span
+                                                            className="p-r--5 p-l--5"
+                                                >
+                                                            .
+                                                </span>
+                                                13 min read
+                                    </Unknown>
+                                    <span
+                                                className="p-r--10 p-l--10"
+                                    >
+                                                .
+                                    </span>
+                        </div>
+            </div>
+</div>,
+          <div
+            className="col m3"
+>
+            <div
+                        className="m-t--15"
+            />
+</div>,
+        ],
+        "className": "row",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Link
+                replace={false}
+                to="/"
+>
+                <div
+                                className="author__avatar"
+                >
+                                <img
+                                                alt=""
+                                                className="responsive-img circle avatar--small"
+                                                src={undefined}
+                                />
+                </div>
+</Link>,
+              <div
+                className="author_details author--small"
+>
+                <div
+                                className="author__info"
+                >
+                                <div
+                                                className="author-name"
+                                >
+                                                <Link
+                                                                className="text--small"
+                                                                replace={false}
+                                                                to="/profile/test user"
+                                                >
+                                                                Test User
+                                                </Link>
+                                </div>
+                </div>
+                <div
+                                className="article__highlights"
+                >
+                                Invalid Date
+                                <Unknown>
+                                                <span
+                                                                className="p-r--5 p-l--5"
+                                                >
+                                                                .
+                                                </span>
+                                                13 min read
+                                </Unknown>
+                                <span
+                                                className="p-r--10 p-l--10"
+                                >
+                                                .
+                                </span>
+                </div>
+</div>,
+            ],
+            "className": "author false",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <div
+                  className="author__avatar"
+>
+                  <img
+                                    alt=""
+                                    className="responsive-img circle avatar--small"
+                                    src={undefined}
+                  />
+</div>,
+                "replace": false,
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <img
+                    alt=""
+                    className="responsive-img circle avatar--small"
+                    src={undefined}
+/>,
+                  "className": "author__avatar",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "",
+                    "className": "responsive-img circle avatar--small",
+                    "src": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "type": "div",
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="author__info"
+>
+                    <div
+                                        className="author-name"
+                    >
+                                        <Link
+                                                            className="text--small"
+                                                            replace={false}
+                                                            to="/profile/test user"
+                                        >
+                                                            Test User
+                                        </Link>
+                    </div>
+</div>,
+                  <div
+                    className="article__highlights"
+>
+                    Invalid Date
+                    <Unknown>
+                                        <span
+                                                            className="p-r--5 p-l--5"
+                                        >
+                                                            .
+                                        </span>
+                                        13 min read
+                    </Unknown>
+                    <span
+                                        className="p-r--10 p-l--10"
+                    >
+                                        .
+                    </span>
+</div>,
+                ],
+                "className": "author_details author--small",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="author-name"
+>
+                        <Link
+                                                className="text--small"
+                                                replace={false}
+                                                to="/profile/test user"
+                        >
+                                                Test User
+                        </Link>
+</div>,
+                      false,
+                    ],
+                    "className": "author__info",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <Link
+                          className="text--small"
+                          replace={false}
+                          to="/profile/test user"
+>
+                          Test User
+</Link>,
+                        "className": "author-name",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "Test User",
+                          "className": "text--small",
+                          "replace": false,
+                          "to": "/profile/test user",
+                        },
+                        "ref": null,
+                        "rendered": "Test User",
+                        "type": [Function],
+                      },
+                      "type": "div",
+                    },
+                    false,
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Invalid Date",
+                      <Unknown>
+                        <span
+                                                className="p-r--5 p-l--5"
+                        >
+                                                .
+                        </span>
+                        13 min read
+</Unknown>,
+                      <span
+                        className="p-r--10 p-l--10"
+>
+                        .
+</span>,
+                      false,
+                    ],
+                    "className": "article__highlights",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Invalid Date",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="p-r--5 p-l--5"
+>
+                            .
+</span>,
+                          "13 min read",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": ".",
+                            "className": "p-r--5 p-l--5",
+                          },
+                          "ref": null,
+                          "rendered": ".",
+                          "type": "span",
+                        },
+                        "13 min read",
+                      ],
+                      "type": Symbol(react.fragment),
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": ".",
+                        "className": "p-r--10 p-l--10",
+                      },
+                      "ref": null,
+                      "rendered": ".",
+                      "type": "span",
+                    },
+                    false,
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="m-t--15"
+/>,
+            "className": "col m3",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": false,
+              "className": "m-t--15",
+            },
+            "ref": null,
+            "rendered": false,
             "type": "div",
           },
           "type": "div",

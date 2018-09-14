@@ -1,0 +1,796 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArticleCard /> renders  <ArticleCard /> components 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Articles
+    article={
+        Object {
+            "average_rating": "",
+            "image": "",
+            "likes_count": "",
+            "preview": "cool",
+            "slug": "coll",
+            "title": "cool",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        false,
+        <div
+          className="card-stacked"
+>
+          <div
+                    className="card-content"
+          >
+                    <Link
+                              className="black-text"
+                              replace={false}
+                              to="/article/coll"
+                    >
+                              <h5
+                                        className="truncate"
+                              >
+                                        cool
+                              </h5>
+                    </Link>
+                    <p>
+                              <Link
+                                        className="black-text"
+                                        replace={false}
+                                        to="/article/coll"
+                              >
+                                        cool ... 
+                              </Link>
+                              <Link
+                                        replace={false}
+                                        to="/article/coll"
+                              >
+                                        <u>
+                                                  Read article
+                                        </u>
+                              </Link>
+                    </p>
+          </div>
+          <div
+                    className="card-action card--reactions"
+          >
+                    <div
+                              className="stats"
+                    >
+                              <span
+                                        className="icon-stats"
+                              >
+                                        <img
+                                                  alt="likes"
+                                                  src="thumbs-up.svg"
+                                        />
+                                        
+                              </span>
+                              <span
+                                        className="icon-stats"
+                              />
+                    </div>
+          </div>
+</div>,
+        false,
+      ],
+      "className": "card horizontal",
+    },
+    "ref": null,
+    "rendered": Array [
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="card-content"
+>
+              <Link
+                            className="black-text"
+                            replace={false}
+                            to="/article/coll"
+              >
+                            <h5
+                                          className="truncate"
+                            >
+                                          cool
+                            </h5>
+              </Link>
+              <p>
+                            <Link
+                                          className="black-text"
+                                          replace={false}
+                                          to="/article/coll"
+                            >
+                                          cool ... 
+                            </Link>
+                            <Link
+                                          replace={false}
+                                          to="/article/coll"
+                            >
+                                          <u>
+                                                        Read article
+                                          </u>
+                            </Link>
+              </p>
+</div>,
+            <div
+              className="card-action card--reactions"
+>
+              <div
+                            className="stats"
+              >
+                            <span
+                                          className="icon-stats"
+                            >
+                                          <img
+                                                        alt="likes"
+                                                        src="thumbs-up.svg"
+                                          />
+                                          
+                            </span>
+                            <span
+                                          className="icon-stats"
+                            />
+              </div>
+</div>,
+          ],
+          "className": "card-stacked",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Link
+                  className="black-text"
+                  replace={false}
+                  to="/article/coll"
+>
+                  <h5
+                                    className="truncate"
+                  >
+                                    cool
+                  </h5>
+</Link>,
+                <p>
+                  <Link
+                                    className="black-text"
+                                    replace={false}
+                                    to="/article/coll"
+                  >
+                                    cool ... 
+                  </Link>
+                  <Link
+                                    replace={false}
+                                    to="/article/coll"
+                  >
+                                    <u>
+                                                      Read article
+                                    </u>
+                  </Link>
+</p>,
+              ],
+              "className": "card-content",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <h5
+                    className="truncate"
+>
+                    cool
+</h5>,
+                  "className": "black-text",
+                  "replace": false,
+                  "to": "/article/coll",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "cool",
+                    "className": "truncate",
+                  },
+                  "ref": null,
+                  "rendered": "cool",
+                  "type": "h5",
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <Link
+                      className="black-text"
+                      replace={false}
+                      to="/article/coll"
+>
+                      cool ... 
+</Link>,
+                    <Link
+                      replace={false}
+                      to="/article/coll"
+>
+                      <u>
+                                            Read article
+                      </u>
+</Link>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "cool ... ",
+                      "className": "black-text",
+                      "replace": false,
+                      "to": "/article/coll",
+                    },
+                    "ref": null,
+                    "rendered": "cool ... ",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <u>
+                        Read article
+</u>,
+                      "replace": false,
+                      "to": "/article/coll",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Read article",
+                      },
+                      "ref": null,
+                      "rendered": "Read article",
+                      "type": "u",
+                    },
+                    "type": [Function],
+                  },
+                ],
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="stats"
+>
+                <span
+                                className="icon-stats"
+                >
+                                <img
+                                                alt="likes"
+                                                src="thumbs-up.svg"
+                                />
+                                
+                </span>
+                <span
+                                className="icon-stats"
+                />
+</div>,
+              "className": "card-action card--reactions",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <span
+                    className="icon-stats"
+>
+                    <img
+                                        alt="likes"
+                                        src="thumbs-up.svg"
+                    />
+                    
+</span>,
+                  <span
+                    className="icon-stats"
+/>,
+                ],
+                "className": "stats",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <img
+                        alt="likes"
+                        src="thumbs-up.svg"
+/>,
+                      "",
+                    ],
+                    "className": "icon-stats",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "alt": "likes",
+                        "src": "thumbs-up.svg",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "img",
+                    },
+                    "",
+                  ],
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "",
+                    "className": "icon-stats",
+                  },
+                  "ref": null,
+                  "rendered": "",
+                  "type": "span",
+                },
+              ],
+              "type": "div",
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      false,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          false,
+          <div
+            className="card-stacked"
+>
+            <div
+                        className="card-content"
+            >
+                        <Link
+                                    className="black-text"
+                                    replace={false}
+                                    to="/article/coll"
+                        >
+                                    <h5
+                                                className="truncate"
+                                    >
+                                                cool
+                                    </h5>
+                        </Link>
+                        <p>
+                                    <Link
+                                                className="black-text"
+                                                replace={false}
+                                                to="/article/coll"
+                                    >
+                                                cool ... 
+                                    </Link>
+                                    <Link
+                                                replace={false}
+                                                to="/article/coll"
+                                    >
+                                                <u>
+                                                            Read article
+                                                </u>
+                                    </Link>
+                        </p>
+            </div>
+            <div
+                        className="card-action card--reactions"
+            >
+                        <div
+                                    className="stats"
+                        >
+                                    <span
+                                                className="icon-stats"
+                                    >
+                                                <img
+                                                            alt="likes"
+                                                            src="thumbs-up.svg"
+                                                />
+                                                
+                                    </span>
+                                    <span
+                                                className="icon-stats"
+                                    />
+                        </div>
+            </div>
+</div>,
+          false,
+        ],
+        "className": "card horizontal",
+      },
+      "ref": null,
+      "rendered": Array [
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="card-content"
+>
+                <Link
+                                className="black-text"
+                                replace={false}
+                                to="/article/coll"
+                >
+                                <h5
+                                                className="truncate"
+                                >
+                                                cool
+                                </h5>
+                </Link>
+                <p>
+                                <Link
+                                                className="black-text"
+                                                replace={false}
+                                                to="/article/coll"
+                                >
+                                                cool ... 
+                                </Link>
+                                <Link
+                                                replace={false}
+                                                to="/article/coll"
+                                >
+                                                <u>
+                                                                Read article
+                                                </u>
+                                </Link>
+                </p>
+</div>,
+              <div
+                className="card-action card--reactions"
+>
+                <div
+                                className="stats"
+                >
+                                <span
+                                                className="icon-stats"
+                                >
+                                                <img
+                                                                alt="likes"
+                                                                src="thumbs-up.svg"
+                                                />
+                                                
+                                </span>
+                                <span
+                                                className="icon-stats"
+                                />
+                </div>
+</div>,
+            ],
+            "className": "card-stacked",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Link
+                    className="black-text"
+                    replace={false}
+                    to="/article/coll"
+>
+                    <h5
+                                        className="truncate"
+                    >
+                                        cool
+                    </h5>
+</Link>,
+                  <p>
+                    <Link
+                                        className="black-text"
+                                        replace={false}
+                                        to="/article/coll"
+                    >
+                                        cool ... 
+                    </Link>
+                    <Link
+                                        replace={false}
+                                        to="/article/coll"
+                    >
+                                        <u>
+                                                            Read article
+                                        </u>
+                    </Link>
+</p>,
+                ],
+                "className": "card-content",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <h5
+                      className="truncate"
+>
+                      cool
+</h5>,
+                    "className": "black-text",
+                    "replace": false,
+                    "to": "/article/coll",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "cool",
+                      "className": "truncate",
+                    },
+                    "ref": null,
+                    "rendered": "cool",
+                    "type": "h5",
+                  },
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <Link
+                        className="black-text"
+                        replace={false}
+                        to="/article/coll"
+>
+                        cool ... 
+</Link>,
+                      <Link
+                        replace={false}
+                        to="/article/coll"
+>
+                        <u>
+                                                Read article
+                        </u>
+</Link>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "cool ... ",
+                        "className": "black-text",
+                        "replace": false,
+                        "to": "/article/coll",
+                      },
+                      "ref": null,
+                      "rendered": "cool ... ",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": <u>
+                          Read article
+</u>,
+                        "replace": false,
+                        "to": "/article/coll",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Read article",
+                        },
+                        "ref": null,
+                        "rendered": "Read article",
+                        "type": "u",
+                      },
+                      "type": [Function],
+                    },
+                  ],
+                  "type": "p",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="stats"
+>
+                  <span
+                                    className="icon-stats"
+                  >
+                                    <img
+                                                      alt="likes"
+                                                      src="thumbs-up.svg"
+                                    />
+                                    
+                  </span>
+                  <span
+                                    className="icon-stats"
+                  />
+</div>,
+                "className": "card-action card--reactions",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <span
+                      className="icon-stats"
+>
+                      <img
+                                            alt="likes"
+                                            src="thumbs-up.svg"
+                      />
+                      
+</span>,
+                    <span
+                      className="icon-stats"
+/>,
+                  ],
+                  "className": "stats",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <img
+                          alt="likes"
+                          src="thumbs-up.svg"
+/>,
+                        "",
+                      ],
+                      "className": "icon-stats",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "alt": "likes",
+                          "src": "thumbs-up.svg",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "img",
+                      },
+                      "",
+                    ],
+                    "type": "span",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "",
+                      "className": "icon-stats",
+                    },
+                    "ref": null,
+                    "rendered": "",
+                    "type": "span",
+                  },
+                ],
+                "type": "div",
+              },
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        false,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;

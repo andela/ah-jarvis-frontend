@@ -37,9 +37,15 @@
 
     &--img {
       padding-right: 20px;
+      max-width: 140px!important;
+      min-width: 140px!important;
+      max-height: 140px!important;
+      // min-height: 140px!important;
+
     }
 
     &--body {
+      width: 60%;
       line-height: 20px;
       padding-top: 10px;
       .article__title {
@@ -69,6 +75,7 @@
     height: 246px !important;
     width: 310px !important;
   }
+
   &__highlights {
     display: flex;
     align-items: baseline;
@@ -78,6 +85,43 @@
       font-size: 30px;
     }
   }
+
+  &__image {
+    display: flex;
+  }
+
+
+  &__hypes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+
+    & div {
+      display: flex;
+      align-items: center;
+
+      & img {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  &__preview {
+    height: 200px!important;
+    width: auto;
+
+    &--title {
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+
+    &--body {
+      line-height: 30px;
+    }
+
+  }
+  
+
   &__header {
     display: flex;
     align-items: baseline;
@@ -139,7 +183,7 @@
   align-items: center;
 
   &__avatar {
-    margin-right: 30px;
+    margin-right: 15px;
   }
 
   &__details {
@@ -154,6 +198,10 @@
 
   &-name {
     margin-right: 10px;
+  }
+
+  &--small {
+    line-height: 13px;
   }
 }
 
@@ -175,4 +223,9 @@
   .stats {
     display: flex;
   }
+}
+
+.preview {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 40px;
 }

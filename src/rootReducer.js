@@ -8,12 +8,17 @@ import signin from './containers/Signin/reducer';
 import getProfile from './containers/Profile/Read/reducer';
 import editProfile from './containers/Profile/Update/reducer';
 import fetchArticle from './containers/Article/Read/reducer';
+import articles from './containers/Home/reducer';
 import createArticle from './containers/Article/Create/reducer';
+import trending from './containers/Sidebar/reducer';
+
 
 const rootReducer = combineReducers({
   getProfile,
   editProfile,
   createArticle,
+  articles,
+  trending,
   fetchArticle,
   signin,
   forgotPass,
