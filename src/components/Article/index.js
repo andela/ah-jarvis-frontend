@@ -5,9 +5,8 @@ import AuthorDetails from '../AuthorDetails';
 import thumbsUp from '../../assets/icons/thumbs-up.svg';
 import heart from '../../assets/icons/heart.svg';
 
-
 const Article = ({
-  title, author, image, preview, date, slug,
+  title, author, image, preview, date, slug, likes_count,
 }) => (
   <div className="col m11 s12 preview">
     <div className="row author">
@@ -18,11 +17,12 @@ const Article = ({
         <div className="row article__image">
           <img alt="" src={image} className="responsive-img article__preview" />
         </div>
-
-      </Link>)
-    }
+      </Link>
+    )}
     <div className="row article__details">
-      <Link to={`article/${slug}`} className="black-text"><h2 className="article__preview--title truncate">{title}</h2></Link>
+      <Link to={`article/${slug}`} className="black-text">
+        <h2 className="article__preview--title truncate">{title}</h2>
+      </Link>
       <div className="article__preview--body truncate">
         <Link to={`article/${slug}`} className="black-text">
           <p>{preview}</p>
@@ -34,9 +34,8 @@ const Article = ({
       <div className="article__hypes">
         <div className="icon---default">
           <img src={thumbsUp} alt="thumbs-up" />
-          <div className="text--small">77k</div>
+          <div className="text--small">{likes_count}</div>
         </div>
-
         <div>
           <img src={heart} alt="thumbs-up" />
         </div>
@@ -44,7 +43,6 @@ const Article = ({
     </div>
   </div>
 );
-
 
 Article.propTypes = {
   title: PropTypes.string.isRequired,
@@ -55,6 +53,7 @@ Article.propTypes = {
   author: PropTypes.shape({
     username: PropTypes.string.isRequired,
   }).isRequired,
+  likes_count: PropTypes.string.isRequired,
 };
 
 export default Article;

@@ -37,11 +37,10 @@
 
     &--img {
       padding-right: 20px;
-      max-width: 140px!important;
-      min-width: 140px!important;
-      max-height: 140px!important;
+      max-width: 140px !important;
+      min-width: 140px !important;
+      max-height: 140px !important;
       // min-height: 140px!important;
-
     }
 
     &--body {
@@ -90,7 +89,6 @@
     display: flex;
   }
 
-
   &__hypes {
     display: flex;
     justify-content: space-between;
@@ -107,7 +105,7 @@
   }
 
   &__preview {
-    height: 200px!important;
+    height: 200px !important;
     width: auto;
 
     &--title {
@@ -118,9 +116,7 @@
     &--body {
       line-height: 30px;
     }
-
   }
-  
 
   &__header {
     display: flex;
@@ -160,7 +156,9 @@
   margin-top: 10px;
   align-items: flex-end;
   position: fixed;
+  padding-top: 170px;
   margin-left: 50px;
+  color: $primary_color;
 
   & .icon {
     margin-bottom: 20px;

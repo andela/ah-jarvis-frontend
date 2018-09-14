@@ -93,7 +93,7 @@ class Read extends Component {
     }
   };
 
-  renderReaction = ( id, src, count ) => (
+  renderReaction = (id, src, count) => (
     <Reaction id={id} src={src} count={count} onClick={this.handleReaction} />
   );
 
@@ -165,6 +165,8 @@ Read.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.object.isRequired,
   }).isRequired,
+  likeArticle: PropTypes.func.isRequired,
+  dislikeArticle: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators(

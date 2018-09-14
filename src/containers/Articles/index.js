@@ -51,6 +51,7 @@ class Articles extends Component {
           image={image}
           author={data.author}
           key={data.slug}
+          likes_count={data.likes_count}
         />
       );
     });

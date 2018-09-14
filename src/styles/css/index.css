@@ -253,7 +253,8 @@ helper-text {
   width: 90px !important; }
 
 .text--small {
-  font-size: 12px !important; }
+  font-size: 12px !important;
+  color: #03a87c; }
 
 .flex-center {
   display: flex;
@@ -262,9 +263,6 @@ helper-text {
 .avatar--medium {
   height: 90px !important;
   width: 90px !important; }
-
-.text--small {
-  font-size: 12px !important; }
 
 .flex-center {
   display: flex;
@@ -619,7 +617,9 @@ hr {
   margin-top: 10px;
   align-items: flex-end;
   position: fixed;
-  margin-left: 50px; }
+  padding-top: 170px;
+  margin-left: 50px;
+  color: #03a87c; }
   .reactions .icon {
     margin-bottom: 20px;
     height: 30px;

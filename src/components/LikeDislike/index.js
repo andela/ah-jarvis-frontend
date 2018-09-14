@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 const Reaction = ({
   id, src, count, onClick,
 }) => (
-  <div className="reactions__icon">
+  <div className="reactions__icon p-b--20">
     <span>{count}</span>
-    <a href="#!" onClick={onClick}>
-      <img id={id} src={src} alt="Reaction" className="icon" />
+    <a href="#!" onClick={onClick} className="">
+      <img id={id} src={src} alt="Reaction" className="" />
     </a>
   </div>
 );
