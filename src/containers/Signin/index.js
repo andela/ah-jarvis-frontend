@@ -10,6 +10,7 @@ import InputField from '../../components/InputField';
 import Errors from '../../components/Errors';
 import Buttons from '../../components/SigninButtons';
 import signinAction from './actions';
+import ROUTES from '../../utils/routes';
 
 class Signin extends Component {
   static defaultProps = {
@@ -56,7 +57,7 @@ class Signin extends Component {
         <div className="col m4 s12 offset-m4 auth">
           <div className="card card--auth">
             <div className="card-content">
-              <Link to="/" className="card-title center-align text-primary brand">
+              <Link to={`${ROUTES.home}`} className="card-title center-align text-primary brand">
                 Authors' Haven
               </Link>
               <Errors name="error" errors={errors} failure={failure} />

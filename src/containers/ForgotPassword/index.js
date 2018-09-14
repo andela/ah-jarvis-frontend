@@ -10,6 +10,7 @@ import Errors from '../../components/Errors';
 import validateInput from '../../utils/validateInput';
 import { ResendEmail } from '../../components/ResendEmail';
 import { forgotPasswordAction } from './actions';
+import ROUTES from '../../utils/routes';
 
 class ForgotPassword extends Component {
   static defaultProps = {
@@ -70,7 +71,7 @@ class ForgotPassword extends Component {
           <div className="col m4 s12 offset-m4 auth">
             <div className="card card--auth p-b--40">
               <div className="card-content">
-                <Link to="/" className="card-title center-align text-primary brand">
+                <Link to={`${ROUTES.home}`} className="card-title center-align text-primary brand">
                   Authors' Haven
                 </Link>
                 <h6 className="center">Reset password</h6>

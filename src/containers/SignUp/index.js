@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Form from './Form';
 import { registerUser } from './actions';
 import InlineLoader from '../../components/InlineLoader';
+import ROUTES from '../../utils/routes';
 
 class SignUp extends React.Component {
   state = {};
@@ -20,7 +21,7 @@ class SignUp extends React.Component {
           <div className="card card--auth">
             {register.isFetching ? <InlineLoader /> : ''}
             <div className="card-content">
-              <Link to="/" className="card-title center-align text-primary brand">
+              <Link to={`${ROUTES.home}`} className="card-title center-align text-primary brand">
                 Authors' Haven
               </Link>
               <Form

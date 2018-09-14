@@ -75,7 +75,10 @@ class SocialAuth extends React.Component {
         {isLoading && <InlineLoader />}
         {error && this.toaster()}
         <div className="card-content">
-          <Link to="/" className="card-title center-align text-primary brand m-b--30 m-t--15">
+          <Link
+            to={`${ROUTES.home}`}
+            className="card-title center-align text-primary brand m-b--30 m-t--15"
+          >
             Authors' Haven
           </Link>
           <Link

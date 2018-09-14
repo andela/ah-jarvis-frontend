@@ -9,6 +9,7 @@ import InputField from '../../components/InputField';
 import validateInput from '../../utils/validateInput';
 import Errors from '../../components/Errors';
 import resetPasswordAction from './actions';
+import ROUTES from '../../utils/routes';
 
 class ResetPassword extends Component {
   static defaultProps = {
@@ -90,7 +91,10 @@ class ResetPassword extends Component {
         <div className="col m4 s12 offset-m4 auth">
           <div className="card card--auth p-b--40">
             <div className="card-content">
-              <Link to="/" className="card-title center-align text-primary  brand m-b--30 m-t--15">
+              <Link
+                to={`${ROUTES.home}`}
+                className="card-title center-align text-primary  brand m-b--30 m-t--15"
+              >
                 Authors' Haven
               </Link>
               <form onSubmit={this.handleSubmit}>
