@@ -30,7 +30,10 @@ const updateUser = (data, history) => (dispatch) => {
       dispatch({ type: CLEAR_STORE });
       history.push(`/profile/${res.user.username}`);
     })
-    .catch(err => dispatch(editProfileFailure(err)));
+    .catch((err) => {
+      dispatch(editProfileFailure(err));
+      dispatch({ type: CLEAR_STORE });
+    });
 };
 
 export default updateUser;
