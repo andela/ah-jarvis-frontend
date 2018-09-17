@@ -7,7 +7,7 @@ const Reaction = ({
   <div className="reactions__icon p-b--20">
     <span>{count}</span>
     <a href="#!" onClick={onClick} className="">
-      <img id={id} src={src} alt="Reaction" className="" />
+      <img id={id} src={src} alt="Reaction" className="waves-effect waves-teal" />
     </a>
   </div>
 );

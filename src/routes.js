@@ -27,7 +27,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props => (getCurrentUser() ? (
-      <Component {...props} user={getCurrentUser()} />
+      <Component {...props} user={getCurrentUser()} key={Math.random()} />
     ) : (
       <Redirect to={{ pathname: ROUTES.signin, state: { from: props.location } }} />
     ))
@@ -41,15 +41,23 @@ export default () => (
       <Scroll>
         <Switch>
           <Route exact path={ROUTES.home} component={Home} />
-          <Route exact path={ROUTES.getArticleUrl} component={Read} />
+          <Route
+            exact
+            path={ROUTES.getArticleUrl}
+            render={props => <Read {...props} key={Math.random()} />}
+          />
           <PrivateRoute exact path={ROUTES.createArticleUrl} component={Create} />
           <Route exact path={ROUTES.signup} component={SignUp} />
           <Route exact path={ROUTES.signin} component={SocialAuth} />
           <Route exact path={ROUTES.signinWithEmail} component={Signin} />
           <Route exact path={ROUTES.resetPassword} component={ForgotPasssword} />
           <Route exact path={ROUTES.verify} component={ResetPasssword} />
-          <PrivateRoute exact path={ROUTES.getProfile} component={ReadProfile} />
-          <Route exact path={ROUTES.updateProfile} component={UpdateProfile} />
+          <PrivateRoute
+            exact
+            path={ROUTES.getProfile}
+            component={ReadProfile}
+          />
+          <PrivateRoute exact path={ROUTES.updateProfile} component={UpdateProfile} />
           <Route exact path={ROUTES.articles} component={Articles} />
           <Route component={NotFound} />
         </Switch>

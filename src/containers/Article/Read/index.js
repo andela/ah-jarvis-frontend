@@ -20,7 +20,6 @@ import api from '../../../utils/api';
 import getCurrentUser from '../../../utils/auth';
 import readTime from '../../../utils/readtime';
 
-const user = getCurrentUser();
 
 class Read extends Component {
   state = {
@@ -46,7 +45,7 @@ class Read extends Component {
         rate: nextValue,
       },
     };
-    if (user) {
+    if (getCurrentUser()) {
       this.setState({ alert: false });
       api({
         endpoint: `/articles/${this.props.match.params.id}/rate/`,
@@ -78,7 +77,7 @@ class Read extends Component {
   handleReaction = (e) => {
     e.preventDefault();
     const { like, dislike, match } = this.props;
-    if (user) {
+    if (getCurrentUser()) {
       this.setState({ alert: false });
       if (e.target.id === 'like') {
         like(match.params.id);
@@ -117,7 +116,7 @@ class Read extends Component {
     }
     return (
       <React.Fragment>
-        <Header />
+        <Header {...this.props} />
 
         <div className="container m-t--30">
           <div className="row">

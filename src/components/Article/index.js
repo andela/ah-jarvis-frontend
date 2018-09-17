@@ -4,30 +4,31 @@ import { Link } from 'react-router-dom';
 import AuthorDetails from '../AuthorDetails';
 import thumbsUp from '../../assets/icons/thumbs-up.svg';
 import heart from '../../assets/icons/heart.svg';
+import { bookmarkArticle } from '../../containers/Article/Read/actions';
 
 const Article = ({
-  title, author, image, preview, date, slug, readtime, likesCount,
+  title, author, image, preview, date, slug, readtime, likesCount, bookmark
 }) => (
   <div className="col m11 s12 preview">
     <div className="row author">
       <AuthorDetails user={author} date={date} small readtime={readtime} />
     </div>
     {image && (
-      <Link to={`article/${slug}`} className="black-text">
+      <Link to={`/article/${slug}`} className="black-text">
         <div className="row article__image">
           <img alt="" src={image} className="responsive-img article__preview" />
         </div>
       </Link>
     )}
     <div className="row article__details">
-      <Link to={`article/${slug}`} className="black-text">
+      <Link to={`/article/${slug}`} className="black-text">
         <h2 className="article__preview--title truncate">{title}</h2>
       </Link>
       <div className="article__preview--body truncate">
-        <Link to={`article/${slug}`} className="black-text">
+        <Link to={`/article/${slug}`} className="black-text">
           <p>{preview}</p>
         </Link>
-        <Link to={`article/${slug}`}>Read more...</Link>
+        <Link to={`/article/${slug}`}>Read more...</Link>
       </div>
     </div>
     <div className="row">
@@ -37,7 +38,9 @@ const Article = ({
           <div className="text--small">{likesCount}</div>
         </div>
         <div>
-          <img src={heart} alt="thumbs-up" />
+          <a onClick={() => bookmark(slug)}>
+            <img src={heart} alt="bookmark" />
+          </a>
         </div>
       </div>
     </div>

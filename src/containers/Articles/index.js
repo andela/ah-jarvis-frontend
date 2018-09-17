@@ -12,6 +12,7 @@ import Paginator from '../../components/Pagination';
 import config from '../../config';
 import Sidebar from '../Sidebar';
 import readTime from '../../utils/readtime';
+import { bookmarkArticle } from '../Article/Read/actions';
 
 class Articles extends Component {
   state = {
@@ -25,6 +26,10 @@ class Articles extends Component {
       this.setState({ activePage: page });
     }
     this.props.fetchArticle(config.ARTICLES_PER_PAGE, page || this.state.activePage);
+  }
+
+  bookmark = (slug) => {
+    this.props.bookmark(slug);
   }
 
   renderArticles = () => {
@@ -52,6 +57,7 @@ class Articles extends Component {
           key={data.slug}
           readtime={readTime(b)}
           likesCount={data.likes_count}
+          bookmark={this.bookmark}
         />
       );
     });
@@ -94,7 +100,7 @@ class Articles extends Component {
     return (
       <div>
         <React.Fragment>
-          <Header />
+          <Header {...this.props} />
           <div className="container-fluid">
             {this.renderStories()}
             {payload && (
@@ -131,6 +137,7 @@ const mapStateToProps = ({ articles }) => ({
 const mapDispatchToProps = dispatch => bindActionCreators(
   {
     fetchArticle: fetchArticleAction,
+    bookmark: bookmarkArticle,
   },
   dispatch,
 );

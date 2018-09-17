@@ -5,6 +5,8 @@ import {
   RATE_ARTICLE_REQUEST,
   LIKE_ARTICLE_SUCCESS,
   DISLIKE_ARTICLE_SUCCESS,
+  BOOKMARK_ARTICLE_REQUEST,
+  BOOKMARK_ARTICLE_SUCCESS,
 } from './constants';
 
 const initialState = {
@@ -16,6 +18,7 @@ const initialState = {
   success: false,
   failure: false,
   errors: null,
+  bookmarking: false,
 };
 
 export default function (state = initialState, action) {
@@ -42,6 +45,10 @@ export default function (state = initialState, action) {
         isFetching: false,
         isRating: false,
       };
+    case BOOKMARK_ARTICLE_REQUEST:
+      return { ...state, bookmarking: true };
+    case BOOKMARK_ARTICLE_SUCCESS:
+      return { ...state, bookmarking: false };
     case RATE_ARTICLE_REQUEST:
       return { ...state, isRating: true };
     case LIKE_ARTICLE_SUCCESS:

@@ -22,6 +22,12 @@ class Create extends Component {
     saving: false,
   };
 
+  componentDidMount() {
+    const elems = document.querySelectorAll('.chips');
+    M.Chips.init(elems);
+  }
+
+
   handleSave = (state) => {
     this.setState({ saving: true });
     const editorState = state.editorState();
@@ -66,7 +72,7 @@ class Create extends Component {
 
     return (
       <React.Fragment>
-        <Header />
+        <Header {...this.props} />
         <div className="container m-t--30">
           <UserInfo
             onPublish={this.handlePublish}
@@ -75,7 +81,7 @@ class Create extends Component {
             user={this.props.user}
           />
           <div className="row">
-            <div className="col s12">
+            <div className="col s11">
               <Dante
                 content={editorstate}
                 spellcheck
@@ -102,6 +108,10 @@ class Create extends Component {
                   interval: 1000,
                 }}
               />
+            </div>
+
+            <div className="col s1">
+              <div className="chips chips-autocomplete" />
             </div>
           </div>
         </div>

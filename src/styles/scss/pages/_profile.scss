@@ -35,6 +35,17 @@
   }
 }
 
+.profile {
+  &--articles {
+    .title {
+      font-weight: 600!important;
+      font-size: 30px;
+      line-height: 40px!important;
+      padding-bottom: 20px;
+    }
+  }
+}
+
 .activities {
   background-color: darken($secondary-color, 3%);
   height: 100%;
@@ -61,4 +72,32 @@
 .small-article__photo {
   max-height: auto !important;
   max-width: 150px !important;
+}
+
+.tabs {
+  background-color: inherit;
+
+  
+  .active {
+    background-color: inherit !important;
+  }
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__title {
+    font-weight: 600!important;
+    font-size: 21px!important;
+    line-height: 30px!important;
+  }
+
+  &__body {
+    font-weight: 400!important;
+    line-height: 20px!important;
+    max-width: 400px!important;
+  }
+
 }
