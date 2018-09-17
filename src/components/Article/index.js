@@ -6,11 +6,11 @@ import thumbsUp from '../../assets/icons/thumbs-up.svg';
 import heart from '../../assets/icons/heart.svg';
 
 const Article = ({
-  title, author, image, preview, date, slug, likesCount,
+  title, author, image, preview, date, slug, readtime, likesCount,
 }) => (
   <div className="col m11 s12 preview">
     <div className="row author">
-      <AuthorDetails user={author} date={date} small />
+      <AuthorDetails user={author} date={date} small readtime={readtime} />
     </div>
     {image && (
       <Link to={`article/${slug}`} className="black-text">
@@ -53,6 +53,7 @@ Article.propTypes = {
   author: PropTypes.shape({
     username: PropTypes.string.isRequired,
   }).isRequired,
+  readtime: PropTypes.number,
   likesCount: PropTypes.string.isRequired,
 };
 

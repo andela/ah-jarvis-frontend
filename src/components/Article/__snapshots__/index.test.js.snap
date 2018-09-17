@@ -12,6 +12,7 @@ ShallowWrapper {
     date=""
     image=""
     preview="data"
+    readtime={2}
     slug="data"
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -33,6 +34,7 @@ ShallowWrapper {
 >
           <AuthorDetails
                     date=""
+                    readtime={2}
                     small={true}
                     user={
                               Object {
@@ -111,6 +113,7 @@ ShallowWrapper {
         "props": Object {
           "children": <AuthorDetails
             date=""
+            readtime={2}
             small={true}
             user={
                         Object {
@@ -127,6 +130,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "date": "",
+            "readtime": 2,
             "small": true,
             "user": Object {
               "username": "test user",
@@ -423,6 +427,7 @@ ShallowWrapper {
 >
             <AuthorDetails
                         date=""
+                        readtime={2}
                         small={true}
                         user={
                                     Object {
@@ -501,6 +506,7 @@ ShallowWrapper {
           "props": Object {
             "children": <AuthorDetails
               date=""
+              readtime={2}
               small={true}
               user={
                             Object {
@@ -517,6 +523,7 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "date": "",
+              "readtime": 2,
               "small": true,
               "user": Object {
                 "username": "test user",

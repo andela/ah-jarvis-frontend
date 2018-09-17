@@ -76,7 +76,7 @@ ShallowWrapper {
                                         >
                                                   .
                                         </span>
-                                        13 min read
+                                        undefined min read
                               </Unknown>
                               <span
                                         className="p-r--10 p-l--10"
@@ -168,7 +168,7 @@ ShallowWrapper {
                                           >
                                                         .
                                           </span>
-                                          13 min read
+                                          undefined min read
                             </Unknown>
                             <span
                                           className="p-r--10 p-l--10"
@@ -283,7 +283,7 @@ ShallowWrapper {
                                     >
                                                       .
                                     </span>
-                                    13 min read
+                                    undefined min read
                   </Unknown>
                   <span
                                     className="p-r--10 p-l--10"
@@ -400,7 +400,7 @@ ShallowWrapper {
                       >
                                             .
                       </span>
-                      13 min read
+                      undefined min read
 </Unknown>,
                     <span
                       className="p-r--10 p-l--10"
@@ -440,7 +440,7 @@ ShallowWrapper {
 >
                           .
 </span>,
-                        "13 min read",
+                        "undefined min read",
                       ],
                     },
                     "ref": null,
@@ -457,7 +457,7 @@ ShallowWrapper {
                         "rendered": ".",
                         "type": "span",
                       },
-                      "13 min read",
+                      "undefined min read",
                     ],
                     "type": Symbol(react.fragment),
                   },
@@ -642,7 +642,7 @@ ShallowWrapper {
                                                 >
                                                             .
                                                 </span>
-                                                13 min read
+                                                undefined min read
                                     </Unknown>
                                     <span
                                                 className="p-r--10 p-l--10"
@@ -734,7 +734,7 @@ ShallowWrapper {
                                                 >
                                                                 .
                                                 </span>
-                                                13 min read
+                                                undefined min read
                                 </Unknown>
                                 <span
                                                 className="p-r--10 p-l--10"
@@ -849,7 +849,7 @@ ShallowWrapper {
                                         >
                                                             .
                                         </span>
-                                        13 min read
+                                        undefined min read
                     </Unknown>
                     <span
                                         className="p-r--10 p-l--10"
@@ -966,7 +966,7 @@ ShallowWrapper {
                         >
                                                 .
                         </span>
-                        13 min read
+                        undefined min read
 </Unknown>,
                       <span
                         className="p-r--10 p-l--10"
@@ -1006,7 +1006,7 @@ ShallowWrapper {
 >
                             .
 </span>,
-                          "13 min read",
+                          "undefined min read",
                         ],
                       },
                       "ref": null,
@@ -1023,7 +1023,7 @@ ShallowWrapper {
                           "rendered": ".",
                           "type": "span",
                         },
-                        "13 min read",
+                        "undefined min read",
                       ],
                       "type": Symbol(react.fragment),
                     },
@@ -1244,7 +1244,7 @@ ShallowWrapper {
                                         >
                                                   .
                                         </span>
-                                        13 min read
+                                        undefined min read
                               </Unknown>
                               <span
                                         className="p-r--10 p-l--10"
@@ -1314,7 +1314,7 @@ ShallowWrapper {
                                           >
                                                         .
                                           </span>
-                                          13 min read
+                                          undefined min read
                             </Unknown>
                             <span
                                           className="p-r--10 p-l--10"
@@ -1407,7 +1407,7 @@ ShallowWrapper {
                                     >
                                                       .
                                     </span>
-                                    13 min read
+                                    undefined min read
                   </Unknown>
                   <span
                                     className="p-r--10 p-l--10"
@@ -1491,7 +1491,7 @@ ShallowWrapper {
                       >
                                             .
                       </span>
-                      13 min read
+                      undefined min read
 </Unknown>,
                     <span
                       className="p-r--10 p-l--10"
@@ -1516,7 +1516,7 @@ ShallowWrapper {
 >
                           .
 </span>,
-                        "13 min read",
+                        "undefined min read",
                       ],
                     },
                     "ref": null,
@@ -1533,7 +1533,7 @@ ShallowWrapper {
                         "rendered": ".",
                         "type": "span",
                       },
-                      "13 min read",
+                      "undefined min read",
                     ],
                     "type": Symbol(react.fragment),
                   },
@@ -1639,7 +1639,7 @@ ShallowWrapper {
                                                 >
                                                             .
                                                 </span>
-                                                13 min read
+                                                undefined min read
                                     </Unknown>
                                     <span
                                                 className="p-r--10 p-l--10"
@@ -1709,7 +1709,7 @@ ShallowWrapper {
                                                 >
                                                                 .
                                                 </span>
-                                                13 min read
+                                                undefined min read
                                 </Unknown>
                                 <span
                                                 className="p-r--10 p-l--10"
@@ -1802,7 +1802,7 @@ ShallowWrapper {
                                         >
                                                             .
                                         </span>
-                                        13 min read
+                                        undefined min read
                     </Unknown>
                     <span
                                         className="p-r--10 p-l--10"
@@ -1886,7 +1886,7 @@ ShallowWrapper {
                         >
                                                 .
                         </span>
-                        13 min read
+                        undefined min read
 </Unknown>,
                       <span
                         className="p-r--10 p-l--10"
@@ -1911,7 +1911,7 @@ ShallowWrapper {
 >
                             .
 </span>,
-                          "13 min read",
+                          "undefined min read",
                         ],
                       },
                       "ref": null,
@@ -1928,7 +1928,7 @@ ShallowWrapper {
                           "rendered": ".",
                           "type": "span",
                         },
-                        "13 min read",
+                        "undefined min read",
                       ],
                       "type": Symbol(react.fragment),
                     },

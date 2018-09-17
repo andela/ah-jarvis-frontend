@@ -16,7 +16,6 @@ export default {
     errors: null,
     isFetching: false,
   },
-
   user: {
     user: {
       email: 'user@mail.com',

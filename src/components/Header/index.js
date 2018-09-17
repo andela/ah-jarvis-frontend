@@ -58,7 +58,7 @@ class Header extends React.Component {
         </NavLink>
 
       </li>
-      <li>
+      <ul>
         {user ? (
           <a href="#!" className="black-text" id="search">
             <div>
@@ -80,7 +80,7 @@ class Header extends React.Component {
 
         )
     }
-      </li>
+      </ul>
     </React.Fragment>
   )
 
