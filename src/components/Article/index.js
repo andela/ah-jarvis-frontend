@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import AuthorDetails from '../AuthorDetails';
 import thumbsUp from '../../assets/icons/thumbs-up.svg';
 import heart from '../../assets/icons/heart.svg';
-import { bookmarkArticle } from '../../containers/Article/Read/actions';
 
 const Article = ({
   title, author, image, preview, date, slug, readtime, likesCount, bookmark
