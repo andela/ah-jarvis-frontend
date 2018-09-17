@@ -102,7 +102,7 @@ class UpdateProfile extends Component {
 
     return (
       <div>
-        <Header />
+        <Header {...this.props} />
         <div className="container container--medium">
           {success && this.toaster()}
           {/* Main */}

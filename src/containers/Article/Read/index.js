@@ -77,7 +77,7 @@ class Read extends Component {
     }
     return (
       <React.Fragment>
-        <Header />
+        <Header {...this.props} />
 
         <div className="container m-t--30">
           <div className="row">

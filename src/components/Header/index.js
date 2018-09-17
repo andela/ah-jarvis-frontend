@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import M from 'materialize-css';
+import PropTypes from 'prop-types';
 
 import getCurrentUser from '../../utils/auth';
 import ROUTES from '../../utils/routes';
@@ -18,7 +19,7 @@ class Header extends React.Component {
 
   logout = () => {
     localStorage.removeItem('user');
-    return window.location.replace(ROUTES.home);
+    this.props.history.push(ROUTES.home);
   }
 
   renderDropDown = user => (
@@ -118,5 +119,11 @@ class Header extends React.Component {
     );
   }
 }
+
+Header.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default Header;
