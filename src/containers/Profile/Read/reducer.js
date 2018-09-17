@@ -1,4 +1,11 @@
-import { GET_REQUEST, GET_SUCCESS, GET_FAILURE } from './constants';
+import {
+  GET_REQUEST,
+  GET_SUCCESS,
+  GET_FAILURE,
+  FOLLOW_USER_REQUEST,
+  FOLLOW_USER_SUCCESS,
+  FOLLOW_USER_FAILURE,
+} from './constants';
 
 const initialState = {
   payload: {},
@@ -6,6 +13,7 @@ const initialState = {
   success: false,
   failure: false,
   errors: null,
+  isFollowing: false,
 };
 
 export default function (state = initialState, action) {
@@ -30,6 +38,23 @@ export default function (state = initialState, action) {
         failure: true,
         success: false,
         isFetching: false,
+      };
+    case FOLLOW_USER_REQUEST:
+      return {
+        ...state,
+        isFetching: true,
+      };
+    case FOLLOW_USER_SUCCESS:
+      return {
+        ...state,
+        isFollowing: true,
+        payload,
+      };
+    case FOLLOW_USER_FAILURE:
+      return {
+        ...state,
+        isFollowing: false,
+        errors,
       };
     default:
       return state;

@@ -36,3 +36,34 @@ describe('user get profile actions', () => {
     expect(actions.fetchProfileSuccess(payload)).toEqual(expectedAction);
   });
 });
+
+describe('user follow and unfollow actions', () => {
+  it('should create a request action to Follow a user', () => {
+    const expectedAction = {
+      type: types.FOLLOW_USER_REQUEST,
+    };
+    expect(actions.followActionRequest()).toEqual(expectedAction);
+  });
+  it('should create an action to dispatch errors to the user', () => {
+    const errors = {
+      errors: {
+        error: [],
+      },
+    };
+    const expectedAction = {
+      type: types.FOLLOW_USER_FAILURE,
+      errors,
+    };
+    expect(actions.followActionFailure(errors)).toEqual(expectedAction);
+  });
+  it('should create an action to dispatch success response.', () => {
+    const payload = {
+      profile: {},
+    };
+    const expectedAction = {
+      type: types.FOLLOW_USER_SUCCESS,
+      payload,
+    };
+    expect(actions.followActionSuccess(payload)).toEqual(expectedAction);
+  });
+});

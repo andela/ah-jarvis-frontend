@@ -4,9 +4,10 @@ import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import getUser from './actions';
+import getUser, { followAction } from './actions';
 import capitalize from '../../../utils/capitalize';
 import Header from '../../../components/Header';
+import Follow from '../../../components/FollowButton';
 
 export class ReadProfile extends Component {
   componentDidMount() {
@@ -16,18 +17,11 @@ export class ReadProfile extends Component {
   }
 
   render() {
-    const { success, payload, errors } = this.props.profile;
+    const {
+      isFetching, success, payload, errors,
+    } = this.props.profile;
 
-    let data;
-    if (payload.profile) {
-      data = JSON.parse(JSON.stringify(payload.profile));
-    }
-
-    let error;
-    if (errors) {
-      data = JSON.parse(JSON.stringify(errors));
-      error = data.profile.detail;
-    }
+    const profile = payload.profile && payload.profile;
 
     return (
       <React.Fragment>
@@ -36,47 +30,45 @@ export class ReadProfile extends Component {
         <div className="container container--medium">
           <div className="row m-t--20">
             {/* User Profile */}
-            <div className="row p-t--20 p-b--20">
-              <div className="col s12 m9">
-                <div className="m-b--15 username-line">
-                  <h4>{success ? capitalize(data.username) : error}</h4>
-                </div>
-
-                <div className="m-b--15 p-r--100 line-space">
-                  <p>{success ? data.bio : error}</p>
-                </div>
-
-                {data && (
+            {profile && (
+              <div className="row p-t--20 p-b--20">
+                <div className="col s12 m9">
+                  <div className="m-b--15 username-line">
+                    <h4>{capitalize(profile.username)}</h4>
+                  </div>
+                  <div className="m-b--15 p-r--100 line-space">
+                    <p>{profile.bio}</p>
+                  </div>
                   <div className="m-b--15">
-                    {this.props.user.email === data.email ? (
+                    {this.props.user.email === profile.email ? (
                       <Link
-                        to={`/profile/${data.username}/edit`}
+                        to={`/profile/${profile.username}/edit`}
                         className="waves-effect waves-light btn btn--rounded"
                       >
                         Edit
                       </Link>
                     ) : (
                       <div>
-                        {success && (
-                          <Link to="#!" className="waves-effect waves-light btn btn--rounded">
-                            Follow
-                          </Link>
-                        )}
+                        {
+                          <Follow
+                            user={profile}
+                            classname="waves-effect waves-light btn btn--rounded"
+                            follow={this.props.follow}
+                          />
+                        }
                       </div>
                     )}
                   </div>
-                )}
-              </div>
-              <div className="col s12 m3">
-                {data && (
+                </div>
+                <div className="col s12 m3">
                   <img
-                    src={data.image}
-                    alt={data.username}
+                    src={profile.image}
+                    alt={profile.username}
                     className="responsive-img circle avatar--large"
                   />
-                )}
+                </div>
               </div>
-            </div>
+            )}
             {/* End of User profile */}
           </div>
         </div>
@@ -90,6 +82,7 @@ ReadProfile.propTypes = {
   match: PropTypes.object,
   profile: PropTypes.object,
   user: PropTypes.object,
+  follow: PropTypes.func,
 };
 
 const mapStateToProps = state => ({
@@ -99,6 +92,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => bindActionCreators(
   {
     retrieveProfile: getUser,
+    follow: followAction,
   },
   dispatch,
 );
