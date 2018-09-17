@@ -7,6 +7,7 @@ import ROUTES from '../../utils/routes';
 
 import notification from '../../assets/icons/bell.svg';
 import search from '../../assets/icons/search.svg';
+import config from '../../config';
 
 
 class Header extends React.Component {
@@ -15,13 +16,17 @@ class Header extends React.Component {
     M.Dropdown.init(el);
   }
 
+  logout = () => {
+    localStorage.removeItem('user');
+  }
+
   renderDropDown = user => (
     <li>
       { user && (
         <React.Fragment>
           <a className="dropdown-trigger black-text" href="!#" data-target="profile">
             <img
-              src={user.image}
+              src={user.image ? user.image : config.DEFAULT_USER_AVATAR}
               alt=""
               className="responsive-img small--avatar circle-img"
             />
@@ -41,6 +46,10 @@ class Header extends React.Component {
             <li className="divider" tabIndex="-1" />
             <li>
               <a href="#!">Favorites</a>
+            </li>
+            <li className="divider" tabIndex="-1" />
+            <li>
+              <NavLink to={`${ROUTES.home}`} onClick={this.logout}>Logout</NavLink>
             </li>
           </ul>
         </React.Fragment>)
