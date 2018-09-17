@@ -44,7 +44,7 @@ class Home extends Component {
     const { isFetching, success } = this.props.articles;
     return (
       <React.Fragment>
-        <Header {...this.props} />
+        <Header />
         <div className="container-fluid">
           <div className="row articles">
             <div className="col m8 articles__main">

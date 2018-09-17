@@ -33,7 +33,6 @@ class Read extends Component {
   }
 
   onStarClick = (nextValue) => {
-    console.log('value', nextValue);
     this.setState({ rating: nextValue });
     const rateData = {
       rate: {

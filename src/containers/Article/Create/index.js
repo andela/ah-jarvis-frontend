@@ -66,7 +66,7 @@ class Create extends Component {
 
     return (
       <React.Fragment>
-        <Header {...this.props} />
+        <Header />
         <div className="container m-t--30">
           <UserInfo
             onPublish={this.handlePublish}

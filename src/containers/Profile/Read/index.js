@@ -31,7 +31,7 @@ export class ReadProfile extends Component {
 
     return (
       <React.Fragment>
-        <Header {...this.props} />
+        <Header />
         {/* Main */}
         <div className="container container--medium">
           <div className="row m-t--20">

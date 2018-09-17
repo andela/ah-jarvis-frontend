@@ -93,7 +93,7 @@ class Articles extends Component {
     return (
       <div>
         <React.Fragment>
-          <Header {...this.props} />
+          <Header />
           <div className="container-fluid">
             {this.renderStories()}
             {payload

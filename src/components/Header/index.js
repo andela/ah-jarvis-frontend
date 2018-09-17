@@ -19,7 +19,6 @@ class Header extends React.Component {
 
   logout = () => {
     localStorage.removeItem('user');
-    this.props.history.push(ROUTES.home);
   }
 
   renderDropDown = user => (
@@ -51,7 +50,7 @@ class Header extends React.Component {
             </li>
             <li className="divider" tabIndex="-1" />
             <li>
-              <a href="#!" onClick={this.logout}>Logout</a>
+              <NavLink to={`${ROUTES.home}`} onClick={this.logout}>Logout</NavLink>
             </li>
           </ul>
         </React.Fragment>)
