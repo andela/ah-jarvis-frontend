@@ -16,6 +16,10 @@ class Notification extends Component {
 
   renderNotifications = ({ notifications }) => {
     const data = notifications.map((notification) => {
+      if (!notification.actor) {
+        return null;
+      }
+
       if (notification.actor.type === 'user') {
         return null;
       }
