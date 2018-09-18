@@ -11,6 +11,7 @@ import fetchArticle from './containers/Article/Read/reducer';
 import articles from './containers/Home/reducer';
 import createArticle from './containers/Article/Create/reducer';
 import trending from './containers/Sidebar/reducer';
+import notifications from './containers/Notifications/reducer';
 
 
 const rootReducer = combineReducers({
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
   forgotPass,
   reset,
   signup,
+  notifications,
 });
 
 export default rootReducer;

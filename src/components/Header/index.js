@@ -1,19 +1,22 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import M from 'materialize-css';
+import { connect } from 'react-redux';
 
 import getCurrentUser from '../../utils/auth';
 import ROUTES from '../../utils/routes';
 
 import notification from '../../assets/icons/bell.svg';
 import search from '../../assets/icons/search.svg';
+import InlineLoader from '../InlineLoader';
+import Notifications from '../../containers/Notifications';
 import config from '../../config';
 
 
 class Header extends React.Component {
   componentDidMount() {
-    const el = document.querySelector('.dropdown-trigger');
-    M.Dropdown.init(el);
+    const elems = document.querySelectorAll('.dropdown-trigger');
+    M.Dropdown.init(elems);
   }
 
   logout = () => {
@@ -47,10 +50,12 @@ class Header extends React.Component {
             <li>
               <a href="#!">Favorites</a>
             </li>
+
             <li className="divider" tabIndex="-1" />
             <li>
               <NavLink to={`${ROUTES.home}`} onClick={this.logout}>Logout</NavLink>
             </li>
+
           </ul>
         </React.Fragment>)
         }
@@ -67,55 +72,66 @@ class Header extends React.Component {
         </NavLink>
 
       </li>
-      <ul>
-        {user ? (
-          <a href="#!" className="black-text" id="search">
-            <div>
-              <img src={notification} alt="" className="icon" />
-            </div>
-          </a>
-        ) : (
-          <React.Fragment>
-            <li>
-              <NavLink to={ROUTES.signin} className="black-text">Sign in</NavLink>
-            </li>
-            <li>
-              <NavLink to={ROUTES.signup} className="black-text">Sign up</NavLink>
-            </li>
-            <li>
-              <NavLink to={`${ROUTES.createArticleUrl}`} className="waves-effect waves-light btn ">What's your story</NavLink>
-            </li>
-          </React.Fragment>
+      {user ? (
+        <React.Fragment>
+          <li className="relative">
+            <a href="#!" className="dropdown-trigger black-text" data-target="notifications">
+              <div>
+                <img src={notification} alt="" className="icon" />
+              </div>
+            </a>
+            <Notifications {...this.props} />
+          </li>
+        </React.Fragment>
+      ) : (
+        <React.Fragment>
+          <li>
+            <NavLink to={ROUTES.signin} className="black-text">Sign in</NavLink>
+          </li>
+          <li>
+            <NavLink to={ROUTES.signup} className="black-text">Sign up</NavLink>
+          </li>
+          <li>
+            <NavLink to={`${ROUTES.createArticleUrl}`} className="waves-effect waves-light btn ">What's your story</NavLink>
+          </li>
+        </React.Fragment>
 
-        )
+      )
     }
-      </ul>
     </React.Fragment>
   )
 
   render() {
     const user = getCurrentUser();
+    const { loading } = this.props;
     return (
-      <header>
-        <nav className="white">
-          <div className="nav-wrapper p-l--30 p-r--30">
-            <NavLink to="/" className="flow-text black-text">
-                Authors' Haven
-            </NavLink>
+      <React.Fragment>
+        <header>
+          <nav className="white">
+            <div className="nav-wrapper p-l--30 p-r--30">
+              <NavLink to="/" className="flow-text black-text">
+                  Authors' Haven
+              </NavLink>
 
-            <ul id="nav-mobile" className="right nav-icons hide-on-med-and-down">
-              <li className="black-text hide search-input">
-                <input type="text" placeholder="Search..." className="search" />
-              </li>
-              {this.renderIcons(user)}
-              {this.renderDropDown(user)}
-            </ul>
+              <ul id="nav-mobile" className="right nav-icons hide-on-med-and-down">
+                <li className="black-text hide search-input">
+                  <input type="text" placeholder="Search..." className="search" />
+                </li>
+                {this.renderIcons(user)}
+                {this.renderDropDown(user)}
+              </ul>
 
-          </div>
-        </nav>
-      </header>
+            </div>
+          </nav>
+        </header>
+        {loading && <InlineLoader />}
+      </React.Fragment>
     );
   }
 }
 
-export default Header;
+const mapPropsToState = notifications => ({
+  notifications,
+});
+
+export default connect(mapPropsToState)(Header);
