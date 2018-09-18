@@ -46,28 +46,59 @@ ShallowWrapper {
           />
 </div>,
         <div
-          className="col m1 s6"
+          className="col s6 m1"
 >
-          <p
-                    className="grey-text p-t--10"
-          >
-                    Saving...
-          </p>
+          <div>
+                    <p
+                              className="grey-text p-t--10"
+                    >
+                              Saving...
+                    </p>
+          </div>
 </div>,
         <div
           className="col s6 m1"
 >
-          <div
-                    className="m-b--15"
-          >
+          <div>
                     <button
-                              className="waves-effect waves-light btn btn--rounded"
-                              disabled={true}
-                              onClick={[Function]}
-                              type="submit"
+                              className="dropdown-trigger btn-dropdown"
+                              data-target="publish"
+                              type="button"
                     >
                               Publishing...
                     </button>
+                    <div
+                              className="publish dropdown-content card"
+                              id="publish"
+                    >
+                              <h6>
+                                        Ready to publish your awesome article?
+                              </h6>
+                              <p
+                                        className="p-t--15"
+                              >
+                                        Add tags to make it easier for readers to find your article
+                              </p>
+                              <div
+                                        className="chips chips-placeholder"
+                              />
+                              <div
+                                        className="divider"
+                              />
+                              <p
+                                        className="p-t--15 p-b--25"
+                              >
+                                        Tip: add a high resolution image to your story to capture people’s interest
+                              </p>
+                              <button
+                                        className="waves-effect waves-light btn-flat btn-flat--primary right"
+                                        disabled={true}
+                                        onClick={[Function]}
+                                        type="submit"
+                              >
+                                        Publishing...
+                              </button>
+                    </div>
           </div>
 </div>,
       ],
@@ -139,44 +170,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <p
-            className="grey-text p-t--10"
->
-            Saving...
-</p>,
-          "className": "col m1 s6",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Saving...",
-            "className": "grey-text p-t--10",
-          },
-          "ref": null,
-          "rendered": "Saving...",
-          "type": "p",
-        },
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <div
-            className="m-b--15"
->
-            <button
-                        className="waves-effect waves-light btn btn--rounded"
-                        disabled={true}
-                        onClick={[Function]}
-                        type="submit"
+          "children": <div>
+            <p
+                        className="grey-text p-t--10"
             >
-                        Publishing...
-            </button>
+                        Saving...
+            </p>
 </div>,
           "className": "col s6 m1",
         },
@@ -186,15 +185,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <button
-              className="waves-effect waves-light btn btn--rounded"
-              disabled={true}
-              onClick={[Function]}
-              type="submit"
+            "children": <p
+              className="grey-text p-t--10"
 >
-              Publishing...
-</button>,
-            "className": "m-b--15",
+              Saving...
+</p>,
           },
           "ref": null,
           "rendered": Object {
@@ -202,16 +197,244 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Publishing...",
-              "className": "waves-effect waves-light btn btn--rounded",
-              "disabled": true,
-              "onClick": [Function],
-              "type": "submit",
+              "children": "Saving...",
+              "className": "grey-text p-t--10",
             },
             "ref": null,
-            "rendered": "Publishing...",
-            "type": "button",
+            "rendered": "Saving...",
+            "type": "p",
           },
+          "type": "div",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div>
+            <button
+                        className="dropdown-trigger btn-dropdown"
+                        data-target="publish"
+                        type="button"
+            >
+                        Publishing...
+            </button>
+            <div
+                        className="publish dropdown-content card"
+                        id="publish"
+            >
+                        <h6>
+                                    Ready to publish your awesome article?
+                        </h6>
+                        <p
+                                    className="p-t--15"
+                        >
+                                    Add tags to make it easier for readers to find your article
+                        </p>
+                        <div
+                                    className="chips chips-placeholder"
+                        />
+                        <div
+                                    className="divider"
+                        />
+                        <p
+                                    className="p-t--15 p-b--25"
+                        >
+                                    Tip: add a high resolution image to your story to capture people’s interest
+                        </p>
+                        <button
+                                    className="waves-effect waves-light btn-flat btn-flat--primary right"
+                                    disabled={true}
+                                    onClick={[Function]}
+                                    type="submit"
+                        >
+                                    Publishing...
+                        </button>
+            </div>
+</div>,
+          "className": "col s6 m1",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <button
+                className="dropdown-trigger btn-dropdown"
+                data-target="publish"
+                type="button"
+>
+                Publishing...
+</button>,
+              <div
+                className="publish dropdown-content card"
+                id="publish"
+>
+                <h6>
+                                Ready to publish your awesome article?
+                </h6>
+                <p
+                                className="p-t--15"
+                >
+                                Add tags to make it easier for readers to find your article
+                </p>
+                <div
+                                className="chips chips-placeholder"
+                />
+                <div
+                                className="divider"
+                />
+                <p
+                                className="p-t--15 p-b--25"
+                >
+                                Tip: add a high resolution image to your story to capture people’s interest
+                </p>
+                <button
+                                className="waves-effect waves-light btn-flat btn-flat--primary right"
+                                disabled={true}
+                                onClick={[Function]}
+                                type="submit"
+                >
+                                Publishing...
+                </button>
+</div>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Publishing...",
+                "className": "dropdown-trigger btn-dropdown",
+                "data-target": "publish",
+                "type": "button",
+              },
+              "ref": null,
+              "rendered": "Publishing...",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h6>
+                    Ready to publish your awesome article?
+</h6>,
+                  <p
+                    className="p-t--15"
+>
+                    Add tags to make it easier for readers to find your article
+</p>,
+                  <div
+                    className="chips chips-placeholder"
+/>,
+                  <div
+                    className="divider"
+/>,
+                  <p
+                    className="p-t--15 p-b--25"
+>
+                    Tip: add a high resolution image to your story to capture people’s interest
+</p>,
+                  <button
+                    className="waves-effect waves-light btn-flat btn-flat--primary right"
+                    disabled={true}
+                    onClick={[Function]}
+                    type="submit"
+>
+                    Publishing...
+</button>,
+                ],
+                "className": "publish dropdown-content card",
+                "id": "publish",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Ready to publish your awesome article?",
+                  },
+                  "ref": null,
+                  "rendered": "Ready to publish your awesome article?",
+                  "type": "h6",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Add tags to make it easier for readers to find your article",
+                    "className": "p-t--15",
+                  },
+                  "ref": null,
+                  "rendered": "Add tags to make it easier for readers to find your article",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "chips chips-placeholder",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "divider",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Tip: add a high resolution image to your story to capture people’s interest",
+                    "className": "p-t--15 p-b--25",
+                  },
+                  "ref": null,
+                  "rendered": "Tip: add a high resolution image to your story to capture people’s interest",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Publishing...",
+                    "className": "waves-effect waves-light btn-flat btn-flat--primary right",
+                    "disabled": true,
+                    "onClick": [Function],
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": "Publishing...",
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+          ],
           "type": "div",
         },
         "type": "div",
@@ -243,28 +466,59 @@ ShallowWrapper {
             />
 </div>,
           <div
-            className="col m1 s6"
+            className="col s6 m1"
 >
-            <p
-                        className="grey-text p-t--10"
-            >
-                        Saving...
-            </p>
+            <div>
+                        <p
+                                    className="grey-text p-t--10"
+                        >
+                                    Saving...
+                        </p>
+            </div>
 </div>,
           <div
             className="col s6 m1"
 >
-            <div
-                        className="m-b--15"
-            >
+            <div>
                         <button
-                                    className="waves-effect waves-light btn btn--rounded"
-                                    disabled={true}
-                                    onClick={[Function]}
-                                    type="submit"
+                                    className="dropdown-trigger btn-dropdown"
+                                    data-target="publish"
+                                    type="button"
                         >
                                     Publishing...
                         </button>
+                        <div
+                                    className="publish dropdown-content card"
+                                    id="publish"
+                        >
+                                    <h6>
+                                                Ready to publish your awesome article?
+                                    </h6>
+                                    <p
+                                                className="p-t--15"
+                                    >
+                                                Add tags to make it easier for readers to find your article
+                                    </p>
+                                    <div
+                                                className="chips chips-placeholder"
+                                    />
+                                    <div
+                                                className="divider"
+                                    />
+                                    <p
+                                                className="p-t--15 p-b--25"
+                                    >
+                                                Tip: add a high resolution image to your story to capture people’s interest
+                                    </p>
+                                    <button
+                                                className="waves-effect waves-light btn-flat btn-flat--primary right"
+                                                disabled={true}
+                                                onClick={[Function]}
+                                                type="submit"
+                                    >
+                                                Publishing...
+                                    </button>
+                        </div>
             </div>
 </div>,
         ],
@@ -336,44 +590,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <p
-              className="grey-text p-t--10"
->
-              Saving...
-</p>,
-            "className": "col m1 s6",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Saving...",
-              "className": "grey-text p-t--10",
-            },
-            "ref": null,
-            "rendered": "Saving...",
-            "type": "p",
-          },
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <div
-              className="m-b--15"
->
-              <button
-                            className="waves-effect waves-light btn btn--rounded"
-                            disabled={true}
-                            onClick={[Function]}
-                            type="submit"
+            "children": <div>
+              <p
+                            className="grey-text p-t--10"
               >
-                            Publishing...
-              </button>
+                            Saving...
+              </p>
 </div>,
             "className": "col s6 m1",
           },
@@ -383,15 +605,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <button
-                className="waves-effect waves-light btn btn--rounded"
-                disabled={true}
-                onClick={[Function]}
-                type="submit"
+              "children": <p
+                className="grey-text p-t--10"
 >
-                Publishing...
-</button>,
-              "className": "m-b--15",
+                Saving...
+</p>,
             },
             "ref": null,
             "rendered": Object {
@@ -399,16 +617,244 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Publishing...",
-                "className": "waves-effect waves-light btn btn--rounded",
-                "disabled": true,
-                "onClick": [Function],
-                "type": "submit",
+                "children": "Saving...",
+                "className": "grey-text p-t--10",
               },
               "ref": null,
-              "rendered": "Publishing...",
-              "type": "button",
+              "rendered": "Saving...",
+              "type": "p",
             },
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div>
+              <button
+                            className="dropdown-trigger btn-dropdown"
+                            data-target="publish"
+                            type="button"
+              >
+                            Publishing...
+              </button>
+              <div
+                            className="publish dropdown-content card"
+                            id="publish"
+              >
+                            <h6>
+                                          Ready to publish your awesome article?
+                            </h6>
+                            <p
+                                          className="p-t--15"
+                            >
+                                          Add tags to make it easier for readers to find your article
+                            </p>
+                            <div
+                                          className="chips chips-placeholder"
+                            />
+                            <div
+                                          className="divider"
+                            />
+                            <p
+                                          className="p-t--15 p-b--25"
+                            >
+                                          Tip: add a high resolution image to your story to capture people’s interest
+                            </p>
+                            <button
+                                          className="waves-effect waves-light btn-flat btn-flat--primary right"
+                                          disabled={true}
+                                          onClick={[Function]}
+                                          type="submit"
+                            >
+                                          Publishing...
+                            </button>
+              </div>
+</div>,
+            "className": "col s6 m1",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <button
+                  className="dropdown-trigger btn-dropdown"
+                  data-target="publish"
+                  type="button"
+>
+                  Publishing...
+</button>,
+                <div
+                  className="publish dropdown-content card"
+                  id="publish"
+>
+                  <h6>
+                                    Ready to publish your awesome article?
+                  </h6>
+                  <p
+                                    className="p-t--15"
+                  >
+                                    Add tags to make it easier for readers to find your article
+                  </p>
+                  <div
+                                    className="chips chips-placeholder"
+                  />
+                  <div
+                                    className="divider"
+                  />
+                  <p
+                                    className="p-t--15 p-b--25"
+                  >
+                                    Tip: add a high resolution image to your story to capture people’s interest
+                  </p>
+                  <button
+                                    className="waves-effect waves-light btn-flat btn-flat--primary right"
+                                    disabled={true}
+                                    onClick={[Function]}
+                                    type="submit"
+                  >
+                                    Publishing...
+                  </button>
+</div>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Publishing...",
+                  "className": "dropdown-trigger btn-dropdown",
+                  "data-target": "publish",
+                  "type": "button",
+                },
+                "ref": null,
+                "rendered": "Publishing...",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <h6>
+                      Ready to publish your awesome article?
+</h6>,
+                    <p
+                      className="p-t--15"
+>
+                      Add tags to make it easier for readers to find your article
+</p>,
+                    <div
+                      className="chips chips-placeholder"
+/>,
+                    <div
+                      className="divider"
+/>,
+                    <p
+                      className="p-t--15 p-b--25"
+>
+                      Tip: add a high resolution image to your story to capture people’s interest
+</p>,
+                    <button
+                      className="waves-effect waves-light btn-flat btn-flat--primary right"
+                      disabled={true}
+                      onClick={[Function]}
+                      type="submit"
+>
+                      Publishing...
+</button>,
+                  ],
+                  "className": "publish dropdown-content card",
+                  "id": "publish",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Ready to publish your awesome article?",
+                    },
+                    "ref": null,
+                    "rendered": "Ready to publish your awesome article?",
+                    "type": "h6",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Add tags to make it easier for readers to find your article",
+                      "className": "p-t--15",
+                    },
+                    "ref": null,
+                    "rendered": "Add tags to make it easier for readers to find your article",
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "chips chips-placeholder",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "divider",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Tip: add a high resolution image to your story to capture people’s interest",
+                      "className": "p-t--15 p-b--25",
+                    },
+                    "ref": null,
+                    "rendered": "Tip: add a high resolution image to your story to capture people’s interest",
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Publishing...",
+                      "className": "waves-effect waves-light btn-flat btn-flat--primary right",
+                      "disabled": true,
+                      "onClick": [Function],
+                      "type": "submit",
+                    },
+                    "ref": null,
+                    "rendered": "Publishing...",
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
             "type": "div",
           },
           "type": "div",

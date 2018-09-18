@@ -39,3 +39,15 @@
     border-radius: 200px;
   }
 }
+
+.btn-dropdown {
+  color: $primary-color;
+  background-color: inherit;
+  border: none;
+  height: 32px;
+  line-height: 32px;
+
+  &:focus {
+    background-color: inherit !important;
+  }
+}

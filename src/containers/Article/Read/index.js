@@ -77,6 +77,8 @@ class Read extends Component {
   handleReaction = (e) => {
     e.preventDefault();
     const { like, dislike, match } = this.props;
+    console.log(match);
+
     if (user) {
       this.setState({ alert: false });
       if (e.target.id === 'like') {
@@ -97,8 +99,11 @@ class Read extends Component {
     <Reaction id={id} src={src} count={count} onClick={this.handleReaction} />
   );
 
+  renderTags = tags => tags.map(tag => <div className="chip">{tag}</div>);
+
   render() {
-    console.log(thumbsUp);
+    console.log(this.props.match.params.id);
+
     const {
       isFetching, success, payload, errors, isRating,
     } = this.props.article;
@@ -106,6 +111,7 @@ class Read extends Component {
     if (payload.article) {
       try {
         data = JSON.parse(payload.article.body);
+        console.log(payload.article);
       } catch (e) {
         return <NotFound />;
       }
@@ -147,6 +153,7 @@ class Read extends Component {
               </React.Fragment>
             )}
           </div>
+          {payload.article && <div className="row">{ this.renderTags(payload.article.tagList) }</div>}
         </div>
       </React.Fragment>
     );

@@ -15,7 +15,7 @@ const Reaction = ({
 export default Reaction;
 
 Reaction.propTypes = {
-  id: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
   src: PropTypes.bool.isRequired,
   count: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
