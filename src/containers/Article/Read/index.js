@@ -130,6 +130,7 @@ class Read extends Component {
                   <AuthorDetails
                     user={{ ...payload.article.author }}
                     date={payload.article.created_at}
+                    slug={payload.article.slug}
                     readtime={readtime}
                     averageRate={
                       payload.article.average_rating

@@ -23,22 +23,21 @@ class Home extends Component {
     const articles = featuredArticles.map((data, index) => (
       <ArticleCard key={data.slug} article={data} index={index} />
     ));
-    return (
-      <React.Fragment>
-        {articles}
-      </React.Fragment>
-    );
-  }
+    return <React.Fragment>{articles}</React.Fragment>;
+  };
 
   renderPlaceholder = () => {
     const loaders = [];
     for (let index = 0; index < 4; index += 1) {
-      const loader = index % 2 === 0 ? (<ArticleCardPlaceHolder className="card horizontal" key={index} />)
-        : (<ArticleCardHolderReverse className="card horizontal" key={index} />);
+      const loader = index % 2 === 0 ? (
+        <ArticleCardPlaceHolder className="card horizontal" key={index} />
+      ) : (
+        <ArticleCardHolderReverse className="card horizontal" key={index} />
+      );
       loaders.push(loader);
     }
     return loaders;
-  }
+  };
 
   render() {
     const { isFetching, success } = this.props.articles;
@@ -50,8 +49,7 @@ class Home extends Component {
             <div className="col m8 articles__main">
               <p className="flow-text m-b--30">Featured articles</p>
 
-              {isFetching || !success ? this.renderPlaceholder() : this.renderArticles() }
-
+              {isFetching || !success ? this.renderPlaceholder() : this.renderArticles()}
             </div>
             <Sidebar page="home" />
           </div>
@@ -82,5 +80,7 @@ const mapStateToProps = ({ articles }) => ({
   articles,
 });
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Home);

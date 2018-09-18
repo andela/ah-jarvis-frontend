@@ -26,7 +26,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div
-          className="author col m9"
+          className="author col m10"
 >
           <Link
                     replace={false}
@@ -36,7 +36,7 @@ ShallowWrapper {
                               className="author__avatar"
                     >
                               <img
-                                        alt=""
+                                        alt="test user"
                                         className="responsive-img circle avatar--small"
                                         src={undefined}
                               />
@@ -78,11 +78,6 @@ ShallowWrapper {
                                         </span>
                                         undefined min read
                               </Unknown>
-                              <span
-                                        className="p-r--10 p-l--10"
-                              >
-                                        .
-                              </span>
                               <Unknown>
                                         <span
                                                   className="p-r--10 p-l--10"
@@ -103,14 +98,16 @@ ShallowWrapper {
           </div>
 </div>,
         <div
-          className="col m3"
+          className="col m2 right"
 >
           <div
                     className="m-t--15"
-          />
+          >
+                    
+          </div>
 </div>,
       ],
-      "className": "row",
+      "className": "row author__panel p-t--20",
     },
     "ref": null,
     "rendered": Array [
@@ -128,7 +125,7 @@ ShallowWrapper {
                             className="author__avatar"
               >
                             <img
-                                          alt=""
+                                          alt="test user"
                                           className="responsive-img circle avatar--small"
                                           src={undefined}
                             />
@@ -170,11 +167,6 @@ ShallowWrapper {
                                           </span>
                                           undefined min read
                             </Unknown>
-                            <span
-                                          className="p-r--10 p-l--10"
-                            >
-                                          .
-                            </span>
                             <Unknown>
                                           <span
                                                         className="p-r--10 p-l--10"
@@ -194,7 +186,7 @@ ShallowWrapper {
               </div>
 </div>,
           ],
-          "className": "author col m9",
+          "className": "author col m10",
         },
         "ref": null,
         "rendered": Array [
@@ -207,7 +199,7 @@ ShallowWrapper {
                 className="author__avatar"
 >
                 <img
-                                alt=""
+                                alt="test user"
                                 className="responsive-img circle avatar--small"
                                 src={undefined}
                 />
@@ -222,7 +214,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <img
-                  alt=""
+                  alt="test user"
                   className="responsive-img circle avatar--small"
                   src={undefined}
 />,
@@ -234,7 +226,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "alt": "",
+                  "alt": "test user",
                   "className": "responsive-img circle avatar--small",
                   "src": undefined,
                 },
@@ -285,11 +277,6 @@ ShallowWrapper {
                                     </span>
                                     undefined min read
                   </Unknown>
-                  <span
-                                    className="p-r--10 p-l--10"
-                  >
-                                    .
-                  </span>
                   <Unknown>
                                     <span
                                                       className="p-r--10 p-l--10"
@@ -402,11 +389,6 @@ ShallowWrapper {
                       </span>
                       undefined min read
 </Unknown>,
-                    <span
-                      className="p-r--10 p-l--10"
->
-                      .
-</span>,
                     <Unknown>
                       <span
                                             className="p-r--10 p-l--10"
@@ -460,18 +442,6 @@ ShallowWrapper {
                       "undefined min read",
                     ],
                     "type": Symbol(react.fragment),
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": ".",
-                      "className": "p-r--10 p-l--10",
-                    },
-                    "ref": null,
-                    "rendered": ".",
-                    "type": "span",
                   },
                   Object {
                     "instance": null,
@@ -563,8 +533,10 @@ ShallowWrapper {
         "props": Object {
           "children": <div
             className="m-t--15"
-/>,
-          "className": "col m3",
+>
+            
+</div>,
+          "className": "col m2 right",
         },
         "ref": null,
         "rendered": Object {
@@ -572,11 +544,17 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": null,
+            "children": Array [
+              null,
+              null,
+            ],
             "className": "m-t--15",
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Array [
+            null,
+            null,
+          ],
           "type": "div",
         },
         "type": "div",
@@ -592,7 +570,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div
-            className="author col m9"
+            className="author col m10"
 >
             <Link
                         replace={false}
@@ -602,7 +580,7 @@ ShallowWrapper {
                                     className="author__avatar"
                         >
                                     <img
-                                                alt=""
+                                                alt="test user"
                                                 className="responsive-img circle avatar--small"
                                                 src={undefined}
                                     />
@@ -644,11 +622,6 @@ ShallowWrapper {
                                                 </span>
                                                 undefined min read
                                     </Unknown>
-                                    <span
-                                                className="p-r--10 p-l--10"
-                                    >
-                                                .
-                                    </span>
                                     <Unknown>
                                                 <span
                                                             className="p-r--10 p-l--10"
@@ -669,14 +642,16 @@ ShallowWrapper {
             </div>
 </div>,
           <div
-            className="col m3"
+            className="col m2 right"
 >
             <div
                         className="m-t--15"
-            />
+            >
+                        
+            </div>
 </div>,
         ],
-        "className": "row",
+        "className": "row author__panel p-t--20",
       },
       "ref": null,
       "rendered": Array [
@@ -694,7 +669,7 @@ ShallowWrapper {
                                 className="author__avatar"
                 >
                                 <img
-                                                alt=""
+                                                alt="test user"
                                                 className="responsive-img circle avatar--small"
                                                 src={undefined}
                                 />
@@ -736,11 +711,6 @@ ShallowWrapper {
                                                 </span>
                                                 undefined min read
                                 </Unknown>
-                                <span
-                                                className="p-r--10 p-l--10"
-                                >
-                                                .
-                                </span>
                                 <Unknown>
                                                 <span
                                                                 className="p-r--10 p-l--10"
@@ -760,7 +730,7 @@ ShallowWrapper {
                 </div>
 </div>,
             ],
-            "className": "author col m9",
+            "className": "author col m10",
           },
           "ref": null,
           "rendered": Array [
@@ -773,7 +743,7 @@ ShallowWrapper {
                   className="author__avatar"
 >
                   <img
-                                    alt=""
+                                    alt="test user"
                                     className="responsive-img circle avatar--small"
                                     src={undefined}
                   />
@@ -788,7 +758,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": <img
-                    alt=""
+                    alt="test user"
                     className="responsive-img circle avatar--small"
                     src={undefined}
 />,
@@ -800,7 +770,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "alt": "",
+                    "alt": "test user",
                     "className": "responsive-img circle avatar--small",
                     "src": undefined,
                   },
@@ -851,11 +821,6 @@ ShallowWrapper {
                                         </span>
                                         undefined min read
                     </Unknown>
-                    <span
-                                        className="p-r--10 p-l--10"
-                    >
-                                        .
-                    </span>
                     <Unknown>
                                         <span
                                                             className="p-r--10 p-l--10"
@@ -968,11 +933,6 @@ ShallowWrapper {
                         </span>
                         undefined min read
 </Unknown>,
-                      <span
-                        className="p-r--10 p-l--10"
->
-                        .
-</span>,
                       <Unknown>
                         <span
                                                 className="p-r--10 p-l--10"
@@ -1026,18 +986,6 @@ ShallowWrapper {
                         "undefined min read",
                       ],
                       "type": Symbol(react.fragment),
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": ".",
-                        "className": "p-r--10 p-l--10",
-                      },
-                      "ref": null,
-                      "rendered": ".",
-                      "type": "span",
                     },
                     Object {
                       "instance": null,
@@ -1129,8 +1077,10 @@ ShallowWrapper {
           "props": Object {
             "children": <div
               className="m-t--15"
-/>,
-            "className": "col m3",
+>
+              
+</div>,
+            "className": "col m2 right",
           },
           "ref": null,
           "rendered": Object {
@@ -1138,11 +1088,17 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": null,
+              "children": Array [
+                null,
+                null,
+              ],
               "className": "m-t--15",
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Array [
+              null,
+              null,
+            ],
             "type": "div",
           },
           "type": "div",
@@ -1200,7 +1156,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div
-          className="author false"
+          className="author col m10"
 >
           <Link
                     replace={false}
@@ -1210,7 +1166,7 @@ ShallowWrapper {
                               className="author__avatar"
                     >
                               <img
-                                        alt=""
+                                        alt="test user"
                                         className="responsive-img circle avatar--small"
                                         src={undefined}
                               />
@@ -1246,23 +1202,20 @@ ShallowWrapper {
                                         </span>
                                         undefined min read
                               </Unknown>
-                              <span
-                                        className="p-r--10 p-l--10"
-                              >
-                                        .
-                              </span>
                     </div>
           </div>
 </div>,
         <div
-          className="col m3"
+          className="col m2 right"
 >
           <div
                     className="m-t--15"
-          />
+          >
+                    
+          </div>
 </div>,
       ],
-      "className": "row",
+      "className": "row author__panel p-t--20",
     },
     "ref": null,
     "rendered": Array [
@@ -1280,7 +1233,7 @@ ShallowWrapper {
                             className="author__avatar"
               >
                             <img
-                                          alt=""
+                                          alt="test user"
                                           className="responsive-img circle avatar--small"
                                           src={undefined}
                             />
@@ -1316,15 +1269,10 @@ ShallowWrapper {
                                           </span>
                                           undefined min read
                             </Unknown>
-                            <span
-                                          className="p-r--10 p-l--10"
-                            >
-                                          .
-                            </span>
               </div>
 </div>,
           ],
-          "className": "author false",
+          "className": "author col m10",
         },
         "ref": null,
         "rendered": Array [
@@ -1337,7 +1285,7 @@ ShallowWrapper {
                 className="author__avatar"
 >
                 <img
-                                alt=""
+                                alt="test user"
                                 className="responsive-img circle avatar--small"
                                 src={undefined}
                 />
@@ -1352,7 +1300,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <img
-                  alt=""
+                  alt="test user"
                   className="responsive-img circle avatar--small"
                   src={undefined}
 />,
@@ -1364,7 +1312,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "alt": "",
+                  "alt": "test user",
                   "className": "responsive-img circle avatar--small",
                   "src": undefined,
                 },
@@ -1409,11 +1357,6 @@ ShallowWrapper {
                                     </span>
                                     undefined min read
                   </Unknown>
-                  <span
-                                    className="p-r--10 p-l--10"
-                  >
-                                    .
-                  </span>
 </div>,
               ],
               "className": "author_details author--small",
@@ -1493,11 +1436,6 @@ ShallowWrapper {
                       </span>
                       undefined min read
 </Unknown>,
-                    <span
-                      className="p-r--10 p-l--10"
->
-                      .
-</span>,
                     false,
                   ],
                   "className": "article__highlights",
@@ -1537,18 +1475,6 @@ ShallowWrapper {
                     ],
                     "type": Symbol(react.fragment),
                   },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": ".",
-                      "className": "p-r--10 p-l--10",
-                    },
-                    "ref": null,
-                    "rendered": ".",
-                    "type": "span",
-                  },
                   false,
                 ],
                 "type": "div",
@@ -1566,8 +1492,10 @@ ShallowWrapper {
         "props": Object {
           "children": <div
             className="m-t--15"
-/>,
-          "className": "col m3",
+>
+            
+</div>,
+          "className": "col m2 right",
         },
         "ref": null,
         "rendered": Object {
@@ -1575,11 +1503,17 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": false,
+            "children": Array [
+              null,
+              null,
+            ],
             "className": "m-t--15",
           },
           "ref": null,
-          "rendered": false,
+          "rendered": Array [
+            null,
+            null,
+          ],
           "type": "div",
         },
         "type": "div",
@@ -1595,7 +1529,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div
-            className="author false"
+            className="author col m10"
 >
             <Link
                         replace={false}
@@ -1605,7 +1539,7 @@ ShallowWrapper {
                                     className="author__avatar"
                         >
                                     <img
-                                                alt=""
+                                                alt="test user"
                                                 className="responsive-img circle avatar--small"
                                                 src={undefined}
                                     />
@@ -1641,23 +1575,20 @@ ShallowWrapper {
                                                 </span>
                                                 undefined min read
                                     </Unknown>
-                                    <span
-                                                className="p-r--10 p-l--10"
-                                    >
-                                                .
-                                    </span>
                         </div>
             </div>
 </div>,
           <div
-            className="col m3"
+            className="col m2 right"
 >
             <div
                         className="m-t--15"
-            />
+            >
+                        
+            </div>
 </div>,
         ],
-        "className": "row",
+        "className": "row author__panel p-t--20",
       },
       "ref": null,
       "rendered": Array [
@@ -1675,7 +1606,7 @@ ShallowWrapper {
                                 className="author__avatar"
                 >
                                 <img
-                                                alt=""
+                                                alt="test user"
                                                 className="responsive-img circle avatar--small"
                                                 src={undefined}
                                 />
@@ -1711,15 +1642,10 @@ ShallowWrapper {
                                                 </span>
                                                 undefined min read
                                 </Unknown>
-                                <span
-                                                className="p-r--10 p-l--10"
-                                >
-                                                .
-                                </span>
                 </div>
 </div>,
             ],
-            "className": "author false",
+            "className": "author col m10",
           },
           "ref": null,
           "rendered": Array [
@@ -1732,7 +1658,7 @@ ShallowWrapper {
                   className="author__avatar"
 >
                   <img
-                                    alt=""
+                                    alt="test user"
                                     className="responsive-img circle avatar--small"
                                     src={undefined}
                   />
@@ -1747,7 +1673,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": <img
-                    alt=""
+                    alt="test user"
                     className="responsive-img circle avatar--small"
                     src={undefined}
 />,
@@ -1759,7 +1685,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "alt": "",
+                    "alt": "test user",
                     "className": "responsive-img circle avatar--small",
                     "src": undefined,
                   },
@@ -1804,11 +1730,6 @@ ShallowWrapper {
                                         </span>
                                         undefined min read
                     </Unknown>
-                    <span
-                                        className="p-r--10 p-l--10"
-                    >
-                                        .
-                    </span>
 </div>,
                 ],
                 "className": "author_details author--small",
@@ -1888,11 +1809,6 @@ ShallowWrapper {
                         </span>
                         undefined min read
 </Unknown>,
-                      <span
-                        className="p-r--10 p-l--10"
->
-                        .
-</span>,
                       false,
                     ],
                     "className": "article__highlights",
@@ -1932,18 +1848,6 @@ ShallowWrapper {
                       ],
                       "type": Symbol(react.fragment),
                     },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": ".",
-                        "className": "p-r--10 p-l--10",
-                      },
-                      "ref": null,
-                      "rendered": ".",
-                      "type": "span",
-                    },
                     false,
                   ],
                   "type": "div",
@@ -1961,8 +1865,10 @@ ShallowWrapper {
           "props": Object {
             "children": <div
               className="m-t--15"
-/>,
-            "className": "col m3",
+>
+              
+</div>,
+            "className": "col m2 right",
           },
           "ref": null,
           "rendered": Object {
@@ -1970,11 +1876,17 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": false,
+              "children": Array [
+                null,
+                null,
+              ],
               "className": "m-t--15",
             },
             "ref": null,
-            "rendered": false,
+            "rendered": Array [
+              null,
+              null,
+            ],
             "type": "div",
           },
           "type": "div",

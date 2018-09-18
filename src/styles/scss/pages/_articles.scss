@@ -153,12 +153,10 @@
 .reactions {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
+  margin-top: 250px;
   align-items: flex-end;
   position: fixed;
-  padding-top: 170px;
   margin-left: 50px;
-  color: $primary_color;
 
   & .icon {
     margin-bottom: 20px;
@@ -182,6 +180,12 @@
 
   &__avatar {
     margin-right: 15px;
+  }
+
+  &__panel {
+    display: flex;
+    width: 100%;
+    justify-content: space-between !important;
   }
 
   &__details {

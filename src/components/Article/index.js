@@ -10,7 +10,7 @@ const Article = ({
 }) => (
   <div className="col m11 s12 preview">
     <div className="row author">
-      <AuthorDetails user={author} date={date} small readtime={readtime} />
+      <AuthorDetails user={author} date={date} small readtime={readtime} slug={slug} />
     </div>
     {image && (
       <Link to={`article/${slug}`} className="black-text">

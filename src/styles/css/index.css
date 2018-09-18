@@ -137,10 +137,15 @@ nav .back {
   font-size: 1rem;
   padding: 0; }
 
-.dropdown-content {
+.--nav {
   min-width: 190px;
   max-height: 450px;
   overflow-y: scroll;
+  top: -57px; }
+
+.dropdown-content--nav {
+  min-width: 190px !important;
+  max-height: 450px !important;
   top: -57px; }
 
 .pagination li.active {
@@ -253,8 +258,7 @@ helper-text {
   width: 90px !important; }
 
 .text--small {
-  font-size: 12px !important;
-  color: #03a87c; }
+  font-size: 12px !important; }
 
 .flex-center {
   display: flex;
@@ -263,6 +267,9 @@ helper-text {
 .avatar--medium {
   height: 90px !important;
   width: 90px !important; }
+
+.text--small {
+  font-size: 12px !important; }
 
 .flex-center {
   display: flex;
@@ -614,12 +621,10 @@ hr {
 .reactions {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
+  margin-top: 250px;
   align-items: flex-end;
   position: fixed;
-  padding-top: 170px;
-  margin-left: 50px;
-  color: #03a87c; }
+  margin-left: 50px; }
   .reactions .icon {
     margin-bottom: 20px;
     height: 30px;
@@ -636,6 +641,10 @@ hr {
   align-items: center; }
   .author__avatar {
     margin-right: 15px; }
+  .author__panel {
+    display: flex;
+    width: 100%;
+    justify-content: space-between !important; }
   .author__details {
     display: flex;
     flex-direction: column; }

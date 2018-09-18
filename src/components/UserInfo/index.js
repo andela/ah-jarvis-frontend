@@ -7,7 +7,7 @@ const UserInfo = ({
 }) => (
   <div className="row p-t--20 p-b--20">
     <div className="col s6 m1">
-      <img src={user.image} alt="nn" className="responsive-img circle" />
+      <img src={user.image} alt={user.username} className="responsive-img circle" />
     </div>
     <div className="col s12 m9">
       <p className={!user.bio ? 'm-t--15' : ''}>{user.username && capitalize(user.username)}</p>
