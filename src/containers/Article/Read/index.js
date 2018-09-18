@@ -18,6 +18,7 @@ import ArticleDetailsLoader from '../../../components/Placehoders/ArticleDetails
 import NotFound from '../../../components/NotFound';
 import api from '../../../utils/api';
 import getCurrentUser from '../../../utils/auth';
+import readTime from '../../../utils/readtime';
 
 const user = getCurrentUser();
 
@@ -102,27 +103,25 @@ class Read extends Component {
   renderTags = tags => tags.map(tag => <div className="chip">{tag}</div>);
 
   render() {
-    console.log(this.props.match.params.id);
-
     const {
       isFetching, success, payload, errors, isRating,
     } = this.props.article;
     let data;
+    let readtime;
     if (payload.article) {
       try {
         data = JSON.parse(payload.article.body);
-        console.log(payload.article);
+        readtime = readTime(data);
       } catch (e) {
         return <NotFound />;
       }
     }
-
     if (errors) {
       return <NotFound />;
     }
     return (
       <React.Fragment>
-        <Header />
+        <Header {...this.props} />
 
         <div className="container m-t--30">
           <div className="row">
@@ -135,9 +134,10 @@ class Read extends Component {
                   <AuthorDetails
                     user={{ ...payload.article.author }}
                     date={payload.article.created_at}
+                    readtime={readtime}
                     averageRate={
                       payload.article.average_rating
-                        ? payload.article.average_rating
+                        ? parseFloat(payload.article.average_rating)
                         : this.state.rating
                     }
                     onStarClick={this.onStarClick}
@@ -166,7 +166,7 @@ Read.propTypes = {
     isRating: PropTypes.bool.isRequired,
     success: PropTypes.bool.isRequired,
     payload: PropTypes.object.isRequired,
-    errors: PropTypes.object.isRequired,
+    errors: PropTypes.object,
   }).isRequired,
   getArticle: PropTypes.func.isRequired,
   getRating: PropTypes.func.isRequired,

@@ -11,6 +11,7 @@ import ArticleLoader from '../../components/Placehoders/ArticleLoader';
 import Paginator from '../../components/Pagination';
 import config from '../../config';
 import Sidebar from '../Sidebar';
+import readTime from '../../utils/readtime';
 
 class Articles extends Component {
   state = {
@@ -36,9 +37,7 @@ class Articles extends Component {
         return false;
       }
       const { blocks } = b;
-      if (!blocks) {
-        return false;
-      }
+      if (!blocks) return false;
       const image = extractImage(blocks);
       const p = extractDescription(blocks);
       const preview = p ? p.text : '';
@@ -51,6 +50,7 @@ class Articles extends Component {
           image={image}
           author={data.author}
           key={data.slug}
+          readtime={readTime(b)}
           likesCount={data.likes_count}
         />
       );

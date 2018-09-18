@@ -54,7 +54,7 @@ class SideBar extends Component {
   renderTrendingPlaceholder = () => {
     const loaders = [];
     for (let index = 0; index < 3; index += 1) {
-      loaders.push(<TrendingPlaceHolder />);
+      loaders.push(<TrendingPlaceHolder key={index} />);
     }
 
     return loaders;

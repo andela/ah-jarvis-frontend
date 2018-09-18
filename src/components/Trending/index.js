@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Trending = ({ articles }) => {
   const articlesList = articles.map(article => (
-    <div className="trending__article">
+    <div className="trending__article" key={article.slug}>
       <div className="trending__article--img">
         <img src={article.image} alt="" className="responsive-img" />
       </div>
