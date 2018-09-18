@@ -143,7 +143,7 @@ class Header extends React.Component {
   }
 }
 
-Header.prototypes = {
+Header.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func,
   }),
