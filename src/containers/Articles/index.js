@@ -21,10 +21,11 @@ class Articles extends Component {
   componentDidMount() {
     const { location } = this.props;
     const page = new URLSearchParams(location.search).get('page');
+    const search = new URLSearchParams(location.search).get('search');
     if (page) {
       this.setState({ activePage: page });
     }
-    this.props.fetchArticle(config.ARTICLES_PER_PAGE, page || this.state.activePage);
+    this.props.fetchArticle(config.ARTICLES_PER_PAGE, page || this.state.activePage, search);
   }
 
   renderArticles = () => {
@@ -94,7 +95,7 @@ class Articles extends Component {
     return (
       <div>
         <React.Fragment>
-          <Header />
+          <Header {...this.props} />
           <div className="container-fluid">
             {this.renderStories()}
             {payload && (

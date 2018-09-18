@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import M from 'materialize-css';
+import PropTypes from 'prop-types';
 
 import getCurrentUser from '../../utils/auth';
 import ROUTES from '../../utils/routes';
@@ -11,6 +12,10 @@ import config from '../../config';
 
 
 class Header extends React.Component {
+  state = {
+    search: '',
+  }
+
   componentDidMount() {
     const el = document.querySelector('.dropdown-trigger');
     M.Dropdown.init(el);
@@ -18,6 +23,15 @@ class Header extends React.Component {
 
   logout = () => {
     localStorage.removeItem('user');
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.history.push(`${ROUTES.articles}?search=${this.state.search}`);
+  }
+
+  handleChange = (e) => {
+    this.setState({ search: e.target.value });
   }
 
   renderDropDown = user => (
@@ -59,8 +73,13 @@ class Header extends React.Component {
 
   renderIcons = user => (
     <React.Fragment>
+      <li className="black-text search-input">
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" placeholder="Search..." className="search" onChange={this.handleChange} />
+        </form>
+      </li>
       <li>
-        <NavLink to={ROUTES.articles} className="black-text" id="search">
+        <NavLink to={ROUTES.articles} className="black-text" id="search" onClick={this.handleSubmit}>
           <div>
             <img src={search} alt="" className="icon" />
           </div>
@@ -95,6 +114,8 @@ class Header extends React.Component {
 
   render() {
     const user = getCurrentUser();
+    console.log(this.state);
+
     return (
       <header>
         <nav className="white">
@@ -105,7 +126,11 @@ class Header extends React.Component {
 
             <ul id="nav-mobile" className="right nav-icons hide-on-med-and-down">
               <li className="black-text hide search-input">
-                <input type="text" placeholder="Search..." className="search" />
+                {/* <form onSubmit={this.handleSubmit}>
+                  <input type="text" name="search"
+                  placeholder="Search..." value=""
+                  className="search" onChange={this.handleChange} />
+                </form> */}
               </li>
               {this.renderIcons(user)}
               {this.renderDropDown(user)}
@@ -117,5 +142,11 @@ class Header extends React.Component {
     );
   }
 }
+
+Header.prototypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }),
+};
 
 export default Header;

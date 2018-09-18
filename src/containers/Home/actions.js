@@ -17,11 +17,11 @@ export const articlesFailure = errors => ({
 
 export const limit = (count, p) => `limit=${count}&offset=${p ? p * count : 0}`;
 
-const fetchArticlesAction = (count, page) => (dispatch) => {
+const fetchArticlesAction = (count, page, search) => (dispatch) => {
   dispatch(articlesFetch());
   return api({
     method: 'GET',
-    endpoint: `/articles?${limit(count, page - 1)}`,
+    endpoint: `/articles?${limit(count, page - 1)}&${search && `search=${search}`}`,
   })
     .then((res) => {
       dispatch(articlesSuccess(res));

@@ -111,7 +111,7 @@ class UpdateProfile extends Component {
 
     return (
       <div>
-        <Header />
+        <Header {...this.props} />
         <div className="container container--medium">
           {success && this.toaster()}
           {errors && this.errorToaster(error.errors.username[0])}
