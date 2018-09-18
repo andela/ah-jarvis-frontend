@@ -40,7 +40,7 @@ class Notification extends Component {
             <li className="collection-item" key={notification.verb}>
               <div className="dot" />
               <img src={notification.actor.data.author.image} alt=" " className="responsive-img small--avatar " />
-              <p className="unread">
+              <p className="">
                 <b>{notification.verb}</b>
               </p>
             </li>
@@ -64,7 +64,7 @@ class Notification extends Component {
         </ul>
         {notifications.notifications && (
         <div className="badge">
-          <p className="black-text">{notifications.notifications.filter(n => n.actor && n.actor.type === 'article').length}</p>
+          <p className="black-text">{notifications.notifications.filter(n => n.actor && n.actor.type === 'article' && n.unread).length}</p>
         </div>)
         }
       </React.Fragment>

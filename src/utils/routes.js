@@ -3,6 +3,7 @@ const ROUTES = {
   signin: '/signin',
   signup: '/signup',
   articles: '/articles',
+  article: '/article',
   getArticleUrl: '/article/:id',
   createArticleUrl: '/articles/new',
   signinWithEmail: '/signin/email',
