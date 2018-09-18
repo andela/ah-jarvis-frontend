@@ -8,10 +8,6 @@ import fetchNotifications, { read } from './actions';
 import ROUTES from '../../utils/routes';
 
 class Notification extends Component {
-  state = {
-    notification: null,
-  }
-
   componentDidMount() {
     this.props.fetchNotifications();
     const elems = document.querySelectorAll('.dropdown-trigger');
@@ -20,7 +16,8 @@ class Notification extends Component {
 
 
   renderNotifications = ({ notifications }) => {
-    const data = notifications.map((notification) => {
+    const notificationList = notifications.sort((x, y) => y.unread - x.unread);
+    const data = notificationList.map((notification) => {
       if (!notification.actor) {
         return null;
       }
@@ -30,21 +27,24 @@ class Notification extends Component {
 
       if (notification.actor.type === 'article') {
         return (
-          <Link
-            to={`${ROUTES.article}/${notification.actor.data.slug}`}
-            onClick={() => {
-              this.props.read(notification.id);
-            }}
+          <li
             key={notification.id}
+            className="collection-item"
           >
-            <li className="collection-item" key={notification.verb}>
-              <div className="dot" />
-              <img src={notification.actor.data.author.image} alt=" " className="responsive-img small--avatar " />
-              <p className="">
-                <b>{notification.verb}</b>
+            { notification.unread && (<div className="dot" />)}
+            <img src={notification.actor.data.author.image} alt=" " className="responsive-img small--avatar " />
+            <Link
+              to={`${ROUTES.article}/${notification.actor.data.slug}`}
+              onClick={() => {
+                this.props.read(notification.id);
+              }}
+              className="notification_link"
+            >
+              <p>
+                {notification.verb}
               </p>
-            </li>
-          </Link>
+            </Link>
+          </li>
         );
       }
       return null;
@@ -61,8 +61,18 @@ class Notification extends Component {
           {isFetching || !success ? '' : (
             this.renderNotifications(notifications)
           )}
+          <li
+            className="collection-item"
+          >
+            <Link
+              to={`${ROUTES.notifications}`}
+              className="notification_link"
+            >
+              Read all
+            </Link>
+          </li>
         </ul>
-        {notifications.notifications && (
+        {notifications.notifications && notifications.notifications.length > 1 && (
         <div className="badge">
           <p className="black-text">{notifications.notifications.filter(n => n.actor && n.actor.type === 'article' && n.unread).length}</p>
         </div>)

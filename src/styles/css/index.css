@@ -151,8 +151,8 @@ nav .back {
 
 .collection {
   width: 350px !important;
-  height: 460px;
-  top: -38px; }
+  height: auto;
+  top: -65px; }
 
 .public-DraftEditorPlaceholder-inner {
   background-color: whitesmoke; }
@@ -177,6 +177,9 @@ nav .back {
     border-radius: 50%;
     background-color: #03a87c;
     margin-right: 30px; }
+
+.notification_link:hover {
+  background-color: inherit; }
 
 body {
   background-color: whitesmoke; }

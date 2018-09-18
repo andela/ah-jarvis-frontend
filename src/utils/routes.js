@@ -4,6 +4,7 @@ const ROUTES = {
   signup: '/signup',
   articles: '/articles',
   article: '/article',
+  notifications: 'notifications',
   getArticleUrl: '/article/:id',
   createArticleUrl: '/articles/new',
   signinWithEmail: '/signin/email',
