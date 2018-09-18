@@ -37,8 +37,8 @@ describe('user get profile actions', () => {
   });
 });
 
-describe('user follow and unfollow actions', () => {
-  it('should create a request action to Follow a user', () => {
+describe('user follow / unfollow actions', () => {
+  it('should create a request action to FOLLOW/UNFOLLOW a user', () => {
     const expectedAction = {
       type: types.FOLLOW_USER_REQUEST,
     };
@@ -57,13 +57,69 @@ describe('user follow and unfollow actions', () => {
     expect(actions.followActionFailure(errors)).toEqual(expectedAction);
   });
   it('should create an action to dispatch success response.', () => {
-    const payload = {
-      profile: {},
-    };
+    const payload = {};
     const expectedAction = {
       type: types.FOLLOW_USER_SUCCESS,
       payload,
     };
     expect(actions.followActionSuccess(payload)).toEqual(expectedAction);
+  });
+});
+
+describe('followers actions', () => {
+  it('should create a request action to list followers of a user', () => {
+    const expectedAction = {
+      type: types.FOLLOWERS_REQUEST,
+    };
+    expect(actions.followersRequest()).toEqual(expectedAction);
+  });
+  it('should create an action to dispatch errors to the user', () => {
+    const errors = {
+      errors: {
+        error: [],
+      },
+    };
+    const expectedAction = {
+      type: types.FOLLOWERS_FAILURE,
+      errors,
+    };
+    expect(actions.followersFailure(errors)).toEqual(expectedAction);
+  });
+  it('should create an action to dispatch success response.', () => {
+    const payload = {};
+    const expectedAction = {
+      type: types.FOLLOWERS_SUCCESS,
+      payload,
+    };
+    expect(actions.followersSuccess(payload)).toEqual(expectedAction);
+  });
+});
+
+describe('followers actions', () => {
+  it('should create a request action to list followings of a user', () => {
+    const expectedAction = {
+      type: types.FOLLOWING_REQUEST,
+    };
+    expect(actions.followingRequest()).toEqual(expectedAction);
+  });
+  it('should create an action to dispatch errors to the user', () => {
+    const errors = {
+      errors: {
+        error: [],
+      },
+    };
+    const expectedAction = {
+      type: types.FOLLOWING_FAILURE,
+      errors,
+    };
+    expect(actions.followingFailure(errors)).toEqual(expectedAction);
+  });
+  it('should create an action to dispatch success response.', () => {
+    const payload = {};
+    const expectedAction = {
+      type: types.FOLLOWING_SUCCESS,
+      payload,
+    };
+    expect(actions.followingSuccess(payload)).toEqual(expectedAction);
   });
 });

@@ -1,13 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import M from 'materialize-css';
+import PropTypes from 'prop-types';
 
 import getCurrentUser from '../../utils/auth';
 import ROUTES from '../../utils/routes';
 
 import notification from '../../assets/icons/bell.svg';
 import search from '../../assets/icons/search.svg';
-
+import InlineLoader from '../InlineLoader';
 
 class Header extends React.Component {
   componentDidMount() {
@@ -17,14 +18,10 @@ class Header extends React.Component {
 
   renderDropDown = user => (
     <li>
-      { user && (
+      {user && (
         <React.Fragment>
           <a className="dropdown-trigger black-text" href="!#" data-target="profile">
-            <img
-              src={user.image}
-              alt=""
-              className="responsive-img small--avatar circle-img"
-            />
+            <img src={user.image} alt="" className="responsive-img small--avatar circle-img" />
           </a>
           <ul id="profile" className="dropdown-content">
             <li>
@@ -43,10 +40,10 @@ class Header extends React.Component {
               <a href="#!">Favorites</a>
             </li>
           </ul>
-        </React.Fragment>)
-        }
+        </React.Fragment>
+      )}
     </li>
-  )
+  );
 
   renderIcons = user => (
     <React.Fragment>
@@ -56,7 +53,6 @@ class Header extends React.Component {
             <img src={search} alt="" className="icon" />
           </div>
         </NavLink>
-
       </li>
       <li>
         {user ? (
@@ -68,45 +64,56 @@ class Header extends React.Component {
         ) : (
           <React.Fragment>
             <li>
-              <NavLink to={ROUTES.signin} className="black-text">Sign in</NavLink>
+              <NavLink to={ROUTES.signin} className="black-text">
+                Sign in
+              </NavLink>
             </li>
             <li>
-              <NavLink to={ROUTES.signup} className="black-text">Sign up</NavLink>
+              <NavLink to={ROUTES.signup} className="black-text">
+                Sign up
+              </NavLink>
             </li>
             <li>
-              <NavLink to={`${ROUTES.createArticleUrl}`} className="waves-effect waves-light btn ">What's your story</NavLink>
+              <NavLink to={`${ROUTES.createArticleUrl}`} className="waves-effect waves-light btn ">
+                What's your story
+              </NavLink>
             </li>
           </React.Fragment>
-
-        )
-    }
+        )}
       </li>
     </React.Fragment>
-  )
+  );
 
   render() {
     const user = getCurrentUser();
+    const { loading } = this.props;
     return (
-      <header>
-        <nav className="white">
-          <div className="nav-wrapper p-l--30 p-r--30">
-            <NavLink to="/" className="flow-text black-text">
+      <React.Fragment>
+        <header>
+          <nav className="white">
+            <div className="nav-wrapper p-l--30 p-r--30">
+              <NavLink to="/" className="flow-text black-text">
                 Authors' Haven
-            </NavLink>
+              </NavLink>
 
-            <ul id="nav-mobile" className="right nav-icons hide-on-med-and-down">
-              <li className="black-text hide search-input">
-                <input type="text" placeholder="Search..." className="search" />
-              </li>
-              {this.renderIcons(user)}
-              {this.renderDropDown(user)}
-            </ul>
-
-          </div>
-        </nav>
-      </header>
+              <ul id="nav-mobile" className="right nav-icons hide-on-med-and-down">
+                <li className="black-text hide search-input">
+                  <input type="text" placeholder="Search..." className="search" />
+                </li>
+                {this.renderIcons(user)}
+                {this.renderDropDown(user)}
+              </ul>
+            </div>
+          </nav>
+        </header>
+        {loading && <InlineLoader />}
+      </React.Fragment>
     );
   }
 }
+
+Header.propTypes = {
+  loading: PropTypes.bool.isRequired,
+};
 
 export default Header;
