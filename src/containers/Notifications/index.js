@@ -21,6 +21,9 @@ class Notification extends Component {
 
   renderNotifications = ({ notifications }) => {
     const data = notifications.map((notification) => {
+      if (!notification.actor) {
+        return null;
+      }
       if (notification.actor.type === 'user') {
         return null;
       }
@@ -61,7 +64,7 @@ class Notification extends Component {
         </ul>
         {notifications.notifications && (
         <div className="badge">
-          <p className="black-text">{notifications.notifications.filter(n => n.actor.type === 'article').length}</p>
+          <p className="black-text">{notifications.notifications.filter(n => n.actor && n.actor.type === 'article').length}</p>
         </div>)
         }
       </React.Fragment>
