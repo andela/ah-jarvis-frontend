@@ -13,7 +13,7 @@ import { PlaceholderBlockConfig } from 'Dante2/package/es/components/blocks/plac
 import createArticleAction from './actions';
 import UserInfo from '../../../components/UserInfo';
 import Header from '../../../components/Header';
-import editorstate from './editorstate';
+import editorstate from '../../../utils/editorstate';
 import config from '../../../config';
 import uploader from '../../../utils/uploader';
 

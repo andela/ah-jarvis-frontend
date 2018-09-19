@@ -9,6 +9,7 @@ import ROUTES from '../../utils/routes';
 import notification from '../../assets/icons/bell.svg';
 import search from '../../assets/icons/search.svg';
 import InlineLoader from '../InlineLoader';
+import config from '../../config';
 
 class Header extends React.Component {
   componentDidMount() {
@@ -16,12 +17,20 @@ class Header extends React.Component {
     M.Dropdown.init(el);
   }
 
+  logout = () => {
+    localStorage.removeItem('user');
+  };
+
   renderDropDown = user => (
     <li>
       {user && (
         <React.Fragment>
           <a className="dropdown-trigger black-text" href="!#" data-target="profile">
-            <img src={user.image} alt="" className="responsive-img small--avatar circle-img" />
+            <img
+              src={user.image ? user.image : config.DEFAULT_USER_AVATAR}
+              alt=""
+              className="responsive-img small--avatar circle-img"
+            />
           </a>
           <ul id="profile" className="dropdown-content">
             <li>
@@ -39,6 +48,12 @@ class Header extends React.Component {
             <li>
               <a href="#!">Favorites</a>
             </li>
+            <li className="divider" tabIndex="-1" />
+            <li>
+              <NavLink to={`${ROUTES.home}`} onClick={this.logout}>
+                Logout
+              </NavLink>
+            </li>
           </ul>
         </React.Fragment>
       )}
@@ -54,7 +69,7 @@ class Header extends React.Component {
           </div>
         </NavLink>
       </li>
-      <li>
+      <ul>
         {user ? (
           <a href="#!" className="black-text" id="search">
             <div>
@@ -80,7 +95,7 @@ class Header extends React.Component {
             </li>
           </React.Fragment>
         )}
-      </li>
+      </ul>
     </React.Fragment>
   );
 
