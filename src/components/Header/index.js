@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import M from 'materialize-css';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import getCurrentUser from '../../utils/auth';
@@ -130,12 +129,9 @@ class Header extends React.Component {
   }
 }
 
-const mapPropsToState = notifications => ({
-  notifications,
-});
 
 Header.propTypes = {
   loading: PropTypes.bool.isRequired,
 };
 
-export default connect(mapPropsToState)(Header);
+export default Header;
