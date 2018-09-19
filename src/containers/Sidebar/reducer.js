@@ -1,4 +1,10 @@
-import { ARTICLES_TRENDING_REQUEST, ARTICLES_TRENDING_SUCCESS, ARTICLES_TRENDING_FAILURE } from './constants';
+import {
+  ARTICLES_TRENDING_REQUEST,
+  ARTICLES_TRENDING_SUCCESS,
+  ARTICLES_TRENDING_FAILURE,
+  TAGS_SUCCESS,
+  TAGS_FAILURE,
+} from './constants';
 
 const initialState = {
   payload: {},
@@ -6,6 +12,7 @@ const initialState = {
   success: false,
   failure: false,
   errors: null,
+  tags: null,
 };
 
 export default function (state = initialState, action) {
@@ -30,6 +37,16 @@ export default function (state = initialState, action) {
         failure: true,
         success: false,
         isFetching: false,
+      };
+    case TAGS_SUCCESS:
+      return {
+        ...state,
+        tags: payload,
+      };
+    case TAGS_FAILURE:
+      return {
+        ...state,
+        errors,
       };
     default:
       return state;
