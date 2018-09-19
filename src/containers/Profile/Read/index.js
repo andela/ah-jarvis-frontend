@@ -4,11 +4,14 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import M from 'materialize-css';
 
-import getUser, { followAction, myFollowers, myFollowings } from './actions';
+import getUser, {
+  followAction, myFollowers, myFollowings, updateNotification,
+} from './actions';
 import Header from '../../../components/Header';
 import NotFound from '../../../components/NotFound';
 import ProfileUser from '../../../components/ProfileUser';
 import FollowList from '../../../components/FollowList';
+import Settings from '../../../components/Settings';
 
 export class ReadProfile extends Component {
   componentDidMount() {
@@ -31,6 +34,11 @@ export class ReadProfile extends Component {
     const { profile } = this.props.profile.payload;
     this.props.following(profile.username);
   };
+
+  updateProfile = () => {
+    const { profile } = this.props.profile.payload;
+    this.props.updateNotification(!profile.get_notifications);
+  }
 
   render() {
     const {
@@ -161,9 +169,8 @@ export class ReadProfile extends Component {
                   )}
                 </div>
 
-                <div id="settings" className="col s12  p-t--30">
-                  <p> Settings </p>
-                </div>
+                {this.props.user.username === data.username
+                && <Settings data={data} update={this.updateProfile} /> }
 
               </div>
             </React.Fragment>
@@ -183,6 +190,7 @@ ReadProfile.propTypes = {
   followers: PropTypes.func.isRequired,
   following: PropTypes.func.isRequired,
   history: PropTypes.func.isRequired,
+  updateNotification: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -195,6 +203,7 @@ const mapDispatchToProps = dispatch => bindActionCreators(
     follow: followAction,
     followers: myFollowers,
     following: myFollowings,
+    updateNotification,
   },
   dispatch,
 );
