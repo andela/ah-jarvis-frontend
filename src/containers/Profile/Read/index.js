@@ -93,7 +93,7 @@ export class ReadProfile extends Component {
                         Profile
                       </a>
                     </li>
-
+                    {this.props.user.username === data.username && (
                     <li className="tab col ">
                       <a
                         className="black-text"
@@ -102,7 +102,8 @@ export class ReadProfile extends Component {
                       >
                         Favorites
                       </a>
-                    </li>
+                    </li>)
+                    }
 
                     <li className="tab col ">
                       <a
@@ -129,7 +130,7 @@ export class ReadProfile extends Component {
                         Followers
                       </a>
                     </li>
-
+                    {this.props.user.username === data.username && (
                     <li className="tab col ">
                       <a
                         className="black-text"
@@ -141,17 +142,19 @@ export class ReadProfile extends Component {
                       >
                          Settings
                       </a>
-                    </li>
-
+                    </li>)
+                    }
                   </ul>
                   <hr />
                 </div>
                 <div id="latest" className="col s12  p-t--30">
                   Latest
                 </div>
-                <div id="bookmarks" className="col s12  p-t--30">
-                  Bookmarks
-                </div>
+                {this.props.user.username === data.username && (
+                  <div id="bookmarks" className="col s12  p-t--30">
+                    Bookmarks
+                  </div>
+                )}
 
                 <div id="followers" className="col s12  p-t--30">
                   {followersResults && (
