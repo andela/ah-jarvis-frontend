@@ -15,8 +15,7 @@ export const fetchNotificationFailure = error => ({
   error,
 });
 
-export const read = id => (dispatch) => {
-//   dispatch(({ type: 'READ' }));
+export const read = id => () => {
   api({
     method: 'PUT',
     endpoint: `/notifications/${id}/read/`,
