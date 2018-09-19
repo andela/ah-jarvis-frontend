@@ -25,9 +25,9 @@ const ProfileUser = ({
 Following
         </a>
         <a href="#followers" className="follow-text" onClick={listFollowers}>
-          {data.followers}
-          {' '}
-Followers
+          {data.followers <= 1
+            ? `${data.followers}${' Follower'}`
+            : `${data.followers}${' Followers'}`}
         </a>
       </div>
 
@@ -58,8 +58,8 @@ ProfileUser.propTypes = {
   follow: PropTypes.func.isRequired,
   data: PropTypes.object.isRequired,
   currentUser: PropTypes.object.isRequired,
-  listFollowers: PropTypes.object.isRequired,
-  listFollowing: PropTypes.object.isRequired,
+  listFollowers: PropTypes.func.isRequired,
+  listFollowing: PropTypes.func.isRequired,
 };
 
 export default ProfileUser;
