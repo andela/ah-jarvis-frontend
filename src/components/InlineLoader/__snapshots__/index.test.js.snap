@@ -20,7 +20,7 @@ ShallowWrapper {
       "children": <div
         className="indeterminate"
 />,
-      "className": "progress",
+      "className": "progress loader",
     },
     "ref": null,
     "rendered": Object {
@@ -45,7 +45,7 @@ ShallowWrapper {
         "children": <div
           className="indeterminate"
 />,
-        "className": "progress",
+        "className": "progress loader",
       },
       "ref": null,
       "rendered": Object {

@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import M from 'materialize-css';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import getCurrentUser from '../../utils/auth';
 import ROUTES from '../../utils/routes';
@@ -12,7 +13,6 @@ import InlineLoader from '../InlineLoader';
 import Notifications from '../../containers/Notifications';
 import config from '../../config';
 
-
 class Header extends React.Component {
   componentDidMount() {
     const elems = document.querySelectorAll('.dropdown-trigger');
@@ -21,11 +21,11 @@ class Header extends React.Component {
 
   logout = () => {
     localStorage.removeItem('user');
-  }
+  };
 
   renderDropDown = user => (
     <li>
-      { user && (
+      {user && (
         <React.Fragment>
           <a className="dropdown-trigger black-text" href="!#" data-target="profile">
             <img
@@ -53,14 +53,16 @@ class Header extends React.Component {
 
             <li className="divider" tabIndex="-1" />
             <li>
-              <NavLink to={`${ROUTES.home}`} onClick={this.logout}>Logout</NavLink>
+              <NavLink to={`${ROUTES.home}`} onClick={this.logout}>
+                Logout
+              </NavLink>
             </li>
 
           </ul>
-        </React.Fragment>)
-        }
+        </React.Fragment>
+      )}
     </li>
-  )
+  );
 
   renderIcons = user => (
     <React.Fragment>
@@ -70,7 +72,6 @@ class Header extends React.Component {
             <img src={search} alt="" className="icon" />
           </div>
         </NavLink>
-
       </li>
       {user ? (
         <React.Fragment>
@@ -99,7 +100,7 @@ class Header extends React.Component {
       )
     }
     </React.Fragment>
-  )
+  );
 
   render() {
     const user = getCurrentUser();
@@ -110,7 +111,7 @@ class Header extends React.Component {
           <nav className="white">
             <div className="nav-wrapper p-l--30 p-r--30">
               <NavLink to="/" className="flow-text black-text">
-                  Authors' Haven
+                Authors' Haven
               </NavLink>
 
               <ul id="nav-mobile" className="right nav-icons hide-on-med-and-down">
@@ -120,7 +121,6 @@ class Header extends React.Component {
                 {this.renderIcons(user)}
                 {this.renderDropDown(user)}
               </ul>
-
             </div>
           </nav>
         </header>
@@ -133,5 +133,9 @@ class Header extends React.Component {
 const mapPropsToState = notifications => ({
   notifications,
 });
+
+Header.propTypes = {
+  loading: PropTypes.bool.isRequired,
+};
 
 export default connect(mapPropsToState)(Header);

@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default () => (
-  <div className="progress">
+  <div className="progress loader">
     <div className="indeterminate" />
   </div>
 );

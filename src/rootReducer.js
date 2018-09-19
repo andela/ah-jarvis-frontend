@@ -13,7 +13,6 @@ import createArticle from './containers/Article/Create/reducer';
 import trending from './containers/Sidebar/reducer';
 import notifications from './containers/Notifications/reducer';
 
-
 const rootReducer = combineReducers({
   getProfile,
   editProfile,
