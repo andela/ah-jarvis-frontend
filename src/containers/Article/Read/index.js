@@ -78,7 +78,6 @@ class Read extends Component {
   handleReaction = (e) => {
     e.preventDefault();
     const { like, dislike, match } = this.props;
-    console.log(match);
 
     if (user) {
       this.setState({ alert: false });
