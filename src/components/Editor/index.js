@@ -15,6 +15,29 @@ import UserInfo from '../UserInfo';
 export default class Editor extends Component {
   state = {
     saving: false,
+    tags: [],
+  };
+
+  componentDidMount() {
+    localStorage.setItem('article', this.props.state)
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    console.log('Stater', state);
+    console.log('Proper', props);
+    return null;
+  }
+
+  getTags = (_e, d) => {
+    this.setState({
+      tags: [...this.state.tags, d.childNodes[0].nodeValue],
+    });
+  };
+
+  removeTag = (_e, d) => {
+    this.setState({
+      tags: this.state.tags.filter(t => t !== d.childNodes[0].nodeValue),
+    });
   };
 
   handleSave = (state) => {
@@ -36,10 +59,10 @@ export default class Editor extends Component {
   };
 
   handlePublish = () => {
-    const {
-      postArticle, history, update, slug,
-    } = this.props;
-    postArticle(JSON.parse(localStorage.getItem('article')), history, update, slug);
+    const { postArticle, history } = this.props;
+    const article = JSON.parse(localStorage.getItem('article'));
+    article.article.tagList = this.state.tags;
+    postArticle(article, history);
     localStorage.removeItem('article');
   };
 
@@ -58,16 +81,23 @@ export default class Editor extends Component {
     });
   };
 
+  renderTags = tags => tags.map(tag => <div className="chip">{tag}</div>);
+
   render() {
-    const { state, publishing, user } = this.props;
+    const {
+      state, publishing, user, tags, update,
+    } = this.props;
     return (
       <div className="container m-t--30">
         <UserInfo
           onPublish={this.handlePublish}
           publishing={publishing}
-          editing
           save={this.state.saving}
-          user={user}
+          user={this.props.user}
+          getTags={this.getTags}
+          removeTag={this.removeTag}
+          tags={tags}
+          update={!!update}
         />
         <div className="row">
           <div className="col s12">
@@ -97,6 +127,8 @@ export default class Editor extends Component {
                 interval: 1000,
               }}
             />
+
+            {update && <div className="row">{this.renderTags(tags)}</div>}
           </div>
         </div>
       </div>

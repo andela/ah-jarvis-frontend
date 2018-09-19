@@ -1,12 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import M from 'materialize-css';
+import PropTypes from 'prop-types';
 
 import getCurrentUser from '../../utils/auth';
 import ROUTES from '../../utils/routes';
 
 import notification from '../../assets/icons/bell.svg';
 import search from '../../assets/icons/search.svg';
+import InlineLoader from '../InlineLoader';
 import config from '../../config';
 
 class Header extends React.Component {
@@ -99,26 +101,34 @@ class Header extends React.Component {
 
   render() {
     const user = getCurrentUser();
+    const { loading } = this.props;
     return (
-      <header>
-        <nav className="white">
-          <div className="nav-wrapper p-l--30 p-r--30">
-            <NavLink to="/" className="flow-text black-text">
-              Authors' Haven
-            </NavLink>
+      <React.Fragment>
+        <header>
+          <nav className="white">
+            <div className="nav-wrapper p-l--30 p-r--30">
+              <NavLink to="/" className="flow-text black-text">
+                Authors' Haven
+              </NavLink>
 
-            <ul id="nav-mobile" className="right nav-icons hide-on-med-and-down">
-              <li className="black-text hide search-input">
-                <input type="text" placeholder="Search..." className="search" />
-              </li>
-              {this.renderIcons(user)}
-              {this.renderDropDown(user)}
-            </ul>
-          </div>
-        </nav>
-      </header>
+              <ul id="nav-mobile" className="right nav-icons hide-on-med-and-down">
+                <li className="black-text hide search-input">
+                  <input type="text" placeholder="Search..." className="search" />
+                </li>
+                {this.renderIcons(user)}
+                {this.renderDropDown(user)}
+              </ul>
+            </div>
+          </nav>
+        </header>
+        {loading && <InlineLoader />}
+      </React.Fragment>
     );
   }
 }
+
+Header.propTypes = {
+  loading: PropTypes.bool.isRequired,
+};
 
 export default Header;

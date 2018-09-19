@@ -4,6 +4,8 @@ import {
   ARTICLES_FAILURE,
   DELETE_ARTICLE_SUCCESS,
   DELETE_ARTICLE_REQUEST,
+  SEARCH_SUCCESS,
+  SEARCH_REQUEST,
 } from './constants';
 
 const initialState = {
@@ -14,6 +16,7 @@ const initialState = {
   failure: false,
   errors: null,
   deleted: false,
+  isSearching: false,
 };
 
 export default function (state = initialState, action) {
@@ -35,6 +38,7 @@ export default function (state = initialState, action) {
         success: true,
         failure: false,
         isFetching: false,
+        isSearching: false,
       };
 
     case ARTICLES_FAILURE:
@@ -59,6 +63,18 @@ export default function (state = initialState, action) {
       };
     }
 
+    case SEARCH_REQUEST:
+      return { ...state, isSearching: true };
+    case SEARCH_SUCCESS:
+      return {
+        ...state,
+        payload,
+        errors: null,
+        success: true,
+        failure: false,
+        isFetching: false,
+        isSearching: false,
+      };
     default:
       return state;
   }

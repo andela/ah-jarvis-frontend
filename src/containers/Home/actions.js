@@ -5,6 +5,8 @@ import {
   DELETE_ARTICLE_REQUEST,
   DELETE_ARTICLE_SUCCESS,
   DELETE_ARTICLE_FAILURE,
+  SEARCH_SUCCESS,
+  SEARCH_REQUEST,
 } from './constants';
 import api from '../../utils/api';
 
@@ -32,16 +34,29 @@ export const deleteFailure = errors => ({
   errors,
 });
 
+export const searchSuccess = payload => ({
+  type: SEARCH_SUCCESS,
+  payload,
+});
+
+export const searchRequest = () => ({
+  type: SEARCH_REQUEST,
+});
+
 export const limit = (count, p) => `limit=${count}&offset=${p ? p * count : 0}`;
 
-const fetchArticlesAction = (count, page) => (dispatch) => {
+const fetchArticlesAction = (count, page, search) => (dispatch) => {
   dispatch(articlesFetch());
   return api({
     method: 'GET',
-    endpoint: `/articles?${limit(count, page - 1)}`,
+    endpoint: `/articles?${limit(count, page - 1)}&${search && `search=${search}`}`,
   })
     .then((res) => {
-      dispatch(articlesSuccess(res));
+      if (search) {
+        dispatch(searchSuccess(res));
+      } else {
+        dispatch(articlesSuccess(res));
+      }
     })
     .catch(err => dispatch(articlesFailure(err)));
 };

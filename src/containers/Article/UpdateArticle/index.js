@@ -19,7 +19,7 @@ class Update extends Component {
       isFetching, payload, success, publishing,
     } = this.props.article;
     const { slug } = this.props.match.params;
-    console.log(payload, isFetching, success);
+    console.log(payload);
 
     return (
       <React.Fragment>
@@ -33,6 +33,7 @@ class Update extends Component {
               history={this.props.history}
               publishing={publishing}
               user={this.props.user}
+              tags={payload.article.tagList}
               update
             />
         )}

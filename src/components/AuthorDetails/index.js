@@ -36,10 +36,11 @@ const AuthorDetails = ({
               {capitalize(user.username)}
             </Link>
           </div>
-          {!small && (
-            <a className="btn-flat btn-flat--primary" href="#!">
-              Follow
-            </a>
+          {!small
+            && !getCurrentUser().username && (
+              <a className="btn-flat btn-flat--primary" href="#!">
+                Follow
+              </a>
           )}
         </div>
 

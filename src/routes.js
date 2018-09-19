@@ -52,7 +52,11 @@ export default () => (
           <Route exact path={ROUTES.verify} component={ResetPasssword} />
           <PrivateRoute exact path={ROUTES.getProfile} component={ReadProfile} />
           <Route exact path={ROUTES.updateProfile} component={UpdateProfile} />
-          <Route exact path={ROUTES.articles} component={Articles} />
+          <Route
+            exact
+            path={ROUTES.articles}
+            component={props => <Articles {...props} key={Math.random()} />}
+          />
           <Route component={NotFound} />
         </Switch>
       </Scroll>
