@@ -20,8 +20,7 @@ class Form extends React.Component {
 
   handleChange = (event) => {
     const { user, validation } = this.state;
-    const name = event.target.name;
-    const value = event.target.value;
+    const { name, value } = event.target;
     user[name] = value;
     if (name !== 'confirmPass') {
       validation[name] = validateInput(name, value);
