@@ -12,18 +12,26 @@ class Form extends React.Component {
       username: '',
       email: '',
       password: '',
+      confirmPass: '',
     },
     validation: {},
     isDisabled: false,
   };
 
   handleChange = (event) => {
-    const checkValidation = Object.values(this.state.validation).every(e => e === '')
-      && Object.keys(this.state.validation).length === 3;
-
     const { user, validation } = this.state;
-    user[event.target.name] = event.target.value;
-    validation[event.target.name] = validateInput(event.target.name, event.target.value);
+    const { name, value } = event.target;
+    user[name] = value;
+    if (name !== 'confirmPass') {
+      validation[name] = validateInput(name, value);
+    } else {
+      validation[name] = validateInput(name, {
+        password: this.state.user.password,
+        confirmPass: value,
+      });
+    }
+
+    const checkValidation = Object.values(validation).every(e => e === '') && Object.keys(validation).length === 4;
 
     this.setState(prevState => ({
       ...prevState,
@@ -35,13 +43,14 @@ class Form extends React.Component {
 
   handleClick = (event) => {
     event.preventDefault();
-    this.props.onClick({ user: this.state.user });
+    const { username, email, password } = this.state.user;
+    this.props.onClick({ user: { username, email, password } });
   };
 
   renderInput = (name, failure, errors, value, validation, type) => (
     <InputField
       name={`${name}`}
-      label={`Enter your ${name}`}
+      label={name === 'confirmPass' ? 'Confirm Password' : `Enter your ${name}`}
       type={`${type}`}
       value={value}
       onChange={this.handleChange}
@@ -53,13 +62,16 @@ class Form extends React.Component {
 
   render() {
     const { error, failure } = this.props.register;
-    const { username, email, password } = this.state.validation;
+    const {
+      username, email, password, confirmPass,
+    } = this.state.validation;
     const { user } = this.state;
     return (
       <form>
         {this.renderInput('username', failure, error, user.username, username, 'text')}
         {this.renderInput('email', failure, error, user.email, email, 'email')}
         {this.renderInput('password', failure, error, user.password, password, 'password')}
+        {this.renderInput('confirmPass', failure, error, user.confirmPass, confirmPass, 'password')}
 
         <div className="row">
           <div className="input-field col s12">

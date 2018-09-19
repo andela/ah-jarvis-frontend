@@ -127,7 +127,7 @@ export class ReadProfile extends Component {
                           push({ hash: '#followers' });
                         }}
                       >
-                        Followers
+                        {data.followers <= 1 ? 'Follower' : 'Followers'}
                       </a>
                     </li>
                     {this.props.user.username === data.username && (
@@ -192,8 +192,8 @@ ReadProfile.propTypes = {
   follow: PropTypes.func.isRequired,
   followers: PropTypes.func.isRequired,
   following: PropTypes.func.isRequired,
-  history: PropTypes.func.isRequired,
   updateNotification: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({

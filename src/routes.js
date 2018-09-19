@@ -58,7 +58,11 @@ export default () => (
             component={props => <ReadProfile {...props} key={Math.random()} />}
           />
           <Route exact path={ROUTES.updateProfile} component={UpdateProfile} />
-          <Route exact path={ROUTES.articles} component={Articles} />
+          <Route
+            exact
+            path={ROUTES.articles}
+            component={props => <Articles {...props} key={Math.random()} />}
+          />
           <Route component={NotFound} />
         </Switch>
       </Scroll>

@@ -65,6 +65,7 @@ class Header extends React.Component {
 
   renderIcons = user => (
     <React.Fragment>
+
       <li>
         <NavLink to={ROUTES.articles} className="black-text" id="search">
           <div>

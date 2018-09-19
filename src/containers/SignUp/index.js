@@ -13,7 +13,6 @@ class SignUp extends React.Component {
   state = {};
 
   render() {
-    console.log(this.props);
     const { register, history, actions } = this.props;
     return (
       <div className="row">
@@ -26,6 +25,7 @@ class SignUp extends React.Component {
               </Link>
               <Form
                 onClick={(user) => {
+                  console.log(user);
                   actions(user, history);
                 }}
                 register={register}
