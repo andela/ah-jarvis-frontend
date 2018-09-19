@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import Article from '../../components/Article';
 import Header from '../../components/Header';
-import fetchArticleAction from '../Home/actions';
+import fetchArticleAction, { searchRequest } from '../Home/actions';
 import { extractImage, extractDescription } from './filterArticles';
 import ArticleLoader from '../../components/Placehoders/ArticleLoader';
 import Paginator from '../../components/Pagination';
@@ -14,17 +14,50 @@ import Sidebar from '../Sidebar';
 import readTime from '../../utils/readtime';
 
 class Articles extends Component {
-  state = {
-    activePage: 1,
-  };
+  constructor(props) {
+    super(props);
+    this.timeout = 0;
+    this.loading = false;
+    this.state = {
+      activePage: 1,
+      search: null,
+    };
+  }
+
 
   componentDidMount() {
     const { location } = this.props;
     const page = new URLSearchParams(location.search).get('page');
+    const search = new URLSearchParams(location.search).get('search');
+
     if (page) {
       this.setState({ activePage: page });
     }
-    this.props.fetchArticle(config.ARTICLES_PER_PAGE, page || this.state.activePage);
+    this.setState({ search });
+    this.props.fetchArticle(
+      config.ARTICLES_PER_PAGE, page || this.state.activePage, this.state.search,
+    );
+  }
+
+  fetchFunc = (search) => {
+    this.props.fetchArticle(
+      config.ARTICLES_PER_PAGE, this.state.activePage, search,
+    );
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.fetchFunc(e.target.value);
+  }
+
+  handleChange = (e) => {
+    this.props.searchRequest();
+    e.preventDefault();
+    e.persist();
+    if (this.timeout) clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => {
+      this.fetchFunc(e.target.value);
+    }, 500);
   }
 
   renderArticles = () => {
@@ -77,12 +110,22 @@ class Articles extends Component {
   };
 
   renderStories = () => {
-    const { isFetching, success } = this.props.articles;
+    const {
+      isFetching, success,
+    } = this.props.articles;
     return (
       <div className="row articles">
         <div className="col m8 articles__main">
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              placeholder="Search Authors' Heven..."
+              className="search"
+              onChange={this.handleChange}
+            />
+          </form>
           <p className="flow-text m-b--30">Stories</p>
-          {isFetching || !success ? this.renderLoader() : this.renderArticles()}
+          {(isFetching || !success) ? this.renderLoader() : this.renderArticles()}
         </div>
         <Sidebar />
       </div>
@@ -90,11 +133,11 @@ class Articles extends Component {
   };
 
   render() {
-    const { payload } = this.props.articles;
+    const { payload, isSearching } = this.props.articles;
     return (
       <div>
         <React.Fragment>
-          <Header />
+          <Header {...this.props} loading={isSearching} />
           <div className="container-fluid">
             {this.renderStories()}
             {payload && (
@@ -131,6 +174,7 @@ const mapStateToProps = ({ articles }) => ({
 const mapDispatchToProps = dispatch => bindActionCreators(
   {
     fetchArticle: fetchArticleAction,
+    searchRequest,
   },
   dispatch,
 );
