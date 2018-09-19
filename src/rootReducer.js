@@ -10,6 +10,8 @@ import editProfile from './containers/Profile/Update/reducer';
 import fetchArticle from './containers/Article/Read/reducer';
 import articles from './containers/Home/reducer';
 import createArticle from './containers/Article/Create/reducer';
+import createComment from './containers/Comments/Create/reducer';
+import getComments from './containers/Comments/Read/reducer';
 import trending from './containers/Sidebar/reducer';
 
 
@@ -17,6 +19,8 @@ const rootReducer = combineReducers({
   getProfile,
   editProfile,
   createArticle,
+  createComment,
+  getComments,
   articles,
   trending,
   fetchArticle,
