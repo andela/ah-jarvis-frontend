@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import M from 'materialize-css';
 
-import getUser from './actions';
-import capitalize from '../../../utils/capitalize';
+import getUser, { followAction, myFollowers, myFollowings } from './actions';
 import Header from '../../../components/Header';
+import NotFound from '../../../components/NotFound';
+import ProfileUser from '../../../components/ProfileUser';
+import FollowList from '../../../components/FollowList';
 
 export class ReadProfile extends Component {
   componentDidMount() {
@@ -15,70 +17,134 @@ export class ReadProfile extends Component {
     retrieveProfile(urlUsername);
   }
 
+  componentDidUpdate() {
+    const el = document.querySelector('.tabs');
+    M.Tabs.init(el);
+  }
+
+  getFollowers = () => {
+    const { profile } = this.props.profile.payload;
+    this.props.followers(profile.username);
+  };
+
+  getFollowing = () => {
+    const { profile } = this.props.profile.payload;
+    this.props.following(profile.username);
+  };
+
   render() {
-    const { success, payload, errors } = this.props.profile;
+    const {
+      isFetching,
+      success,
+      payload,
+      errors,
+      updating,
+      isFollowing,
+      followers,
+      following,
+    } = this.props.profile;
 
-    let data;
-    if (payload.profile) {
-      data = JSON.parse(JSON.stringify(payload.profile));
-    }
+    const data = payload.profile ? payload.profile : null;
 
-    let error;
     if (errors) {
-      data = JSON.parse(JSON.stringify(errors));
-      error = data.profile.detail;
+      return <NotFound />;
     }
+
+    const loading = isFetching || !success || updating;
+    const followersResults = followers.profiles;
+    const followingResults = following.profiles;
+    const { push } = this.props.history;
 
     return (
       <React.Fragment>
-        <Header />
+        <Header loading={loading || isFollowing} />
         {/* Main */}
         <div className="container container--medium">
-          <div className="row m-t--20">
-            {/* User Profile */}
-            <div className="row p-t--20 p-b--20">
-              <div className="col s12 m9">
-                <div className="m-b--15 username-line">
-                  <h4>{success ? capitalize(data.username) : error}</h4>
-                </div>
+          {data && (
+            <React.Fragment>
+              <div className="row m-t--20">
+                <ProfileUser
+                  data={data}
+                  currentUser={this.props.user}
+                  follow={this.props.follow}
+                  listFollowers={this.getFollowers}
+                  listFollowing={this.getFollowing}
+                />
+              </div>
 
-                <div className="m-b--15 p-r--100 line-space">
-                  <p>{success ? data.bio : error}</p>
-                </div>
-
-                {data && (
-                  <div className="m-b--15">
-                    {this.props.user.email === data.email ? (
-                      <Link
-                        to={`/profile/${data.username}/edit`}
-                        className="waves-effect waves-light btn btn--rounded"
+              <div className="row">
+                <div className="col s12 data">
+                  <ul className="tabs">
+                    <li className="tab col s3">
+                      <a
+                        className="black-text"
+                        href="#latest"
+                        onClick={() => push({ hash: '#latest' })}
                       >
-                        Edit
-                      </Link>
-                    ) : (
-                      <div>
-                        {success && (
-                          <Link to="#!" className="waves-effect waves-light btn btn--rounded">
-                            Follow
-                          </Link>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                )}
+                        Profile
+                      </a>
+                    </li>
+                    <li className="tab col s3">
+                      <a
+                        className="black-text"
+                        href="#bookmarks"
+                        onClick={() => push({ hash: '#bookmarks' })}
+                      >
+                        Favorites
+                      </a>
+                    </li>
+                    <li className="tab col s3">
+                      <a
+                        className="black-text"
+                        href="#following"
+                        onClick={() => {
+                          this.getFollowing();
+                          push({ hash: '#following' });
+                        }}
+                      >
+                        Following
+                      </a>
+                    </li>
+                    <li className="tab col s3">
+                      <a
+                        className="black-text"
+                        href="#followers"
+                        onClick={() => {
+                          this.getFollowers();
+                          push({ hash: '#followers' });
+                        }}
+                      >
+                        {data.followers <= 1 ? 'Follower' : 'Followers'}
+                      </a>
+                    </li>
+                  </ul>
+                  <hr />
+                </div>
+                <div id="latest" className="col s12  p-t--30">
+                  Latest
+                </div>
+                <div id="bookmarks" className="col s12  p-t--30">
+                  Bookmarks
+                </div>
+
+                <div id="followers" className="col s12  p-t--30">
+                  {followersResults && (
+                    <div>
+                      {followersResults.length > 0 && <FollowList details={followersResults} />}
+                    </div>
+                  )}
+                </div>
+
+                <div id="following" className="col s12  p-t--30">
+                  {followingResults && (
+                    <div>
+                      {followingResults.length > 0 && <FollowList details={followingResults} />}
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className="col s12 m3">
-                {data && (
-                  <img
-                    src={data.image}
-                    alt={data.username}
-                    className="responsive-img circle avatar--large"
-                  />
-                )}
-              </div>
-            </div>
-            {/* End of User profile */}
-          </div>
+            </React.Fragment>
+          )}
         </div>
       </React.Fragment>
     );
@@ -90,6 +156,10 @@ ReadProfile.propTypes = {
   match: PropTypes.object,
   profile: PropTypes.object,
   user: PropTypes.object,
+  follow: PropTypes.func.isRequired,
+  followers: PropTypes.func.isRequired,
+  following: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -99,6 +169,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => bindActionCreators(
   {
     retrieveProfile: getUser,
+    follow: followAction,
+    followers: myFollowers,
+    following: myFollowings,
   },
   dispatch,
 );

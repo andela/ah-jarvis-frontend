@@ -20,6 +20,19 @@ import uploader from '../../../utils/uploader';
 class Create extends Component {
   state = {
     saving: false,
+    tags: [],
+  };
+
+  getTags = (_e, d) => {
+    this.setState({
+      tags: [...this.state.tags, d.childNodes[0].nodeValue],
+    });
+  };
+
+  removeTag = (_e, d) => {
+    this.setState({
+      tags: this.state.tags.filter(t => t !== d.childNodes[0].nodeValue),
+    });
   };
 
   handleSave = (state) => {
@@ -42,7 +55,9 @@ class Create extends Component {
 
   handlePublish = () => {
     const { postArticle, history } = this.props;
-    postArticle(JSON.parse(localStorage.getItem('article')), history);
+    const article = JSON.parse(localStorage.getItem('article'));
+    article.article.tagList = this.state.tags;
+    postArticle(article, history);
     localStorage.removeItem('article');
   };
 
@@ -66,13 +81,15 @@ class Create extends Component {
 
     return (
       <React.Fragment>
-        <Header />
+        <Header {...this.props} />
         <div className="container m-t--30">
           <UserInfo
             onPublish={this.handlePublish}
             publishing={publishing}
             save={this.state.saving}
             user={this.props.user}
+            getTags={this.getTags}
+            removeTag={this.removeTag}
           />
           <div className="row">
             <div className="col s12">

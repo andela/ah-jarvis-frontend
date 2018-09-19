@@ -1,4 +1,6 @@
-import { EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE } from './constants';
+import {
+  EDIT_REQUEST, EDIT_SUCCESS, EDIT_FAILURE, CLEAR_STORE,
+} from './constants';
 import api from '../../../utils/api';
 
 export const editProfileFetch = () => ({
@@ -25,9 +27,13 @@ const updateUser = (data, history) => (dispatch) => {
   })
     .then((res) => {
       dispatch(editProfileSuccess(res));
+      dispatch({ type: CLEAR_STORE });
       history.push(`/profile/${res.user.username}`);
     })
-    .catch(err => dispatch(editProfileFailure(err)));
+    .catch((err) => {
+      dispatch(editProfileFailure(err));
+      dispatch({ type: CLEAR_STORE });
+    });
 };
 
 export default updateUser;

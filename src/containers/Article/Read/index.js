@@ -80,6 +80,7 @@ class Read extends Component {
   handleReaction = (e) => {
     e.preventDefault();
     const { like, dislike, match } = this.props;
+
     if (user) {
       this.setState({ alert: false });
       if (e.target.id === 'like') {
@@ -99,6 +100,8 @@ class Read extends Component {
   renderReaction = (id, src, count) => (
     <Reaction id={id} src={src} count={count} onClick={this.handleReaction} />
   );
+
+  renderTags = tags => tags.map(tag => <div className="chip">{tag}</div>);
 
   render() {
     const {
@@ -153,6 +156,7 @@ class Read extends Component {
               </React.Fragment>
             )}
           </div>
+          {payload.article && <div className="row">{ this.renderTags(payload.article.tagList) }</div>}
         </div>
       </React.Fragment>
     );

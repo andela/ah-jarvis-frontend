@@ -14,7 +14,6 @@ import createComment from './containers/Comments/Create/reducer';
 import getComments from './containers/Comments/Read/reducer';
 import trending from './containers/Sidebar/reducer';
 
-
 const rootReducer = combineReducers({
   getProfile,
   editProfile,

@@ -92,19 +92,29 @@ class UpdateProfile extends Component {
     M.toast({ html: 'Your profile has been successfully updated', classes: 'success' });
   };
 
+  errorToaster = (error) => {
+    M.toast({ html: error, classes: 'danger' });
+  };
+
   render() {
-    const { success, isFetching } = this.props.edit;
+    const { success, isFetching, errors } = this.props.edit;
     if (this.state.uploaded === 100) {
       this.setState({
         uploaded: null,
       });
     }
 
+    let error;
+    if (errors) {
+      error = errors;
+    }
+
     return (
       <div>
-        <Header />
+        <Header {...this.props} />
         <div className="container container--medium">
           {success && this.toaster()}
+          {errors && this.errorToaster(error.errors.username[0])}
           {/* Main */}
           <div className="row m-t--20">
             {/* User Profile */}
