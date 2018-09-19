@@ -366,6 +366,10 @@ hr {
 .line-space {
   line-height: 25px; }
 
+.loader {
+  padding: 0;
+  margin: 0; }
+
 .avatar {
   border-radius: 50%; }
   .avatar--large {
@@ -485,18 +489,12 @@ hr {
 .relative {
   position: relative; }
 
-input[type=text] {
-  width: 130px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out; }
-
-/* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
-  width: 100%; }
-
 .search {
   width: 20%;
-  color: red; }
+  height: 60px !important;
+  line-height: 50px !important;
+  font-size: 1.8em !important;
+  margin-bottom: 20px !important; }
 
 .search {
   color: #ccc;

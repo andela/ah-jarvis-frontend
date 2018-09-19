@@ -9,13 +9,10 @@ import ROUTES from '../../utils/routes';
 import notification from '../../assets/icons/bell.svg';
 import search from '../../assets/icons/search.svg';
 import config from '../../config';
+import InlineLoader from '../InlineLoader';
 
 
 class Header extends React.Component {
-  state = {
-    search: '',
-  }
-
   componentDidMount() {
     const el = document.querySelector('.dropdown-trigger');
     M.Dropdown.init(el);
@@ -25,14 +22,16 @@ class Header extends React.Component {
     localStorage.removeItem('user');
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.history.push(`${ROUTES.articles}?search=${this.state.search}`);
-  }
+  // handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("location logs", this.props.articles);
+  //   this.props.history.push(`${ROUTES.articles}?search=${this.state.search}`);
+  // }
 
-  handleChange = (e) => {
-    this.setState({ search: e.target.value });
-  }
+  // handleChange = (e) => {
+  //   console.log("location logs", this.props.location.search);
+  //   this.setState({ search: e.target.value });
+  // }
 
   renderDropDown = user => (
     <li>
@@ -73,13 +72,9 @@ class Header extends React.Component {
 
   renderIcons = user => (
     <React.Fragment>
-      <li className="black-text search-input">
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="Search..." className="search" onChange={this.handleChange} />
-        </form>
-      </li>
+
       <li>
-        <NavLink to={ROUTES.articles} className="black-text" id="search" onClick={this.handleSubmit}>
+        <NavLink to={ROUTES.articles} className="black-text" id="search">
           <div>
             <img src={search} alt="" className="icon" />
           </div>
@@ -114,7 +109,6 @@ class Header extends React.Component {
 
   render() {
     const user = getCurrentUser();
-    console.log(this.state);
 
     return (
       <header>
@@ -125,19 +119,14 @@ class Header extends React.Component {
             </NavLink>
 
             <ul id="nav-mobile" className="right nav-icons hide-on-med-and-down">
-              <li className="black-text hide search-input">
-                {/* <form onSubmit={this.handleSubmit}>
-                  <input type="text" name="search"
-                  placeholder="Search..." value=""
-                  className="search" onChange={this.handleChange} />
-                </form> */}
-              </li>
+
               {this.renderIcons(user)}
               {this.renderDropDown(user)}
             </ul>
 
           </div>
         </nav>
+        {this.props.loading && <InlineLoader /> }
       </header>
     );
   }
