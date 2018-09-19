@@ -16,16 +16,34 @@ export default class Editor extends Component {
   state = {
     saving: false,
     tags: [],
+    editorState: null,
+    article: {},
   };
 
   componentDidMount() {
-    localStorage.setItem('article', this.props.state)
+    this.setState({
+      article: {
+        ...this.state.article,
+        body: this.props.state,
+        tags: [],
+      },
+    });
   }
 
   static getDerivedStateFromProps(props, state) {
-    console.log('Stater', state);
-    console.log('Proper', props);
-    return null;
+    const propsNewTags = props.tags ? props.tags.filter(tag => state.tags.includes(tag)) : [];
+    if (!props.tags) {
+      return {
+        ...state,
+        tags: [...state.tags],
+        editorState: props.state,
+      };
+    }
+    return {
+      ...state,
+      tags: propsNewTags.length === 0 ? props.tags : [...propsNewTags, ...state.tags],
+      editorState: props.state,
+    };
   }
 
   getTags = (_e, d) => {
@@ -36,7 +54,7 @@ export default class Editor extends Component {
 
   removeTag = (_e, d) => {
     this.setState({
-      tags: this.state.tags.filter(t => t !== d.childNodes[0].nodeValue),
+      tags: this.state.tags.filter(tag => tag !== d.childNodes[0].nodeValue),
     });
   };
 
@@ -44,18 +62,31 @@ export default class Editor extends Component {
     this.setState({ saving: true });
     const editorState = state.editorState();
     const title = editorState.getCurrentContent().getFirstBlock().text;
-    const data = {
+    let data;
+    if (state.editorContent.blocks.length === 1 && state.editorContent.blocks[0].text === '') {
+      data = {
+        article: {
+          body: JSON.stringify(this.state.editorState),
+          title,
+          description: title,
+          tagList: this.state.tags,
+        },
+      };
+      localStorage.setItem('article', JSON.stringify(data));
+      this.setState({ saving: false });
+      return;
+    }
+    data = {
       article: {
         body: JSON.stringify(state.editorContent),
         title,
         description: title,
+        tagList: this.state.tags,
       },
     };
 
     localStorage.setItem('article', JSON.stringify(data));
-    setTimeout(() => {
-      this.setState({ saving: false });
-    }, 500);
+    this.setState({ saving: false });
   };
 
   handlePublish = () => {
@@ -63,7 +94,6 @@ export default class Editor extends Component {
     const article = JSON.parse(localStorage.getItem('article'));
     article.article.tagList = this.state.tags;
     postArticle(article, history);
-    localStorage.removeItem('article');
   };
 
   handleFailure = (e) => {
@@ -85,7 +115,7 @@ export default class Editor extends Component {
 
   render() {
     const {
-      state, publishing, user, tags, update,
+      state, publishing, tags, update, user,
     } = this.props;
     return (
       <div className="container m-t--30">
@@ -93,10 +123,10 @@ export default class Editor extends Component {
           onPublish={this.handlePublish}
           publishing={publishing}
           save={this.state.saving}
-          user={this.props.user}
+          user={user}
           getTags={this.getTags}
           removeTag={this.removeTag}
-          tags={tags}
+          tags={this.state.tags}
           update={!!update}
         />
         <div className="row">
@@ -124,7 +154,7 @@ export default class Editor extends Component {
                 save_handler: this.handleSave,
                 success_handler: this.handleSuccess,
                 failure_handler: this.handleFailure,
-                interval: 1000,
+                interval: 100,
               }}
             />
 
@@ -140,10 +170,11 @@ Editor.propTypes = {
   user: PropTypes.shape({
     username: PropTypes.string.isRequired,
   }).isRequired,
-  slug: PropTypes.string.isRequired,
   history: PropTypes.object.isRequired,
   postArticle: PropTypes.func.isRequired,
   publishing: PropTypes.bool.isRequired,
   update: PropTypes.bool,
   state: PropTypes.string,
+  tags: PropTypes.array.isRequired,
+
 };

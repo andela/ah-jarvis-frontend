@@ -33,7 +33,7 @@ ShallowWrapper {
           className="col s6 m1"
 >
           <img
-                    alt={undefined}
+                    alt="nn"
                     className="responsive-img circle"
                     src={undefined}
           />
@@ -112,7 +112,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <img
-            alt={undefined}
+            alt="nn"
             className="responsive-img circle"
             src={undefined}
 />,
@@ -124,7 +124,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "alt": undefined,
+            "alt": "nn",
             "className": "responsive-img circle",
             "src": undefined,
           },
@@ -453,7 +453,7 @@ ShallowWrapper {
             className="col s6 m1"
 >
             <img
-                        alt={undefined}
+                        alt="nn"
                         className="responsive-img circle"
                         src={undefined}
             />
@@ -532,7 +532,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <img
-              alt={undefined}
+              alt="nn"
               className="responsive-img circle"
               src={undefined}
 />,
@@ -544,7 +544,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "alt": undefined,
+              "alt": "nn",
               "className": "responsive-img circle",
               "src": undefined,
             },

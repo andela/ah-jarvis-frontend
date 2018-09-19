@@ -12,7 +12,6 @@ import Editor from '../../../components/Editor';
 class Create extends Component {
   render() {
     const { publishing } = this.props.article;
-    console.log(this.props.article);
 
     return (
       <React.Fragment>

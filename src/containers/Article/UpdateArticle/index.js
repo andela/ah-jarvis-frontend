@@ -14,13 +14,15 @@ class Update extends Component {
     this.props.getArticle(this.props.match.params.slug);
   }
 
+  edit = (article, history) => {
+    this.props.editArticle(article, history, true, this.props.match.params.slug);
+  };
+
   render() {
     const {
       isFetching, payload, success, publishing,
     } = this.props.article;
     const { slug } = this.props.match.params;
-    console.log(payload);
-
     return (
       <React.Fragment>
         <Header />
@@ -28,7 +30,7 @@ class Update extends Component {
           && !isFetching && (
             <Editor
               state={JSON.parse(payload.article.body)}
-              postArticle={this.props.editArticle}
+              postArticle={this.edit}
               slug={slug}
               history={this.props.history}
               publishing={publishing}

@@ -78,7 +78,6 @@ class Read extends Component {
   handleReaction = (e) => {
     e.preventDefault();
     const { like, dislike, match } = this.props;
-    console.log(match);
 
     if (user) {
       this.setState({ alert: false });
@@ -155,6 +154,8 @@ class Read extends Component {
             )}
           </div>
           {payload.article && <div className="row">{ this.renderTags(payload.article.tagList) }</div>}
+`
+          {' '}
         </div>
       </React.Fragment>
     );

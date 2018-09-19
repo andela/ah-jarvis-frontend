@@ -18,7 +18,6 @@ class ArticleActions extends Component {
 
   handleDelete = () => {
     const { slug, removeArticle } = this.props;
-    console.log(slug);
 
     swal({
       title: 'Are you sure?',
@@ -40,7 +39,6 @@ class ArticleActions extends Component {
 
   render() {
     const { slug } = this.props;
-    console.log(slug);
 
     return (
       <React.Fragment>

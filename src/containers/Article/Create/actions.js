@@ -18,11 +18,9 @@ export const articleFailure = errors => ({
 const createArticleAction = (data, history, update = false, slug) => (dispatch) => {
   dispatch(articleFetch());
   let endpoint = '/articles/';
-  console.log(endpoint);
 
   if (update) {
     endpoint = `/articles/${slug}/`;
-    console.log(endpoint);
   }
   return api({
     method: `${update ? 'PUT' : 'POST'}`,
