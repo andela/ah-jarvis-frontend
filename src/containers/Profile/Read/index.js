@@ -68,6 +68,7 @@ export class ReadProfile extends Component {
                   currentUser={this.props.user}
                   follow={this.props.follow}
                   listFollowers={this.getFollowers}
+                  listFollowing={this.getFollowing}
                 />
               </div>
 
@@ -120,10 +121,10 @@ export class ReadProfile extends Component {
                   <hr />
                 </div>
                 <div id="latest" className="col s12  p-t--30">
-                  {/* {results && <UserArticles results={results} />} */}
+                  Latest
                 </div>
                 <div id="bookmarks" className="col s12  p-t--30">
-                  {/* {userBookmarks && this.renderBookmarks(userBookmarks) } */}
+                  Bookmarks
                 </div>
 
                 <div id="followers" className="col s12  p-t--30">
@@ -141,8 +142,6 @@ export class ReadProfile extends Component {
                     </div>
                   )}
                 </div>
-                {/* {this.props.user.username === data.username
-                && <Settings data={data} update={this.updateProfile} /> } */}
               </div>
             </React.Fragment>
           )}

@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import capitalize from '../../utils/capitalize';
+import Follow from '../FollowButton';
 
 const ProfileUser = ({
-  data, currentUser, follow, listFollowers,
+  data, currentUser, follow, listFollowers, listFollowing,
 }) => (
   <div className="row p-t--20 p-b--20">
     <div className="col s12 m9">
@@ -18,7 +19,7 @@ const ProfileUser = ({
       </div>
 
       <div className="m-b--15">
-        <a href="#following" className="m-r--15">
+        <a href="#following" className="m-r--15" onClick={listFollowing}>
           {data.following}
           {' '}
 Following
@@ -39,25 +40,11 @@ Followers
             Edit
           </Link>
         ) : (
-          <div>
-            {data.i_follow_this_user ? (
-              <button
-                onClick={() => follow(data.username, 'DELETE')}
-                className="waves-effect waves-light btn btn--rounded"
-                type="button"
-              >
-                Unfollow
-              </button>
-            ) : (
-              <button
-                type="button"
-                onClick={() => follow(data.username, 'POST')}
-                className="waves-effect waves-light btn btn--rounded"
-              >
-                Follow
-              </button>
-            )}
-          </div>
+          <Follow
+            follow={follow}
+            user={data}
+            classname="waves-effect waves-light btn btn--rounded"
+          />
         )}
       </div>
     </div>
@@ -72,6 +59,7 @@ ProfileUser.propTypes = {
   data: PropTypes.object.isRequired,
   currentUser: PropTypes.object.isRequired,
   listFollowers: PropTypes.object.isRequired,
+  listFollowing: PropTypes.object.isRequired,
 };
 
 export default ProfileUser;
