@@ -4,13 +4,12 @@ import PropTypes from 'prop-types';
 import CommentHead from '../CommentHead';
 
 
-const CommentBlock = ({ user, body, createdAt, }) => (
+const CommentBlock = ({ user, body, createdAt }) => (
   <div className="comment-box response">
     <CommentHead user={user} date={createdAt} />
     <div className="row">
       <div className="comment-body comment-body--small">
         {body}
-                <a href="#!" className="reply-1"> REPLY</a>
       </div>
     </div>
   </div>
@@ -18,3 +17,10 @@ const CommentBlock = ({ user, body, createdAt, }) => (
 
 export default CommentBlock;
 
+CommentBlock.propTypes = {
+  user: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+  }).isRequired,
+  createdAt: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+};

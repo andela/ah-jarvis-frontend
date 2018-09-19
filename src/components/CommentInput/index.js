@@ -30,9 +30,7 @@ const CommentInput = ({
         </div>
       </div>
     </form>
-    <div className="row">
-      
-    </div>
+    <div className="row" />
   </div>
 );
 
@@ -46,6 +44,8 @@ CommentInput.propTypes = {
   }),
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  handleSubmitComment: PropTypes.func,
   errors: PropTypes.shape({
     email: PropTypes.string,
     username: PropTypes.string,

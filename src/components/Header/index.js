@@ -129,7 +129,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  loading: PropTypes.bool.isRequired,
+  loading: PropTypes.bool,
 };
 
 export default Header;

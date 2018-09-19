@@ -27,6 +27,7 @@ class ReadComments extends Component {
           this.results(payload)
             .map(data => (
               <CommentBlock
+                key={data.id.toString()}
                 body={data.body}
                 createdAt={data.createdAt}
                 user={data.author}

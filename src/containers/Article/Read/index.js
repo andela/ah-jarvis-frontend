@@ -103,6 +103,18 @@ class Read extends Component {
 
   renderTags = tags => tags.map(tag => <div className="chip">{tag}</div>);
 
+  renderComments = () => {
+    if (user) {
+      return (
+        <div>
+          <NewComment slug={this.props.match.params.id} />
+          <ReadComments slug={this.props.match.params.id} />
+        </div>
+      );
+    }
+    return null;
+  }
+
   render() {
     const {
       isFetching, success, payload, errors, isRating,
@@ -144,8 +156,7 @@ class Read extends Component {
                     onStarClick={this.onStarClick}
                   />
                   <Dante read_only content={data} />
-                  <NewComment slug={this.props.match.params.id} />
-                  <ReadComments slug={this.props.match.params.id} />
+                  {this.renderComments()}
                 </div>
                 <div className="col s1">
                   <div className="reactions">

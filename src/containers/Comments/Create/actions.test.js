@@ -1,14 +1,9 @@
-import configureMockStore from 'redux-mock-store';
 import fetchMock from 'fetch-mock';
-import thunk from 'redux-thunk';
 
 import { COMMENTS_POST_SUCCESS, COMMENTS_POST_FAILURE, COMMENTS_POST_REQUEST } from './constants';
-import createComment, { commentFailure, commentFetch, commentSuccess } from './actions';
-import getAction from '../../../utils/getActions';
+import { commentFailure, commentFetch, commentSuccess } from './actions';
 import testData from '../../../utils/testData';
 
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
 
 describe('comment actions', () => {
   afterEach(() => {
