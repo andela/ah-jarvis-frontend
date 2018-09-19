@@ -80,8 +80,6 @@ class Read extends Component {
     const { like, dislike, match } = this.props;
 
     if (user) {
-      console.log(user);
-
       this.setState({ alert: false });
       if (e.target.id === 'like') {
         like(match.params.id);
