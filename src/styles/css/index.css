@@ -148,10 +148,11 @@ nav .back {
   .pagination li.active .collection {
     width: 350px !important;
     top: -38px; }
-  .pagination li.active .collection {
-    width: 350px !important;
-    height: 460px;
-    top: -38px; }
+
+.collection {
+  width: 350px !important;
+  height: auto;
+  top: -65px; }
 
 .public-DraftEditorPlaceholder-inner {
   background-color: whitesmoke; }
@@ -176,6 +177,9 @@ nav .back {
     border-radius: 50%;
     background-color: #03a87c;
     margin-right: 30px; }
+
+.notification_link:hover {
+  background-color: inherit; }
 
 body {
   background-color: whitesmoke; }
@@ -392,8 +396,8 @@ hr {
   color: white;
   height: 25px;
   width: 25px;
-  top: -87%;
-  left: 60%;
+  top: 0%;
+  left: 50%;
   display: flex;
   align-items: center;
   justify-content: center; }

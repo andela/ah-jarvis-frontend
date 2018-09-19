@@ -4,11 +4,14 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import M from 'materialize-css';
 
-import getUser, { followAction, myFollowers, myFollowings } from './actions';
+import getUser, {
+  followAction, myFollowers, myFollowings, updateNotification,
+} from './actions';
 import Header from '../../../components/Header';
 import NotFound from '../../../components/NotFound';
 import ProfileUser from '../../../components/ProfileUser';
 import FollowList from '../../../components/FollowList';
+import Settings from '../../../components/Settings';
 
 export class ReadProfile extends Component {
   componentDidMount() {
@@ -31,6 +34,11 @@ export class ReadProfile extends Component {
     const { profile } = this.props.profile.payload;
     this.props.following(profile.username);
   };
+
+  updateProfile = () => {
+    const { profile } = this.props.profile.payload;
+    this.props.updateNotification(!profile.get_notifications);
+  }
 
   render() {
     const {
@@ -74,8 +82,9 @@ export class ReadProfile extends Component {
 
               <div className="row">
                 <div className="col s12 data">
-                  <ul className="tabs">
-                    <li className="tab col s3">
+                  <ul className="tabs tabs-fixed-width">
+
+                    <li className="tab col ">
                       <a
                         className="black-text"
                         href="#latest"
@@ -84,7 +93,8 @@ export class ReadProfile extends Component {
                         Profile
                       </a>
                     </li>
-                    <li className="tab col s3">
+                    {this.props.user.username === data.username && (
+                    <li className="tab col ">
                       <a
                         className="black-text"
                         href="#bookmarks"
@@ -92,8 +102,10 @@ export class ReadProfile extends Component {
                       >
                         Favorites
                       </a>
-                    </li>
-                    <li className="tab col s3">
+                    </li>)
+                    }
+
+                    <li className="tab col ">
                       <a
                         className="black-text"
                         href="#following"
@@ -105,7 +117,8 @@ export class ReadProfile extends Component {
                         Following
                       </a>
                     </li>
-                    <li className="tab col s3">
+
+                    <li className="tab col ">
                       <a
                         className="black-text"
                         href="#followers"
@@ -117,15 +130,31 @@ export class ReadProfile extends Component {
                         {data.followers <= 1 ? 'Follower' : 'Followers'}
                       </a>
                     </li>
+                    {this.props.user.username === data.username && (
+                    <li className="tab col ">
+                      <a
+                        className="black-text"
+                        href="#settings"
+                        onClick={() => {
+                          this.getFollowers();
+                          push({ hash: '#settings' });
+                        }}
+                      >
+                         Settings
+                      </a>
+                    </li>)
+                    }
                   </ul>
                   <hr />
                 </div>
                 <div id="latest" className="col s12  p-t--30">
                   Latest
                 </div>
-                <div id="bookmarks" className="col s12  p-t--30">
-                  Bookmarks
-                </div>
+                {this.props.user.username === data.username && (
+                  <div id="bookmarks" className="col s12  p-t--30">
+                    Bookmarks
+                  </div>
+                )}
 
                 <div id="followers" className="col s12  p-t--30">
                   {followersResults && (
@@ -142,6 +171,10 @@ export class ReadProfile extends Component {
                     </div>
                   )}
                 </div>
+
+                {this.props.user.username === data.username
+                && <Settings data={data} update={this.updateProfile} /> }
+
               </div>
             </React.Fragment>
           )}
@@ -159,6 +192,7 @@ ReadProfile.propTypes = {
   follow: PropTypes.func.isRequired,
   followers: PropTypes.func.isRequired,
   following: PropTypes.func.isRequired,
+  updateNotification: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
 };
 
@@ -172,6 +206,7 @@ const mapDispatchToProps = dispatch => bindActionCreators(
     follow: followAction,
     followers: myFollowers,
     following: myFollowings,
+    updateNotification,
   },
   dispatch,
 );

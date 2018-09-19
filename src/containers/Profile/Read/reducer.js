@@ -11,6 +11,8 @@ import {
   FOLLOWING_REQUEST,
   FOLLOWING_SUCCESS,
   FOLLOWING_FAILURE,
+  UPDATE_PROFILE_NOTIFICATION_REQUEST,
+  UPDATE_PROFILE_NOTIFICATION_SUCCESS,
 } from './constants';
 
 const initialState = {
@@ -107,6 +109,30 @@ export default function (state = initialState, action) {
         success: false,
         isFetching: false,
       };
+    case UPDATE_PROFILE_NOTIFICATION_REQUEST:
+      return {
+        ...state,
+        updating: true,
+        success: false,
+      };
+
+    case UPDATE_PROFILE_NOTIFICATION_SUCCESS:
+      return {
+        ...state,
+        payload: {
+          ...state.payload,
+          profile: {
+            ...state.payload.profile,
+            get_notifications: payload.user.get_notifications,
+          },
+        },
+        errors: null,
+        updating: false,
+        success: true,
+        failure: false,
+        isFetching: false,
+      };
+
     default:
       return state;
   }

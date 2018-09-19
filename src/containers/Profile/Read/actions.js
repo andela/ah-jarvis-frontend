@@ -11,6 +11,8 @@ import {
   FOLLOWING_REQUEST,
   FOLLOWING_SUCCESS,
   FOLLOWING_FAILURE,
+  UPDATE_PROFILE_NOTIFICATION_SUCCESS,
+  UPDATE_PROFILE_NOTIFICATION_REQUEST,
 } from './constants';
 import api from '../../../utils/api';
 
@@ -69,6 +71,31 @@ export const followingSuccess = payload => ({
 export const followingRequest = () => ({
   type: FOLLOWING_REQUEST,
 });
+
+export const updateProfileNotification = () => ({
+  type: UPDATE_PROFILE_NOTIFICATION_REQUEST,
+});
+
+
+export const updateProfileSuccess = payload => ({
+  type: UPDATE_PROFILE_NOTIFICATION_SUCCESS,
+  payload,
+});
+
+export const updateNotification = notification => (dispatch) => {
+  dispatch(updateProfileNotification());
+  api({
+    method: 'PUT',
+    endpoint: '/user/',
+    data: {
+      user: {
+        get_notifications: notification,
+      },
+    },
+    authenticated: true,
+  }).then(res => dispatch(updateProfileSuccess(res)))
+    .catch(err => dispatch(fetchProfileFailure(err)));
+};
 
 export const myFollowings = username => (dispatch) => {
   dispatch(followingRequest());

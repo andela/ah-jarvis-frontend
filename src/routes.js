@@ -41,14 +41,22 @@ export default () => (
       <Scroll>
         <Switch>
           <Route exact path={ROUTES.home} component={Home} />
-          <Route exact path={ROUTES.getArticleUrl} component={Read} />
+          <Route
+            exact
+            path={ROUTES.getArticleUrl}
+            component={props => <Read {...props} key={Math.random()} />}
+          />
           <PrivateRoute exact path={ROUTES.createArticleUrl} component={Create} />
           <Route exact path={ROUTES.signup} component={SignUp} />
           <Route exact path={ROUTES.signin} component={SocialAuth} />
           <Route exact path={ROUTES.signinWithEmail} component={Signin} />
           <Route exact path={ROUTES.resetPassword} component={ForgotPasssword} />
           <Route exact path={ROUTES.verify} component={ResetPasssword} />
-          <PrivateRoute exact path={ROUTES.getProfile} component={ReadProfile} />
+          <PrivateRoute
+            exact
+            path={ROUTES.getProfile}
+            component={props => <ReadProfile {...props} key={Math.random()} />}
+          />
           <Route exact path={ROUTES.updateProfile} component={UpdateProfile} />
           <Route
             exact
