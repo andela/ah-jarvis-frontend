@@ -40,13 +40,4 @@ describe('comment actions', () => {
     };
     expect(commentSuccess(payload)).toEqual(expectedAction);
   });
-
-  it('should mock thunk action', async () => {
-    const store = mockStore();
-
-    store.dispatch(createComment());
-    expect(await getAction(store, COMMENTS_POST_REQUEST)).toEqual({
-      type: COMMENTS_POST_REQUEST,
-    });
-  });
 });
