@@ -5,7 +5,9 @@ import capitalize from '../../utils/capitalize';
 
 class UserInfo extends React.Component {
   componentDidMount() {
-    const { getTags, removeTag } = this.props;
+    const {
+      getTags, removeTag, tags, update,
+    } = this.props;
     const elems = document.querySelectorAll('.dropdown-trigger');
     M.Dropdown.init(elems, { closeOnClick: false });
 
@@ -14,6 +16,11 @@ class UserInfo extends React.Component {
       placeholder: 'Add a tag...',
       onChipAdd: getTags,
       onChipDelete: removeTag,
+      data:
+        update
+        && tags.map(tag => ({
+          tag,
+        })),
     });
   }
 
@@ -84,6 +91,8 @@ UserInfo.propTypes = {
   }).isRequired,
   getTags: PropTypes.func.isRequired,
   removeTag: PropTypes.func.isRequired,
+  tags: PropTypes.array.isRequired,
+  update: PropTypes.bool.isRequired,
 };
 
 export default UserInfo;

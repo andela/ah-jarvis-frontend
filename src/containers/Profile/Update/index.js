@@ -77,7 +77,6 @@ class UpdateProfile extends Component {
 
     uploader({ body: this.state.fileInput.current.files[0], progress: this.updateProgress })
       .then((response) => {
-        console.log(response);
         this.setState({
           profile: {
             ...this.state.profile,

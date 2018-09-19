@@ -7,6 +7,7 @@ const ROUTES = {
   notifications: 'notifications',
   getArticleUrl: '/article/:id',
   createArticleUrl: '/articles/new',
+  editArticleUrl: '/article/:slug/edit',
   signinWithEmail: '/signin/email',
   resetPassword: '/reset/password',
   verify: '/verify/:token',

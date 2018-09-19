@@ -133,6 +133,7 @@ class Read extends Component {
                   <AuthorDetails
                     user={{ ...payload.article.author }}
                     date={payload.article.created_at}
+                    slug={payload.article.slug}
                     readtime={readtime}
                     averageRate={
                       payload.article.average_rating
@@ -153,6 +154,8 @@ class Read extends Component {
             )}
           </div>
           {payload.article && <div className="row">{ this.renderTags(payload.article.tagList) }</div>}
+`
+          {' '}
         </div>
       </React.Fragment>
     );

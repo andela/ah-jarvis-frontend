@@ -33,7 +33,7 @@ class Header extends React.Component {
               className="responsive-img small--avatar circle-img"
             />
           </a>
-          <ul id="profile" className="dropdown-content">
+          <ul id="profile" className="dropdown-content  dropdown-content--nav">
             <li>
               <NavLink to={`${ROUTES.profile}/${user.username}`}>Profile</NavLink>
             </li>
@@ -65,7 +65,6 @@ class Header extends React.Component {
 
   renderIcons = user => (
     <React.Fragment>
-
       <li>
         <NavLink to={ROUTES.articles} className="black-text" id="search">
           <div>

@@ -35,6 +35,7 @@ ShallowWrapper {
           <AuthorDetails
                     date=""
                     readtime={2}
+                    slug="data"
                     small={true}
                     user={
                               Object {
@@ -114,6 +115,7 @@ ShallowWrapper {
           "children": <AuthorDetails
             date=""
             readtime={2}
+            slug="data"
             small={true}
             user={
                         Object {
@@ -131,6 +133,7 @@ ShallowWrapper {
           "props": Object {
             "date": "",
             "readtime": 2,
+            "slug": "data",
             "small": true,
             "user": Object {
               "username": "test user",
@@ -428,6 +431,7 @@ ShallowWrapper {
             <AuthorDetails
                         date=""
                         readtime={2}
+                        slug="data"
                         small={true}
                         user={
                                     Object {
@@ -507,6 +511,7 @@ ShallowWrapper {
             "children": <AuthorDetails
               date=""
               readtime={2}
+              slug="data"
               small={true}
               user={
                             Object {
@@ -524,6 +529,7 @@ ShallowWrapper {
             "props": Object {
               "date": "",
               "readtime": 2,
+              "slug": "data",
               "small": true,
               "user": Object {
                 "username": "test user",

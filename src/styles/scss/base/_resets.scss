@@ -144,10 +144,16 @@ nav .back {
   padding: 0;
 }
 
-.dropdown-content {
+.--nav {
   min-width: 190px;
   max-height: 450px;
   overflow-y: scroll;
+  top: -57px;
+}
+
+.dropdown-content--nav {
+  min-width: 190px !important;
+  max-height: 450px !important;
   top: -57px;
 }
 
