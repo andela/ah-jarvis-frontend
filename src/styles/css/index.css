@@ -495,6 +495,13 @@ hr {
   .icon--twitter {
     fill: #2aa3ef; }
 
+.eye {
+  position: absolute;
+  top: 10px;
+  right: 27px;
+  fill: #03a87c;
+  opacity: 0.5; }
+
 .nav-icons {
   display: flex !important;
   align-items: center; }
@@ -533,6 +540,9 @@ hr {
 
 .helper-text {
   font-size: 12px; }
+
+.relative {
+  position: relative; }
 
 .articles {
   display: flex;
