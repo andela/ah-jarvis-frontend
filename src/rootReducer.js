@@ -13,6 +13,7 @@ import createArticle from './containers/Article/Create/reducer';
 import createComment from './containers/Comments/Create/reducer';
 import getComments from './containers/Comments/Read/reducer';
 import trending from './containers/Sidebar/reducer';
+import notifications from './containers/Notifications/reducer';
 
 const rootReducer = combineReducers({
   getProfile,
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
   forgotPass,
   reset,
   signup,
+  notifications,
 });
 
 export default rootReducer;

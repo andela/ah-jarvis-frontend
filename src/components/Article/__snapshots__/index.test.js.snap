@@ -35,6 +35,7 @@ ShallowWrapper {
           <AuthorDetails
                     date=""
                     readtime={2}
+                    slug="data"
                     small={true}
                     user={
                               Object {
@@ -96,7 +97,7 @@ ShallowWrapper {
                     <div>
                               <img
                                         alt="thumbs-up"
-                                        src="heart.svg"
+                                        src="baseline-bookmark_border-24px.svg"
                               />
                     </div>
           </div>
@@ -114,6 +115,7 @@ ShallowWrapper {
           "children": <AuthorDetails
             date=""
             readtime={2}
+            slug="data"
             small={true}
             user={
                         Object {
@@ -131,6 +133,7 @@ ShallowWrapper {
           "props": Object {
             "date": "",
             "readtime": 2,
+            "slug": "data",
             "small": true,
             "user": Object {
               "username": "test user",
@@ -302,7 +305,7 @@ ShallowWrapper {
             <div>
                         <img
                                     alt="thumbs-up"
-                                    src="heart.svg"
+                                    src="baseline-bookmark_border-24px.svg"
                         />
             </div>
 </div>,
@@ -329,7 +332,7 @@ ShallowWrapper {
               <div>
                 <img
                                 alt="thumbs-up"
-                                src="heart.svg"
+                                src="baseline-bookmark_border-24px.svg"
                 />
 </div>,
             ],
@@ -389,7 +392,7 @@ ShallowWrapper {
               "props": Object {
                 "children": <img
                   alt="thumbs-up"
-                  src="heart.svg"
+                  src="baseline-bookmark_border-24px.svg"
 />,
               },
               "ref": null,
@@ -399,7 +402,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "alt": "thumbs-up",
-                  "src": "heart.svg",
+                  "src": "baseline-bookmark_border-24px.svg",
                 },
                 "ref": null,
                 "rendered": null,
@@ -428,6 +431,7 @@ ShallowWrapper {
             <AuthorDetails
                         date=""
                         readtime={2}
+                        slug="data"
                         small={true}
                         user={
                                     Object {
@@ -489,7 +493,7 @@ ShallowWrapper {
                         <div>
                                     <img
                                                 alt="thumbs-up"
-                                                src="heart.svg"
+                                                src="baseline-bookmark_border-24px.svg"
                                     />
                         </div>
             </div>
@@ -507,6 +511,7 @@ ShallowWrapper {
             "children": <AuthorDetails
               date=""
               readtime={2}
+              slug="data"
               small={true}
               user={
                             Object {
@@ -524,6 +529,7 @@ ShallowWrapper {
             "props": Object {
               "date": "",
               "readtime": 2,
+              "slug": "data",
               "small": true,
               "user": Object {
                 "username": "test user",
@@ -695,7 +701,7 @@ ShallowWrapper {
               <div>
                             <img
                                           alt="thumbs-up"
-                                          src="heart.svg"
+                                          src="baseline-bookmark_border-24px.svg"
                             />
               </div>
 </div>,
@@ -722,7 +728,7 @@ ShallowWrapper {
                 <div>
                   <img
                                     alt="thumbs-up"
-                                    src="heart.svg"
+                                    src="baseline-bookmark_border-24px.svg"
                   />
 </div>,
               ],
@@ -782,7 +788,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": <img
                     alt="thumbs-up"
-                    src="heart.svg"
+                    src="baseline-bookmark_border-24px.svg"
 />,
                 },
                 "ref": null,
@@ -792,7 +798,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "alt": "thumbs-up",
-                    "src": "heart.svg",
+                    "src": "baseline-bookmark_border-24px.svg",
                   },
                   "ref": null,
                   "rendered": null,
