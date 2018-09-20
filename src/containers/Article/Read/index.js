@@ -7,10 +7,12 @@ import M from 'materialize-css';
 
 import thumbsUp from '../../../assets/icons/thumbsUp.svg';
 import thumbsDown from '../../../assets/icons/thumbsDown.svg';
+import heart from '../../../assets/icons/baseline-bookmark_border-24px.svg';
+import heartFill from '../../../assets/icons/baseline-bookmark-24px.svg';
 
 import Header from '../../../components/Header';
 import {
-  fetchArticle, rateSuccess, likeArticle, dislikeArticle,
+  fetchArticle, rateSuccess, likeArticle, dislikeArticle, bookmarkArticle,
 } from './actions';
 import Reaction from '../../../components/LikeDislike';
 import AuthorDetails from '../../../components/AuthorDetails';
@@ -19,8 +21,6 @@ import NotFound from '../../../components/NotFound';
 import api from '../../../utils/api';
 import getCurrentUser from '../../../utils/auth';
 import readTime from '../../../utils/readtime';
-
-const user = getCurrentUser();
 
 class Read extends Component {
   state = {
@@ -32,7 +32,11 @@ class Read extends Component {
 
   componentDidMount() {
     const { getArticle, match } = this.props;
-    getArticle(match.params.id);
+    let auth = false;
+    if (getCurrentUser()) {
+      auth = true;
+    }
+    getArticle(match.params.id, auth);
   }
 
   toaster = () => {
@@ -46,7 +50,8 @@ class Read extends Component {
         rate: nextValue,
       },
     };
-    if (user) {
+
+    if (getCurrentUser()) {
       this.setState({ alert: false });
       api({
         endpoint: `/articles/${this.props.match.params.id}/rate/`,
@@ -58,6 +63,7 @@ class Read extends Component {
           const { getRating, getArticle, match } = this.props;
           getRating();
           getArticle(match.params.id);
+          console.log('article here', getArticle(match.params.id));
         })
         .catch((err) => {
           this.setState({
@@ -77,14 +83,20 @@ class Read extends Component {
 
   handleReaction = (e) => {
     e.preventDefault();
-    const { like, dislike, match } = this.props;
+    const {
+      like, dislike, match, bookmark,
+    } = this.props;
 
-    if (user) {
+    if (getCurrentUser()) {
       this.setState({ alert: false });
       if (e.target.id === 'like') {
         like(match.params.id);
       } else if (e.target.id === 'dislike') {
         dislike(match.params.id);
+      } else if (e.target.id === 'bookmark') {
+        bookmark(match.params.id, 'DELETE');
+      } else if (e.target.id === 'unBookmark') {
+        bookmark(match.params.id, 'POST');
       }
     } else {
       this.setState({
@@ -114,6 +126,7 @@ class Read extends Component {
       } catch (e) {
         return <NotFound />;
       }
+      console.log(payload.article.favorited);
     }
     if (errors) {
       return <NotFound />;
@@ -144,12 +157,15 @@ class Read extends Component {
                   />
                   <Dante read_only content={data} />
                 </div>
+
                 <div className="col s1">
                   <div className="reactions">
                     {this.renderReaction('like', thumbsUp, payload.article.likes_count)}
                     {this.renderReaction('dislike', thumbsDown, payload.article.dislikes_count)}
+                    {payload.article.favorited ? this.renderReaction('bookmark', heartFill) : this.renderReaction('unBookmark', heart)}
                   </div>
                 </div>
+
               </React.Fragment>
             )}
           </div>
@@ -185,6 +201,7 @@ const mapDispatchToProps = dispatch => bindActionCreators(
     getRating: rateSuccess,
     like: likeArticle,
     dislike: dislikeArticle,
+    bookmark: bookmarkArticle,
   },
   dispatch,
 );

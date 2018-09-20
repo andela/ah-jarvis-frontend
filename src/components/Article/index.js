@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import AuthorDetails from '../AuthorDetails';
 import thumbsUp from '../../assets/icons/thumbs-up.svg';
-import heart from '../../assets/icons/heart.svg';
+import heart from '../../assets/icons/baseline-bookmark_border-24px.svg';
+import heartFill from '../../assets/icons/baseline-bookmark-24px.svg';
 
 const Article = ({
-  title, author, image, preview, date, slug, readtime, likesCount,
+  title, author, image, preview, date, slug, readtime, likesCount, favorited,
 }) => (
   <div className="col m11 s12 preview">
     <div className="row author">
@@ -37,7 +38,8 @@ const Article = ({
           <div className="text--small">{likesCount}</div>
         </div>
         <div>
-          <img src={heart} alt="thumbs-up" />
+          {favorited ? <img src={heartFill} alt="thumbs-up" /> : <img src={heart} alt="thumbs-up" /> }
+
         </div>
       </div>
     </div>
@@ -55,6 +57,7 @@ Article.propTypes = {
   }).isRequired,
   readtime: PropTypes.number,
   likesCount: PropTypes.string.isRequired,
+  favorited: PropTypes.bool.isRequired,
 };
 
 export default Article;
