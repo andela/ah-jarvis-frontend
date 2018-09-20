@@ -108,6 +108,7 @@ class Articles extends Component {
           key={data.slug}
           readtime={readTime(b)}
           likesCount={data.likes_count}
+          favorited={data.favorited}
         />
       );
     });
@@ -146,7 +147,7 @@ class Articles extends Component {
           <form onSubmit={this.handleSubmit}>
             <input
               type="text"
-              placeholder="Search Authors' Heven..."
+              placeholder="Search Authors' Haven..."
               className="search"
               onChange={this.handleChange}
             />

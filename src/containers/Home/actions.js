@@ -9,6 +9,7 @@ import {
   SEARCH_REQUEST,
 } from './constants';
 import api from '../../utils/api';
+import getCurrentUser from '../../utils/auth';
 
 export const articlesFetch = () => ({
   type: ARTICLES_REQUEST,
@@ -50,6 +51,7 @@ const fetchArticlesAction = (count, page, search) => (dispatch) => {
   return api({
     method: 'GET',
     endpoint: `/articles?${limit(count, page - 1)}&${search && `search=${search}`}`,
+    authenticated: !!getCurrentUser(),
   })
     .then((res) => {
       if (search) {
