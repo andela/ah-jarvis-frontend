@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 
 import { createComment } from './actions';
-import { getComments } from '../Read/actions';
 import getCurrentUser from '../../../utils/auth';
 import CommentInput from '../../../components/CommentInput';
 
@@ -56,7 +55,6 @@ class NewComment extends Component {
     };
     this.setState({ comment: '' });
     this.props.createComment(data, this.props.slug);
-    this.props.getComments(this.props.slug);
   };
 
   render() {
@@ -76,14 +74,13 @@ NewComment.propTypes = {
     failure: PropTypes.isRequired,
     isFetching: PropTypes.isRequired,
   }),
-  getComments: PropTypes.func.isRequired,
   createComment: PropTypes.func.isRequired,
   slug: PropTypes.string.isRequired,
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators(
   {
-    createComment, getComments,
+    createComment,
   },
   dispatch,
 );

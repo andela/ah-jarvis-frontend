@@ -116,6 +116,7 @@ class Read extends Component {
   renderTags = tags => tags.map(tag => <div className="chip">{tag}</div>);
 
   renderComments = () => {
+    const user = getCurrentUser();
     if (user) {
       return (
         <div>
@@ -209,6 +210,7 @@ Read.propTypes = {
   }).isRequired,
   like: PropTypes.func.isRequired,
   dislike: PropTypes.func.isRequired,
+  bookmark: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators(

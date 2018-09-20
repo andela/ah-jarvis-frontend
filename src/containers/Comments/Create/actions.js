@@ -4,6 +4,7 @@ import {
   COMMENTS_POST_SUCCESS,
   COMMENTS_POST_FAILURE,
 } from './constants';
+import { getComments } from '../Read/actions';
 
 export const commentFetch = () => ({
   type: COMMENTS_POST_REQUEST,
@@ -28,6 +29,7 @@ export const createComment = (data, slug) => (dispatch) => {
   })
     .then((res) => {
       dispatch(commentSuccess(res));
+      dispatch(getComments(slug));
     })
     .catch(err => dispatch(commentFailure(err)));
 };
