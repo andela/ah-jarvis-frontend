@@ -6,6 +6,8 @@ import {
   RATE_ARTICLE_REQUEST,
   LIKE_ARTICLE_SUCCESS,
   DISLIKE_ARTICLE_SUCCESS,
+  BOOKMARK_ARTICLE_SUCCESS,
+  BOOKMARK_ARTICLE_REQUEST,
 } from './constants';
 
 export const articleFetch = () => ({
@@ -28,6 +30,8 @@ export const rateSuccess = () => ({
 
 export const likeArticleSuccess = () => ({ type: LIKE_ARTICLE_SUCCESS });
 export const dislikeArticleSuccess = () => ({ type: DISLIKE_ARTICLE_SUCCESS });
+export const bookmarkArticleSuccess = payload => ({ type: BOOKMARK_ARTICLE_SUCCESS, payload });
+export const bookmarkArticleRequest = () => ({ type: BOOKMARK_ARTICLE_REQUEST });
 
 export const likeArticle = slug => (dispatch) => {
   api({
@@ -55,11 +59,27 @@ export const dislikeArticle = slug => (dispatch) => {
     .catch(err => dispatch(articleFailure(err)));
 };
 
-export const fetchArticle = id => (dispatch) => {
+export const bookmarkArticle = (slug, method) => (dispatch) => {
+  dispatch(bookmarkArticleRequest());
+  console.log('method', method);
+  api({
+    endpoint: `/articles/${slug}/favorite/`,
+    method,
+    authenticated: true,
+  })
+    .then((res) => {
+      dispatch(bookmarkArticleSuccess(res));
+      console.log('favorite res', res);
+    })
+    .catch(err => dispatch(articleFailure(err)));
+};
+
+export const fetchArticle = (id, auth = false) => (dispatch) => {
   dispatch(articleFetch());
   return api({
     method: 'GET',
     endpoint: `/articles/${id}`,
+    authenticated: auth,
   })
     .then(res => dispatch(articleSuccess(res)))
     .catch(err => dispatch(articleFailure(err)));
