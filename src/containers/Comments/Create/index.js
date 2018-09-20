@@ -37,11 +37,11 @@ class NewComment extends Component {
     this.setState({ comment: e.target.value });
   };
 
-  renderCommentButton = isCommenting => (
+  renderCommentButton = isFetching => (
     <div className="row">
       <div className="input-field col s12">
         <button className="btn waves-effect waves-light btn--block" type="submit" name="action">
-          {isCommenting ? 'Sending...' : 'Publish'}
+          {isFetching ? 'Sending...' : 'Publish'}
         </button>
       </div>
     </div>
