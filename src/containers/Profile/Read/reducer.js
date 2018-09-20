@@ -118,7 +118,6 @@ export default function (state = initialState, action) {
         success: false,
       };
     case FETCH_USER_BOOKMARKS_SUCCESS:
-      console.log(payload);
       return {
         ...state,
         bookmarks: payload,

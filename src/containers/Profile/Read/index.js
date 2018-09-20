@@ -69,11 +69,9 @@ export class ReadProfile extends Component {
     const loading = isFetching || !success || updating;
     const followersResults = followers.profiles;
     const followingResults = following.profiles;
-    const results = articles.results ? articles.results : null;
-    console.log('====================================');
-    console.log(results);
-    console.log('====================================');
-    const userBookmarks = bookmarks.results ? bookmarks.results : null;
+    const results = articles.results && articles.results;
+
+    const userBookmarks = bookmarks.results && bookmarks.results;
     const { push } = this.props.history;
 
     return (
