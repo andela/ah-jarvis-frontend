@@ -1,18 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import show from '../../assets/icons/show.svg';
+import hide from '../../assets/icons/hide.svg';
 
 const InputField = ({
-  type, name, label, value, onChange, errors, failure, validation,
+  type,
+  name,
+  label,
+  value,
+  onChange,
+  errors,
+  failure,
+  validation,
+  toggleView,
 }) => (
   <div className="row">
     <div className="input-field col s12">
       <input
         type={type}
         name={name}
-        className={`validate ${failure && 'text-red'}`}
+        className={`validate ${failure && 'text-red'} relative`}
         value={value}
         onChange={onChange}
       />
+      {name === 'password' && (
+        <div className="btn-dropdown eye" onClick={() => toggleView(type)}>
+          {type === 'password' ? <img src={show} alt="show" /> : <img src={hide} alt="show" />}
+        </div>
+      )}
       <label htmlFor={name}>{label}</label>
       {failure && <span className="red-text helper-text">{errors.errors[name]}</span>}
       <span className="green-text helper-text">{validation}</span>

@@ -12,24 +12,17 @@ class Form extends React.Component {
       username: '',
       email: '',
       password: '',
-      confirmPass: '',
     },
     validation: {},
     isDisabled: false,
+    currentType: 'password',
   };
 
   handleChange = (event) => {
     const { user, validation } = this.state;
     const { name, value } = event.target;
     user[name] = value;
-    if (name !== 'confirmPass') {
-      validation[name] = validateInput(name, value);
-    } else {
-      validation[name] = validateInput(name, {
-        password: this.state.user.password,
-        confirmPass: value,
-      });
-    }
+    validation[name] = validateInput(name, value);
 
     const checkValidation = Object.values(validation).every(e => e === '') && Object.keys(validation).length === 4;
 
@@ -57,22 +50,25 @@ class Form extends React.Component {
       failure={failure}
       errors={errors}
       validation={validation}
+      toggleView={this.toggleView}
     />
   );
 
+  toggleView = (type) => {
+    type === 'password'
+      ? this.setState({ ...this.state, currentType: 'text' })
+      : this.setState({ ...this.state, currentType: 'password' });
+  };
+
   render() {
     const { error, failure } = this.props.register;
-    const {
-      username, email, password, confirmPass,
-    } = this.state.validation;
-    const { user } = this.state;
+    const { username, email, password } = this.state.validation;
+    const { user, currentType } = this.state;
     return (
       <form>
         {this.renderInput('username', failure, error, user.username, username, 'text')}
         {this.renderInput('email', failure, error, user.email, email, 'email')}
-        {this.renderInput('password', failure, error, user.password, password, 'password')}
-        {this.renderInput('confirmPass', failure, error, user.confirmPass, confirmPass, 'password')}
-
+        {this.renderInput('password', failure, error, user.password, password, currentType)}
         <div className="row">
           <div className="input-field col s12">
             <SignUpButton onClick={this.handleClick} disabled={this.state.isDisabled} />
