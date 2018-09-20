@@ -65,7 +65,6 @@ class Read extends Component {
           const { getRating, getArticle, match } = this.props;
           getRating();
           getArticle(match.params.id);
-          console.log('article here', getArticle(match.params.id));
         })
         .catch((err) => {
           this.setState({
@@ -141,7 +140,6 @@ class Read extends Component {
       } catch (e) {
         return <NotFound />;
       }
-      console.log(payload.article.favorited);
     }
     if (errors) {
       return <NotFound />;

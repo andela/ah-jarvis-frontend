@@ -63,14 +63,7 @@ class Notification extends Component {
           )}
           <li
             className="collection-item"
-          >
-            <Link
-              to={`${ROUTES.notifications}`}
-              className="notification_link"
-            >
-              Read all
-            </Link>
-          </li>
+          />
         </ul>
         {notifications.notifications && notifications.notifications.length > 1 && (
         <div className="badge">

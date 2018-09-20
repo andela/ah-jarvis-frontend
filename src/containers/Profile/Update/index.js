@@ -83,8 +83,7 @@ class UpdateProfile extends Component {
             image: response.secure_url,
           },
         });
-      })
-      .catch(err => console.log(err));
+      });
   };
 
   toaster = () => {

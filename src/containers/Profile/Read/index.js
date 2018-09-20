@@ -5,19 +5,21 @@ import PropTypes from 'prop-types';
 import M from 'materialize-css';
 
 import getUser, {
-  followAction, myFollowers, myFollowings, updateNotification,
+  followAction, myFollowers, myFollowings, updateNotification, getBookMarks, getUserArticles,
 } from './actions';
 import Header from '../../../components/Header';
 import NotFound from '../../../components/NotFound';
 import ProfileUser from '../../../components/ProfileUser';
 import FollowList from '../../../components/FollowList';
 import Settings from '../../../components/Settings';
+import UserArticles from '../../../components/UserArticles';
 
 export class ReadProfile extends Component {
   componentDidMount() {
     const { retrieveProfile, match } = this.props;
     const urlUsername = match.params.username;
     retrieveProfile(urlUsername);
+    this.props.getUserArticles(match.params.username);
   }
 
   componentDidUpdate() {
@@ -40,6 +42,10 @@ export class ReadProfile extends Component {
     this.props.updateNotification(!profile.get_notifications);
   }
 
+  renderBookmarks = results => (
+    <UserArticles results={results} type="bookmark" />
+  );
+
   render() {
     const {
       isFetching,
@@ -50,6 +56,8 @@ export class ReadProfile extends Component {
       isFollowing,
       followers,
       following,
+      bookmarks,
+      articles,
     } = this.props.profile;
 
     const data = payload.profile ? payload.profile : null;
@@ -61,6 +69,9 @@ export class ReadProfile extends Component {
     const loading = isFetching || !success || updating;
     const followersResults = followers.profiles;
     const followingResults = following.profiles;
+    const results = articles.results && articles.results;
+
+    const userBookmarks = bookmarks.results && bookmarks.results;
     const { push } = this.props.history;
 
     return (
@@ -88,7 +99,10 @@ export class ReadProfile extends Component {
                       <a
                         className="black-text"
                         href="#latest"
-                        onClick={() => push({ hash: '#latest' })}
+                        onClick={() => {
+                          push({ hash: '#latest' });
+                        }
+                      }
                       >
                         Profile
                       </a>
@@ -98,9 +112,13 @@ export class ReadProfile extends Component {
                       <a
                         className="black-text"
                         href="#bookmarks"
-                        onClick={() => push({ hash: '#bookmarks' })}
+                        onClick={() => {
+                          push({ hash: '#bookmarks' });
+                          this.props.getBookMarks(data.username);
+                        }
+                      }
                       >
-                        Favorites
+                        Bookmarks
                       </a>
                     </li>)
                     }
@@ -147,12 +165,14 @@ export class ReadProfile extends Component {
                   </ul>
                   <hr />
                 </div>
+
                 <div id="latest" className="col s12  p-t--30">
-                  Latest
+                  {results && <UserArticles results={results} />}
                 </div>
+
                 {this.props.user.username === data.username && (
                   <div id="bookmarks" className="col s12  p-t--30">
-                    Bookmarks
+                    {userBookmarks && this.renderBookmarks(userBookmarks) }
                   </div>
                 )}
 
@@ -194,6 +214,8 @@ ReadProfile.propTypes = {
   following: PropTypes.func.isRequired,
   updateNotification: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
+  getBookMarks: PropTypes.func,
+  getUserArticles: PropTypes.func,
 };
 
 const mapStateToProps = state => ({
@@ -207,6 +229,8 @@ const mapDispatchToProps = dispatch => bindActionCreators(
     followers: myFollowers,
     following: myFollowings,
     updateNotification,
+    getBookMarks,
+    getUserArticles,
   },
   dispatch,
 );
