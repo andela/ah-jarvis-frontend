@@ -13,6 +13,8 @@ import {
   FOLLOWING_FAILURE,
   UPDATE_PROFILE_NOTIFICATION_REQUEST,
   UPDATE_PROFILE_NOTIFICATION_SUCCESS,
+  FETCH_USER_BOOKMARKS_SUCCESS,
+  FETCH_USER_ARTICLES_SUCCESS,
 } from './constants';
 
 const initialState = {
@@ -115,6 +117,12 @@ export default function (state = initialState, action) {
         updating: true,
         success: false,
       };
+    case FETCH_USER_BOOKMARKS_SUCCESS:
+      console.log(payload);
+      return {
+        ...state,
+        bookmarks: payload,
+      };
 
     case UPDATE_PROFILE_NOTIFICATION_SUCCESS:
       return {
@@ -131,6 +139,11 @@ export default function (state = initialState, action) {
         success: true,
         failure: false,
         isFetching: false,
+      };
+    case FETCH_USER_ARTICLES_SUCCESS:
+      return {
+        ...state,
+        articles: payload,
       };
 
     default:
