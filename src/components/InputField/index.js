@@ -24,9 +24,9 @@ const InputField = ({
         onChange={onChange}
       />
       {name === 'password' && (
-        <div className="btn-dropdown eye" onClick={() => toggleView(type)}>
+        <button type="button" className="btn-dropdown eye" onClick={() => toggleView(type)}>
           {type === 'password' ? <img src={show} alt="show" /> : <img src={hide} alt="show" />}
-        </div>
+        </button>
       )}
       <label htmlFor={name}>{label}</label>
       {failure && <span className="red-text helper-text">{errors.errors[name]}</span>}
@@ -43,6 +43,7 @@ InputField.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  toggleView: PropTypes.func,
   errors: PropTypes.shape({
     email: PropTypes.string,
     username: PropTypes.string,

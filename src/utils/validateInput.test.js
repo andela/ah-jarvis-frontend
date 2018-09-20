@@ -39,18 +39,6 @@ describe('Validate Input', () => {
     expect(validate('bio', value)).toEqual('Bio should not exceed 150 words');
   });
 
-  it('should return message if confirm password does not match password', () => {
-    expect(validate('confirmPass', { password: 'Pass123!', confirmPass: 'Pass' })).toEqual(
-      'Input should match the password',
-    );
-  });
-
-  it('should return message if password is missing', () => {
-    expect(validate('confirmPass', { password: '', confirmPass: 'Pass' })).toEqual(
-      'Password is missing',
-    );
-  });
-
   it('should return null by default', () => {
     expect(validate('', '')).toEqual('');
   });

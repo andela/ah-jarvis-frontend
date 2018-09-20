@@ -24,7 +24,7 @@ class Form extends React.Component {
     user[name] = value;
     validation[name] = validateInput(name, value);
 
-    const checkValidation = Object.values(validation).every(e => e === '') && Object.keys(validation).length === 4;
+    const checkValidation = Object.values(validation).every(e => e === '') && Object.keys(validation).length === 3;
 
     this.setState(prevState => ({
       ...prevState,
@@ -54,11 +54,9 @@ class Form extends React.Component {
     />
   );
 
-  toggleView = (type) => {
-    type === 'password'
-      ? this.setState({ ...this.state, currentType: 'text' })
-      : this.setState({ ...this.state, currentType: 'password' });
-  };
+  toggleView = type => (type === 'password'
+    ? this.setState({ ...this.state, currentType: 'text' })
+    : this.setState({ ...this.state, currentType: 'password' }));
 
   render() {
     const { error, failure } = this.props.register;
