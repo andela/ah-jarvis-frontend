@@ -19,8 +19,7 @@ import NotFound from '../../../components/NotFound';
 import api from '../../../utils/api';
 import getCurrentUser from '../../../utils/auth';
 import readTime from '../../../utils/readtime';
-
-const user = getCurrentUser();
+import SocialShare from '../../../components/SocialShare';
 
 class Read extends Component {
   state = {
@@ -46,7 +45,7 @@ class Read extends Component {
         rate: nextValue,
       },
     };
-    if (user) {
+    if (getCurrentUser()) {
       this.setState({ alert: false });
       api({
         endpoint: `/articles/${this.props.match.params.id}/rate/`,
@@ -79,7 +78,7 @@ class Read extends Component {
     e.preventDefault();
     const { like, dislike, match } = this.props;
 
-    if (user) {
+    if (getCurrentUser()) {
       this.setState({ alert: false });
       if (e.target.id === 'like') {
         like(match.params.id);
@@ -145,16 +144,17 @@ class Read extends Component {
                   <Dante read_only content={data} />
                 </div>
                 <div className="col s1">
-                  <div className="reactions">
+                  <div className="reaction">
                     {this.renderReaction('like', thumbsUp, payload.article.likes_count)}
                     {this.renderReaction('dislike', thumbsDown, payload.article.dislikes_count)}
+                    <SocialShare title={payload.article.title} slug={payload.article.slug} />
                   </div>
                 </div>
               </React.Fragment>
             )}
           </div>
-          {payload.article && <div className="row">{ this.renderTags(payload.article.tagList) }</div>}
-`
+          {payload.article && <div className="row">{this.renderTags(payload.article.tagList)}</div>}
+          `
           {' '}
         </div>
       </React.Fragment>
