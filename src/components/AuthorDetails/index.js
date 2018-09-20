@@ -37,7 +37,7 @@ const AuthorDetails = ({
             </Link>
           </div>
           {!small
-            && !getCurrentUser().username && (
+            && !getCurrentUser() && (
               <a className="btn-flat btn-flat--primary" href="#!">
                 Follow
               </a>
