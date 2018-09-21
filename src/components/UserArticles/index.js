@@ -34,12 +34,15 @@ const UserArticles = ({ results, type }) => {
 
   return (
     <div className="profile--articles">
-      { type === 'bookmark' ? (<h5 className="title"> Bookmarks </h5>) : (<h5 className="title"> Latest </h5>) }
+      {type === 'bookmark' ? (
+        <h5 className="title"> Bookmarks </h5>
+      ) : (
+        <h5 className="title"> Latest </h5>
+      )}
       {articles}
     </div>
   );
 };
-
 
 UserArticles.propTypes = {
   results: PropTypes.object,

@@ -36,6 +36,7 @@ export default function (state = initialState, action) {
   switch (type) {
     case GET_REQUEST:
       return { ...state, isFetching: true };
+
     case GET_SUCCESS:
       return {
         ...state,
