@@ -7,8 +7,6 @@ import { createComment } from './actions';
 import getCurrentUser from '../../../utils/auth';
 import CommentInput from '../../../components/CommentInput';
 
-const user = getCurrentUser();
-
 class NewComment extends Component {
   static defaultProps = {
     comments: {},
@@ -27,7 +25,7 @@ class NewComment extends Component {
       onChange={this.handleChange}
       failure={failure}
       errors={errors}
-      user={user}
+      user={getCurrentUser()}
       handleSubmitComment={this.handleSubmitComment}
     />
   );
@@ -59,11 +57,7 @@ class NewComment extends Component {
 
   render() {
     const { errors, failure } = this.props.comments;
-    return (
-      <div>
-        {this.renderCommentInput('Comment', failure, errors, this.state.comment)}
-      </div>
-    );
+    return <div>{this.renderCommentInput('Comment', failure, errors, this.state.comment)}</div>;
   }
 }
 
