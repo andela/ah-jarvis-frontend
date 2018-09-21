@@ -39,7 +39,7 @@ class Header extends React.Component {
             </li>
             <li className="divider" tabIndex="-1" />
             <li>
-              <NavLink to={`${ROUTES.createArticleUrl}`}>New Article</NavLink>
+              <NavLink to={`${ROUTES.createArticleUrl}`}>New story</NavLink>
             </li>
             <li className="divider" tabIndex="-1" />
             <li>
@@ -53,10 +53,9 @@ class Header extends React.Component {
             <li className="divider" tabIndex="-1" />
             <li>
               <NavLink to={`${ROUTES.home}`} onClick={this.logout}>
-                Logout
+                Sign out
               </NavLink>
             </li>
-
           </ul>
         </React.Fragment>
       )}
@@ -86,18 +85,22 @@ class Header extends React.Component {
       ) : (
         <React.Fragment>
           <li>
-            <NavLink to={ROUTES.signin} className="black-text">Sign in</NavLink>
+            <NavLink to={ROUTES.signin} className="black-text">
+              Sign in
+            </NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.signup} className="black-text">Sign up</NavLink>
+            <NavLink to={ROUTES.signup} className="black-text">
+              Sign up
+            </NavLink>
           </li>
           <li>
-            <NavLink to={`${ROUTES.createArticleUrl}`} className="waves-effect waves-light btn ">What's your story</NavLink>
+            <NavLink to={`${ROUTES.createArticleUrl}`} className="waves-effect waves-light btn ">
+              What's your story
+            </NavLink>
           </li>
         </React.Fragment>
-
-      )
-    }
+      )}
     </React.Fragment>
   );
 
@@ -128,7 +131,6 @@ class Header extends React.Component {
     );
   }
 }
-
 
 Header.propTypes = {
   loading: PropTypes.bool,

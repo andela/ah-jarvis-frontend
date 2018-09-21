@@ -21,6 +21,7 @@ import NotFound from '../../../components/NotFound';
 import api from '../../../utils/api';
 import getCurrentUser from '../../../utils/auth';
 import readTime from '../../../utils/readtime';
+import SocialShare from '../../../components/SocialShare';
 import NewComment from '../../Comments/Create';
 import ReadComments from '../../Comments/Read';
 
@@ -173,18 +174,19 @@ class Read extends Component {
                 </div>
 
                 <div className="col s1">
-                  <div className="reactions">
+                  <div className="reaction">
                     {this.renderReaction('like', thumbsUp, payload.article.likes_count)}
                     {this.renderReaction('dislike', thumbsDown, payload.article.dislikes_count)}
                     {payload.article.favorited ? this.renderReaction('bookmark', heartFill) : this.renderReaction('unBookmark', heart)}
+                    <SocialShare title={payload.article.title} slug={payload.article.slug} />
                   </div>
                 </div>
 
               </React.Fragment>
             )}
           </div>
-          {payload.article && <div className="row">{ this.renderTags(payload.article.tagList) }</div>}
-`
+          {payload.article && <div className="row">{this.renderTags(payload.article.tagList)}</div>}
+          `
           {' '}
         </div>
       </React.Fragment>

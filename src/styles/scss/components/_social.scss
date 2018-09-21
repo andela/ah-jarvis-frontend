@@ -1,0 +1,29 @@
+.social--share {
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active,
+  &:focus,
+  &:visited {
+    outline: none !important;
+    border: none !important;
+  }
+}
+
+.social__icon {
+  &:active,
+  &:focus,
+  &:visited {
+    outline: none !important;
+    border: none !important;
+  }
+}
+
+.reaction {
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+  margin-left: 50px;
+  position: fixed;
+}
