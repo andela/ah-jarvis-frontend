@@ -20,6 +20,7 @@ class Signin extends Component {
   state = {
     email: '',
     password: '',
+    currentType: 'password',
   };
 
   handleChange = (e) => {
@@ -37,20 +38,26 @@ class Signin extends Component {
     M.toast({ html: localStorage.getItem('flash'), className: 'success' });
   };
 
-  renderInput = (name, failure, errors, value) => (
+  toggleView = type => (type === 'password'
+    ? this.setState({ ...this.state, currentType: 'text' })
+    : this.setState({ ...this.state, currentType: 'password' }));
+
+  renderInput = (name, failure, errors, value, type) => (
     <InputField
       name={`${name}`}
       label={`Enter your ${name}`}
-      type={`${name}`}
+      type={`${type}`}
       value={value}
       onChange={this.handleChange}
       failure={failure}
       errors={errors}
+      toggleView={this.toggleView}
     />
   );
 
   render() {
     const { errors, failure, isFetching } = this.props.signin;
+    const { currentType } = this.state;
     return (
       <div className="row">
         {localStorage.getItem('flash') ? this.toaster() : ''}
@@ -62,8 +69,8 @@ class Signin extends Component {
               </Link>
               <Errors name="error" errors={errors} failure={failure} />
               <form id="loginForm" onSubmit={this.handleSubmit}>
-                {this.renderInput('email', failure, errors, this.state.email)}
-                {this.renderInput('password', failure, errors, this.state.password)}
+                {this.renderInput('email', failure, errors, this.state.email, 'email')}
+                {this.renderInput('password', failure, errors, this.state.password, currentType)}
                 <Buttons isFetching={isFetching} onClick={this.handleSubmit} />
               </form>
             </div>
