@@ -21,7 +21,7 @@ export const read = id => () => {
     endpoint: `/notifications/${id}/read/`,
     data: {},
     authenticated: true,
-  }).then(() => console.log('read')).catch(err => console.log(err));
+  });
 };
 
 const fetchNotifications = () => (dispatch) => {

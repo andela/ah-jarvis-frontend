@@ -61,7 +61,6 @@ export const dislikeArticle = slug => (dispatch) => {
 
 export const bookmarkArticle = (slug, method) => (dispatch) => {
   dispatch(bookmarkArticleRequest());
-  console.log('method', method);
   api({
     endpoint: `/articles/${slug}/favorite/`,
     method,
@@ -69,7 +68,6 @@ export const bookmarkArticle = (slug, method) => (dispatch) => {
   })
     .then((res) => {
       dispatch(bookmarkArticleSuccess(res));
-      console.log('favorite res', res);
     })
     .catch(err => dispatch(articleFailure(err)));
 };

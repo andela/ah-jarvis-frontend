@@ -13,8 +13,15 @@ import {
   FOLLOWING_FAILURE,
   UPDATE_PROFILE_NOTIFICATION_SUCCESS,
   UPDATE_PROFILE_NOTIFICATION_REQUEST,
+  FETCH_USER_BOOKMARKS_REQUEST,
+  FETCH_USER_BOOKMARKS_SUCCESS,
+  FETCH_USER_BOOKMARKS_FAILURE,
+  FETCH_USER_ARTICLES_REQUEST,
+  FETCH_USER_ARTICLES_SUCCESS,
+  FETCH_USER_ARTICLES_FAILURE,
 } from './constants';
 import api from '../../../utils/api';
+import { limit } from '../../Home/actions';
 
 export const fetchProfile = () => ({
   type: GET_REQUEST,
@@ -141,6 +148,54 @@ const getUser = username => (dispatch) => {
       dispatch(fetchProfileSuccess(res));
     })
     .catch(err => dispatch(fetchProfileFailure(err)));
+};
+
+export const fetchUserBookMarks = () => ({
+  type: FETCH_USER_BOOKMARKS_REQUEST,
+});
+
+export const fetchUserBookmarksSuccess = payload => ({
+  type: FETCH_USER_BOOKMARKS_SUCCESS,
+  payload,
+});
+
+export const fetchUserBookMarksFailure = errors => ({
+  type: FETCH_USER_BOOKMARKS_FAILURE,
+  errors,
+});
+
+export const getBookMarks = username => (dispatch) => {
+  dispatch(fetchUserBookMarks());
+  api({
+    method: 'GET',
+    endpoint: `/articles?users_favorites__user__username=${username}&${limit(10)}`,
+  }).then((res) => {
+    dispatch(fetchUserBookmarksSuccess(res));
+  }).catch(err => dispatch(fetchUserBookMarksFailure(err)));
+};
+
+export const fetchUserArticles = () => ({
+  type: FETCH_USER_ARTICLES_REQUEST,
+});
+
+export const fetchUserArticlesSuccess = payload => ({
+  type: FETCH_USER_ARTICLES_SUCCESS,
+  payload,
+});
+
+export const fetchUserArticlesFailure = errors => ({
+  type: FETCH_USER_ARTICLES_FAILURE,
+  errors,
+});
+
+export const getUserArticles = username => (dispatch) => {
+  dispatch(fetchUserArticles());
+  api({
+    method: 'GET',
+    endpoint: `/articles?author__user__username=${username}&${limit(10)}`,
+  }).then((res) => {
+    dispatch(fetchUserArticlesSuccess(res));
+  }).catch(err => dispatch(fetchUserArticlesFailure(err)));
 };
 
 export default getUser;

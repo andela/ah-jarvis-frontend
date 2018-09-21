@@ -25,7 +25,6 @@ class SignUp extends React.Component {
               </Link>
               <Form
                 onClick={(user) => {
-                  console.log(user);
                   actions(user, history);
                 }}
                 register={register}

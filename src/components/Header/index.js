@@ -43,11 +43,11 @@ class Header extends React.Component {
             </li>
             <li className="divider" tabIndex="-1" />
             <li>
-              <a href="#!">My articles</a>
+              <NavLink to={`${ROUTES.profile}/${user.username}#profile`}>My articles</NavLink>
             </li>
             <li className="divider" tabIndex="-1" />
             <li>
-              <a href="#!">Favorites</a>
+              <NavLink to={`${ROUTES.profile}/${user.username}#bookmarks`}>Favorite</NavLink>
             </li>
 
             <li className="divider" tabIndex="-1" />
@@ -133,7 +133,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  loading: PropTypes.bool.isRequired,
+  loading: PropTypes.bool,
 };
 
 export default Header;

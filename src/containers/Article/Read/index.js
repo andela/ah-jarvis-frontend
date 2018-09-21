@@ -22,6 +22,8 @@ import api from '../../../utils/api';
 import getCurrentUser from '../../../utils/auth';
 import readTime from '../../../utils/readtime';
 import SocialShare from '../../../components/SocialShare';
+import NewComment from '../../Comments/Create';
+import ReadComments from '../../Comments/Read';
 
 class Read extends Component {
   state = {
@@ -64,7 +66,6 @@ class Read extends Component {
           const { getRating, getArticle, match } = this.props;
           getRating();
           getArticle(match.params.id);
-          console.log('article here', getArticle(match.params.id));
         })
         .catch((err) => {
           this.setState({
@@ -114,6 +115,19 @@ class Read extends Component {
 
   renderTags = tags => tags.map(tag => <div className="chip">{tag}</div>);
 
+  renderComments = () => {
+    const user = getCurrentUser();
+    if (user) {
+      return (
+        <div>
+          <NewComment slug={this.props.match.params.id} />
+          <ReadComments slug={this.props.match.params.id} />
+        </div>
+      );
+    }
+    return null;
+  }
+
   render() {
     const {
       isFetching, success, payload, errors, isRating,
@@ -127,14 +141,13 @@ class Read extends Component {
       } catch (e) {
         return <NotFound />;
       }
-      console.log(payload.article.favorited);
     }
     if (errors) {
       return <NotFound />;
     }
     return (
       <React.Fragment>
-        <Header {...this.props} />
+        <Header />
 
         <div className="container m-t--30">
           <div className="row">
@@ -157,6 +170,7 @@ class Read extends Component {
                     onStarClick={this.onStarClick}
                   />
                   <Dante read_only content={data} />
+                  {this.renderComments()}
                 </div>
 
                 <div className="col s1">
@@ -185,6 +199,7 @@ Read.propTypes = {
     isFetching: PropTypes.bool.isRequired,
     isRating: PropTypes.bool.isRequired,
     success: PropTypes.bool.isRequired,
+    failure: PropTypes.bool.isRequired,
     payload: PropTypes.object.isRequired,
     errors: PropTypes.object,
   }).isRequired,
@@ -195,6 +210,7 @@ Read.propTypes = {
   }).isRequired,
   like: PropTypes.func.isRequired,
   dislike: PropTypes.func.isRequired,
+  bookmark: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators(
