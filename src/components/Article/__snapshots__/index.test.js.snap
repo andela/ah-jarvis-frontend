@@ -51,7 +51,7 @@ ShallowWrapper {
           <Link
                     className="black-text"
                     replace={false}
-                    to="article/data"
+                    to="/article/data"
           >
                     <h2
                               className="article__preview--title truncate"
@@ -63,7 +63,7 @@ ShallowWrapper {
                     <Link
                               className="black-text"
                               replace={false}
-                              to="article/data"
+                              to="/article/data"
                     >
                               <p>
                                         data
@@ -71,7 +71,7 @@ ShallowWrapper {
                     </Link>
                     <Link
                               replace={false}
-                              to="article/data"
+                              to="/article/data"
                     >
                               Read more...
                     </Link>
@@ -155,7 +155,7 @@ ShallowWrapper {
             <Link
               className="black-text"
               replace={false}
-              to="article/data"
+              to="/article/data"
 >
               <h2
                             className="article__preview--title truncate"
@@ -167,7 +167,7 @@ ShallowWrapper {
               <Link
                             className="black-text"
                             replace={false}
-                            to="article/data"
+                            to="/article/data"
               >
                             <p>
                                           data
@@ -175,7 +175,7 @@ ShallowWrapper {
               </Link>
               <Link
                             replace={false}
-                            to="article/data"
+                            to="/article/data"
               >
                             Read more...
               </Link>
@@ -195,7 +195,7 @@ ShallowWrapper {
 />,
               "className": "black-text",
               "replace": false,
-              "to": "article/data",
+              "to": "/article/data",
             },
             "ref": null,
             "rendered": Object {
@@ -221,7 +221,7 @@ ShallowWrapper {
                 <Link
                   className="black-text"
                   replace={false}
-                  to="article/data"
+                  to="/article/data"
 >
                   <p>
                                     data
@@ -229,7 +229,7 @@ ShallowWrapper {
 </Link>,
                 <Link
                   replace={false}
-                  to="article/data"
+                  to="/article/data"
 >
                   Read more...
 </Link>,
@@ -248,7 +248,7 @@ ShallowWrapper {
 </p>,
                   "className": "black-text",
                   "replace": false,
-                  "to": "article/data",
+                  "to": "/article/data",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -271,7 +271,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": "Read more...",
                   "replace": false,
-                  "to": "article/data",
+                  "to": "/article/data",
                 },
                 "ref": null,
                 "rendered": "Read more...",
@@ -447,7 +447,7 @@ ShallowWrapper {
             <Link
                         className="black-text"
                         replace={false}
-                        to="article/data"
+                        to="/article/data"
             >
                         <h2
                                     className="article__preview--title truncate"
@@ -459,7 +459,7 @@ ShallowWrapper {
                         <Link
                                     className="black-text"
                                     replace={false}
-                                    to="article/data"
+                                    to="/article/data"
                         >
                                     <p>
                                                 data
@@ -467,7 +467,7 @@ ShallowWrapper {
                         </Link>
                         <Link
                                     replace={false}
-                                    to="article/data"
+                                    to="/article/data"
                         >
                                     Read more...
                         </Link>
@@ -551,7 +551,7 @@ ShallowWrapper {
               <Link
                 className="black-text"
                 replace={false}
-                to="article/data"
+                to="/article/data"
 >
                 <h2
                                 className="article__preview--title truncate"
@@ -563,7 +563,7 @@ ShallowWrapper {
                 <Link
                                 className="black-text"
                                 replace={false}
-                                to="article/data"
+                                to="/article/data"
                 >
                                 <p>
                                                 data
@@ -571,7 +571,7 @@ ShallowWrapper {
                 </Link>
                 <Link
                                 replace={false}
-                                to="article/data"
+                                to="/article/data"
                 >
                                 Read more...
                 </Link>
@@ -591,7 +591,7 @@ ShallowWrapper {
 />,
                 "className": "black-text",
                 "replace": false,
-                "to": "article/data",
+                "to": "/article/data",
               },
               "ref": null,
               "rendered": Object {
@@ -617,7 +617,7 @@ ShallowWrapper {
                   <Link
                     className="black-text"
                     replace={false}
-                    to="article/data"
+                    to="/article/data"
 >
                     <p>
                                         data
@@ -625,7 +625,7 @@ ShallowWrapper {
 </Link>,
                   <Link
                     replace={false}
-                    to="article/data"
+                    to="/article/data"
 >
                     Read more...
 </Link>,
@@ -644,7 +644,7 @@ ShallowWrapper {
 </p>,
                     "className": "black-text",
                     "replace": false,
-                    "to": "article/data",
+                    "to": "/article/data",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -667,7 +667,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": "Read more...",
                     "replace": false,
-                    "to": "article/data",
+                    "to": "/article/data",
                   },
                   "ref": null,
                   "rendered": "Read more...",
