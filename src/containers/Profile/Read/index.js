@@ -73,7 +73,6 @@ export class ReadProfile extends Component {
 
     const userBookmarks = bookmarks.results && bookmarks.results;
     const { push } = this.props.history;
-
     return (
       <React.Fragment>
         <Header loading={loading || isFollowing} />
@@ -108,7 +107,7 @@ export class ReadProfile extends Component {
                       </a>
                     </li>
                     {this.props.user.username === data.username && (
-                    <li className="tab col ">
+                    <li className="tab col">
                       <a
                         className="black-text"
                         href="#bookmarks"
@@ -123,7 +122,7 @@ export class ReadProfile extends Component {
                     </li>)
                     }
 
-                    <li className="tab col ">
+                    <li className="tab col">
                       <a
                         className="black-text"
                         href="#following"
@@ -136,7 +135,7 @@ export class ReadProfile extends Component {
                       </a>
                     </li>
 
-                    <li className="tab col ">
+                    <li className="tab col">
                       <a
                         className="black-text"
                         href="#followers"
@@ -149,7 +148,7 @@ export class ReadProfile extends Component {
                       </a>
                     </li>
                     {this.props.user.username === data.username && (
-                    <li className="tab col ">
+                    <li className="tab col">
                       <a
                         className="black-text"
                         href="#settings"

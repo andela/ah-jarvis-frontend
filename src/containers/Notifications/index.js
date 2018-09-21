@@ -14,7 +14,6 @@ class Notification extends Component {
     M.Dropdown.init(elems);
   }
 
-
   renderNotifications = ({ notifications }) => {
     const notificationList = notifications.sort((x, y) => y.unread - x.unread);
     const data = notificationList.map((notification) => {
@@ -27,12 +26,13 @@ class Notification extends Component {
 
       if (notification.actor.type === 'article') {
         return (
-          <li
-            key={notification.id}
-            className="collection-item"
-          >
-            { notification.unread && (<div className="dot" />)}
-            <img src={notification.actor.data.author.image} alt=" " className="responsive-img small--avatar " />
+          <li key={notification.id} className="collection-item">
+            {notification.unread && <div className="dot" />}
+            <img
+              src={notification.actor.data.author.image}
+              alt=" "
+              className="responsive-img small--avatar "
+            />
             <Link
               to={`${ROUTES.article}/${notification.actor.data.slug}`}
               onClick={() => {
@@ -40,9 +40,7 @@ class Notification extends Component {
               }}
               className="notification_link"
             >
-              <p>
-                {notification.verb}
-              </p>
+              <p>{notification.verb}</p>
             </Link>
           </li>
         );
@@ -50,7 +48,7 @@ class Notification extends Component {
       return null;
     });
     return data;
-  }
+  };
 
   render() {
     const { isFetching, success, notifications } = this.props.notifications;
@@ -58,18 +56,21 @@ class Notification extends Component {
     return (
       <React.Fragment>
         <ul id="notifications" className="dropdown-content collection">
-          {isFetching || !success ? '' : (
-            this.renderNotifications(notifications)
-          )}
-          <li
-            className="collection-item"
-          />
+          {isFetching || !success ? '' : this.renderNotifications(notifications)}
+          <li className="collection-item" />
         </ul>
-        {notifications.notifications && notifications.notifications.length > 1 && (
-        <div className="badge">
-          <p className="black-text">{notifications.notifications.filter(n => n.actor && n.actor.type === 'article' && n.unread).length}</p>
-        </div>)
-        }
+        {notifications.notifications
+          && notifications.notifications.length > 1 && (
+            <div className="badge">
+              <p className="white-text">
+                {
+                  notifications.notifications.filter(
+                    n => n.actor && n.actor.type === 'article' && n.unread,
+                  ).length
+                }
+              </p>
+            </div>
+        )}
       </React.Fragment>
     );
   }
@@ -87,7 +88,6 @@ const mapDispatchToProps = dispatch => bindActionCreators(
   dispatch,
 );
 
-
 Notification.propTypes = {
   notifications: PropTypes.shape({
     isFetching: PropTypes.bool.isRequired,
@@ -99,4 +99,7 @@ Notification.propTypes = {
   read: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Notification);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Notification);

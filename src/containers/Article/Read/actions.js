@@ -9,6 +9,7 @@ import {
   BOOKMARK_ARTICLE_SUCCESS,
   BOOKMARK_ARTICLE_REQUEST,
 } from './constants';
+import { CLEAR_STORE } from '../../Profile/Update/constants';
 
 export const articleFetch = () => ({
   type: ARTICLE_FETCH_REQUEST,
@@ -73,6 +74,7 @@ export const bookmarkArticle = (slug, method) => (dispatch) => {
 };
 
 export const fetchArticle = (id, auth = false) => (dispatch) => {
+  dispatch({ type: CLEAR_STORE });
   dispatch(articleFetch());
   return api({
     method: 'GET',

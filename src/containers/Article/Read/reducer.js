@@ -7,6 +7,7 @@ import {
   DISLIKE_ARTICLE_SUCCESS,
   BOOKMARK_ARTICLE_REQUEST,
   BOOKMARK_ARTICLE_SUCCESS,
+  CLEAR_STORE,
 } from './constants';
 
 const initialState = {
@@ -26,6 +27,19 @@ export default function (state = initialState, action) {
   switch (type) {
     case ARTICLE_FETCH_REQUEST:
       return { ...state, isFetching: true };
+    case CLEAR_STORE:
+      return {
+        payload: {},
+        isFetching: false,
+        isRating: false,
+        isLiking: false,
+        isDisliking: false,
+        success: false,
+        failure: false,
+        errors: null,
+        bookmarking: false,
+      };
+
     case ARTICLE_FETCH_SUCCESS:
       return {
         ...state,
